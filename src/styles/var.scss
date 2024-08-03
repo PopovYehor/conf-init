@@ -1,0 +1,93 @@
+//---Colors---//
+$color_blue_hover: #497792;
+$color_blue_main: #0067b3;
+$color_card: #99b1bf;
+$color_white_blue_accent: #CCE5F3;
+$color_white_background: #ffffff;
+$color_light_gray_disabled_primary: #b3b4b6;
+$color_disabled_secondary: #888888;
+$color_text: #1E1E1E;
+
+
+//---Text---//
+$font_weight: 400;
+$font_weight_bold: 600;
+$font_size_t1: 24px;
+$font_size_t2: 20px;
+$font_size_t3:18px;
+$font_size_t4:16px;
+$font_size_t5:14px;
+//---Headline---//
+@mixin h1{
+    font-size: 48px;
+    font-weight: $font_weight;
+    line-height: 57.6px;
+    color: $text_color;
+}
+@mixin h2{
+    font-size: 36px;
+    font-weight: $font_weight;
+    line-height: 36px;
+    color: $text_color;
+}
+@mixin h3{
+    font-size: 32px;
+    font-weight: $font_weight;
+    line-height: 44.16px;
+    color: $text_color;
+}
+@mixin h4{
+    font-size: 24px;
+    font-weight: $font_weight;
+    line-height: 33.12px;
+    color: $text_color;
+}
+//---Typography---//
+//---Primary text---//
+@mixin t1{
+    font-size: $font_size_t1;
+    font-weight: $font_weight;
+    line-height: 33.12px;
+    color: $text_color;
+}
+//---Secondary text---//
+@mixin t2{
+    font-size: $font_size_t2;
+    font-weight: $font_weight;
+    line-height: 26px;
+    color: $text_color;
+}
+@mixin t2_underline{
+    font-size: $font_size_t2;
+    font-weight: $font_weight;
+    line-height: 20px;
+    color: $text_color;
+}
+//---Others text
+@mixin t3{
+    font-size: $font_size_t3;
+    font-weight: $font_weight;
+    line-height: 24.84px;
+    color: $text_color;
+}
+
+@mixin t4{
+    font-size: $font_size_t4;
+    font-weight: $font_weight;
+    line-height: 18.4px;
+    color: $text_color;
+}
+
+@mixin t5{
+    font-size: $font_size_t5;
+    font-weight: $font_weight;
+    line-height: 16.8px;
+    color: $text_color;
+}
+
+@mixin t_button{
+    font-size: 16px;
+    font-weight: $font_weight;
+    line-height: 18.4px;
+    color: $text_color;
+}
