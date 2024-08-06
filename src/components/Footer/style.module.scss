@@ -1,47 +1,154 @@
-.footer{
-    height: 217px;
-    margin: 0;
-    padding: 82px 100px 90px 100px;
+.footer {
+  height: 217px;
+  margin: 0;
+  padding: 82px 100px 90px;
+  border-radius: 24px 24px 0 0;
+  background-color: #0067B3;
+  display: flex;
+  justify-content: space-between;
 
-    
+    .wrapper_logos {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      width: 43%;
 
-    border-radius: 24px 24px 0px 0px;
-    background-color:#0067B3;
-    
-    display: flex;
-    justify-content: space-between;
+      .logo {
+        display: flex;
+        margin: 0 0 35px;
+        justify-content: center;
+      }
 
-    .left_wrapper{
-        width: 49%;
+      .wrapper_icons {
         display: flex;
         justify-content: space-between;
-        border: 1px solid red;
+        width: 104px;
 
-        .left_wrapper_logos{
-            border: 1px solid black;
-            background-color: aliceblue;
-            height: max-content;
+        .icon_circle {
+          width: 24px;
+          height: 24px;
+          padding: 10px;
+          border-radius: 100px;
+          background-color: white;
+        }
+      }
+    }
 
-                .left_wrapper_icons{
-                border: 1px solid black;
-                display: flex;
+    .wrapper_menu_contacts{
+        display: flex;
+        width: 33%;
+        justify-content: space-between;
+
+        .wrapper_menu {
+            display: flex;
+            flex-direction: column;
+            color: white;
+                p {
+                    font-weight: bold;
+                    margin-top: 0;
+                    margin-bottom: 20px;
+                }
+                a {
+                    margin-bottom: 12px;
+                    color: white;
+                    text-decoration: none;
+
+                    &:hover {
+                    text-decoration: underline;
+                    }
+                }
+        }
+  
+        .wrapper_contacts {
+            display: flex;
+            flex-direction: column;
+            width: 180px;
+                p {
+                    font-weight: bold;
+                    margin-top: 0;
+                    margin-bottom: 20px;
+                    color: white;
+                }
+                span, a {
+                    margin-bottom: 12px;
+                    color: white;
+                }
+                a {
+                    text-decoration: none;
+
+                    &:hover {
+                    text-decoration: underline;
+                    }
+                }
+        }
+    }
+
+    .wrapper_politics {
+      display: flex;
+      flex-direction: column;
+
+        &:first-child {
+            margin-bottom: 12px;
+        }
+        a {
+            margin-bottom: 12px;
+            color: white;
+            text-decoration: none;
+
+            &:hover {
+            text-decoration: underline;
             }
         }
-        .left_wrapper_menu{
-            border: 1px solid yellow;
-        }
     }
-    .right_wrapper{
-        display: flex;
-        width: 49%;
-        justify-content: space-between;
-        border:  1px solid red;
+}
 
-        .right_wrapper_contacts{
-            border: 1px solid white;
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 20px 20px 60px;
+
+    .wrapper_logos {
+      align-items: center;
+      width: 100%;
+
+      .logo {
+        margin: 15px 0 25px;
+      }
+
+      .wrapper_icons {
+        width: auto;
+
+        .icon_circle {
+          margin: 0 10px;
         }
-        .right_wrapper_politics{
-            border: 1px solid yellow
-        }
+      }
     }
+
+    .wrapper_menu_contacts {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 58px;
+
+      .wrapper_menu,
+      .wrapper_contacts {
+        width: 100%;
+        margin-bottom: 100px;
+      }
+      .wrapper_contacts{
+        padding-left: 50px;
+      }
+    }
+
+    .wrapper_politics {
+      align-items: center;
+      width: 100%;
+
+      a {
+        text-align: center;
+      }
+    }
+  }
 }
