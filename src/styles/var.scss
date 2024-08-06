@@ -6,6 +6,7 @@ $color_white_blue_accent: #CCE5F3;
 $color_white_background: #ffffff;
 $color_light_gray_disabled_primary: #b3b4b6;
 $color_disabled_secondary: #888888;
+$color_disabled_third: #ECECEC;
 $color_text: #1E1E1E;
 
 
@@ -22,25 +23,25 @@ $font_size_t5:14px;
     font-size: 48px;
     font-weight: $font_weight;
     line-height: 57.6px;
-    color: $text_color;
+    color: $color_text;
 }
 @mixin h2{
     font-size: 36px;
     font-weight: $font_weight;
     line-height: 36px;
-    color: $text_color;
+    color: $color_text;
 }
 @mixin h3{
     font-size: 32px;
     font-weight: $font_weight;
     line-height: 44.16px;
-    color: $text_color;
+    color: $color_text;
 }
 @mixin h4{
     font-size: 24px;
     font-weight: $font_weight;
     line-height: 33.12px;
-    color: $text_color;
+    color: $color_text;
 }
 //---Typography---//
 //---Primary text---//
@@ -48,46 +49,53 @@ $font_size_t5:14px;
     font-size: $font_size_t1;
     font-weight: $font_weight;
     line-height: 33.12px;
-    color: $text_color;
+    color: $color_text;
 }
 //---Secondary text---//
 @mixin t2{
     font-size: $font_size_t2;
     font-weight: $font_weight;
     line-height: 26px;
-    color: $text_color;
+    color: $color_text;
 }
 @mixin t2_underline{
     font-size: $font_size_t2;
     font-weight: $font_weight;
     line-height: 20px;
-    color: $text_color;
+    color: $color_text;
 }
 //---Others text
 @mixin t3{
     font-size: $font_size_t3;
     font-weight: $font_weight;
     line-height: 24.84px;
-    color: $text_color;
+    color: $color_text;
 }
 
 @mixin t4{
     font-size: $font_size_t4;
     font-weight: $font_weight;
     line-height: 18.4px;
-    color: $text_color;
+    color: $color_text;
 }
 
 @mixin t5{
     font-size: $font_size_t5;
     font-weight: $font_weight;
     line-height: 16.8px;
-    color: $text_color;
+    color: $color_text;
 }
 
 @mixin t_button{
     font-size: 16px;
     font-weight: $font_weight;
     line-height: 18.4px;
-    color: $text_color;
+    color: $color_text;
+}
+
+//css function
+@mixin flex_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
