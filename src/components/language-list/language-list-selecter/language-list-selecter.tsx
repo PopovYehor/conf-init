@@ -1,7 +1,17 @@
 import { IconsListClose, IconsListOpen, IconsListSelected } from "@/components/icons/icons-language/icons-language"
 import styles from "./language-list-selecter.module.scss"
+import { useAppDispatch, useAppSelector } from "@/hooks/hooks"
+import { SET_LANGUAGE_SWITCH } from "@/reducers/language/language.reducer"
 
-export function LanguageListSelecter({langList, langListHandler, langSwitch, language, setLangSwitch}: any){
+export function LanguageListSelecter(){
+
+    const languageLists = useAppSelector((state)=>state.language.languageList)
+    const languageSwitch = useAppSelector((state)=>state.language.languageSwitch)
+    const language = useAppSelector((state)=>state.language.language)
+    const dispatch = useAppDispatch()
+
+    const langListHandler = (item: any)=>{}
+    
     return(
         <>
         <div className={styles.language_list_container}>
@@ -10,12 +20,12 @@ export function LanguageListSelecter({langList, langListHandler, langSwitch, lan
                     <div className={styles.language_icon}><language.img/></div>
                     <div className={styles.language_name}>{language.name}</div>
                 </div>
-                {langSwitch === false ? 
-                    <div className={styles.language_btn} onClick={()=>setLangSwitch(!langSwitch)}><IconsListClose/></div>
-                    : <div className={styles.language_btn} onClick={()=>setLangSwitch(!langSwitch)}><IconsListOpen/></div>}
+                {languageSwitch ? 
+                    <div className={styles.language_btn} onClick={()=>dispatch(SET_LANGUAGE_SWITCH(!languageSwitch))}><IconsListClose/></div>
+                    : <div className={styles.language_btn} onClick={()=>dispatch(SET_LANGUAGE_SWITCH(!languageSwitch))}><IconsListOpen/></div>}
             </div>
             <div className={styles.language_items}>
-                {langList.map((item: any)=>{
+                {languageLists.map((item: any)=>{
                     return(
                             <div className={styles.language_item} onClick={()=>langListHandler(item)}>
                                 <div className={styles.language_switch_item}>

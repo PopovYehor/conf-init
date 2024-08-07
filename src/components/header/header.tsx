@@ -1,11 +1,10 @@
-import { LanguageList } from "../language-list/language-list";
-
+import LanguageListComponent from "../language-list/language-list";
 
 export default function Header(){
     
     return (
     <>
-    <LanguageList/>
+    <LanguageListComponent/>
     </>
     )
 }
