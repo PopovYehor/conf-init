@@ -1,26 +1,35 @@
 import Link from "next/link";
 import style from "./style.module.scss";
-import {
-  InstagramIconsDefault,
-  InstagramIconsHover,
-  InstagramIconsPressed,
-  InstagramIconsDisabled,
-  FacebookIconsDefault,
-  FacebookIconsHover,
-  FacebookIconsPresed,
-  FacebookIconsDisabled,
-} from "@/assets/icons-socials/icons-socials";
-import { Logo } from "@/assets/logo/logo";
+import { InstagramIconsDefault, FacebookIconsDefault } from "@/components/icons/icons-socials/icons-socials";
+import { IconsMain } from "@/components/icons/icons-main/icons-main";
+import { useState, useEffect } from "react";
+import { getApiData } from "@/utils/api-request/getApiData";
+import { apiUrls } from "@/constants/apiUrls/apiUrls";
+import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
+import { fetchContacts } from "@/reducers/contact/contact.reducer";
 
 export default function Footer() {
 
+  const [apiData, setApiData] = useState<any[]>([]);
+  const contacts = useAppSelector((state) => state.contacts);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchContacts())
+    if (apiData.length === 0) {
+      getApiData(setApiData, apiUrls.contactUrl);
+    }
+    console.log(contacts);
+  }, [apiData]);
+
+
+  const contactData = apiData.length > 0 ? apiData[0] : null;
 
   return (
     <footer className={style.footer}>
-      
       <div className={style.wrapper_logos}>
         <div className={style.logo}>
-          <a href="">{Logo()}</a>
+          <a href="">{IconsMain()}</a>
         </div>
 
         <div className={style.wrapper_icons}>
@@ -53,10 +62,17 @@ export default function Footer() {
 
         <div className={style.wrapper_contacts}>
           <p>Контакти</p>
-          <span>Дім {`"Божий Дар"`}</span>
-          <span>03035, м.Київ, вул.Кучмин Яр, 1Б</span>
-
-          <a href="tel:+380932175571">+38 093 217 55 71</a>
+          {contactData ? (
+            <>
+              <span>{contactData.titleCont}</span>
+              <span>{contactData.adressCont}</span>
+              <a href={`tel:${contactData.phoneCont}`}>
+                {contactData.phoneCont}
+              </a>
+            </>
+          ) : (
+              <span>Скоро тут з`являться контакти</span>
+          )}
         </div>
       </div>
 
