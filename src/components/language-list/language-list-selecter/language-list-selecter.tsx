@@ -1,7 +1,8 @@
 import { IconsListClose, IconsListOpen, IconsListSelected } from "@/components/icons/icons-language/icons-language"
 import styles from "./language-list-selecter.module.scss"
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks"
-import { SET_LANGUAGE_SWITCH } from "@/reducers/language/language.reducer"
+import { CHANGE_LANGUAGE, SET_LANGUAGE_SWITCH } from "@/reducers/language/language.reducer"
+import { ILanguageItem } from "@/interfaces/language/language"
 
 export function LanguageListSelecter(){
 
@@ -9,12 +10,16 @@ export function LanguageListSelecter(){
     const languageSwitch = useAppSelector((state)=>state.language.languageSwitch)
     const language = useAppSelector((state)=>state.language.language)
     const dispatch = useAppDispatch()
-
-    const langListHandler = (item: any)=>{}
     
+    const mouseLeaveEvent = ()=>{
+        if(languageSwitch === true){
+            setTimeout(()=>{dispatch(SET_LANGUAGE_SWITCH(false))}, 1000) 
+        }
+    }
+
     return(
         <>
-        <div className={styles.language_list_container}>
+        <div className={styles.language_list_container} onMouseLeave={mouseLeaveEvent}>
             <div className={styles.default_list}>
                 <div className={styles.language_item}>
                     <div className={styles.language_icon}><language.img/></div>
@@ -25,9 +30,9 @@ export function LanguageListSelecter(){
                     : <div className={styles.language_btn} onClick={()=>dispatch(SET_LANGUAGE_SWITCH(!languageSwitch))}><IconsListOpen/></div>}
             </div>
             <div className={styles.language_items}>
-                {languageLists.map((item: any)=>{
+                {languageLists.map((item: ILanguageItem)=>{
                     return(
-                            <div className={styles.language_item} onClick={()=>langListHandler(item)}>
+                            <div className={styles.language_item} onClick={()=>dispatch(CHANGE_LANGUAGE(item.name))}>
                                 <div className={styles.language_switch_item}>
                                     <div className={styles.language_icon}><item.img/></div>
                                     <div className={styles.language_name}>{item.name}</div>
