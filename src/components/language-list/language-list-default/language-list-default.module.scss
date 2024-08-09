@@ -1,32 +1,44 @@
 @import "../../../styles/var.scss";
-.language_list_container{
-    @include flex_center;
-    width: 92px;
-    min-height: 11px;
-    padding: 4px 0;
-    border-radius: 38px;
-    border: 1px solid $color_disabled_third;
-    gap: 11px;
-    .language_item{
-        display: flex;
-        width: 44px;
-        gap: 3px;
-        cursor: default;
-        .language_icon{
-            @include flex_center
+.language_list_wrap{
+    width: 98px;
+    position: absolute;
+    top: 40px;
+    .language_list_container{
+        @include flex_center;
+        width: 92px;
+        min-height: 11px;
+        padding: 4px 0;
+        border-radius: 38px;
+        border: 1px solid $color_disabled_third;
+        gap: 11px;
+        position: relative;
+        .language_item{
+            display: flex;
+            width: 44px;
+            gap: 3px;
+            cursor: default;
+            .language_icon{
+                @include flex_center
+            }
+            .language_name{
+                @include t3
+            }
         }
-        .language_name{
-            @include t3
+        .language_btn{
+            position: relative;
+            cursor: pointer;
+            width: 15px;
+            height: 8px;
+            svg{
+                position: relative;
+                top: -7px;
+            }
         }
     }
-    .language_btn{
+}
+@media screen and (max-width: 426px) {
+    .language_list_wrap{
         position: relative;
-        cursor: pointer;
-        width: 15px;
-        height: 8px;
-        svg{
-            position: relative;
-            top: -7px;
-        }
+        top: 0;
     }
 }

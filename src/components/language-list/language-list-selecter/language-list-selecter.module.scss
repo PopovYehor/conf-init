@@ -8,6 +8,9 @@
     border-radius: 10px;
     border: 1px solid $color_disabled_third;
     gap: 11px;
+    position: absolute;
+    top: 40px;
+    background-color: $color_white_background;
     .default_list{
         display: flex;
         gap: 11px;
@@ -67,5 +70,13 @@
         .language_item:last-child{
             padding-top: 11px;
         }
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .language_list_container{
+        position: relative;
+        top: 0;
+        z-index: 2;
     }
 }
