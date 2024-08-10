@@ -18,6 +18,14 @@ $font_size_t2: 20px;
 $font_size_t3:18px;
 $font_size_t4:16px;
 $font_size_t5:14px;
+
+//css function
+@mixin flex_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 //---Headline---//
 @mixin h1{
     font-size: 48px;
@@ -90,12 +98,49 @@ $font_size_t5:14px;
     font-size: 16px;
     font-weight: $font_weight;
     line-height: 18.4px;
-    color: $color_text;
 }
 
-//css function
-@mixin flex_center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+//buttons
+@mixin button_size{
+    @include t_button();
+    @include flex_center();
+    width: 350px;
+    height: 70px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+@mixin button_setting_primary($bc){
+    @include button_size;
+    background-color: $bc;
+    color: $color_white_background;
+    text-decoration: none
+}
+
+@mixin button_setting_secondary($bc){
+    @include button_size;
+    background-color: $color_white_background;
+    border: 1px solid $bc;
+    color: $bc;
+    text-decoration: none;
+}
+//button default
+@mixin button_default{
+    @include button_setting_primary($bc: $color_blue_main)
+}
+@mixin button_default_secondary{
+    @include button_setting_secondary($bc: $color_blue_main)
+}
+//button hover and presed
+@mixin button_hover{
+    @include button_setting_primary($bc: $color_blue_hover)
+}
+@mixin button_hover_secondary{
+    @include button_setting_secondary($bc: $color_blue_hover)
+}
+//button disabled
+@mixin button_disabled{
+    @include button_setting_primary($bc: $color_disabled_secondary)
+}
+@mixin button_disabled_secondary{
+    @include button_setting_secondary($bc: $color_disabled_secondary)
 }
