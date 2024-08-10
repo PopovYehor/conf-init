@@ -2,7 +2,7 @@ import { IconsListClose, IconsListOpen } from "@/components/icons/icons-language
 import styles from "./language-list-default.module.scss"
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks"
 import { SET_LANGUAGE_SWITCH } from "@/reducers/language/language.reducer"
-import { language } from './../../../language/language';
+import { language } from '../../../language/languages';
 
 export function LanguageListDefaut(){
 
