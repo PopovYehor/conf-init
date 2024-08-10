@@ -1,4 +1,4 @@
-export const language = {
+export const languages = {
     UA:{
         //header
         about: "Про нас",

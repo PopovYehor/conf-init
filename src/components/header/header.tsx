@@ -5,15 +5,16 @@ import styles from "./header.module.scss"
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
 import { useEffect, useState } from "react";
 import { checkMobile, checkMobileListener } from "@/hooks/mobile";
-import { FacebookIconsDefault, FacebookIconsDefaultHeader, InstagramIconsDefault, InstagramIconsDefaultHeader } from "../icons/icons-socials/icons-socials";
-import { language } from "@/language/language";
+import { FacebookIconsDefaultHeader, InstagramIconsDefaultHeader } from "../icons/icons-socials/icons-socials";
+import { languages } from "@/language/languages";
+import { navigation } from "@/constants/navigations/navigations";
 export default function Header(){
 
     const nav = [
-        {text: {UA: language.UA.about, EN: language.EN.about}, link: '/'},
-        {text: {UA: language.UA.project, EN: language.EN.project}, link: '/'},
-        {text: {UA: language.UA.support, EN: language.EN.support}, link: '/'},
-        {text: {UA: language.UA.volunteers, EN: language.EN.volunteers}, link: '/'}
+        {text: {UA: languages.UA.about, EN: languages.EN.about}, link: '/'},
+        {text: {UA: languages.UA.project, EN: languages.EN.project}, link: '/'},
+        {text: {UA: languages.UA.support, EN: languages.EN.support}, link: '/'},
+        {text: {UA: languages.UA.volunteers, EN: languages.EN.volunteers}, link: '/'}
     ]
 
     const langageSelected = useAppSelector((state)=>state.language.languageSelected)
@@ -32,7 +33,9 @@ export default function Header(){
     <header className={styles.header}>
         <div className={styles.header_wrap}>
             <div className={styles.header_logo_wrap}>
-                <IconsMain/>
+                <Link href={navigation.main}>
+                    <IconsMain/>
+                </Link>
             </div>
             <div className={styles.nav_wrap}>
                 <div className={styles.header_nav}>
@@ -56,7 +59,7 @@ export default function Header(){
             <div className={styles.header_logo_wrap}>
                 <IconsMain/>
             </div>
-            <input type="checkbox" id="menu" className="checkbox"/>
+            <input type="checkbox" id="menu"/>
             <div className={styles.header_menu} >
                 <label htmlFor="menu" onClick={()=>setOpen(!open)}>
                     {!open? <IconsMenuOpen/> : <IconsMenuClose/>}
