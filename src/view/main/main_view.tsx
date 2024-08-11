@@ -1,6 +1,6 @@
 import Baner from "@/components/baner/baner";
 import Footer from "@/components/Footer/Footer";
-import Header from "@/components/header/header";
+import Header from "@/components/Header/header";
 
 export default function MainView() {
     return (
