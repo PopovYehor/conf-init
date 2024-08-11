@@ -8,9 +8,6 @@ import { getApiData } from "@/utils/api-request/getApiData";
 import { apiUrls } from "@/constants/apiUrls/apiUrls";
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
 import { fetchContacts } from "@/reducers/contact/contact.reducer";
-import { IconsMain } from "../icons/icons-main/icons-main";
-import { FacebookIconsDefault, InstagramIconsDefault } from "../icons/icons-socials/icons-socials";
-
 
 export default function Footer() {
 
