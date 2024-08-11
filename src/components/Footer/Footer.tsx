@@ -1,5 +1,6 @@
 import Link from "next/link";
 import style from "./style.module.scss";
+
 import { InstagramIconsDefault, FacebookIconsDefault } from "@/components/icons/icons-socials/icons-socials";
 import { IconsMain } from "@/components/icons/icons-main/icons-main";
 import { useState, useEffect } from "react";
@@ -7,6 +8,9 @@ import { getApiData } from "@/utils/api-request/getApiData";
 import { apiUrls } from "@/constants/apiUrls/apiUrls";
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
 import { fetchContacts } from "@/reducers/contact/contact.reducer";
+import { IconsMain } from "../icons/icons-main/icons-main";
+import { FacebookIconsDefault, InstagramIconsDefault } from "../icons/icons-socials/icons-socials";
+
 
 export default function Footer() {
 
@@ -29,19 +33,21 @@ export default function Footer() {
     <footer className={style.footer}>
       <div className={style.wrapper_logos}>
         <div className={style.logo}>
+
           <a href="">{IconsMain()}</a>
+
         </div>
 
         <div className={style.wrapper_icons}>
           <div className={style.icon_circle}>
             <a href="https://www.instagram.com/conf.bmv/">
-              {InstagramIconsDefault()}
+              <InstagramIconsDefault/>
             </a>
           </div>
 
           <div className={style.icon_circle}>
             <a href="https://www.facebook.com/profile.php?id=61559370821121">
-              {FacebookIconsDefault()}
+              <FacebookIconsDefault/>
             </a>
           </div>
         </div>

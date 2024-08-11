@@ -2,6 +2,7 @@ import { IconsListClose, IconsListOpen } from "@/components/icons/icons-language
 import styles from "./language-list-default.module.scss"
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks"
 import { SET_LANGUAGE_SWITCH } from "@/reducers/language/language.reducer"
+import { language } from '../../../language/languages';
 
 export function LanguageListDefaut(){
 
@@ -11,14 +12,16 @@ export function LanguageListDefaut(){
     
     return(
         <>
-        <div className={styles.language_list_container}>
-            <div className={styles.language_item}>
-                <div className={styles.language_icon}><language.img/></div>
-                <div className={styles.language_name}>{language.name}</div>
+        <div className={styles.language_list_wrap}>
+            <div className={styles.language_list_container}>
+                <div className={styles.language_item}>
+                    <div className={styles.language_icon}><language.img/></div>
+                    <div className={styles.language_name}>{language.name}</div>
+                </div>
+                {languageSwitch ? 
+                    <div className={styles.language_btn} onClick={()=>dispatch(SET_LANGUAGE_SWITCH(!languageSwitch))}><IconsListClose/></div>
+                    : <div className={styles.language_btn} onClick={()=>dispatch(SET_LANGUAGE_SWITCH(!languageSwitch))}><IconsListOpen/></div>}
             </div>
-            {languageSwitch ? 
-                <div className={styles.language_btn} onClick={()=>dispatch(SET_LANGUAGE_SWITCH(!languageSwitch))}><IconsListClose/></div>
-                : <div className={styles.language_btn} onClick={()=>dispatch(SET_LANGUAGE_SWITCH(!languageSwitch))}><IconsListOpen/></div>}
         </div>
         </>
     )

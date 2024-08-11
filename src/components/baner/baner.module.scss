@@ -1,0 +1,132 @@
+@import "../../styles/var.scss";
+
+@media screen and (min-width: 427px) {
+    .baner_wrap{
+        height: 715px;
+        position: relative;
+        border-radius: 0 0 24px 24px;
+        overflow: hidden;
+        .background_image{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 0;
+            img{
+                width: 100%;
+                height: 825px;
+                object-fit: cover;
+            }
+        }
+        .background_color_wrap{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: #00000099;
+        }
+        .baner_container{
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            @include flex_center();
+            flex-direction: column;
+            gap: 48px;
+            .baner_text{
+                display: flex;
+                flex-direction: column;
+                width: 750px;
+                gap: 12px;
+                h1{
+                    margin: 0;
+                    padding: 0;
+                    @include h1;
+                    color: $color_white_background;
+                    text-align: center;
+                    cursor: default;
+                }
+                p{
+                    margin: 0;
+                    padding: 0;
+                    @include t2;
+                    color: $color_white_background;
+                    text-align: center;
+                    cursor: default;
+                }
+            }
+            .baner_buttons{
+                display: flex;
+                gap: 24px;
+                .button_about{
+                    @include button_default
+                }
+                .button_support{
+                    @include button_default_secondary
+                }
+            }
+        }
+    }
+};
+
+@media screen and (max-width: 426px) {
+    .baner_wrap{
+        height: 645px;
+        position: relative;
+        border-radius: 0 0 24px 24px;
+        overflow: hidden;
+        z-index: 0;
+        .background_image{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 0;
+            img{
+                width: 100%;
+                height: 740px;
+                object-fit: cover;
+            }
+        }
+        .background_color_wrap{
+            display: none;
+        }
+        .baner_container{
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            @include flex_center();
+            flex-direction: column;
+            gap: 43px;
+            .baner_text{
+                display: flex;
+                flex-direction: column;
+                width: 350px;
+                gap: 8px;
+                h1{
+                    margin: 0;
+                    padding: 0;
+                    @include h3;
+                    color: $color_white_background;
+                    text-align: center;
+                    cursor: default;
+                }
+                p{
+                    margin: 0;
+                    padding: 0;
+                    @include t4;
+                    color: $color_white_background;
+                    text-align: center;
+                    cursor: default;
+                }
+            }
+            .baner_buttons{
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                .button_about{
+                    @include button_default
+                }
+                .button_support{
+                    @include button_default_secondary
+                }
+            }
+        }
+    }
+}

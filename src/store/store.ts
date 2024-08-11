@@ -1,5 +1,6 @@
 import ContactsReducer from '@/reducers/contact/contact.reducer';
 import LanguageReducer from '@/reducers/language/language.reducer';
+import MobileReducer from '@/reducers/mobile/mobile.reducer';
 import TestReducer from '@/reducers/test/test.reducer';
 import { configureStore } from '@reduxjs/toolkit'
 import { combineReducers } from "redux"
@@ -7,7 +8,8 @@ import { combineReducers } from "redux"
 const combinatedReducer = combineReducers({
     test: TestReducer,
     language: LanguageReducer,
-    contacts: ContactsReducer
+    contacts: ContactsReducer,
+    mobile: MobileReducer
 })
 
 export const store = configureStore({
