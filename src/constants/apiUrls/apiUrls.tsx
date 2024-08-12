@@ -1,9 +1,9 @@
 export const apiUrls = {
-  mainUrl: "https://konf-backend.onrender.com/main",
-  worthUrl: "https://konf-backend.onrender.com/worth",
-  eventsUrl: "https://konf-backend.onrender.com/events",
-  imageUrl: "https://konf-backend.onrender.com/image",
-  contactUrl: "https://konf-backend.onrender.com/contact/",
-  partnerUrl: "https://konf-backend.onrender.com/partner",
-  helpUrl: "https://konf-backend.onrender.com/help"
+  mainUrl: "http://localhost:5000/main",
+  worthUrl: "http://localhost:5000/worth",
+  eventsUrl: "http://localhost:5000/events",
+  imageUrl: "http://localhost:5000/image",
+  contactUrl: "http://localhost:5000/contact/",
+  partnerUrl: "http://localhost:5000/partner",
+  helpUrl: "http://localhost:5000/help"
 };
