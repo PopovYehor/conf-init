@@ -8,19 +8,22 @@ import { getApiData } from "@/utils/api-request/getApiData";
 import { apiUrls } from "@/constants/apiUrls/apiUrls";
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
 import { fetchContacts } from "@/reducers/contact/contact.reducer";
+import { languages } from "@/language/languages";
+
 
 export default function Footer() {
 
   const [apiData, setApiData] = useState<any[]>([]);
   const contacts = useAppSelector((state) => state.contacts);
+  const langageSelected = useAppSelector((state) => state.language.languageSelected);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchContacts())
+    dispatch(fetchContacts());
     if (apiData.length === 0) {
       getApiData(setApiData, apiUrls.contactUrl);
     }
-    console.log(contacts);
+    
   }, [apiData]);
 
 
@@ -30,60 +33,96 @@ export default function Footer() {
     <footer className={style.footer}>
       <div className={style.wrapper_logos}>
         <div className={style.logo}>
-
           <a href="">{IconsMain()}</a>
-
         </div>
 
         <div className={style.wrapper_icons}>
           <div className={style.icon_circle}>
-            <a href="https://www.instagram.com/conf.bmv/">
-              <InstagramIconsDefault/>
-            </a>
+            <Link href="https://www.instagram.com/conf.bmv/">
+              {InstagramIconsDefault()}
+            </Link>
           </div>
 
           <div className={style.icon_circle}>
-            <a href="https://www.facebook.com/profile.php?id=61559370821121">
-              <FacebookIconsDefault/>
-            </a>
+            <Link href="https://www.facebook.com/profile.php?id=61559370821121">
+              {FacebookIconsDefault()}
+            </Link>
           </div>
         </div>
       </div>
+      {langageSelected === "UA" ? (
+        <>
+          <div className={style.wrapper_menu_contacts}>
+            <div className={style.wrapper_menu}>
+              <p>{languages.UA.menu}</p>
 
-      <div className={style.wrapper_menu_contacts}>
-        <div className={style.wrapper_menu}>
-          <p>Меню</p>
+              <Link href={"/about"}>{languages.UA.about}</Link>
 
-          <Link href={"/about"}>Про нас</Link>
+              <Link href={"/support"}>{languages.UA.support}</Link>
 
-          <Link href={"/support"}>Підтримати</Link>
+              <Link href={"/projects"}>{languages.UA.project}</Link>
 
-          <Link href={"/projects"}>Наші проєкти</Link>
+              <Link href={"/volunteers"}>{languages.UA.volunteers}</Link>
+            </div>
 
-          <Link href={"/volunteers"}>Волонтери</Link>
-        </div>
+            <div className={style.wrapper_contacts}>
+              <p>{languages.UA.contacts}</p>
+              {contactData ? (
+                <>
+                  <span>{contactData.titleContUA}</span>
+                  <span>{contactData.adressContUA}</span>
+                  <Link href={`tel:${contactData.phoneContUA}`}>
+                    {contactData.phoneContUA}
+                  </Link>
+                </>
+              ) : (
+                <span>Скоро тут з`являться контакти</span>
+              )}
+            </div>
+          </div>
 
-        <div className={style.wrapper_contacts}>
-          <p>Контакти</p>
-          {contactData ? (
-            <>
-              <span>{contactData.titleCont}</span>
-              <span>{contactData.adressCont}</span>
-              <a href={`tel:${contactData.phoneCont}`}>
-                {contactData.phoneCont}
-              </a>
-            </>
-          ) : (
-              <span>Скоро тут з`являться контакти</span>
-          )}
-        </div>
-      </div>
+          <div className={style.wrapper_politics}>
+            <Link href="/">{languages.UA.privacy_policy}</Link>
+            <Link href="/">{languages.UA.offer}</Link>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className={style.wrapper_menu_contacts}>
+            <div className={style.wrapper_menu}>
+              <p>{languages.EN.menu}</p>
 
-      <div className={style.wrapper_politics}>
-        <a href="#">Політика конфіденційності</a>
-        <a href="#">Публічна оферта</a>
-        <a href="#">Політика COOKIE</a>
-      </div>
+              <Link href={"/about"}>{languages.EN.about}</Link>
+
+              <Link href={"/support"}>{languages.EN.support}</Link>
+
+              <Link href={"/projects"}>{languages.EN.project}</Link>
+
+              <Link href={"/volunteers"}>{languages.EN.volunteers}</Link>
+            </div>
+
+            <div className={style.wrapper_contacts}>
+              <p>{languages.EN.contacts}</p>
+              {contactData ? (
+                <>
+                  <span>{contactData.titleContEN}</span>
+                  <span>{contactData.adressContEN}</span>
+                  <Link href={`tel:${contactData.phoneContEN}`}>
+                    {contactData.phoneContEN}
+                  </Link>
+                </>
+              ) : (
+                <span>Contacts will appear here soon</span>
+              )}
+            </div>
+          </div>
+
+          <div className={style.wrapper_politics}>
+            <Link href="/">{languages.EN.privacy_policy}</Link>
+            <Link href="/">{languages.EN.offer}</Link>
+          </div>
+        </>
+      )}
     </footer>
   );
 }
