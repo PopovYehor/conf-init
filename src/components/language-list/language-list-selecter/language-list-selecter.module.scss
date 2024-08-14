@@ -27,7 +27,8 @@
             @include flex_center
         }
         .language_name{
-            @include t3
+            @include t3;
+            color: $color_text_black
         }
     }
     .language_btn{
