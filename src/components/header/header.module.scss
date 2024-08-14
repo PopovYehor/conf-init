@@ -32,6 +32,7 @@
                     a{
                         @include t2;
                         text-decoration: none;
+                        color: $color_text_black
                     }
                     a:hover{
                         @include t2_underline;
