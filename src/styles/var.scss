@@ -71,6 +71,7 @@ $font_size_t5:14px;
     font-weight: $font_weight;
     line-height: 20px;
     color: $color_text;
+    text-decoration: underline;
 }
 //---Others text
 @mixin t3{
