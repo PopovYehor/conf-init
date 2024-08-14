@@ -22,7 +22,7 @@ export default function Baner(){
                     <Link className={styles.button_about} href={navigation.about}>
                         {language === 'UA'? languages.UA.about : languages.EN.about}
                     </Link>
-                    <Link href={navigation.main} className={styles.button_support}>
+                    <Link href={navigation.support} className={styles.button_support}>
                         {language === 'UA'? languages.UA.support : languages.EN.support}
                     </Link>
                 </div>
