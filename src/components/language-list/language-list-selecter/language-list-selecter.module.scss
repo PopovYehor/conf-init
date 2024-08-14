@@ -11,6 +11,7 @@
     position: absolute;
     top: 40px;
     background-color: $color_white_background;
+    z-index: 1;
     .default_list{
         display: flex;
         gap: 11px;

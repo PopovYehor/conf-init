@@ -11,10 +11,10 @@ import { navigation } from "@/constants/navigations/navigations";
 export default function Header(){
 
     const nav = [
-        {text: {UA: languages.UA.about, EN: languages.EN.about}, link: '/'},
-        {text: {UA: languages.UA.project, EN: languages.EN.project}, link: '/'},
-        {text: {UA: languages.UA.support, EN: languages.EN.support}, link: '/'},
-        {text: {UA: languages.UA.volunteers, EN: languages.EN.volunteers}, link: '/'}
+        {text: {UA: languages.UA.about, EN: languages.EN.about}, link: navigation.about},
+        {text: {UA: languages.UA.project, EN: languages.EN.project}, link: navigation.projects},
+        {text: {UA: languages.UA.support, EN: languages.EN.support}, link: navigation.support},
+        {text: {UA: languages.UA.volunteers, EN: languages.EN.volunteers}, link: navigation.volunteers}
     ]
 
     const langageSelected = useAppSelector((state)=>state.language.languageSelected)
