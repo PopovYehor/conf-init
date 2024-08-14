@@ -117,6 +117,7 @@
                 a{
                     @include h3;
                     text-decoration: none;
+                    color: $color_text_black
                 }
             }
             .header_swap_bottom{
