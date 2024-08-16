@@ -32,25 +32,25 @@ $font_size_t5:14px;
     font-size: 48px;
     font-weight: $font_weight;
     line-height: 57.6px;
-    color: $color_text;
+    color: $color_text_black;
 }
 @mixin h2{
     font-size: 36px;
     font-weight: $font_weight;
     line-height: 36px;
-    color: $color_text;
+    color: $color_text_black;
 }
 @mixin h3{
     font-size: 32px;
     font-weight: $font_weight;
     line-height: 44.16px;
-    color: $color_text;
+    color: $color_text_black;
 }
 @mixin h4{
     font-size: 24px;
     font-weight: $font_weight;
     line-height: 33.12px;
-    color: $color_text;
+    color: $color_text_black;
 }
 //---Typography---//
 //---Primary text---//
@@ -58,20 +58,20 @@ $font_size_t5:14px;
     font-size: $font_size_t1;
     font-weight: $font_weight;
     line-height: 33.12px;
-    color: $color_text;
+    color: $color_text_black;
 }
 //---Secondary text---//
 @mixin t2{
     font-size: $font_size_t2;
     font-weight: $font_weight;
     line-height: 26px;
-    color: $color_text;
+    color: $color_text_black;
 }
 @mixin t2_underline{
     font-size: $font_size_t2;
     font-weight: $font_weight;
     line-height: 20px;
-    color: $color_text;
+    color: $color_text_black;
     text-decoration: underline;
 }
 //---Others text
@@ -79,21 +79,21 @@ $font_size_t5:14px;
     font-size: $font_size_t3;
     font-weight: $font_weight;
     line-height: 24.84px;
-    color: $color_text;
+    color: $color_text_black;
 }
 
 @mixin t4{
     font-size: $font_size_t4;
     font-weight: $font_weight;
     line-height: 18.4px;
-    color: $color_text;
+    color: $color_text_black;
 }
 
 @mixin t5{
     font-size: $font_size_t5;
     font-weight: $font_weight;
     line-height: 16.8px;
-    color: $color_text;
+    color: $color_text_black;
 }
 
 @mixin t_button{

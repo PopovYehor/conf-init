@@ -7,3 +7,4 @@ export const apiUrls = {
   partnerUrl: "http://localhost:5000/partner",
   helpUrl: "http://localhost:5000/help"
 };
+export const googleForm = 'https://docs.google.com/forms/d/e/1FAIpQLSd1xaeCYoSMucIhInHujyJtK95an2ZMGh5sPRQuJaPf1JHqng/viewform'

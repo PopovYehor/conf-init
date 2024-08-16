@@ -6,6 +6,16 @@ export const languages = {
     support: "Підтримати",
     volunteers: "Волонтери",
     //_____________________
+    //MAIN
+
+    //evants
+    evants: 'Анонс подій',
+    read_more: 'Читати більше',
+    evant_join: 'Долучитись до події',
+
+    //_____________________
+
+    //_______________________________________________
 
     //footer
     menu: "Меню",
@@ -20,6 +30,17 @@ export const languages = {
     support: "To Support",
     volunteers: "Volunteers",
     //_____________________
+
+    //MAIN
+
+    //evants
+    evants: 'Announcement of events',
+    read_more: 'Read more',
+    evant_join: 'Join the event',
+    //_____________________
+
+    //_______________________________________________
+
     //footer
     menu: "Menu",
     contacts: "Contacts",
