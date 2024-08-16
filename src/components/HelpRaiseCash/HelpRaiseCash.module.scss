@@ -1,0 +1,54 @@
+@import "../../styles/var";
+
+.wrapper{
+    margin: 132px 0;
+    padding: 0 100px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+
+    .image {
+        width: 610px;
+        height: 599px;
+    }
+    
+    .info{
+        h2{
+            @include h2;
+            margin: 0;
+        }
+        p{
+            margin: 16px 0 36px;
+            @include t2;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper{
+        margin: 32px 0 48px;
+        padding: 0 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .image {
+            width: 350px;
+            height: 343px;
+            margin-bottom: 20px;
+        }
+
+        .info{
+            h2{
+                @include h2;
+                margin: 0;
+            }
+            p{
+                margin: 8px 0 24px;
+                @include t2;
+            }
+        }
+    }
+}

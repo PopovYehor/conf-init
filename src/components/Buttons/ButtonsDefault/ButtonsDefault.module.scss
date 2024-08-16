@@ -1,0 +1,17 @@
+@import "../../../styles/var.scss";
+
+.button{
+    @include button_default;
+    border: none;
+    padding: 12px 24px;
+    
+    &:hover{
+        @include button_hover;
+    }
+    &:active{
+        @include button_hover;
+    }
+    &:disabled{
+        @include button_disabled;
+    }
+}
