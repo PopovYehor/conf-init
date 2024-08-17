@@ -22,7 +22,7 @@ export default function HelpRaiseCash() {
             <p>{languages.UA.main_page_text_raise_cash}</p>
             <ButtonsDefault
               text={languages.UA.main_page_button_raise_cash}
-              url="/"
+              url="/support"
             />
           </>
         ) : (
@@ -31,7 +31,7 @@ export default function HelpRaiseCash() {
             <p>{languages.EN.main_page_text_raise_cash}</p>
             <ButtonsDefault
               text={languages.EN.main_page_button_raise_cash}
-              url="/"
+              url="/support"
             />
           </>
         )}
