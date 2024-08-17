@@ -1,7 +1,16 @@
 import Link from "next/link";
 import style from "./style.module.scss";
 
-import { InstagramIconsDefault, FacebookIconsDefault } from "@/components/icons/icons-socials/icons-socials";
+import {
+  InstagramIconsDefault,
+  InstagramIconsHover,
+  InstagramIconsPressed,
+  InstagramIconsDisabled,
+  FacebookIconsDefault,
+  FacebookIconsHover,
+  FacebookIconsPresed,
+  FacebookIconsDisabled,
+} from "@/components/icons/icons-socials/icons-socials";
 import { IconsMain } from "@/components/icons/icons-main/icons-main";
 import { useState, useEffect } from "react";
 import { getApiData } from "@/utils/api-request/getApiData";
@@ -10,12 +19,21 @@ import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
 import { fetchContacts } from "@/reducers/contact/contact.reducer";
 import { languages } from "@/language/languages";
 
-
 export default function Footer() {
-
   const [apiData, setApiData] = useState<any[]>([]);
+
+  const [isInstagramHovered, setInstagramHovered] = useState(false);
+  const [isInstagramPressed, setInstagramPressed] = useState(false);
+  const [isInstagramDisabled, setInstagramDisabled] = useState(false);
+
+  const [isFacebookHovered, setFacebookHovered] = useState(false);
+  const [isFacebookPressed, setFacebookPressed] = useState(false);
+  const [isFacebookDisabled, setFacebookDisabled] = useState(false);
+
   const contacts = useAppSelector((state) => state.contacts);
-  const langageSelected = useAppSelector((state) => state.language.languageSelected);
+  const langageSelected = useAppSelector(
+    (state) => state.language.languageSelected
+  );
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -23,11 +41,23 @@ export default function Footer() {
     if (apiData.length === 0) {
       getApiData(setApiData, apiUrls.contactUrl);
     }
-    
   }, [apiData]);
 
-
   const contactData = apiData.length > 0 ? apiData[0] : null;
+
+  const getInstagramIcon = () => {
+    if (isInstagramDisabled) return InstagramIconsDisabled();
+    if (isInstagramPressed) return InstagramIconsPressed();
+    if (isInstagramHovered) return InstagramIconsHover();
+    return InstagramIconsDefault();
+  };
+
+  const getFacebookIcon = () => {
+    if (isFacebookDisabled) return FacebookIconsDisabled();
+    if (isFacebookPressed) return FacebookIconsPresed();
+    if (isFacebookHovered) return FacebookIconsHover();
+    return FacebookIconsDefault();
+  };
 
   return (
     <footer className={style.footer}>
@@ -37,15 +67,30 @@ export default function Footer() {
         </div>
 
         <div className={style.wrapper_icons}>
-          <div className={style.icon_circle}>
-            <Link href="https://www.instagram.com/conf.bmv/">
-              {InstagramIconsDefault()}
+          <div
+            onMouseEnter={() => setInstagramHovered(true)}
+            onMouseLeave={() => setInstagramHovered(false)}
+            onMouseDown={() => setInstagramPressed(true)}
+            onMouseUp={() => setInstagramPressed(false)}
+            onDoubleClick={() => setInstagramDisabled(!isInstagramDisabled)}
+          >
+            <Link href="https://www.instagram.com/conf.bmv/" target="_blank">
+              {getInstagramIcon()}
             </Link>
           </div>
 
-          <div className={style.icon_circle}>
-            <Link href="https://www.facebook.com/profile.php?id=61559370821121">
-              {FacebookIconsDefault()}
+          <div
+            onMouseEnter={() => setFacebookHovered(true)}
+            onMouseLeave={() => setFacebookHovered(false)}
+            onMouseDown={() => setFacebookPressed(true)}
+            onMouseUp={() => setFacebookPressed(false)}
+            onDoubleClick={() => setFacebookDisabled(!isFacebookDisabled)}
+          >
+            <Link
+              href="https://www.facebook.com/profile.php?id=61559370821121"
+              target="_blank"
+            >
+              {getFacebookIcon()}
             </Link>
           </div>
         </div>
