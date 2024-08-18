@@ -1,0 +1,16 @@
+@import "../../../styles/var.scss";
+
+.button{
+    @include button_default_secondary;
+    padding: 12px 24px;
+    
+    &:hover{
+        @include button_hover_secondary;
+    }
+    &:active{
+        @include button_hover_secondary;
+    }
+    &:disabled{
+        @include button_disabled_secondary;
+    }
+}

@@ -24,15 +24,7 @@
       .wrapper_icons {
         display: flex;
         justify-content: space-between;
-        width: 104px;
-
-        .icon_circle {
-          width: 24px;
-          height: 24px;
-          padding: 10px;
-          border-radius: 100px;
-          background-color: $color_white_background;
-        }
+        width: 110px;
       }
     }
 
@@ -120,11 +112,8 @@
       }
 
       .wrapper_icons {
-        width: auto;
-
-        .icon_circle {
-          margin: 0 10px;
-        }
+        width: 103px;
+        justify-content: space-between;
       }
     }
 
