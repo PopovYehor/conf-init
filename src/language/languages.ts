@@ -8,6 +8,16 @@ export const languages = {
     support: "Підтримати",
     volunteers: "Волонтери",
     //_____________________
+    //MAIN
+
+    //evants
+    evants: 'Анонс подій',
+    read_more: 'Читати більше',
+    evant_join: 'Долучитись до події',
+
+    //_____________________
+
+    //_______________________________________________
 
     //raise cash
     main_page_title_raise_cash: "Допоможіть нам зібрати кошти",
@@ -37,6 +47,15 @@ export const languages = {
     volunteers: "Volunteers",
     //_____________________
 
+    //MAIN
+
+    //evants
+    evants: 'Announcement of events',
+    read_more: 'Read more',
+    evant_join: 'Join the event',
+    //_____________________
+
+    //_______________________________________________
     //raise cash
     main_page_title_raise_cash: "Help us raise funds",
     main_page_text_raise_cash:

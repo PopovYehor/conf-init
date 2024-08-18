@@ -1,5 +1,5 @@
 import { languageDefault, languageList } from "@/constants/languages/language";
-import { ILanguageItem, ILanguageState } from "@/interfaces/language/language";
+import { ILanguageState } from "@/interfaces/header/language/language";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState: ILanguageState = {

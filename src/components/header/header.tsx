@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { IconsMain, IconsMenuClose, IconsMenuOpen } from "../icons/icons-main/icons-main";
-import LanguageListComponent from "../language-list/language-list";
 import styles from "./header.module.scss"
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
 import { useEffect, useState } from "react";
@@ -8,6 +7,7 @@ import { checkMobile, checkMobileListener } from "@/hooks/mobile";
 import { FacebookIconsDefaultHeader, InstagramIconsDefaultHeader } from "../icons/icons-socials/icons-socials";
 import { languages } from "@/language/languages";
 import { navigation } from "@/constants/navigations/navigations";
+import LanguageListComponent from "./language-list/language-list";
 export default function Header(){
 
     const nav = [
@@ -41,9 +41,7 @@ export default function Header(){
                 <div className={styles.header_nav}>
                     {nav.map((item)=>{
                         return(
-                            <>
-                            <Link href={item.link}>{langageSelected === "UA" ? item.text.UA : item.text.EN}</Link>
-                            </>
+                            <Link key={item.link} href={item.link}>{langageSelected === "UA" ? item.text.UA : item.text.EN}</Link>
                         )
                     })}
                 </div>
@@ -67,15 +65,13 @@ export default function Header(){
             </div>
             <div className={styles.header_swap_menu}>
                 <div className={styles.empty_wrap}/>
-                <div className={styles.header_nav}>
+                <nav className={styles.header_nav}>
                     {nav.map((item)=>{
                         return(
-                            <>
-                            <Link href={item.link}>{langageSelected === "UA" ? item.text.UA : item.text.EN}</Link>
-                            </>
+                            <Link key={item.link} href={item.link}>{langageSelected === "UA" ? item.text.UA : item.text.EN}</Link>
                         )
                     })}
-                </div>
+                </nav>
                 <div className={styles.header_swap_bottom}>
                     <div className={styles.header_swap_socials}>
                         <Link href={'/'}><InstagramIconsDefaultHeader/></Link>

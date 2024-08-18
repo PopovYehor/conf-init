@@ -1,0 +1,17 @@
+@import "../../../styles/var.scss";
+.evants_wrap{
+    margin-top: 132px;
+    .evants_container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .evants_header{
+            h2{
+            @include h2;
+            margin: 0
+            }
+        }
+        
+    }
+}
