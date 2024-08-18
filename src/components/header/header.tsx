@@ -41,9 +41,7 @@ export default function Header(){
                 <div className={styles.header_nav}>
                     {nav.map((item)=>{
                         return(
-                            <>
-                            <Link href={item.link}>{langageSelected === "UA" ? item.text.UA : item.text.EN}</Link>
-                            </>
+                            <Link key={item.link} href={item.link}>{langageSelected === "UA" ? item.text.UA : item.text.EN}</Link>
                         )
                     })}
                 </div>
@@ -70,9 +68,7 @@ export default function Header(){
                 <nav className={styles.header_nav}>
                     {nav.map((item)=>{
                         return(
-                            <>
-                            <Link href={item.link}>{langageSelected === "UA" ? item.text.UA : item.text.EN}</Link>
-                            </>
+                            <Link key={item.link} href={item.link}>{langageSelected === "UA" ? item.text.UA : item.text.EN}</Link>
                         )
                     })}
                 </nav>

@@ -2,7 +2,7 @@ import { IconsListClose, IconsListOpen, IconsListSelected } from "@/components/i
 import styles from "./language-list-selecter.module.scss"
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks"
 import { CHANGE_LANGUAGE, SET_LANGUAGE_SWITCH } from "@/reducers/language/language.reducer"
-import { ILanguageItem } from "@/interfaces/language/language"
+import { ILanguageItem } from "@/interfaces/header/language/language"
 
 export function LanguageListSelecter(){
 
@@ -32,7 +32,7 @@ export function LanguageListSelecter(){
             <div className={styles.language_items}>
                 {languageLists.map((item: ILanguageItem)=>{
                     return(
-                            <div className={styles.language_item} onClick={()=>dispatch(CHANGE_LANGUAGE(item.name))}>
+                            <div key={item.name} className={styles.language_item} onClick={()=>dispatch(CHANGE_LANGUAGE(item.name))}>
                                 <div className={styles.language_switch_item}>
                                     <div className={styles.language_icon}><item.img/></div>
                                     <div className={styles.language_name}>{item.name}</div>
