@@ -1,9 +1,8 @@
 import { apiUrls } from "@/constants/apiUrls/apiUrls";
-import { IContactsItem } from "@/interfaces/contacts/contacts";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
-import { defaultContacts } from "@/constants/contacts/defaultContacts";
+import { IContactsItem } from "@/interfaces/main/main.interface";
 
 interface IResponce {
   contacts: {},
