@@ -1,4 +1,4 @@
-@import "../../styles/var.scss";
+@import "../../../styles/var.scss";
 
 @media screen and (min-width: 427px) {
     .baner_wrap{
@@ -40,7 +40,7 @@
                 h1{
                     margin: 0;
                     padding: 0;
-                    @include h1;
+                    @include h2_bold;
                     color: $color_white_background;
                     text-align: center;
                     cursor: default;
@@ -48,7 +48,7 @@
                 p{
                     margin: 0;
                     padding: 0;
-                    @include t2;
+                    @include h3;
                     color: $color_white_background;
                     text-align: center;
                     cursor: default;
@@ -118,7 +118,7 @@
                 p{
                     margin: 0;
                     padding: 0;
-                    @include t4;
+                    @include t2;
                     color: $color_white_background;
                     text-align: center;
                     cursor: default;

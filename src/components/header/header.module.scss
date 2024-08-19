@@ -30,16 +30,16 @@
                     align-items: center;
                     gap: 80px;
                     a{
-                        @include t2;
+                        @include h4;
                         text-decoration: none;
                         color: $color_text_black
                     }
                     a:hover{
-                        @include t2_underline;
+                        @include h4;
                         color: $color_blue_hover;
                     }
                     a:active{
-                        @include t2;
+                        @include h4;
                         color: $color_blue_hover;
                     }
                 }
@@ -117,6 +117,7 @@
                 a{
                     @include h3;
                     text-decoration: none;
+                    color: $color_text_black
                 }
             }
             .header_swap_bottom{
@@ -157,6 +158,9 @@ input:checked ~ .header_swap_menu{
         gap: 20px !important;
         .header_nav{
             gap: 20px !important;
+            a{
+                font-size: 20px !important;
+            }
         }
     }
 }
