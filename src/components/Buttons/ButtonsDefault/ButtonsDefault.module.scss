@@ -4,7 +4,9 @@
     @include button_default;
     border: none;
     padding: 12px 24px;
+    cursor: pointer;
     
+
     &:hover{
         @include button_hover;
     }

@@ -3,6 +3,7 @@
 .button{
     @include button_default_secondary;
     padding: 12px 24px;
+    cursor: pointer;
     
     &:hover{
         @include button_hover_secondary;
