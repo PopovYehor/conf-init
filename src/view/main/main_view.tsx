@@ -1,6 +1,6 @@
 import Baner from "@/components/main/baner/baner";
 import Footer from "@/components/Footer/Footer";
-import Header from "@/components/header/header";
+import Header from "@/components/Header/header";
 import Evants from "@/components/main/evants/evants";
 import { fetchMain } from "@/reducers/main/main.reducer";
 import { useAppDispatch } from "@/hooks/hooks";
