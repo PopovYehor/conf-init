@@ -5,9 +5,6 @@ import Layout from "./layout";
 import { store } from "@/store/store";
 import '@/styles/global.scss'
 import "normalize.css"
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
 
 function MyApp({ Component, pageProps }: AppProps) {
     const router = useRouter()
@@ -15,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <>
         <Provider store={store}>
             <Layout>
-                <div id="root" key={router.pathname} className={inter.className}>
+                <div id="root" key={router.pathname} >
                     <Component {...pageProps} />
                 </div>
             </Layout>

@@ -1,6 +1,4 @@
 import Baner from "@/components/main/baner/baner";
-import Footer from "@/components/Footer/Footer";
-import Header from "@/components/Header/header";
 import Evants from "@/components/main/evants/evants";
 import { fetchMain } from "@/reducers/main/main.reducer";
 import { useAppDispatch } from "@/hooks/hooks";
@@ -18,14 +16,12 @@ export default function MainView() {
     
     return (
       <>
-        <Header/>
         <main>
         <Baner />
-        {/* <Evants/> */}
+        <Evants/>
         <HelpRaiseCash />
         <JoinVolunteers />
         </main>
-        <Footer />
       </>
     );
 };

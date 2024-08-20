@@ -1,7 +1,9 @@
+import { IImageItem } from "../image/image.interfaces";
+
 interface IDBDefault{
     _id?: string;
     __v?: number;
-    image?: string
+    image?: IImageItem
 }
 
 export interface IContactsItem extends IDBDefault {
@@ -13,7 +15,10 @@ export interface IContactsItem extends IDBDefault {
     titleContUA: string;
 }
 
-export interface IEventItem extends IDBDefault{
+export interface IEventItem{
+    _id?: string;
+    __v?: number;
+    image: IImageItem
     adressEventEN: string
     adressEventUA: string
     dataEventEN: string

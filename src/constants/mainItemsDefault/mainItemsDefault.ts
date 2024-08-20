@@ -11,7 +11,7 @@ export const defaultContacts = {
 }
 
 export const defaultEvant = {
-    _id: "1",
+    _id: "0",
     __v: 0,
     image: "",
     adressEventEN: "",
