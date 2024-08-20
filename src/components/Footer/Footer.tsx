@@ -127,8 +127,12 @@ export default function Footer() {
           </div>
 
           <div className={style.wrapper_politics}>
-            <Link href="/">{languages.UA.privacy_policy}</Link>
-            <Link href="/">{languages.UA.offer}</Link>
+            <Link href="/politic-files/privacy_policy.docx" download>
+              {languages.UA.privacy_policy}
+            </Link>
+            <Link href="/politic-files/public_offer.docx" download>
+              {languages.UA.offer}
+            </Link>
           </div>
         </>
       ) : (
@@ -163,8 +167,12 @@ export default function Footer() {
           </div>
 
           <div className={style.wrapper_politics}>
-            <Link href="/">{languages.EN.privacy_policy}</Link>
-            <Link href="/">{languages.EN.offer}</Link>
+            <Link href="/politic-files/privacy_policy.docx" download>
+              {languages.EN.privacy_policy}
+            </Link>
+            <Link href="/politic-files/public_offer.docx" download>
+              {languages.EN.offer}
+            </Link>
           </div>
         </>
       )}
