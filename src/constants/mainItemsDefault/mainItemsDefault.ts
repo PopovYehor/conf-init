@@ -1,3 +1,4 @@
+import { IImageItem } from "@/interfaces/image/image.interfaces"
 
 export const defaultContacts = {
     _id: "1",
@@ -10,10 +11,17 @@ export const defaultContacts = {
     titleContUA: "",
 }
 
+export const defaultImage: IImageItem = {
+    _id: "",
+    url: "",
+    description: "",
+    __v: 0
+}
+
 export const defaultEvant = {
     _id: "0",
     __v: 0,
-    image: "",
+    image: defaultImage,
     adressEventEN: "",
     adressEventUA: "",
     dataEventEN: "",
@@ -34,14 +42,14 @@ export const defaultWorth = {
 export const defaultPartner = {
     _id: "1",
     __v: 0,
-    image: "",
+    image: defaultImage,
     webPatner: "",
 }
 
 export const defaultHelp = {
     _id: "1",
     __v: 0,
-    image: "",
+    image: defaultImage,
     titleHelpUA: "",
     titleHelpEN: "",
 }
