@@ -1,15 +1,14 @@
 
 import { apiUrls } from "@/constants/apiUrls/apiUrls"
 import { defaultMain } from "@/constants/mainItemsDefault/mainItemsDefault"
-import { IContactsItem, IEventItem, IHelpItem, IMain, IPartnerItem, IWorthItem } from "@/interfaces/main/main.interface"
+import { IMain } from "@/interfaces/main/main.interface"
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
-import type { PayloadAction } from '@reduxjs/toolkit'
 import axios from "axios"
 
 
-export const fetchMain= createAsyncThunk('main', async (main, thunkApi)=>{
+export const fetchMain = createAsyncThunk<any, string>('main', async (language, thunkApi)=>{
     try{
-        const response = await axios.get(apiUrls.mainUrl)
+        const response = await axios.get(apiUrls.mainUrl+`?language=${language}`)
         if (response.status >= 400){
             return thunkApi.rejectWithValue(response.data.message)
         }
@@ -32,7 +31,7 @@ const initialState: IMainState = {
 }
 
 const mainSlice = createSlice({
-    name: 'test',
+    name: 'main',
     initialState,
     reducers:{},
     extraReducers(builder){

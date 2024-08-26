@@ -3,6 +3,7 @@ import styles from "./language-list-selecter.module.scss"
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks"
 import { CHANGE_LANGUAGE, SET_LANGUAGE_SWITCH } from "@/reducers/language/language.reducer"
 import { ILanguageItem } from "@/interfaces/header/language/language"
+import Link from "next/link"
 
 export function LanguageListSelecter(){
 
@@ -32,6 +33,7 @@ export function LanguageListSelecter(){
             <div className={styles.language_items}>
                 {languageLists.map((item: ILanguageItem)=>{
                     return(
+                        <Link href={'/'} locale={item.name}>
                             <div key={item.name} className={styles.language_item} onClick={()=>dispatch(CHANGE_LANGUAGE(item.name))}>
                                 <div className={styles.language_switch_item}>
                                     <div className={styles.language_icon}><item.img/></div>
@@ -39,6 +41,7 @@ export function LanguageListSelecter(){
                                 </div>
                                 {item.selected === true && <div className={styles.language_icon}><IconsListSelected/></div>}
                             </div>
+                        </Link>
                     )
                 })}
             </div>

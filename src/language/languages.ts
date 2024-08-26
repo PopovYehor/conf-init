@@ -1,7 +1,5 @@
-import { title } from "process";
-
-export const languages = {
-  UA: {
+export const languages: any = {
+  "ua": {
     //header
     about: "Про нас",
     project: "Наші проєкти",
@@ -42,7 +40,7 @@ export const languages = {
     privacy_policy: "Політика конфіденційності",
     offer: "Публічна оферта",
   },
-  EN: {
+  "en": {
     //header
     about: "About Us",
     project: "Our Projects",

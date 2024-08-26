@@ -18,7 +18,7 @@
     }
     .evant_item_container{
         width: 583px;
-        max-height: 500px;
+        /* max-height: 500px; */
         .evant_item_date{
             display: flex;
             flex-direction: column;
@@ -40,7 +40,12 @@
             margin-top: 16px;
             p{
                 @include t2;
+                margin: 0;
             }
+        }
+        .hiden_description{
+            max-height: 265px;
+            overflow: hidden;
         }
         .evant_item_buttons{
             margin-top: 32px;
@@ -50,6 +55,7 @@
             .read_more{
                 @include t3;
                 text-decoration: underline;
+                cursor: pointer;
             }
             .join{
                 @include button_default;

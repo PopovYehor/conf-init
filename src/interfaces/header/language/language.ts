@@ -10,3 +10,8 @@ export interface ILanguageState{
     language: ILanguageItem
     languageSwitch: boolean
 }
+
+export enum ELanguage {
+    ENGLISH = 'en',
+    UKRAINIAN = 'ua',
+}
