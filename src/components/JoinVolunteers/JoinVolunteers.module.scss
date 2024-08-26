@@ -43,12 +43,12 @@
 
         .info{
             h2{
-                @include h2;
+                @include t1;
                 margin: 0;
             }
             p{
                 margin: 8px 0 24px;
-                @include t2;
+                @include t5;
             }
         }
     }

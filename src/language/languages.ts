@@ -9,12 +9,15 @@ export const languages: any = {
     //MAIN
 
     //evants
-    evants: 'Анонс подій',
-    read_more: 'Читати більше',
-    evant_join: 'Долучитись до події',
+    evants: "Анонс подій",
+    read_more: "Читати більше",
+    evant_join: "Долучитись до події",
 
-    //_____________________
-
+    //Need support
+    need_support_headline: "Якщо вам потрібна підтримка або допомога",
+    need_support_text:
+      "Якщо Ви потребуєте допомоги, то просимо заповнити форму за посиланням.",
+    need_support_button_text: "ОТРИМАТИ ДОПОМОГУ",
     //_______________________________________________
 
     //raise cash
@@ -48,11 +51,14 @@ export const languages: any = {
     //MAIN
 
     //evants
-    evants: 'Announcement of events',
-    read_more: 'Read more',
-    evant_join: 'Join the event',
-    //_____________________
+    evants: "Announcement of events",
+    read_more: "Read more",
+    evant_join: "Join the event",
 
+    //Need support
+    need_support_headline: "If you need support or help",
+    need_support_text: "If you need help, please fill out the form here.",
+    need_support_button_text: "GET HELP",
     //_______________________________________________
     //raise cash
     main_page_title_raise_cash: "Help us raise funds",
