@@ -60,6 +60,9 @@ export function EvantItem({
                 <div className={styles.evant_item_title}>
                     <h3>{titleEvent}</h3>
                 </div>
+                <div className={styles.event_item_link}>
+                    <Link href={'/'}>Посилання на проект</Link>
+                </div>
                 <div ref={descriptionRef} className={!openDescription ? 
                     `${styles.evant_item_description} ${styles.hiden_description}`
                     : styles.evant_item_description}>
