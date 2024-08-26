@@ -22,14 +22,11 @@ export const defaultEvant = {
     _id: "0",
     __v: 0,
     image: defaultImage,
-    adressEventEN: "",
-    adressEventUA: "",
-    dataEventEN: "",
-    dataEventUA: "",
-    descriptionEN: "",
-    descriptionUA: "",
-    titleEventEN: "",
-    titleEventUA: "",
+    adressEvent: "",
+    dataEvent: "",
+    description: "",
+    titleEvent: "",
+    language: 'ua'
 }
 
 export const defaultWorth = {
@@ -57,13 +54,12 @@ export const defaultHelp = {
 export const defaultMain = {
         _id: "",
         __v: 0,
-        descriptionEN: "",
-        descriptionUA: "",
-        titleMainEN: "",
-        titleMainUA: "",
-        contact: [defaultContacts],
+        description:"Міжнародна християнська благодійна організація мирян, яка об’єднує близько 600 тисяч людей",
+        titleMain: 'БЛАГОДІЙНА ОРГАНІЗАЦІЯ "КОНФЕРЕНЦІЯ БЛАЖЕННОЇ МАРТИ ВЄЦКОЇ"',
+        language: 'ua',
+/*         contact: [defaultContacts],
         event: [defaultEvant],
         help: [defaultHelp],
         partner: [defaultPartner],
-        worth: [defaultWorth],
+        worth: [defaultWorth], */
 }

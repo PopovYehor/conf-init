@@ -8,6 +8,7 @@ import { EvantItem } from "./evantItem/evantItem"
 import axios from "axios"
 import { defaultEvant } from "@/constants/mainItemsDefault/mainItemsDefault"
 import { Pagination } from "./pagination/pagination"
+import { EventBaner } from "./event-baner/event-baner"
 
 export interface IPagination{
     limit: number,
@@ -32,14 +33,15 @@ export default function Evants(){
     const [pag, setPag] = useState<IPagination>(pagination)
     // get events
     const fetchEvents = async ()=>{
-        const responce = await axios.get('http://localhost:5000/events')
+        const responce = await axios.get(`http://localhost:5000/events?language=${languageSelected}`)
         setEvents(responce.data)
     }
 
     useEffect(()=>{
         dispatch(fetchImage())
         fetchEvents()
-    },[])
+    },[languageSelected])
+
     //set list for next page
     const nextPage = ()=>{
         if(viewEvents.length === 3){
@@ -78,27 +80,30 @@ export default function Evants(){
         <article className={styles.evants_wrap}>
             <div className={styles.evants_container}>
                 <div className={styles.evants_header}>
-                    <h2>{languageSelected === "UA"? languages.UA.evants : languages.EN.evants}</h2>
+                    <h2>{languages[languageSelected].evants}</h2>
                 </div>
-                {viewEvents.length > 0 && viewEvents[0]._id !== "0" && viewEvents.map((item, i: any)=>{
-                    return(
-                        <div key={i}>
-                            <EvantItem 
-                            image={ item.image}
-                            dataEventUA={item.dataEventUA}
-                            dataEventEN={item.dataEventEN}
-                            adressEventUA={item.adressEventUA}
-                            adressEventEN={item.adressEventEN}
-                            descriptionEN={item.descriptionEN}
-                            descriptionUA={item.descriptionUA}
-                            titleEventUA={item.titleEventUA}
-                            titleEventEN={item.titleEventEN}
-                            />
-                        </div>
-                    )
-                })}
+                {viewEvents.length != 0 &&
+                <>
+                    {viewEvents.length > 0 && viewEvents[0]._id !== "0" && viewEvents.map((item, i: any)=>{
+                        return(
+                            <div key={i}>
+                                <EvantItem 
+                                image={ item.image}
+                                dataEvent={item.dataEvent}
+                                adressEvent={item.adressEvent}
+                                description={item.description}
+                                titleEvent={item.titleEvent}
+                                />
+                            </div>
+                        )
+                    })}
+                </>
+                }
             </div>
-            <Pagination event = {events} page = {pag.page} nextPage = {nextPage} previousPage = {previousPage} setPage = {setPage}/>
+            {events.length > 3 &&
+                <Pagination event = {events} page = {pag.page} nextPage = {nextPage} previousPage = {previousPage} setPage = {setPage}/>
+            }
+            {viewEvents.length == 0 && <EventBaner/>}
         </article>
         </>
     )

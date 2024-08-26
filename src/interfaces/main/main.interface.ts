@@ -4,6 +4,7 @@ interface IDBDefault{
     _id?: string;
     __v?: number;
     image?: IImageItem
+    language: string
 }
 
 export interface IContactsItem extends IDBDefault {
@@ -19,14 +20,10 @@ export interface IEventItem{
     _id?: string;
     __v?: number;
     image: IImageItem
-    adressEventEN: string
-    adressEventUA: string
-    dataEventEN: string
-    dataEventUA: string
-    descriptionEN: string
-    descriptionUA: string
-    titleEventEN: string
-    titleEventUA: string
+    adressEvent: string
+    dataEvent: string
+    description: string
+    titleEvent: string
 }
 
 export interface IHelpItem extends IDBDefault{
@@ -46,13 +43,7 @@ export interface IWorthItem extends IDBDefault{
 export interface IMain{
     _id: string
     __v?: number
-    descriptionEN: string
-    descriptionUA: string
-    titleMainEN: string
-    titleMainUA: string
-    contact: Array<IContactsItem>
-    event: Array<IEventItem>
-    help: Array<IHelpItem>
-    partner: Array<IPartnerItem>
-    worth: Array<IWorthItem>
+    description: string
+    titleMain: string
+    language: string
 }

@@ -17,7 +17,7 @@ export default function Layout ({ children }: {children: ReactNode}) {
       <div className={inter.className}>
         <Header/>
             {children}
-        <Footer/>
+        {/* <Footer/> */}
       </div>
       </>
     );

@@ -7,20 +7,14 @@ import HelpRaiseCash from "@/components/HelpRaiseCash/HelpRaiseCash";
 import JoinVolunteers from "@/components/JoinVolunteers/JoinVolunteers";
 
 export default function MainView() {
-
-    const dispatch = useAppDispatch()
-
-    useEffect(()=>{
-        dispatch(fetchMain())
-    },[])
     
     return (
       <>
         <main>
         <Baner />
         <Evants/>
-        <HelpRaiseCash />
-        <JoinVolunteers />
+        {/* <HelpRaiseCash />
+        <JoinVolunteers /> */}
         </main>
       </>
     );

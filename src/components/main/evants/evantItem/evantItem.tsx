@@ -10,14 +10,10 @@ import { defaultImage } from "@/reducers/image/image.reducer"
 
 export function EvantItem({
     image,
-    dataEventUA,
-    dataEventEN,
-    adressEventUA,
-    adressEventEN,
-    descriptionEN,
-    descriptionUA,
-    titleEventUA,
-    titleEventEN
+    dataEvent,
+    adressEvent,
+    description,
+    titleEvent,
     }: IEventItem){
 
     const languageSelected = useAppSelector((state)=>state.language.languageSelected)
@@ -58,20 +54,20 @@ export function EvantItem({
             </div>
             <div className={styles.evant_item_container}>
                 <div className={styles.evant_item_date}>
-                    <p>{languageSelected === "UA"? dataEventUA : dataEventEN}</p>
-                    <p>{languageSelected === "UA"? adressEventUA : adressEventEN}</p>
+                    <p>{dataEvent}</p>
+                    <p>{adressEvent}</p>
                 </div>
                 <div className={styles.evant_item_title}>
-                    <h3>{languageSelected === "UA"? titleEventUA : titleEventEN}</h3>
+                    <h3>{titleEvent}</h3>
                 </div>
                 <div ref={descriptionRef} className={!openDescription ? 
                     `${styles.evant_item_description} ${styles.hiden_description}`
                     : styles.evant_item_description}>
-                        <p>{languageSelected === "UA"? descriptionUA : descriptionEN}</p>
+                        <p>{description}</p>
                 </div>
                 <div className={styles.evant_item_buttons}>
-                    {isReadMore && <span className={styles.read_more} onClick={()=>setOpenDescription(!openDescription)}>{languageSelected === "UA"? languages.UA.read_more : languages.EN.read_more}</span>}
-                    <Link className={styles.join} href={googleForm}>{languageSelected === "UA"? languages.UA.evant_join : languages.EN.evant_join}</Link>
+                    {isReadMore && <span className={styles.read_more} onClick={()=>setOpenDescription(!openDescription)}>{languages[languageSelected].read_more }</span>}
+                    <Link className={styles.join} href={googleForm}>{languages[languageSelected].evant_join}</Link>
                 </div>
             </div>
         </section>

@@ -18,12 +18,12 @@ export function Pagination({event, page, nextPage, previousPage, setPage}: any){
         const sliceFrom = list.findIndex((item)=>item==active)
         if(active===list.length){
             setViewList(list.slice((sliceFrom-2), list.length))
-        }else if(active === 1){
+        }
+        if(active === 1){
             setViewList(list.slice(0, 3))
         }else{
             setViewList(list.slice((sliceFrom-1), (sliceFrom+2)))
         }
-        
     }
     //next button
     const nextPag = ()=>{
