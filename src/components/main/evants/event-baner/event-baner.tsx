@@ -1,8 +1,15 @@
 import { IconEventBaner } from "@/components/icons/icons-event/icons-event"
 import styles from "./event-baner.module.scss"
-import { FacebookIconsDefault, InstagramIconsDefault } from "@/components/icons/icons-socials/icons-socials"
+import { FacebookIcons, FacebookIconsDefault, InstagramIconsDefault, InstargamIcons } from "@/components/icons/icons-socials/icons-socials"
 import Link from "next/link"
+import { useAppSelector } from "@/hooks/hooks"
+import { languages } from "@/language/languages"
+import { facebookUrl, instagramUrl } from "@/constants/apiUrls/apiUrls"
+
 export function EventBaner(){
+
+    const languageSelected = useAppSelector((state)=>state.language.languageSelected)
+
     return(
         <>
         <div className={styles.event_baner_container}>
@@ -10,17 +17,14 @@ export function EventBaner(){
                 <IconEventBaner/>
             </div>
             <div className={styles.event_baner_title}>
-                <h2>Наразі немає подій</h2>
+                <h2>{languages[languageSelected].without_event_header}</h2>
             </div>
             <div className={styles.event_baner_description}>
-                <span>Хоча на даний час в нас немає запланованих заходів, 
-однак ми вже працюємо над організацією нових! 
-Приєднуйся до наших соціальних мереж та першими 
-отримуйте інформацію про наступні події!</span>
+                <span>{languages[languageSelected].without_event_description}</span>
             </div>
             <div className={styles.event_social_icons_wrap}>
-                <Link href={'/'}><InstagramIconsDefault/></Link>
-                <Link href={'/'}><FacebookIconsDefault/></Link>
+                <InstargamIcons/>
+                <FacebookIcons/>
             </div>
         </div>
         </>

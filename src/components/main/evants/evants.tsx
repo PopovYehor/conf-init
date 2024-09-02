@@ -1,27 +1,27 @@
-import { useAppDispatch, useAppSelector } from "@/hooks/hooks"
+import { useAppSelector } from "@/hooks/hooks"
 import styles from "./evants.module.scss"
 import { languages } from "@/language/languages"
 import { useEffect, useState } from "react"
-import { defaultImage, fetchImage } from "@/reducers/image/image.reducer"
-import { IEventItem } from "@/interfaces/main/main.interface"
 import { EvantItem } from "./evantItem/evantItem"
 import axios from "axios"
 import { defaultEvant } from "@/constants/mainItemsDefault/mainItemsDefault"
 import { Pagination } from "./pagination/pagination"
 import { EventBaner } from "./event-baner/event-baner"
+import { apiUrls, languageParameter } from "@/constants/apiUrls/apiUrls"
+import { IEventItem } from "@/interfaces/main/main.interface"
 
 export interface IPagination{
     limit: number,
     offset: number,
     page: number
 }
+
 export default function Evants(){
 
     const languageSelected = useAppSelector((state)=>state.language.languageSelected)
-    const [events, setEvents] = useState([defaultEvant])
-    const [viewEvents, setViewEvents] = useState(events)
-    const dispatch = useAppDispatch()
-
+    const [events, setEvents] = useState<IEventItem[]>([defaultEvant])
+    const [viewEvents, setViewEvents] = useState<IEventItem[]>(events)
+    const [disconect, setDisconect] = useState<boolean>(false)
     
     //set default pagination
     const pagination: IPagination = {
@@ -31,14 +31,21 @@ export default function Evants(){
     }
 
     const [pag, setPag] = useState<IPagination>(pagination)
+
     // get events
     const fetchEvents = async ()=>{
-        const responce = await axios.get(`http://localhost:5000/events?language=${languageSelected}`)
-        setEvents(responce.data)
+        try{
+            const responce = await axios.get(apiUrls.eventsUrl+languageParameter+languageSelected)
+            setEvents(responce.data)
+            if (disconect) setDisconect(false)
+        }catch{
+            setEvents([defaultEvant])
+            setDisconect(true)
+        }
     }
-
+    //set image and events
     useEffect(()=>{
-        dispatch(fetchImage())
+        
         fetchEvents()
     },[languageSelected])
 
@@ -103,7 +110,7 @@ export default function Evants(){
             {events.length > 3 &&
                 <Pagination event = {events} page = {pag.page} nextPage = {nextPage} previousPage = {previousPage} setPage = {setPage}/>
             }
-            {viewEvents.length == 0 && <EventBaner/>}
+            {viewEvents.length == 0 || disconect && <EventBaner/>}
         </article>
         </>
     )
