@@ -123,14 +123,24 @@ $font_size_t5:14px;
 }
 
 //buttons
+@media screen  {
+    
+}
+
 @mixin button_size{
     @include t_button();
     @include flex_center();
-    width: 350px;
+    @media screen and (min-width: 350px) {
+        width: 350px;
+    }
+    @media screen and (max-width: 350px) {
+        width: 300px;
+    }
     height: 70px;
     border-radius: 20px;
     text-transform: uppercase;
 }
+
 @mixin button_setting_primary($bc){
     @include button_size;
     background-color: $bc;
