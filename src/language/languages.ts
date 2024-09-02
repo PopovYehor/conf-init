@@ -19,6 +19,9 @@ export const languages: any = {
     without_event_header: "Наразі немає подій",
     //________________________________
 
+    //Worth
+    worth: "Наші основні цінності",
+
     //How we help
     how_help: "Як допомагаємо ?",
     help_description_1: "Ми безпосередньо і тісно працюємо з людьми, які потребують допомоги, оскільки впевнені, що пряма комунікація та підтримка дозволить нам максимально ефективно визначити індивідуальні потреби кожної людини та/чи сім'ї та допомогти відповідно до наших можливостей.",
@@ -71,6 +74,8 @@ export const languages: any = {
     without_event_description: "Although we do not currently have any events planned, we are already working on organizing new ones! Join our social networks and be the first to receive information about the next events!",
     without_event_header: "There are currently no events",
     //_________________________________
+    //Worth
+    worth: "Our core worths",
     //How we help
     how_help: "How we help ?",
     help_description_1: "We work directly and closely with people who need help, because we believe that direct communication and support will allow us to determine the individual needs of each person and/or family as effectively as possible and help according to our capabilities.",

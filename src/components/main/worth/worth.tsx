@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 import { defaultWorth } from "@/constants/mainItemsDefault/mainItemsDefault"
 import { IWorthItem } from "@/interfaces/main/main.interface"
 import { WorthDefenseIcons, WorthDignityIcons, WorthDiversityIcons, WorthDoIcons, WorthFaithIcons, WorthHelpIcons } from "@/components/icons/icons-worth/icons-worth"
+import { languages } from "@/language/languages"
 
 export function Worth(){
     const languageSelected = useAppSelector((state)=>state.language.languageSelected)
@@ -37,7 +38,7 @@ export function Worth(){
         <article className={styles.worth_container}>
             <div className={styles.worth_warp}>
                 <div className={styles.worth_header}>
-                    <h1>Наші основні цінності</h1>
+                    <h1>{languages[languageSelected].worth}</h1>
                 </div>
                 <div className={styles.worth_items_wrap}>
                     {worth.map((item:IWorthItem)=>{
