@@ -123,19 +123,29 @@ $font_size_t5:14px;
 }
 
 //buttons
+@media screen  {
+    
+}
+
 @mixin button_size{
     @include t_button();
     @include flex_center();
-    width: 350px;
+    @media screen and (min-width: 350px) {
+        width: 350px;
+    }
+    @media screen and (max-width: 350px) {
+        width: 300px;
+    }
     height: 70px;
     border-radius: 20px;
     text-transform: uppercase;
 }
+
 @mixin button_setting_primary($bc){
     @include button_size;
     background-color: $bc;
     color: $color_white_background;
-    text-decoration: none
+    text-decoration: none !important
 }
 
 @mixin button_setting_secondary($bc){
@@ -143,7 +153,7 @@ $font_size_t5:14px;
     background-color: $color_white_background;
     border: 1px solid $bc;
     color: $bc;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 //button default
 @mixin button_default{

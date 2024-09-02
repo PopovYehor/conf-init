@@ -7,6 +7,7 @@ import { languages } from "@/language/languages"
 import { useEffect, useRef, useState } from "react"
 import { IImageItem } from "@/interfaces/image/image.interfaces"
 import { defaultImage } from "@/reducers/image/image.reducer"
+import { getCurrentImage } from "@/hooks/image"
 
 export function EvantItem({
     image,
@@ -28,24 +29,20 @@ export function EvantItem({
         if (description){
             if (description.children[0].clientHeight > 265){
                 setIsreadMore(true)
+            }else{
+                setIsreadMore(false)
             }
-        }
-    }
-
-    const imageChecker = ()=>{
-        if (image){
-        images.forEach((item: IImageItem)=>{
-            if (image._id === item._id){
-                setUrl(item.url)
-            }
-        })
         }
     }
     
     useEffect(()=>{
-        imageChecker()
-        readMoreHandler()
+        getCurrentImage(image, images, setUrl)
     },[])
+
+    useEffect(()=>{
+        readMoreHandler()
+    },[titleEvent])
+
 
     return(
         <section className={styles.evant_item_wrap}>
@@ -60,13 +57,20 @@ export function EvantItem({
                 <div className={styles.evant_item_title}>
                     <h3>{titleEvent}</h3>
                 </div>
+                <div className={styles.event_item_link}>
+                    <Link href={'/'}>Посилання на проект</Link>
+                </div>
                 <div ref={descriptionRef} className={!openDescription ? 
                     `${styles.evant_item_description} ${styles.hiden_description}`
                     : styles.evant_item_description}>
                         <p>{description}</p>
                 </div>
                 <div className={styles.evant_item_buttons}>
-                    {isReadMore && <span className={styles.read_more} onClick={()=>setOpenDescription(!openDescription)}>{languages[languageSelected].read_more }</span>}
+                    {isReadMore && 
+                        <span className={styles.read_more} 
+                            onClick={()=>setOpenDescription(!openDescription)}>
+                                {!openDescription ? languages[languageSelected].read_more : languages[languageSelected].hide_text}
+                        </span>}
                     <Link className={styles.join} href={googleForm}>{languages[languageSelected].evant_join}</Link>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 
-import { apiUrls } from "@/constants/apiUrls/apiUrls"
+import { apiUrls, languageParameter } from "@/constants/apiUrls/apiUrls"
 import { defaultMain } from "@/constants/mainItemsDefault/mainItemsDefault"
 import { IMain } from "@/interfaces/main/main.interface"
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
@@ -8,7 +8,7 @@ import axios from "axios"
 
 export const fetchMain = createAsyncThunk<any, string>('main', async (language, thunkApi)=>{
     try{
-        const response = await axios.get(apiUrls.mainUrl+`?language=${language}`)
+        const response = await axios.get(apiUrls.mainUrl+languageParameter+language)
         if (response.status >= 400){
             return thunkApi.rejectWithValue(response.data.message)
         }

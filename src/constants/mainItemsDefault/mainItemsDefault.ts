@@ -32,8 +32,7 @@ export const defaultEvant = {
 export const defaultWorth = {
     _id: "1",
     __v: 0,
-    textWorthEN: "",
-    textWorthUA: "",
+    textWorth: "",
 }
 
 export const defaultPartner = {
@@ -47,8 +46,8 @@ export const defaultHelp = {
     _id: "1",
     __v: 0,
     image: defaultImage,
-    titleHelpUA: "",
-    titleHelpEN: "",
+    titleHelp: "",
+    language: ''
 }
 
 export const defaultMain = {

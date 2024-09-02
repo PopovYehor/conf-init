@@ -1,65 +1,162 @@
 @import "../../../../styles/var.scss";
 
-.evant_item_wrap{
-    display: flex;
-    flex-direction: row;
-    gap: 48px;
-    margin-top: 64px;
+@media screen and (min-width: 1023px) {
     .evant_item_img{
         width: 610px;
-        height: 500px;
-        border-radius: 20px;
-        overflow: hidden;
-        img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1250px) {
+    .evant_item_wrap{
+        flex-direction: column !important;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .evant_item_wrap{
+        display: flex;
+        flex-direction: row;
+        gap: 48px;
+        margin-top: 64px;
+        .evant_item_img{
+            /* width: 610px; */
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .evant_item_container{
+            width: 583px;
+            /* max-height: 500px; */
+            .evant_item_date{
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                p{
+                    @include t2;
+                    color: $color_disabled_secondary;
+                    margin: 0;
+                }
+            }
+            .evant_item_title{
+                margin-top: 24px;
+                h3{
+                    @include h3;
+                    margin: 0;
+                }
+            }
+            .evant_item_description{
+                margin-top: 16px;
+                p{
+                    @include t2;
+                    margin: 0;
+                }
+            }
+            .hiden_description{
+                max-height: 191px;
+                overflow: hidden;
+            }
+            .evant_item_buttons{
+                margin-top: 32px;
+                display: flex;
+                align-items: center;
+                gap: 32px;
+                .read_more{
+                    @include t3;
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+                .join{
+                    @include button_default;
+                    text-decoration: underline;
+                }
+            }
+            .event_item_link{
+                margin-top: 8px;
+                a{
+                    @include t2;
+                    text-decoration: none !important;
+                    color: $color_disabled_secondary;
+                }
+            }
         }
     }
-    .evant_item_container{
-        width: 583px;
-        /* max-height: 500px; */
-        .evant_item_date{
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            p{
-                @include t2;
-                color: $color_disabled_secondary;
-                margin: 0;
-            }
-        }
-        .evant_item_title{
-            margin-top: 24px;
-            h3{
-                @include h3;
-                margin: 0;
-            }
-        }
-        .evant_item_description{
-            margin-top: 16px;
-            p{
-                @include t2;
-                margin: 0;
-            }
-        }
-        .hiden_description{
-            max-height: 265px;
+}
+
+@media screen and (max-width: 768px) {
+    .evant_item_wrap{
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        margin-top: 32px;
+        .evant_item_img{
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
             overflow: hidden;
-        }
-        .evant_item_buttons{
-            margin-top: 32px;
-            display: flex;
-            align-items: center;
-            gap: 32px;
-            .read_more{
-                @include t3;
-                text-decoration: underline;
-                cursor: pointer;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
-            .join{
-                @include button_default;
-                text-decoration: underline;
+        }
+        .evant_item_container{
+            /* width: 583px; */
+            /* max-height: 500px; */
+            .evant_item_date{
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                p{
+                    @include t5;
+                    color: $color_disabled_secondary;
+                    margin: 0;
+                }
+            }
+            .evant_item_title{
+                margin-top: 24px;
+                h3{
+                    @include t1;
+                    margin: 0;
+                }
+            }
+            .evant_item_description{
+                margin-top: 16px;
+                p{
+                    @include t4;
+                    margin: 0;
+                }
+            }
+            .hiden_description{
+                max-height: 191px;
+                overflow: hidden;
+            }
+            .evant_item_buttons{
+                margin-top: 32px;
+                display: flex;
+                gap: 32px;
+                flex-direction: column;
+                .read_more{
+                    @include t3;
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+                .join{
+                    @include button_default;
+                    text-decoration: underline;
+                }
+            }
+            .event_item_link{
+                margin-top: 8px;
+                a{
+                    @include t4;
+                    text-decoration: none !important;
+                    color: $color_disabled_secondary;
+                }
             }
         }
     }

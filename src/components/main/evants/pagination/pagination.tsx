@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react"
-import { IPagination } from "../evants"
 import styles from "./pagination.module.scss"
-import { IEventItem } from "@/interfaces/main/main.interface"
-
-
+import { useAppSelector } from "@/hooks/hooks"
+import { languages } from '@/language/languages';
 
 export function Pagination({event, page, nextPage, previousPage, setPage}: any){
 
@@ -12,6 +10,7 @@ export function Pagination({event, page, nextPage, previousPage, setPage}: any){
     const [prev, setPrev] = useState<boolean>(false)
     const [list, setList] = useState<Array<number>>([])
     const [viewList, setViewList] = useState<Array<number>>([])
+    const languageSelected = useAppSelector((state)=>state.language.languageSelected)
 
     //changer list
     const paginationHandler = (active: number)=>{
@@ -86,7 +85,7 @@ export function Pagination({event, page, nextPage, previousPage, setPage}: any){
             <div className={styles.pagination_container}>
                 {prev &&
                     <div className={styles.pagination_item_btn} onClick={()=>prevPag()}>
-                        <span>Назад</span>
+                        <span>{languages[languageSelected].previous}</span>
                     </div>
                 }
                 {viewList.length !== 1 && viewList.map((item, i)=>{
@@ -100,7 +99,7 @@ export function Pagination({event, page, nextPage, previousPage, setPage}: any){
                 })}
                 {next &&
                     <div className={styles.pagination_item_btn} onClick={()=>nextPag()}>
-                        <span>Далі</span>
+                        <span>{languages[languageSelected].next}</span>
                     </div>
                 }
             </div>

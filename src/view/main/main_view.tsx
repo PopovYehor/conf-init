@@ -6,6 +6,8 @@ import { useEffect } from "react";
 import HelpRaiseCash from "@/components/HelpRaiseCash/HelpRaiseCash";
 import JoinVolunteers from "@/components/JoinVolunteers/JoinVolunteers";
 import NeedSupport from "@/components/NeedSupport/NeedSupport";
+import HowWeHelps from "@/components/main/howWeHelps/howWeHalps";
+import { Worth } from "@/components/main/worth/worth";
 
 export default function MainView() {
     
@@ -13,10 +15,12 @@ export default function MainView() {
       <>
         <main>
         <Baner />
+        <Worth/>
         <Evants/>
-        <NeedSupport/>
+        <HowWeHelps/>
+        {/* <NeedSupport/>
         <HelpRaiseCash />
-        <JoinVolunteers />
+        <JoinVolunteers /> */}
         </main>
       </>
     );
