@@ -1,0 +1,43 @@
+@import "../../../../styles/var.scss";
+.support_description_item_image_wrap{
+    width: 100%;
+    @media screen and (min-width: 1300px) {
+        height: 400px;
+    }
+    @media screen and (max-width: 1300px) and (min-width: 1135px) {
+        height: 362px;
+    }
+    @media screen and (max-width: 1134px) and (min-width: 1004px) {
+        height: 309px;
+    }
+    @media screen and (max-width: 1003px)  and (min-width: 426px) {
+        height: 440px;
+    }
+    @media screen and (max-width: 425px) {
+        height: 180px
+    }
+    border-radius: 20px;
+    overflow: hidden;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover
+    }
+}
+.support_description_item_text_wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    p{
+        @media screen and (min-width: 769px) {
+            @include h3;
+        }
+        @media screen and (max-width: 768px) {
+            @include t3;
+        }
+        margin: 0;
+    }
+    .add_text{
+        @include t5;
+    }
+}
