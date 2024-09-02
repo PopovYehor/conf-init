@@ -7,6 +7,8 @@ import { useEffect } from "react";
 import { fetchMain } from "@/reducers/main/main.reducer";
 import banerImg from "@/assets/baner/baner-img.jpg"
 import Image from "next/image";
+import ButtonsDefault from "@/components/Buttons/ButtonsDefault/ButtonsDefault";
+import ButtonsSecondary from "@/components/Buttons/ButtonsSecondary/ButtonsSecondary";
 
 export default function Baner(){
     const languageSelected = useAppSelector((state)=>state.language.languageSelected)
@@ -15,7 +17,7 @@ export default function Baner(){
 
     useEffect(()=>{
         dispatch(fetchMain(languageSelected))
-    })
+    },[languageSelected])
 
     return(
         <>
@@ -28,12 +30,14 @@ export default function Baner(){
                     <p>{main.description}</p>
                 </div>
                 <div className={styles.baner_buttons}>
-                    <Link className={styles.button_about} href={navigation.about}>
-                        {languages[languageSelected].about}
-                    </Link>
-                    <Link href={navigation.support} className={styles.button_support}>
+                    <ButtonsDefault text={languages[languageSelected].about} url={navigation.about}/>
+                    {/* <Link className={styles.button_about} href={}>
+                        {}
+                    </Link> */}
+                    <ButtonsSecondary  text={languages[languageSelected].support} url={navigation.support}/>
+                    {/* <Link href={navigation.support} className={styles.button_support}>
                         {languages[languageSelected].support}
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
         </div>
