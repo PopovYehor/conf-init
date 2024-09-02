@@ -1,10 +1,11 @@
+import { JSXElementConstructor } from "react";
 import { IImageItem } from "../image/image.interfaces";
 
 interface IDBDefault{
     _id?: string;
     __v?: number;
     image?: IImageItem
-    language: string
+    language?: string
 }
 
 export interface IContactsItem extends IDBDefault {
@@ -27,8 +28,7 @@ export interface IEventItem{
 }
 
 export interface IHelpItem extends IDBDefault{
-    titleHelpUA: string
-    titleHelpEN: string
+    titleHelp: string
 }
 
 export interface IPartnerItem extends IDBDefault{
@@ -36,8 +36,8 @@ export interface IPartnerItem extends IDBDefault{
 }
 
 export interface IWorthItem extends IDBDefault{
-    textWorthEN: string
-    textWorthUA: string
+    textWorth: string
+    icon?: JSX.Element
 }
 
 export interface IMain{
