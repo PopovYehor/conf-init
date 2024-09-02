@@ -14,7 +14,6 @@ export default function Header(){
     const langageSelected = useAppSelector((state)=>state.language.languageSelected)
     const isMobile = useAppSelector((state)=>state.mobile.mobile)
     const [open, setOpen] = useState(false)
-    const dispatch = useAppDispatch()
 
     const nav = [
         {text: languages[langageSelected].about, link: navigation.about},
@@ -23,11 +22,6 @@ export default function Header(){
         {text: languages[langageSelected].volunteers, link: navigation.volunteers}
     ]
 
-    useEffect(()=>{
-        checkMobile(dispatch)
-        checkMobileListener(dispatch)
-    }, [])
-    
     return (
     <>
     {!isMobile? 
