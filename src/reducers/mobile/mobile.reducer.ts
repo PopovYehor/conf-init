@@ -1,11 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+
+type StatusMobile = 'start' | null
+
 interface IMobile{
     mobile: boolean
+    status: StatusMobile
 }
 
 const initialState: IMobile = {
-    mobile: false
+    mobile: false,
+    status: null
 }
 
 const mobileSlice = createSlice({
@@ -15,6 +20,7 @@ const mobileSlice = createSlice({
         SET_MOBILE:(state, action: PayloadAction<boolean>)=>{
             const { payload } = action
             state.mobile =  payload
+            state.status = 'start'
         },
     },
 })
