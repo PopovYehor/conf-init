@@ -1,5 +1,5 @@
 import Footer from "@/components/Footer/Footer";
-import Header from "@/components/Header/header"
+import Header from "@/components/header/header"
 import HelpRaiseCash from "@/components/HelpRaiseCash/HelpRaiseCash";
 import JoinVolunteers from "@/components/JoinVolunteers/JoinVolunteers";
 
