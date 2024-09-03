@@ -9,7 +9,6 @@ export const fetchImage= createAsyncThunk('image', async (image, thunkApi)=>{
         if (response.status >= 400){
             return thunkApi.rejectWithValue(response.data.message)
         }
-        console.log(response.data)
         return response.data
     }catch(error){
         return thunkApi.rejectWithValue(error)

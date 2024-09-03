@@ -8,25 +8,20 @@ import { FacebookIconsDefaultHeader, InstagramIconsDefaultHeader } from "../icon
 import { languages } from "@/language/languages";
 import { navigation } from "@/constants/navigations/navigations";
 import LanguageListComponent from "./language-list/language-list";
-export default function Header(){
 
-    const nav = [
-        {text: {UA: languages.UA.about, EN: languages.EN.about}, link: navigation.about},
-        {text: {UA: languages.UA.project, EN: languages.EN.project}, link: navigation.projects},
-        {text: {UA: languages.UA.support, EN: languages.EN.support}, link: navigation.support},
-        {text: {UA: languages.UA.volunteers, EN: languages.EN.volunteers}, link: navigation.volunteers}
-    ]
+export default function Header(){
 
     const langageSelected = useAppSelector((state)=>state.language.languageSelected)
     const isMobile = useAppSelector((state)=>state.mobile.mobile)
     const [open, setOpen] = useState(false)
-    const dispatch = useAppDispatch()
 
-    useEffect(()=>{
-        checkMobile(dispatch)
-        checkMobileListener(dispatch)
-    }, [])
-    
+    const nav = [
+        {text: languages[langageSelected].about, link: navigation.about},
+        {text: languages[langageSelected].project, link: navigation.projects},
+        {text: languages[langageSelected].support, link: navigation.support},
+        {text: languages[langageSelected].volunteers, link: navigation.volunteers}
+    ]
+
     return (
     <>
     {!isMobile? 
@@ -41,7 +36,7 @@ export default function Header(){
                 <div className={styles.header_nav}>
                     {nav.map((item)=>{
                         return(
-                            <Link key={item.link} href={item.link}>{langageSelected === "UA" ? item.text.UA : item.text.EN}</Link>
+                            <Link key={item.link} href={item.link}>{item.text}</Link>
                         )
                     })}
                 </div>
@@ -68,7 +63,7 @@ export default function Header(){
                 <nav className={styles.header_nav}>
                     {nav.map((item)=>{
                         return(
-                            <Link key={item.link} href={item.link}>{langageSelected === "UA" ? item.text.UA : item.text.EN}</Link>
+                            <Link key={item.link} href={item.link}>{item.text}</Link>
                         )
                     })}
                 </nav>

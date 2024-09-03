@@ -5,8 +5,6 @@ export default function ButtonsDefault(
   { text, url }: { text: string; url: string }
 ) {
   return (
-    <Link href={url} style={{ display: "flex", width: "min-content", textDecoration: "none" }}>
-      <button className={style.button}>{text}</button>
-    </Link>
+    <Link href={url} className={style.button}>{text}</Link>
   );
 }

@@ -1,31 +1,27 @@
 import Baner from "@/components/main/baner/baner";
-import Footer from "@/components/Footer/Footer";
-import Header from "@/components/Header/header";
 import Evants from "@/components/main/evants/evants";
 import { fetchMain } from "@/reducers/main/main.reducer";
 import { useAppDispatch } from "@/hooks/hooks";
 import { useEffect } from "react";
 import HelpRaiseCash from "@/components/HelpRaiseCash/HelpRaiseCash";
 import JoinVolunteers from "@/components/JoinVolunteers/JoinVolunteers";
+import NeedSupport from "@/components/NeedSupport/NeedSupport";
+import HowWeHelps from "@/components/main/howWeHelps/howWeHalps";
+import { Worth } from "@/components/main/worth/worth";
 
 export default function MainView() {
-
-    const dispatch = useAppDispatch()
-
-    useEffect(()=>{
-        dispatch(fetchMain())
-    },[])
     
     return (
       <>
-        <Header/>
         <main>
         <Baner />
-        {/* <Evants/> */}
+        <Worth/>
+        <Evants/>
+        <HowWeHelps/>
+        {/* <NeedSupport/>
         <HelpRaiseCash />
-        <JoinVolunteers />
+        <JoinVolunteers /> */}
         </main>
-        <Footer />
       </>
     );
 };

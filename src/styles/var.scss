@@ -2,7 +2,7 @@
 $color_blue_hover: #497792;
 $color_blue_main: #0067b3;
 $color_card: #99b1bf;
-$accent_color: #63ABDF;
+$color_accent: #63ABDF;
 $color_white_blue_accent: #CCE5F3;
 $color_white_background: #ffffff;
 $color_light_gray_disabled_primary: #b3b4b6;
@@ -34,36 +34,43 @@ $font_size_t5:14px;
     font-weight: $font_weight;
     line-height: 77.45px;
     color: $color_text_black;
+    margin: 0;
 }
 @mixin h1_bold{
     @include h1;
-    font-weight: $font_weight_bold
+    font-weight: $font_weight_bold;
+    margin: 0;
 }
 @mixin h2{
     font-size: 48px;
     font-weight: $font_weight;
     line-height: 58.09px;
     color: $color_text_black;
+    margin: 0;
 }
 @mixin h2_bold{
     @include h2;
-    font-weight: $font_weight_bold
+    font-weight: $font_weight_bold;
+    margin: 0;
 }
 @mixin h3{
     font-size: 32px;
     font-weight: $font_weight;
     line-height: 38.73px;
     color: $color_text_black;
+    margin: 0;
 }
 @mixin h3_bold{
     @include h3;
-    font-weight: $font_weight_bold
+    font-weight: $font_weight_bold;
+    margin: 0;
 }
 @mixin h4{
     font-size: 24px;
     font-weight: $font_weight;
     line-height: 29.05px;
     color: $color_text_black;
+    margin: 0;
 }
 //---Typography---//
 //---Primary text---//
@@ -116,19 +123,29 @@ $font_size_t5:14px;
 }
 
 //buttons
+@media screen  {
+    
+}
+
 @mixin button_size{
     @include t_button();
     @include flex_center();
-    width: 350px;
+    @media screen and (min-width: 350px) {
+        width: 350px;
+    }
+    @media screen and (max-width: 350px) {
+        width: 300px;
+    }
     height: 70px;
     border-radius: 20px;
     text-transform: uppercase;
 }
+
 @mixin button_setting_primary($bc){
     @include button_size;
     background-color: $bc;
     color: $color_white_background;
-    text-decoration: none
+    text-decoration: none !important
 }
 
 @mixin button_setting_secondary($bc){
@@ -136,7 +153,7 @@ $font_size_t5:14px;
     background-color: $color_white_background;
     border: 1px solid $bc;
     color: $bc;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 //button default
 @mixin button_default{

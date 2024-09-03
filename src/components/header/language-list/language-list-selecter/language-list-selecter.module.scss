@@ -28,7 +28,9 @@
         }
         .language_name{
             @include t3;
-            color: $color_text_black
+            color: $color_text_black;
+            text-transform: uppercase;
+            text-decoration: none !important;
         }
     }
     .language_btn{
@@ -44,6 +46,9 @@
     .language_items{
         @include flex_center;
         flex-direction: column;
+        a{
+            text-decoration: none;
+        }
         .language_item{
             display: flex;
             width: 80px;
@@ -75,7 +80,7 @@
     }
 }
 
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 768px) {
     .language_list_container{
         position: relative;
         top: 0;

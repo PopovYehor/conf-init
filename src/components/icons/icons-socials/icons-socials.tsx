@@ -1,4 +1,9 @@
 //Instargram Icons
+
+import { facebookUrl, instagramUrl } from "@/constants/apiUrls/apiUrls";
+import Link from "next/link";
+import { useState } from "react";
+
 export const InstagramIconsDefault = ()=>{
 return (
   <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -40,6 +45,37 @@ export const InstagramIconsDisabled = ()=>{
 </svg>)
 }
 
+export const InstargamIcons = ()=>{
+  const [isHovered, setHovered] = useState(false)
+  const [isPressed, setPressed] = useState(false)
+  const [isDisabled, setDisabled] = useState(false)
+
+  const getIcon = () => {
+    if (isDisabled) return <InstagramIconsDisabled/>
+    if (isPressed) return <InstagramIconsPressed/>
+    if (isHovered) return <InstagramIconsHover/>;
+    return <InstagramIconsDefault/>;
+  };
+
+  const presedAnimation = ()=>{
+    setPressed(true)
+    setTimeout(() => {
+      setPressed(false)
+      setHovered(false)
+    }, 100);
+  }
+
+  return(
+    <Link href={instagramUrl} target="_blank"
+    onMouseEnter={() => setHovered(true)}
+    onMouseLeave={() => setHovered(false)}
+    onClick={()=>{presedAnimation()}}
+    >
+      {getIcon()}
+    </Link>
+  )
+
+}
 //Facebook icons
 
 export const FacebookIconsDefault = ()=>{
@@ -78,4 +114,36 @@ export const FacebookIconsDisabled = ()=>{
 <path d="M0 22C0 9.84974 9.84974 0 22 0C34.1503 0 44 9.84974 44 22C44 34.1503 34.1503 44 22 44C9.84974 44 0 34.1503 0 22Z" fill="#ECECEC"/>
 <path opacity="0.973" fillRule="evenodd" clipRule="evenodd" d="M12.3906 10C18.7969 10 25.2031 10 31.6094 10C32.8906 10.3125 33.6875 11.1094 34 12.3906C34 18.7969 34 25.2031 34 31.6094C33.6875 32.8906 32.8906 33.6875 31.6094 34C29.5469 34 27.4844 34 25.4219 34C25.2389 33.9032 25.0905 33.7625 24.9766 33.5781C24.9453 30.5312 24.9453 27.4844 24.9766 24.4375C25.0669 24.2065 25.231 24.0581 25.4688 23.9922C26.3748 23.9688 27.2811 23.9609 28.1875 23.9688C28.1875 23.3125 28.1875 22.6562 28.1875 22C27.2811 22.0078 26.3748 22 25.4688 21.9766C25.231 21.9107 25.0669 21.7622 24.9766 21.5312C24.9453 20.3906 24.9453 19.25 24.9766 18.1094C25.0781 17.8828 25.2422 17.7188 25.4688 17.6172C26.3748 17.5938 27.2811 17.5859 28.1875 17.5938C28.1875 16.9375 28.1875 16.2812 28.1875 15.625C27.2186 15.6172 26.2499 15.625 25.2812 15.6484C23.848 16.0036 23.0746 16.9177 22.9609 18.3906C22.9453 19.4375 22.9297 20.4844 22.9141 21.5312C22.8237 21.7622 22.6597 21.9107 22.4219 21.9766C21.5158 22 20.6095 22.0078 19.7031 22C19.7031 22.6562 19.7031 23.3125 19.7031 23.9688C20.6095 23.9609 21.5158 23.9688 22.4219 23.9922C22.6597 24.0581 22.8237 24.2065 22.9141 24.4375C22.9453 27.4688 22.9453 30.5 22.9141 33.5312C22.8193 33.7431 22.6708 33.8994 22.4688 34C19.1094 34 15.75 34 12.3906 34C11.1094 33.6875 10.3125 32.8906 10 31.6094C10 25.2031 10 18.7969 10 12.3906C10.3125 11.1094 11.1094 10.3125 12.3906 10ZM12.625 11.4531C18.875 11.4453 25.125 11.4531 31.375 11.4766C31.9765 11.6406 32.3594 12.0234 32.5234 12.625C32.5547 18.875 32.5547 25.125 32.5234 31.375C32.3594 31.9765 31.9765 32.3594 31.375 32.5234C29.7188 32.5469 28.0626 32.5547 26.4062 32.5469C26.4062 30.1719 26.4062 27.7969 26.4062 25.4219C27.3126 25.4297 28.2189 25.4219 29.125 25.3984C29.3828 25.3281 29.5469 25.1641 29.6172 24.9062C29.6485 23.625 29.6485 22.3437 29.6172 21.0625C29.5513 20.8247 29.4029 20.6606 29.1719 20.5703C28.2501 20.5469 27.3282 20.539 26.4062 20.5469C26.4062 20.0469 26.4062 19.5469 26.4062 19.0469C27.297 19.0547 28.1876 19.0469 29.0781 19.0234C29.347 18.9577 29.5267 18.7937 29.6172 18.5312C29.6485 17.2344 29.6485 15.9375 29.6172 14.6406C29.5063 14.3733 29.311 14.2093 29.0312 14.1484C27.875 14.1172 26.7188 14.1172 25.5625 14.1484C23.36 14.3781 22.0241 15.5734 21.5547 17.7344C21.4899 18.6704 21.4665 19.6079 21.4844 20.5469C20.5624 20.539 19.6405 20.5469 18.7188 20.5703C18.4878 20.6606 18.3393 20.8247 18.2734 21.0625C18.2422 22.3437 18.2422 23.625 18.2734 24.9062C18.3438 25.1641 18.5078 25.3281 18.7656 25.3984C19.6717 25.4219 20.578 25.4297 21.4844 25.4219C21.4844 27.7969 21.4844 30.1719 21.4844 32.5469C18.5312 32.5547 15.5781 32.5469 12.625 32.5234C12.0234 32.3594 11.6406 31.9765 11.4766 31.375C11.4453 25.125 11.4453 18.875 11.4766 12.625C11.6492 12.0227 12.032 11.6321 12.625 11.4531Z" fill="#888888"/>
 </svg>)
+}
+
+export const FacebookIcons = ()=>{
+  const [isHovered, setHovered] = useState(false)
+  const [isPressed, setPressed] = useState(false)
+  const [isDisabled, setDisabled] = useState(false)
+
+  const getIcon = () => {
+    if (isDisabled) return <FacebookIconsDisabled/>
+    if (isPressed) return <FacebookIconsPresed/>
+    if (isHovered) return <FacebookIconsHover/>;
+    return <FacebookIconsDefault/>;
+  };
+
+  const presedAnimation = ()=>{
+    setPressed(true)
+    setTimeout(() => {
+      setPressed(false)
+      setHovered(false)
+    }, 100);
+  }
+
+  return(
+    <Link href={facebookUrl} target="_blank"
+    onMouseEnter={() => setHovered(true)}
+    onMouseLeave={() => setHovered(false)}
+    onClick={()=>{presedAnimation()}}
+    >
+      {getIcon()}
+    </Link>
+  )
+
 }

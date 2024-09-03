@@ -1,7 +1,11 @@
+import { JSXElementConstructor } from "react";
+import { IImageItem } from "../image/image.interfaces";
+
 interface IDBDefault{
     _id?: string;
     __v?: number;
-    image?: string
+    image?: IImageItem
+    language?: string
 }
 
 export interface IContactsItem extends IDBDefault {
@@ -13,20 +17,18 @@ export interface IContactsItem extends IDBDefault {
     titleContUA: string;
 }
 
-export interface IEventItem extends IDBDefault{
-    adressEventEN: string
-    adressEventUA: string
-    dataEventEN: string
-    dataEventUA: string
-    descriptionEN: string
-    descriptionUA: string
-    titleEventEN: string
-    titleEventUA: string
+export interface IEventItem{
+    _id?: string;
+    __v?: number;
+    image: IImageItem
+    adressEvent: string
+    dataEvent: string
+    description: string
+    titleEvent: string
 }
 
 export interface IHelpItem extends IDBDefault{
-    titleHelpUA: string
-    titleHelpEN: string
+    titleHelp: string
 }
 
 export interface IPartnerItem extends IDBDefault{
@@ -34,20 +36,14 @@ export interface IPartnerItem extends IDBDefault{
 }
 
 export interface IWorthItem extends IDBDefault{
-    textWorthEN: string
-    textWorthUA: string
+    textWorth: string
+    icon?: JSX.Element
 }
 
 export interface IMain{
     _id: string
     __v?: number
-    descriptionEN: string
-    descriptionUA: string
-    titleMainEN: string
-    titleMainUA: string
-    contact: Array<IContactsItem>
-    event: Array<IEventItem>
-    help: Array<IHelpItem>
-    partner: Array<IPartnerItem>
-    worth: Array<IWorthItem>
+    description: string
+    titleMain: string
+    language: string
 }

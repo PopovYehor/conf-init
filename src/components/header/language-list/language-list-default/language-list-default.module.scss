@@ -22,7 +22,8 @@
             }
             .language_name{
                 @include t3;
-                color: $color_text_black
+                color: $color_text_black;
+                text-transform: uppercase;
             }
         }
         .language_btn{
@@ -37,7 +38,7 @@
         }
     }
 }
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 768px) {
     .language_list_wrap{
         position: relative;
         top: 0;
