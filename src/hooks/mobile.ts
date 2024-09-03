@@ -1,7 +1,7 @@
 import { SET_MOBILE } from "@/reducers/mobile/mobile.reducer"
 
 export const checkMobile = (hook: any)=>{
-    document.body.clientWidth < 426 ? 
+    document.body.clientWidth < 769 ? 
     hook(SET_MOBILE(true)): hook(SET_MOBILE(false))
 }
 
