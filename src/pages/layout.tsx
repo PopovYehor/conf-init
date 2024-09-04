@@ -56,7 +56,7 @@ export default function Layout ({ children }: ILayout) {
     <div className={inter.className}>
       <Header/>
           {children}
-      {/* <Footer/> */}
+      <Footer/>
     </div>
     </>
   );

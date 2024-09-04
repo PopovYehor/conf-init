@@ -18,9 +18,9 @@ export default function MainView() {
         <Worth/>
         <Evants/>
         <HowWeHelps/>
-        {/* <NeedSupport/>
+        <NeedSupport/>
         <HelpRaiseCash />
-        <JoinVolunteers /> */}
+        <JoinVolunteers />
         </main>
       </>
     );
