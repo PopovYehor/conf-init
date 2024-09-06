@@ -8,6 +8,7 @@ import JoinVolunteers from "@/components/JoinVolunteers/JoinVolunteers";
 import NeedSupport from "@/components/NeedSupport/NeedSupport";
 import HowWeHelps from "@/components/main/howWeHelps/howWeHalps";
 import { Worth } from "@/components/main/worth/worth";
+import { Partners } from "@/components/main/partners/partners";
 
 export default function MainView() {
     
@@ -18,9 +19,10 @@ export default function MainView() {
         <Worth/>
         <Evants/>
         <HowWeHelps/>
-        <NeedSupport/>
+        {/* <NeedSupport/>
         <HelpRaiseCash />
-        <JoinVolunteers />
+        <JoinVolunteers /> */}
+        <Partners/>
         </main>
       </>
     );
