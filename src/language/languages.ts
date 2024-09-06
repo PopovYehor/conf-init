@@ -12,7 +12,7 @@ export const languages: any = {
     evants: "Анонс подій",
     read_more: "Читати більше",
     evant_join: "Долучитись до події",
-    hide_text: 'Прихвати текст',
+    hide_text: 'Приховати текст',
     next: 'Далі',
     previous: 'Назад',
     without_event_description: "Хоча на даний час в нас немає запланованих заходів, однак ми вже працюємо над організацією нових! Приєднуйся до наших соціальних мереж та першими отримуйте інформацію про наступні події!",
@@ -48,6 +48,10 @@ export const languages: any = {
     main_page_button_volunteers: "ДОЛУЧИТИСЬ",
     //_____________________
 
+    //partners
+    partners: "Наші партнери",
+    //_____________________________
+
     //footer
     menu: "Меню",
     contacts: "Контакти",
@@ -80,7 +84,7 @@ export const languages: any = {
     how_help: "How we help ?",
     help_description_1: "We work directly and closely with people who need help, because we believe that direct communication and support will allow us to determine the individual needs of each person and/or family as effectively as possible and help according to our capabilities.",
     help_description_2: "The charitable activities of the Conference are based on respect and love for one's neighbor, starting with a firm commitment to our common Christian values.",
-    we_support:"We supports:",
+    we_support:"We support:",
     //Need support
     need_support_headline: "If you need support or help",
     need_support_text: "If you need help, please fill out the form here.",
@@ -99,6 +103,10 @@ export const languages: any = {
       "To do this, you need to register on a special volunteer platform, which constantly involves volunteers to work and various useful fees",
     main_page_button_volunteers: "JOIN",
     //_____________________
+
+    //partners
+    partners: "Our partners",
+    //_____________________________
 
     //footer
     menu: "Menu",
