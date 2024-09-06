@@ -8,7 +8,7 @@ import { useAppSelector } from "@/hooks/hooks";
 
 
 export default function JoinVolunteers() {
-  const langageSelected = useAppSelector(
+  const languageSelected = useAppSelector(
     (state) => state.language.languageSelected
   );
   return (
@@ -16,25 +16,12 @@ export default function JoinVolunteers() {
       <Image src={photo} alt="" className={style.image} />
 
       <div className={style.info}>
-        {langageSelected === "UA" ? (
-          <>
-            <h2>{languages.UA.main_page_title_volunteers}</h2>
-            <p>{languages.UA.main_page_text_volunteers}</p>
-            <ButtonsDefault
-              text={languages.UA.main_page_button_volunteers}
-              url="/volunteers"
-            />
-          </>
-        ) : (
-          <>
-            <h2>{languages.EN.main_page_title_volunteers}</h2>
-            <p>{languages.EN.main_page_text_volunteers}</p>
-            <ButtonsDefault
-              text={languages.EN.main_page_button_volunteers}
-              url="/volunteers"
-            />
-          </>
-        )}
+        <h2>{languages[languageSelected].main_page_title_volunteers}</h2>
+        <p>{languages[languageSelected].main_page_text_volunteers}</p>
+        <ButtonsDefault
+          text={languages[languageSelected].main_page_button_volunteers}
+          url="/volunteers"
+        />
       </div>
     </section>
   );

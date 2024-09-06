@@ -31,7 +31,8 @@ export default function Footer() {
   const [isFacebookDisabled, setFacebookDisabled] = useState(false);
 
   const contacts = useAppSelector((state) => state.contacts);
-  const langageSelected = useAppSelector(
+
+  const languageSelected = useAppSelector(
     (state) => state.language.languageSelected
   );
   const dispatch = useAppDispatch();
@@ -95,87 +96,45 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      {langageSelected === "UA" ? (
-        <>
-          <div className={style.wrapper_menu_contacts}>
-            <div className={style.wrapper_menu}>
-              <p>{languages.UA.menu}</p>
+      <div className={style.wrapper_menu_contacts}>
+        <div className={style.wrapper_menu}>
+          <p>{languages[languageSelected].menu}</p>
 
-              <Link href={"/about"}>{languages.UA.about}</Link>
+          <Link href={"/about"}>{languages[languageSelected].about}</Link>
 
-              <Link href={"/support"}>{languages.UA.support}</Link>
+          <Link href={"/support"}>{languages[languageSelected].support}</Link>
 
-              <Link href={"/projects"}>{languages.UA.project}</Link>
+          <Link href={"/projects"}>{languages[languageSelected].project}</Link>
 
-              <Link href={"/volunteers"}>{languages.UA.volunteers}</Link>
-            </div>
+          <Link href={"/volunteers"}>
+            {languages[languageSelected].volunteers}
+          </Link>
+        </div>
 
-            <div className={style.wrapper_contacts}>
-              <p>{languages.UA.contacts}</p>
-              {contactData ? (
-                <>
-                  <span>{contactData.titleContUA}</span>
-                  <span>{contactData.adressContUA}</span>
-                  <Link href={`tel:${contactData.phoneContUA}`}>
-                    {contactData.phoneContUA}
-                  </Link>
-                </>
-              ) : (
-                <span>Скоро тут з`являться контакти</span>
-              )}
-            </div>
-          </div>
+        <div className={style.wrapper_contacts}>
+          <p>{languages[languageSelected].contacts}</p>
+          {contactData ? (
+            <>
+              <span>{contactData.titleContUA}</span>
+              <span>{contactData.adressContUA}</span>
+              <Link href={`tel:${contactData.phoneContUA}`}>
+                {contactData.phoneContUA}
+              </Link>
+            </>
+          ) : (
+            <span>Скоро тут з`являться контакти</span>
+          )}
+        </div>
+      </div>
 
-          <div className={style.wrapper_politics}>
-            <Link href="/politic-files/privacy_policy.docx" download>
-              {languages.UA.privacy_policy}
-            </Link>
-            <Link href="/politic-files/public_offer.docx" download>
-              {languages.UA.offer}
-            </Link>
-          </div>
-        </>
-      ) : (
-        <>
-          <div className={style.wrapper_menu_contacts}>
-            <div className={style.wrapper_menu}>
-              <p>{languages.EN.menu}</p>
-
-              <Link href={"/about"}>{languages.EN.about}</Link>
-
-              <Link href={"/support"}>{languages.EN.support}</Link>
-
-              <Link href={"/projects"}>{languages.EN.project}</Link>
-
-              <Link href={"/volunteers"}>{languages.EN.volunteers}</Link>
-            </div>
-
-            <div className={style.wrapper_contacts}>
-              <p>{languages.EN.contacts}</p>
-              {contactData ? (
-                <>
-                  <span>{contactData.titleContEN}</span>
-                  <span>{contactData.adressContEN}</span>
-                  <Link href={`tel:${contactData.phoneContEN}`}>
-                    {contactData.phoneContEN}
-                  </Link>
-                </>
-              ) : (
-                <span>Contacts will appear here soon</span>
-              )}
-            </div>
-          </div>
-
-          <div className={style.wrapper_politics}>
-            <Link href="/politic-files/privacy_policy.docx" download>
-              {languages.EN.privacy_policy}
-            </Link>
-            <Link href="/politic-files/public_offer.docx" download>
-              {languages.EN.offer}
-            </Link>
-          </div>
-        </>
-      )}
+      <div className={style.wrapper_politics}>
+        <Link href="/politic-files/privacy_policy.docx" download>
+          {languages[languageSelected].privacy_policy}
+        </Link>
+        <Link href="/politic-files/public_offer.docx" download>
+          {languages[languageSelected].offer}
+        </Link>
+      </div>
     </footer>
   );
 }
