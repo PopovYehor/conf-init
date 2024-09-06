@@ -43,7 +43,7 @@ export function Worth(){
                 <div className={styles.worth_items_wrap}>
                     {worth.map((item:IWorthItem)=>{
                         return(
-                            <section className={styles.worth_item}>
+                            <section className={styles.worth_item} key={item._id}>
                                 <div className={styles. worth_item_icon}>
                                     {item.icon}
                                 </div>

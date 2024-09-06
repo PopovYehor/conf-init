@@ -1,4 +1,5 @@
 import { IImageItem } from "@/interfaces/image/image.interfaces"
+import { IEventItem, IHelpItem, IPartnerItem, IWorthItem } from "@/interfaces/main/main.interface"
 
 export const defaultContacts = {
     _id: "1",
@@ -18,7 +19,7 @@ export const defaultImage: IImageItem = {
     __v: 0
 }
 
-export const defaultEvant = {
+export const defaultEvant: IEventItem = {
     _id: "0",
     __v: 0,
     image: defaultImage,
@@ -29,25 +30,27 @@ export const defaultEvant = {
     language: 'ua'
 }
 
-export const defaultWorth = {
+export const defaultWorth: IWorthItem = {
     _id: "1",
     __v: 0,
     textWorth: "",
+    language: 'ua'
 }
 
-export const defaultPartner = {
+export const defaultPartner: IPartnerItem = {
     _id: "1",
     __v: 0,
     image: defaultImage,
     webPatner: "",
+    language: 'ua'
 }
 
-export const defaultHelp = {
+export const defaultHelp: IHelpItem = {
     _id: "1",
     __v: 0,
     image: defaultImage,
     titleHelp: "",
-    language: ''
+    language: 'ua'
 }
 
 export const defaultMain = {
@@ -56,9 +59,4 @@ export const defaultMain = {
         description:"Міжнародна християнська благодійна організація мирян, яка об’єднує близько 600 тисяч людей",
         titleMain: 'БЛАГОДІЙНА ОРГАНІЗАЦІЯ "КОНФЕРЕНЦІЯ БЛАЖЕННОЇ МАРТИ ВЄЦКОЇ"',
         language: 'ua',
-/*         contact: [defaultContacts],
-        event: [defaultEvant],
-        help: [defaultHelp],
-        partner: [defaultPartner],
-        worth: [defaultWorth], */
 }
