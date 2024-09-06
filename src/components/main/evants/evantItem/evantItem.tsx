@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react"
 import { IImageItem } from "@/interfaces/image/image.interfaces"
 import { defaultImage } from "@/reducers/image/image.reducer"
 import { getCurrentImage } from "@/hooks/image"
+import ButtonsDefault from "@/components/Buttons/ButtonsDefault/ButtonsDefault"
 
 export function EvantItem({
     image,
@@ -15,6 +16,7 @@ export function EvantItem({
     adressEvent,
     description,
     titleEvent,
+    linkEvent,
     }: IEventItem){
 
     const languageSelected = useAppSelector((state)=>state.language.languageSelected)
@@ -57,9 +59,10 @@ export function EvantItem({
                 <div className={styles.evant_item_title}>
                     <h3>{titleEvent}</h3>
                 </div>
-                <div className={styles.event_item_link}>
-                    <Link href={'/'}>Посилання на проект</Link>
+                {linkEvent && <div className={styles.event_item_link}>
+                    <Link href={linkEvent}>{linkEvent}</Link>
                 </div>
+                }
                 <div ref={descriptionRef} className={!openDescription ? 
                     `${styles.evant_item_description} ${styles.hiden_description}`
                     : styles.evant_item_description}>
@@ -71,7 +74,7 @@ export function EvantItem({
                             onClick={()=>setOpenDescription(!openDescription)}>
                                 {!openDescription ? languages[languageSelected].read_more : languages[languageSelected].hide_text}
                         </span>}
-                    <Link className={styles.join} href={googleForm}>{languages[languageSelected].evant_join}</Link>
+                    <ButtonsDefault url={googleForm} text={languages[languageSelected].evant_join}/>
                 </div>
             </div>
         </section>

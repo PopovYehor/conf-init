@@ -9,7 +9,7 @@
             align-items: center;
             .evants_header{
                 h2{
-                @include h2;
+                @include h1;
                 margin: 0
                 }
             }
