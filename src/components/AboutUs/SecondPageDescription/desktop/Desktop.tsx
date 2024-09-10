@@ -1,19 +1,11 @@
-import TitleForOtherPages from "../../TitleForOtherPages/TitleForOtherPages";
 import style from "./desktop.module.scss";
 import Image from "next/image";
 import photo from "../photo.png";
 
-import { languages } from "@/language/languages";
-import { useAppSelector } from "@/hooks/hooks";
-
 export default function Desktop() {
-  const languageSelected = useAppSelector(
-    (state) => state.language.languageSelected
-  );
 
   return (
     <>
-          <TitleForOtherPages text={languages[languageSelected].about} />
           <section className={style.wrapper}>
             <div className={style.image_wrapper}>
               <Image src={photo} alt="" className={style.image}></Image>
