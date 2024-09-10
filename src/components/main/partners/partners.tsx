@@ -34,17 +34,15 @@ export function Partners(){
                 </div>
                 <div className={styles.partners_items_wrap}>
                     {partners.map((item: IPartnerItem)=>{
-                        return(
-                            <>
-                                { item.image != null &&
-                                <section key={item._id} className={styles.partner_item_wrap}>
-                                    <Link href={item.webPatner} target="_blank">
-                                        <img src={item.image?.url}/>
-                                    </Link>
-                                </section>
-                                }
-                            </>
-                        )
+                        if(item.image != null){
+                            return(
+                                    <section key={item._id} className={styles.partner_item_wrap}>
+                                        <Link href={item.webPatner} target="_blank">
+                                            <img src={item.image?.url}/>
+                                        </Link>
+                                    </section>
+                            )
+                        }
                     })}
                     
                 </div>
