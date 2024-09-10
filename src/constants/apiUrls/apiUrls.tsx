@@ -1,6 +1,7 @@
 //url
 const urlPage = 'http://localhost:3000/'
 const url = 'http://localhost:5000/'
+//main
 const main = "main"
 const  worth = "worth"
 const  events = "events"
@@ -8,12 +9,17 @@ const  image = "image"
 const  contact = "contact"
 const  partner = "partner"
 const  help = "help"
+//_________
+//about-us
+const sectionAbout = 'sectionabout'
+//______________
 //language parameter 
 export const languageParameter = "?language="
 
 export const apiUrls = {
   urlPage: urlPage,
   url: url,
+  //main
   mainUrl: url+main,
   worthUrl: url+worth,
   eventsUrl: url+events,
@@ -21,6 +27,10 @@ export const apiUrls = {
   contactUrl: url+contact,
   partnerUrl: url+partner,
   helpUrl: url+help,
+  //_______________
+  //about
+  sectionAbout: url+sectionAbout,
+  //__________
 };
 export const googleForm = 'https://docs.google.com/forms/d/e/1FAIpQLSd1xaeCYoSMucIhInHujyJtK95an2ZMGh5sPRQuJaPf1JHqng/viewform'
 export const facebookUrl = 'https://www.facebook.com/profile.php?id=61559370821121'

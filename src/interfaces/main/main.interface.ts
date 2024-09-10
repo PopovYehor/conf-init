@@ -1,12 +1,12 @@
 import { JSXElementConstructor } from "react";
 import { IImageItem } from "../image/image.interfaces";
 
-interface IDefaultData{
+export interface IDefaultData{
     _id: string;
     __v: number;
 }
 
-interface IDBDefault extends IDefaultData{
+export interface IDBDefault extends IDefaultData{
     image: NonNullable<IImageItem>
     language: string
 }
