@@ -16,9 +16,9 @@ export function HeaderMobile({nav}: IHeaderProps){
     return(
         <header className={styles.header}>
         <div className={styles.header_menu_wrap}>
-            <div className={styles.header_logo_wrap}>
+            <Link href={"/"} className={styles.header_logo_wrap}>
                 <IconsMain/>
-            </div>
+            </Link>
             <input type="checkbox" id="menu"/>
             <div className={styles.header_menu} >
                 <label htmlFor="menu" onClick={()=>setOpen(!open)}>
