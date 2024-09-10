@@ -9,6 +9,7 @@ export interface ILanguageState{
     languageSelected: string
     language: ILanguageItem
     languageSwitch: boolean
+    page: string
 }
 
 export enum ELanguage {
