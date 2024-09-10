@@ -4,8 +4,14 @@ import { useEffect, useState } from "react"
 import { defaultImage } from "@/reducers/image/image.reducer"
 import { getCurrentImage } from "@/hooks/image"
 import { IHelpItem } from "@/interfaces/main/main.interface"
+import { IImageItem } from "@/interfaces/image/image.interfaces"
 
-export function HowWeHelpItem({titleHelp, image}: IHelpItem){
+interface IHowWeHelpProps{
+    titleHelp: string
+    image: IImageItem
+}
+
+export function HowWeHelpItem({titleHelp, image}: IHowWeHelpProps){
 
     const mobile = useAppSelector((state)=>state.mobile.mobile)
     const images = useAppSelector((state)=>state.image.image)
