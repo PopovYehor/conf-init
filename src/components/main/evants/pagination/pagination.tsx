@@ -2,8 +2,18 @@ import { useEffect, useState } from "react"
 import styles from "./pagination.module.scss"
 import { useAppSelector } from "@/hooks/hooks"
 import { languages } from '@/language/languages';
+import Link from "next/link";
+import { IEventItem } from "@/interfaces/main/main.interface";
 
-export function Pagination({event, page, nextPage, previousPage, setPage}: any){
+interface IPaginationComponentProps{
+    event: IEventItem[]
+    page: number
+    nextPage: ()=> void
+    previousPage: ()=> void
+    setPage: (page: number)=> void
+}
+
+export function Pagination({event, page, nextPage, previousPage, setPage}: IPaginationComponentProps){
 
     const [active, setActive] = useState<number>(page)
     const [next, setNext] = useState<boolean>(true)
@@ -90,7 +100,7 @@ export function Pagination({event, page, nextPage, previousPage, setPage}: any){
                 }
                 {viewList.length !== 1 && viewList.map((item, i)=>{
                     return(
-                        <div key={i} 
+                        <div key={i}
                             className={active !==item ? styles.pagination_item_list : `${styles.pagination_item_list} ${styles.active}`}
                             onClick={()=>setPagePag(item)}>
                                 <span>{String(item)}</span>

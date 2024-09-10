@@ -2,8 +2,8 @@ import Image from "next/image";
 import style from "./needSupport.module.scss";
 import photo from "./photo.png";
 import { languages } from "@/language/languages";
-import ButtonsSecondary from "../Buttons/ButtonsSecondary/ButtonsSecondary";
 import { useAppSelector } from "@/hooks/hooks";
+import ButtonsSecondary from "@/components/Buttons/ButtonsSecondary/ButtonsSecondary";
 
 export default function NeedSupport() {
     const languageSelected = useAppSelector(

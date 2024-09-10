@@ -26,7 +26,7 @@ export default function HowWeHelps(){
 
     useEffect(()=>{
         fetchHelp()
-    },[])
+    },[languageSelected])
     
     return(
         <>

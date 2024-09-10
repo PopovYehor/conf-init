@@ -1,6 +1,6 @@
-import { IconEventBaner } from "@/components/icons/icons-event/icons-event"
+import { IconEventBaner } from "@/components/Icons/icons-event/icons-event"
 import styles from "./event-baner.module.scss"
-import { FacebookIcons, FacebookIconsDefault, InstagramIconsDefault, InstargamIcons } from "@/components/icons/icons-socials/icons-socials"
+import { FacebookIcons, FacebookIconsDefault, InstagramIconsDefault, InstargamIcons } from "@/components/Icons/icons-socials/icons-socials"
 import Link from "next/link"
 import { useAppSelector } from "@/hooks/hooks"
 import { languages } from "@/language/languages"

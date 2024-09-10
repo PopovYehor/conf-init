@@ -3,8 +3,8 @@ import style from "./JoinVolunteers.module.scss";
 
 import { languages } from "@/language/languages";
 import photo from "./photo.png";
-import ButtonsDefault from "../Buttons/ButtonsDefault/ButtonsDefault";
 import { useAppSelector } from "@/hooks/hooks";
+import ButtonsDefault from "@/components/Buttons/ButtonsDefault/ButtonsDefault";
 
 
 export default function JoinVolunteers() {

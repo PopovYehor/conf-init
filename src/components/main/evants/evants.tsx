@@ -1,7 +1,7 @@
 import { useAppSelector } from "@/hooks/hooks"
 import styles from "./evants.module.scss"
 import { languages } from "@/language/languages"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { EvantItem } from "./evantItem/evantItem"
 import axios from "axios"
 import { defaultEvant } from "@/constants/mainItemsDefault/mainItemsDefault"
@@ -22,6 +22,7 @@ export default function Evants(){
     const [events, setEvents] = useState<IEventItem[]>([defaultEvant])
     const [viewEvents, setViewEvents] = useState<IEventItem[]>(events)
     const [disconect, setDisconect] = useState<boolean>(false)
+    const header_event = useRef<HTMLDivElement | null>(null)
     
     //set default pagination
     const pagination: IPagination = {
@@ -51,31 +52,37 @@ export default function Evants(){
 
     //set list for next page
     const nextPage = ()=>{
-        if(viewEvents.length === 3){
+        const header = header_event.current
+        if(viewEvents.length === 3 && header){
             setPag({...pag,
                 page: pag.page+1,
                 offset: pag.limit*(pag.page+1)
             })
             setViewEvents(events.slice(((pag.limit*(pag.page+1))-pag.limit), pag.limit*(pag.page+1)))
+            header.scrollIntoView()
         }
     }
     //set list for previous page
     const previousPage = ()=>{
-        if (pag.page > 1){
+        const header = header_event.current
+        if (pag.page > 1 && header){
             setPag({...pag,
                 page: pag.page-1,
                 offset: pag.limit*(pag.page-1)
             })
             setViewEvents(events.slice(((pag.limit*(pag.page-1))-pag.limit), pag.limit*(pag.page-1)))
+            header.scrollIntoView()
         }
     }
     // set list for specific page
     const setPage = (page: number) =>{
+        const header = header_event.current
         setPag({...pag,
             page: page,
             offset: pag.limit*page
         })
         setViewEvents(events.slice(((pag.limit*(page))-pag.limit), pag.limit*(page)))
+        if (header) header.scrollIntoView()
     }
     // set default list
     useEffect(()=>{
@@ -86,7 +93,7 @@ export default function Evants(){
         <>
         <article className={styles.evants_wrap}>
             <div className={styles.evants_container}>
-                <div className={styles.evants_header}>
+                <div className={styles.evants_header} ref={header_event}>
                     <h2>{languages[languageSelected].evants}</h2>
                 </div>
                 {viewEvents.length != 0 &&

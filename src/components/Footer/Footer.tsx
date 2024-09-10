@@ -10,8 +10,8 @@ import {
   FacebookIconsHover,
   FacebookIconsPresed,
   FacebookIconsDisabled,
-} from "@/components/icons/icons-socials/icons-socials";
-import { IconsMain } from "@/components/icons/icons-main/icons-main";
+} from "@/components/Icons/icons-socials/icons-socials";
+import { IconsMain } from "@/components/Icons/icons-main/icons-main";
 import { useState, useEffect } from "react";
 import { getApiData } from "@/utils/api-request/getApiData";
 import { apiUrls } from "@/constants/apiUrls/apiUrls";
