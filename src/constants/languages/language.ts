@@ -1,4 +1,4 @@
-import { IconsEN, IconsUA } from "@/components/Icons/icons-language/icons-language";
+import { IconsEN, IconsUA } from "@/components/icons/icons-language/icons-language";
 import { ILanguageItem } from "@/interfaces/header/language/language";
 
 export const languageList : Array<ILanguageItem> = [

@@ -8,7 +8,7 @@ import { checkMobile, checkMobileListener } from "@/hooks/mobile";
 import { apiUrls } from "@/constants/apiUrls/apiUrls";
 import { fetchImage } from "@/reducers/image/image.reducer";
 import { locales } from "@/constants/languages/language";
-import Header from "@/components/Header/header";
+import Header from "@/components/header/header";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -52,7 +52,7 @@ export default function Layout ({ children }: ILayout) {
     if (imageStatus === 'idle'){
       dispatch(fetchImage())
     }
-  },[])
+  },[dispatch, imageStatus, mobileCheckStatus])
 
   return (
     <>

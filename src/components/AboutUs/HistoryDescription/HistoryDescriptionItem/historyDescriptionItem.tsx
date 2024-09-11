@@ -13,9 +13,10 @@ export function HistoryDescriptionItem({item}: IHistoryDescriptionItemProps){
 
     const [imageUrl, setImageUrl] = useState<string>(defaultImage.url)
     const images = useAppSelector((state)=>state.image.image)
+
     useEffect(()=>{
         getCurrentImage(item.image, images, setImageUrl)
-    },[])
+    },[images, item.image])
 
     return(
         <>
@@ -24,7 +25,7 @@ export function HistoryDescriptionItem({item}: IHistoryDescriptionItemProps){
                 <p>{item.description}</p>
             </div>
             <div className={styles.history_item_img}>
-                <img src={imageUrl}/>
+                <img src={imageUrl} alt={item.description}/>
             </div>
         </>
     )

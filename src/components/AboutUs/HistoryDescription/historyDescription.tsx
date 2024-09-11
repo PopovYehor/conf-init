@@ -12,19 +12,18 @@ export function HistoryDescription(){
     const languageSelected = useAppSelector((state)=>state.language.languageSelected)
     const [history, setHistory] = useState<IHistoryDescriptionItem[]>([historyDescriptionItemDefault])
 
-    const fetchHistryDescription = async ()=>{
-        try{
-            const responce = await axios.get(apiUrls.sectionAbout+languageParameter+languageSelected)
-            setHistory(responce.data)
+    useEffect( ()=>{
+        const fetchHistryDescription = async ()=>{
+            try{
+                const responce = await axios.get(apiUrls.sectionAbout+languageParameter+languageSelected)
+                setHistory(responce.data)
+            }
+            catch{
+                setHistory([historyDescriptionItemDefault])
+            }
         }
-        catch{
-            setHistory([historyDescriptionItemDefault])
-        }
-    }
-
-    useEffect(()=>{
         fetchHistryDescription()
-    }, [languageSelected])
+    }, [languageSelected, ])
 
     return(
         <>

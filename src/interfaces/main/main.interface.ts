@@ -39,6 +39,7 @@ export interface IPartnerItem extends IDBDefault{
 export interface IWorthItem extends IDefaultData{
     textWorth: string
     icon?: JSX.Element
+    key?: number
     language: string
 }
 
