@@ -1,15 +1,13 @@
 import { IImageItem } from "@/interfaces/image/image.interfaces"
 
 export const defaultContacts = {
-    _id: "1",
-    __v: 0,
-    adressContEN: "",
-    adressContUA: "",
-    phoneContEN: "",
-    phoneContUA: "",
-    titleContEN: "",
-    titleContUA: "",
-}
+  _id: "1",
+  __v: 0,
+  adressCont: "м. Київ вул. Кучмин Яр, 1Б.",
+  phoneCont: "+38 093 217 55 71",
+  titleCont: "Дім “Божий Дар",
+  language: "ua"
+};
 
 export const defaultImage: IImageItem = {
     _id: "",

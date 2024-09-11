@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { ReactNode, useEffect } from "react";
 import { Inter } from 'next/font/google'
-import Header from "@/components/header/header";
+import Header from "@/components/Header/header";
 import Footer from "@/components/Footer/Footer";
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
 import { CHANGE_LANGUAGE, SET_LANGUAGE_SELECTED } from "@/reducers/language/language.reducer";
