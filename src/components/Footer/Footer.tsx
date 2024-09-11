@@ -10,6 +10,8 @@ import {
   FacebookIconsHover,
   FacebookIconsPresed,
   FacebookIconsDisabled,
+  InstargamIcons,
+  FacebookIcons,
 } from "@/components/Icons/icons-socials/icons-socials";
 import { IconsMain } from "@/components/Icons/icons-main/icons-main";
 import { useState, useEffect } from "react";
@@ -21,14 +23,6 @@ import { languages } from "@/language/languages";
 
 export default function Footer() {
   const [apiData, setApiData] = useState<any[]>([]);
-
-  const [isInstagramHovered, setInstagramHovered] = useState(false);
-  const [isInstagramPressed, setInstagramPressed] = useState(false);
-  const [isInstagramDisabled, setInstagramDisabled] = useState(false);
-
-  const [isFacebookHovered, setFacebookHovered] = useState(false);
-  const [isFacebookPressed, setFacebookPressed] = useState(false);
-  const [isFacebookDisabled, setFacebookDisabled] = useState(false);
 
   const contacts = useAppSelector((state) => state.contacts);
 
@@ -42,23 +36,9 @@ export default function Footer() {
     if (apiData.length === 0) {
       getApiData(setApiData, apiUrls.contactUrl);
     }
-  }, [apiData]);
+  }, [apiData, dispatch]);
 
   const contactData = apiData.length > 0 ? apiData[0] : null;
-
-  const getInstagramIcon = () => {
-    if (isInstagramDisabled) return InstagramIconsDisabled();
-    if (isInstagramPressed) return InstagramIconsPressed();
-    if (isInstagramHovered) return InstagramIconsHover();
-    return InstagramIconsDefault();
-  };
-
-  const getFacebookIcon = () => {
-    if (isFacebookDisabled) return FacebookIconsDisabled();
-    if (isFacebookPressed) return FacebookIconsPresed();
-    if (isFacebookHovered) return FacebookIconsHover();
-    return FacebookIconsDefault();
-  };
 
   return (
     <footer className={style.footer}>
@@ -68,32 +48,8 @@ export default function Footer() {
         </div>
 
         <div className={style.wrapper_icons}>
-          <div
-            onMouseEnter={() => setInstagramHovered(true)}
-            onMouseLeave={() => setInstagramHovered(false)}
-            onMouseDown={() => setInstagramPressed(true)}
-            onMouseUp={() => setInstagramPressed(false)}
-            onDoubleClick={() => setInstagramDisabled(!isInstagramDisabled)}
-          >
-            <Link href="https://www.instagram.com/conf.bmv/" target="_blank">
-              {getInstagramIcon()}
-            </Link>
-          </div>
-
-          <div
-            onMouseEnter={() => setFacebookHovered(true)}
-            onMouseLeave={() => setFacebookHovered(false)}
-            onMouseDown={() => setFacebookPressed(true)}
-            onMouseUp={() => setFacebookPressed(false)}
-            onDoubleClick={() => setFacebookDisabled(!isFacebookDisabled)}
-          >
-            <Link
-              href="https://www.facebook.com/profile.php?id=61559370821121"
-              target="_blank"
-            >
-              {getFacebookIcon()}
-            </Link>
-          </div>
+          <InstargamIcons/>
+          <FacebookIcons/>
         </div>
       </div>
       <div className={style.wrapper_menu_contacts}>
