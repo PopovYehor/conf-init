@@ -6,8 +6,8 @@ import { apiUrls } from "@/constants/apiUrls/apiUrls";
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
 import { fetchContacts } from "@/reducers/contact/contact.reducer";
 import { languages } from "@/language/languages";
-import { FacebookIcons, InstargamIcons } from "../Icons/icons-socials/icons-socials";
-import { IconsMain } from "../Icons/icons-main/icons-main";
+import { FacebookIcons, InstargamIcons } from "@/components/Icons/icons-socials/icons-socials"
+import { IconsMain } from "@/components/Icons/icons-main/icons-main";
 
 export default function Footer() {
   const [apiData, setApiData] = useState<any[]>([]);
