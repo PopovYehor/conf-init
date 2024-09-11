@@ -2,7 +2,7 @@ import axios from 'axios'
 import styles from './historyDescription.module.scss'
 import { apiUrls, languageParameter } from '@/constants/apiUrls/apiUrls'
 import { useAppSelector } from '@/hooks/hooks';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { IHistoryDescriptionItem } from '@/interfaces/about-us/about-us.interface';
 import { historyDescriptionItemDefault } from '@/constants/aboutUsItemsDefault/aboutUsItemsDefault';
 import { HistoryDescriptionItem } from './HistoryDescriptionItem/historyDescriptionItem';
@@ -12,19 +12,18 @@ export function HistoryDescription(){
     const languageSelected = useAppSelector((state)=>state.language.languageSelected)
     const [history, setHistory] = useState<IHistoryDescriptionItem[]>([historyDescriptionItemDefault])
 
-    const fetchHistryDescription = async ()=>{
-        try{
-            const responce = await axios.get(apiUrls.sectionAbout+languageParameter+languageSelected)
-            setHistory(responce.data)
+    useEffect( ()=>{
+        const fetchHistryDescription = async ()=>{
+            try{
+                const responce = await axios.get(apiUrls.sectionAbout+languageParameter+languageSelected)
+                setHistory(responce.data)
+            }
+            catch{
+                setHistory([historyDescriptionItemDefault])
+            }
         }
-        catch{
-            setHistory([historyDescriptionItemDefault])
-        }
-    }
-
-    useEffect(()=>{
         fetchHistryDescription()
-    }, [languageSelected])
+    }, [languageSelected, ])
 
     return(
         <>
