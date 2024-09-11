@@ -22,11 +22,11 @@ export function HowWeHelpItem({titleHelp, image}: IHowWeHelpProps){
         if (image){
             getCurrentImage(image, images, setHelpImage)
         }
-    }, [])
+    }, [image, images])
     return(
         <>
             <div className={styles.support_description_item_image_wrap}>
-                <img src={helpImage}/>
+                <img src={helpImage} alt={titleHelp}/>
             </div>
             <div className={styles.support_description_item_text_wrap}>
                 <p>{titleHelp}</p>

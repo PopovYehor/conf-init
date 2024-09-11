@@ -12,17 +12,16 @@ export function Partners(){
     const languageSelected = useAppSelector((state)=>state.language.languageSelected)
     const [partners, setPartners] = useState<IPartnerItem[]>([defaultPartner])
 
-    const fetchPartners = async ()=>{
-        try{
-            const response = await axios.get<IPartnerItem[]>(apiUrls.partnerUrl+languageParameter+languageSelected)
-            setPartners(response.data)
-
-        }catch{
-            setPartners([defaultPartner])
-        }
-    }
-
     useEffect(()=>{
+        const fetchPartners = async ()=>{
+            try{
+                const response = await axios.get<IPartnerItem[]>(apiUrls.partnerUrl+languageParameter+languageSelected)
+                setPartners(response.data)
+    
+            }catch{
+                setPartners([defaultPartner])
+            }
+        }
         fetchPartners()
     },[languageSelected])
 
@@ -34,17 +33,15 @@ export function Partners(){
                 </div>
                 <div className={styles.partners_items_wrap}>
                     {partners.map((item: IPartnerItem)=>{
-                        return(
-                            <>
-                                { item.image != null &&
-                                <section key={item._id} className={styles.partner_item_wrap}>
-                                    <Link href={item.webPatner} target="_blank">
-                                        <img src={item.image?.url}/>
-                                    </Link>
-                                </section>
-                                }
-                            </>
-                        )
+                        if(item.image != null){
+                            return(
+                                    <section key={item._id} className={styles.partner_item_wrap}>
+                                        <Link href={item.webPatner} target="_blank">
+                                            <img src={item.image?.url} alt={item.webPatner}/>
+                                        </Link>
+                                    </section>
+                            )
+                        }
                     })}
                     
                 </div>

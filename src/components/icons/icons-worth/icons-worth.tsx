@@ -1,6 +1,6 @@
 //1/6
-export const WorthHelpIcons = ()=>{
-    return(<svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+export const WorthHelpIcons = ({key}: any)=>{
+    return(<svg key={key} width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="34.5" cy="34.5" r="34.5" fill="white"/>
         <path d="M52 48L47.17 43.17C46.42 42.42 45.4 42 44.34 42H43L41 43H37C35.9 43 35 43.9 35 45V47" stroke="#0067B3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M46 53.9999L44 51.9999H32L23 42.9999L24.57 42.6099C26.1 42.2299 27.73 42.5799 28.96 43.5699L33 46.9999H41" stroke="#0067B3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -10,9 +10,9 @@ export const WorthHelpIcons = ()=>{
         </svg>)
 }
 //2/6
-export const WorthDiversityIcons = ()=>{
+export const WorthDiversityIcons = ({key}: any)=>{
     return(
-        <svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg key={key} width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="34.5" cy="34.5" r="34.5" fill="white"/>
         <rect width="34" height="34.0038" transform="translate(18 18)" fill="white"/>
         <path d="M35 22.8738C36.66 19.6638 40.2 17.5738 44.16 18.0738C48.7 18.6438 52 22.7138 52 27.2938C52 32.2338 50.04 36.9638 46.55 40.4538L35 52.0038L23.45 40.4538C19.96 36.9638 18 32.2338 18 27.2938C18 22.4638 21.68 18.2838 26.5 18.0138C30.19 17.8138 33.44 19.8438 35 22.8738Z" stroke="#0067B3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -23,8 +23,8 @@ export const WorthDiversityIcons = ()=>{
     )
 }
 //3/6
-export const WorthDignityIcons = ()=>{
-    return(<svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+export const WorthDignityIcons = ({key}: any)=>{
+    return(<svg key={key} width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="34.5" cy="34.5" r="34.5" fill="white"/>
         <path d="M32.9902 28C35.7517 28 37.9902 25.7614 37.9902 23C37.9902 20.2386 35.7517 18 32.9902 18C30.2288 18 27.9902 20.2386 27.9902 23C27.9902 25.7614 30.2288 28 32.9902 28Z" stroke="#0067B3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M33.49 31H30.97C29.2 31 27.65 32.16 27.14 33.85L25 41H23" stroke="#0067B3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -34,9 +34,9 @@ export const WorthDignityIcons = ()=>{
         </svg>)
 }
 //4/6
-export const WorthDefenseIcons = ()=>{
+export const WorthDefenseIcons = ({key}: any)=>{
 return(
-    <svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg key={key} width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="34.5" cy="34.5" r="34.5" fill="white"/>
     <path d="M42 20.8683C42.98 18.9783 45.06 17.7483 47.39 18.0483C50.06 18.3783 52 20.7783 52 23.4683C52 26.3683 50.85 29.1583 48.79 31.2083L42 37.9983L35.21 31.2083C33.16 29.1583 32 26.3683 32 23.4683C32 20.6283 34.16 18.1683 37 18.0083C39.17 17.8883 41.08 19.0783 42 20.8683Z" stroke="#0067B3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
     <path d="M36 42.9983C36 47.9683 31.97 51.9983 27 51.9983C22.03 51.9983 18 47.9683 18 42.9983C18 38.0283 22.03 33.9983 27 33.9983" stroke="#0067B3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -48,9 +48,9 @@ return(
     )
 }
 //5/6
-export const WorthDoIcons = ()=>{
+export const WorthDoIcons = ({key}: any)=>{
     return(
-        <svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg key={key} width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="34.5" cy="34.5" r="34.5" fill="white"/>
 <path d="M40 45.0024L35 50.0024L30 45.0024" stroke="#0067B3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
 <path d="M20 28.2024C20 23.9424 23.24 20.2524 27.5 20.0124C30.76 19.8324 33.62 21.6224 35 24.3024C36.47 21.4724 39.59 19.6324 43.09 20.0624C47.1 20.5624 50 24.1524 50 28.1924" stroke="#0067B3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -65,8 +65,9 @@ export const WorthDoIcons = ()=>{
 </svg>
 )
 }
-export const WorthFaithIcons = ()=>{
-    return(<svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+//6/6
+export const WorthFaithIcons = ({key}: any)=>{
+    return(<svg key={key} width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="34.5" cy="34.5" r="34.5" fill="white"/>
         <path d="M32.0002 52.0089V45.0089C32.0002 43.7589 31.3802 42.5889 30.3402 41.8989L29.0002 41.0089L27.4102 39.4189C26.6302 38.6389 25.3602 38.6389 24.5802 39.4189L23.9902 40.0089" stroke="#0067B3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M26 52.0089V48.0089L19 41.0089V32.0089C20.67 32.0089 21.95 33.3389 22 35.0089V38.0089L27 43.0089" stroke="#0067B3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

@@ -1,11 +1,12 @@
-import Baner from "@/components/Main/baner/baner";
-import Evants from "@/components/Main/evants/evants";
-import HowWeHelps from "@/components/Main/howWeHelps/howWeHalps";
-import { Worth } from "@/components/Main/worth/worth";
-import { Partners } from "@/components/Main/partners/partners";
-import NeedSupport from "@/components/NeedSupport/NeedSupport";
 import HelpRaiseCash from "@/components/HelpRaiseCash/HelpRaiseCash";
 import JoinVolunteers from "@/components/JoinVolunteers/JoinVolunteers";
+import Baner from "@/components/main/baner/baner";
+import Evants from "@/components/main/evants/evants";
+import HowWeHelps from "@/components/main/howWeHelps/howWeHalps";
+import { Partners } from "@/components/main/partners/partners";
+import { Worth } from "@/components/main/worth/worth";
+import NeedSupport from "@/components/NeedSupport/NeedSupport";
+
 
 export default function MainView() {
     
