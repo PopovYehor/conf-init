@@ -1,7 +1,7 @@
-import { IconsMain, IconsMenuClose, IconsMenuOpen } from "@/components/icons/icons-main/icons-main"
+import { IconsMain, IconsMenuClose, IconsMenuOpen } from "@/components/Icons/icons-main/icons-main"
 import styles from "../header.module.scss"
 import Link from "next/link"
-import { FacebookIcons, InstargamIcons } from "@/components/icons/icons-socials/icons-socials"
+import { FacebookIcons, InstargamIcons } from "@/components/Icons/icons-socials/icons-socials"
 import { useState } from "react"
 import LanguageListComponent from "../language-list/language-list"
 import { IHeaderProps } from "../header"
@@ -16,9 +16,9 @@ export function HeaderMobile({nav}: IHeaderProps){
     return(
         <header className={styles.header}>
         <div className={styles.header_menu_wrap}>
-            <Link href={"/"} className={styles.header_logo_wrap}>
+            <div className={styles.header_logo_wrap}>
                 <IconsMain/>
-            </Link>
+            </div>
             <input type="checkbox" id="menu"/>
             <div className={styles.header_menu} >
                 <label htmlFor="menu" onClick={()=>setOpen(!open)}>
