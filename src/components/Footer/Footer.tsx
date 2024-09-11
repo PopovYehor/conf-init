@@ -1,6 +1,5 @@
 import Link from "next/link";
 import style from "./style.module.scss";
-import { IconsMain } from "@/components/Icons/icons-main/icons-main";
 import { useState, useEffect } from "react";
 import { getApiData } from "@/utils/api-request/getApiData";
 import { apiUrls } from "@/constants/apiUrls/apiUrls";
@@ -8,6 +7,7 @@ import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
 import { fetchContacts } from "@/reducers/contact/contact.reducer";
 import { languages } from "@/language/languages";
 import { FacebookIcons, InstargamIcons } from "../Icons/icons-socials/icons-socials";
+import { IconsMain } from "../Icons/icons-main/icons-main";
 
 export default function Footer() {
   const [apiData, setApiData] = useState<any[]>([]);
@@ -32,7 +32,7 @@ export default function Footer() {
     <footer className={style.footer}>
       <div className={style.wrapper_logos}>
         <div className={style.logo}>
-          <a href="">{IconsMain()}</a>
+          <a href="">{<IconsMain/>}</a>
         </div>
 
         <div className={style.wrapper_icons}>
