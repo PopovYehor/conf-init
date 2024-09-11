@@ -2,10 +2,10 @@ import { IconsMain } from "@/components/icons/icons-main/icons-main"
 import styles from "../header.module.scss"
 import Link from "next/link"
 import { navigation } from "@/constants/navigations/navigations"
-import { IHeaderNavigation, IHeaderProps } from "../header"
-import LanguageListComponent from "../language-list/language-list"
 import { useAppDispatch } from "@/hooks/hooks"
 import { CHANGE_PAGE } from "@/reducers/language/language.reducer"
+import { IHeaderNavigation, IHeaderProps } from "../header"
+import LanguageListComponent from "../language-list/language-list"
 
 export function HeaderDesctop({nav}: IHeaderProps){
 
