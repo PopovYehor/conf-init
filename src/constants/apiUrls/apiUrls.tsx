@@ -1,6 +1,6 @@
 //url
 /* const urlPage = 'http://localhost:3000/' */ // for local use
-const urlPage = 'conf-init-deploy.vercel.app' // for regular use
+const urlPage = 'conf-init.vercel.app' // for regular use
 /* const url = 'http://localhost:5000/' */ // for local use
 const url = 'https://konf-backend.onrender.com/' // for regular use
 //main
