@@ -1,18 +1,5 @@
 import Link from "next/link";
 import style from "./style.module.scss";
-
-import {
-  InstagramIconsDefault,
-  InstagramIconsHover,
-  InstagramIconsPressed,
-  InstagramIconsDisabled,
-  FacebookIconsDefault,
-  FacebookIconsHover,
-  FacebookIconsPresed,
-  FacebookIconsDisabled,
-  InstargamIcons,
-  FacebookIcons,
-} from "@/components/Icons/icons-socials/icons-socials";
 import { IconsMain } from "@/components/Icons/icons-main/icons-main";
 import { useState, useEffect } from "react";
 import { getApiData } from "@/utils/api-request/getApiData";
@@ -20,6 +7,7 @@ import { apiUrls } from "@/constants/apiUrls/apiUrls";
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
 import { fetchContacts } from "@/reducers/contact/contact.reducer";
 import { languages } from "@/language/languages";
+import { FacebookIcons, InstargamIcons } from "../Icons/icons-socials/icons-socials";
 
 export default function Footer() {
   const [apiData, setApiData] = useState<any[]>([]);
