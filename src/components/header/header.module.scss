@@ -7,7 +7,7 @@
     }
     }
 }
-@media screen and (min-width: 1024px) and (max-width: 1439px) {
+@media screen and (max-width: 1439px) and (min-width: 1024px) {
     .nav_wrap{
     gap: 60px;
     .header_nav{
@@ -15,11 +15,11 @@
     }
     }
 }
-@media screen and (min-width: 769px)  and (max-width: 1023px) {
+@media screen and (max-width: 1023px) and (min-width: 769px) {
     .nav_wrap{
     gap: 30px;
     .header_nav{
-        gap: 30px;
+        gap: 15px;
     }
     }
 }
@@ -29,9 +29,21 @@
         background-color: $color_white_background;
         position: relative;
         z-index: 1;
+        display: flex;
+        justify-content: center;
         .header_wrap{
             display: flex;
             justify-content: space-around;
+            @media screen and (min-width: 1240px){
+                width: 1240px;
+            }
+            @media screen and (max-width: 1239px) and (min-width: 1024px) {
+                width: 1000px;
+            }
+            @media screen and (max-width: 1023px) and (min-width: 769px) {
+                width: 100%;
+                margin: 0 20px;
+            }
             .header_logo_wrap{
                 height: 113px;
                 width: 119px;
@@ -51,16 +63,32 @@
                     flex-direction: row;
                     align-items: center;
                     a{
-                        @include h4;
+                        @media screen and (min-width: 1023px){
+                            @include h4;
+                        }
+                        @media screen and (max-width: 1023px) and (min-width: 769px){
+                            @include t2;
+                        }
                         text-decoration: none;
-                        color: $color_text_black
+                        color: $color_text_black;
+                        text-align: center;
                     }
                     a:hover{
-                        @include h4;
+                        @media screen and (min-width: 1023px){
+                            @include h4;
+                        }
+                        @media screen and (max-width: 1023px) and (min-width: 769px){
+                            @include t2;
+                        }
                         color: $color_blue_hover;
                     }
                     a:active{
-                        @include h4;
+                        @media screen and (min-width: 1023px){
+                            @include h4;
+                        }
+                        @media screen and (max-width: 1023px) and (min-width: 769px){
+                            @include t2;
+                        }
                         color: $color_blue_hover;
                     }
                 }

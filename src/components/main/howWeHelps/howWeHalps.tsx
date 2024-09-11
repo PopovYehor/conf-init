@@ -12,7 +12,7 @@ export default function HowWeHelps(){
 
     const mobile = useAppSelector((state)=>state.mobile.mobile)
     const languageSelected = useAppSelector((state)=>state.language.languageSelected)
-    const [help, setHelp] = useState([defaultHelp])
+    const [help, setHelp] = useState<IHelpItem[]>([defaultHelp])
     
     const fetchHelp = async()=>{
         try{
@@ -51,9 +51,9 @@ export default function HowWeHelps(){
                                 : languages[languageSelected].how_help}</h2>
                     </div>
                     <div className={styles.support_description}>
-                        {help.map((item:IHelpItem)=>{
+                        {help.map((item : IHelpItem, i : number)=>{
                             return(
-                                <div className={styles.support_description_item_wrap} key={item._id}>
+                                <div className={styles.support_description_item_wrap} key={item._id+i}>
                                     <HowWeHelpItem titleHelp = {item.titleHelp} image = {item.image}/>
                                 </div>
                             )
