@@ -2,7 +2,7 @@ import axios from 'axios'
 import styles from './historyDescription.module.scss'
 import { apiUrls, languageParameter } from '@/constants/apiUrls/apiUrls'
 import { useAppSelector } from '@/hooks/hooks';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IHistoryDescriptionItem } from '@/interfaces/about-us/about-us.interface';
 import { historyDescriptionItemDefault } from '@/constants/aboutUsItemsDefault/aboutUsItemsDefault';
 import { HistoryDescriptionItem } from './HistoryDescriptionItem/historyDescriptionItem';

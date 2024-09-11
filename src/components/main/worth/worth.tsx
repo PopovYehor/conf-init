@@ -5,7 +5,7 @@ import { useAppSelector } from "@/hooks/hooks"
 import { useEffect, useState } from "react"
 import { defaultWorth } from "@/constants/mainItemsDefault/mainItemsDefault"
 import { IWorthItem } from "@/interfaces/main/main.interface"
-import { WorthDefenseIcons, WorthDignityIcons, WorthDiversityIcons, WorthDoIcons, WorthFaithIcons, WorthHelpIcons } from "@/components/Icons/icons-worth/icons-worth"
+import { WorthDefenseIcons, WorthDignityIcons, WorthDiversityIcons, WorthDoIcons, WorthFaithIcons, WorthHelpIcons } from "@/components/icons/icons-worth/icons-worth"
 import { languages } from "@/language/languages"
 
 export function Worth(){

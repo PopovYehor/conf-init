@@ -4,9 +4,9 @@ import { useEffect, useState } from "react"
 import { defaultHelp } from "@/constants/mainItemsDefault/mainItemsDefault"
 import axios from "axios"
 import { apiUrls, languageParameter } from "@/constants/apiUrls/apiUrls"
-import { HowWeHelpItem } from './howWeHelpItem/howWeHelpItem';
 import { languages } from "@/language/languages"
 import { IHelpItem } from "@/interfaces/main/main.interface"
+import { HowWeHelpItem } from "./howWeHelpItem/howWeHelpItem"
 
 export default function HowWeHelps(){
 

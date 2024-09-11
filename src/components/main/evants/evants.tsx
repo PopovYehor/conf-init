@@ -2,13 +2,13 @@ import { useAppSelector } from "@/hooks/hooks"
 import styles from "./evants.module.scss"
 import { languages } from "@/language/languages"
 import { useEffect, useRef, useState } from "react"
-import { EvantItem } from "./evantItem/evantItem"
 import axios from "axios"
 import { defaultEvant } from "@/constants/mainItemsDefault/mainItemsDefault"
-import { Pagination } from "./pagination/pagination"
-import { EventBaner } from "./event-baner/event-baner"
 import { apiUrls, languageParameter } from "@/constants/apiUrls/apiUrls"
 import { IEventItem } from "@/interfaces/main/main.interface"
+import { EvantItem } from "./evantItem/evantItem"
+import { EventBaner } from "./event-baner/event-baner"
+import { Pagination } from "./pagination/pagination"
 
 export interface IPagination{
     limit: number,
@@ -46,7 +46,7 @@ export default function Evants(){
             }
         }
         fetchEvents()
-    },[languageSelected])
+    },[languageSelected, disconect])
 
     //set list for next page
     const nextPage = ()=>{

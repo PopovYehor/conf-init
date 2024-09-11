@@ -1,4 +1,4 @@
-import { IconsListClose, IconsListOpen, IconsListSelected } from "@/components/Icons/icons-language/icons-language"
+import { IconsListClose, IconsListOpen, IconsListSelected } from "@/components/icons/icons-language/icons-language"
 import styles from "./language-list-selecter.module.scss"
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks"
 import { CHANGE_LANGUAGE, SET_LANGUAGE_SWITCH } from "@/reducers/language/language.reducer"
