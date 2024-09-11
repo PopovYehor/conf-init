@@ -1,4 +1,4 @@
-import { IconsMain } from "@/components/Icons/icons-main/icons-main"
+import { IconsMain } from "@/components/icons/icons-main/icons-main"
 import styles from "../header.module.scss"
 import Link from "next/link"
 import { navigation } from "@/constants/navigations/navigations"
