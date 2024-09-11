@@ -46,7 +46,7 @@ export default function Evants(){
             }
         }
         fetchEvents()
-    },[languageSelected])
+    },[languageSelected, disconect])
 
     //set list for next page
     const nextPage = ()=>{
