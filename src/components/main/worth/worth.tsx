@@ -12,25 +12,29 @@ export function Worth(){
     const languageSelected = useAppSelector((state)=>state.language.languageSelected)
     const [worth, setWorth] = useState<IWorthItem[]>([defaultWorth])
 
-    const worthIcons = [<WorthHelpIcons/>, <WorthDiversityIcons/>, <WorthDignityIcons/>, <WorthDefenseIcons/>,  <WorthDoIcons/>, <WorthFaithIcons/>]
-
-    const fetchWorth = async ()=>{
-        try{
-            const response = await axios.get(apiUrls.worthUrl+languageParameter+languageSelected)
-
-            const {data} = response
-            const copyData = data
-            copyData.map((item: IWorthItem, i: number)=>{
-                item.icon = worthIcons[i]
-            })
-            setWorth(copyData)
-        }catch{
-            setWorth([defaultWorth])
-        }
-        
-    }
-
     useEffect(()=>{
+        const fetchWorth = async ()=>{
+            try{
+                const response = await axios.get(apiUrls.worthUrl+languageParameter+languageSelected)
+    
+                const {data} = response
+                const copyData = data
+                copyData.map((item: IWorthItem, i: number)=>{
+                    const worthIcons = [
+                        <WorthHelpIcons key={i}/>, 
+                        <WorthDiversityIcons key={i}/>,
+                        <WorthDignityIcons key={i}/>,
+                        <WorthDefenseIcons key={i}/>,
+                        <WorthDoIcons key={i}/>,
+                        <WorthFaithIcons key={i}/>]
+                    return item.icon = worthIcons[i]
+                    
+                })
+                setWorth(copyData)
+            }catch{
+                setWorth([defaultWorth])
+            }
+        }
         fetchWorth()
     },[languageSelected])
 

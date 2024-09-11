@@ -17,7 +17,7 @@ export default function Baner(){
 
     useEffect(()=>{
         dispatch(fetchMain(languageSelected))
-    },[languageSelected])
+    },[languageSelected, dispatch])
 
     return(
         <>

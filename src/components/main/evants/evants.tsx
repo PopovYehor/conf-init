@@ -32,21 +32,19 @@ export default function Evants(){
     }
 
     const [pag, setPag] = useState<IPagination>(pagination)
-
     // get events
-    const fetchEvents = async ()=>{
-        try{
-            const responce = await axios.get(apiUrls.eventsUrl+languageParameter+languageSelected)
-            setEvents(responce.data)
-            if (disconect) setDisconect(false)
-        }catch{
-            setEvents([defaultEvant])
-            setDisconect(true)
-        }
-    }
-    //set image and events
+    
     useEffect(()=>{
-        
+        const fetchEvents = async ()=>{
+            try{
+                const responce = await axios.get(apiUrls.eventsUrl+languageParameter+languageSelected)
+                setEvents(responce.data)
+                if (disconect) setDisconect(false)
+            }catch{
+                setEvents([defaultEvant])
+                setDisconect(true)
+            }
+        }
         fetchEvents()
     },[languageSelected])
 
@@ -87,7 +85,7 @@ export default function Evants(){
     // set default list
     useEffect(()=>{
         setViewEvents(events.slice((pag.offset-pag.limit), pag.offset))
-    },[events])
+    },[events, pag.offset, pag.limit])
 
     return(
         <>
@@ -98,7 +96,7 @@ export default function Evants(){
                 </div>
                 {viewEvents.length != 0 &&
                 <>
-                    {viewEvents.length > 0 && viewEvents[0]._id !== "0" && viewEvents.map((item, i: any)=>{
+                    {viewEvents.length > 0 && viewEvents[0]._id !== "0" && viewEvents.map((item : IEventItem, i: number)=>{
                         return(
                             <div key={i}>
                                 <EvantItem 
@@ -107,6 +105,7 @@ export default function Evants(){
                                 adressEvent={item.adressEvent}
                                 description={item.description}
                                 titleEvent={item.titleEvent}
+                                linkEvent={item.linkEvent}
                                 />
                             </div>
                         )

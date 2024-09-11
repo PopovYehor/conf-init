@@ -14,17 +14,17 @@ export default function HowWeHelps(){
     const languageSelected = useAppSelector((state)=>state.language.languageSelected)
     const [help, setHelp] = useState<IHelpItem[]>([defaultHelp])
     
-    const fetchHelp = async()=>{
-        try{
-            const responce = await axios.get(apiUrls.helpUrl+languageParameter+languageSelected)
-            setHelp(responce.data)
-        }catch{
-            setHelp([defaultHelp, defaultHelp, defaultHelp, defaultHelp, defaultHelp])
-        }
-        
-    }
+    
 
     useEffect(()=>{
+        const fetchHelp = async()=>{
+            try{
+                const responce = await axios.get(apiUrls.helpUrl+languageParameter+languageSelected)
+                setHelp(responce.data)
+            }catch{
+                setHelp([defaultHelp, defaultHelp, defaultHelp, defaultHelp, defaultHelp])
+            }
+        }
         fetchHelp()
     },[languageSelected])
     

@@ -1,6 +1,7 @@
 //url
 const urlPage = 'http://localhost:3000/'
-const url = 'http://localhost:5000/'
+const url = 'http://localhost:5000/' // for local use
+/* const url = 'https://konf-backend.onrender.com/' */ // for regular use
 //main
 const main = "main"
 const  worth = "worth"

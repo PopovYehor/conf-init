@@ -71,7 +71,7 @@ export function Pagination({event, page, nextPage, previousPage, setPage}: IPagi
         //default list setting
         const viewListArr = arr
         setViewList(viewListArr.slice(0,3))
-    },[event])
+    },[event, list.length, next, prev])
 
     //check view buttons
     useEffect(()=>{
@@ -87,7 +87,7 @@ export function Pagination({event, page, nextPage, previousPage, setPage}: IPagi
         if(active !== list.length && next === false){
             setNext(true)
         }
-    }, [active])
+    }, [active, list.length, next, prev])
 
     return(
         <>

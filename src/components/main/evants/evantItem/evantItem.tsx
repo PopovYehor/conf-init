@@ -10,14 +10,23 @@ import { defaultImage } from "@/reducers/image/image.reducer"
 import { getCurrentImage } from "@/hooks/image"
 import ButtonsDefault from "@/components/Buttons/ButtonsDefault/ButtonsDefault"
 
+interface IEventItemProps{
+    image: IImageItem
+    dataEvent: string
+    adressEvent: string
+    description: string
+    titleEvent: string
+    linkEvent: string | undefined
+}
+
 export function EvantItem({
     image,
     dataEvent,
     adressEvent,
     description,
     titleEvent,
-    linkEvent,
-    }: IEventItem){
+    linkEvent
+    }: IEventItemProps){
 
     const languageSelected = useAppSelector((state)=>state.language.languageSelected)
     const images = useAppSelector((state)=>state.image.image)
@@ -39,7 +48,7 @@ export function EvantItem({
     
     useEffect(()=>{
         getCurrentImage(image, images, setUrl)
-    },[])
+    },[image, images])
 
     useEffect(()=>{
         readMoreHandler()
@@ -49,7 +58,7 @@ export function EvantItem({
     return(
         <section className={styles.evant_item_wrap}>
             <div className={styles.evant_item_img}>
-                <img src={url}/>
+                <img src={url} alt={description}/>
             </div>
             <div className={styles.evant_item_container}>
                 <div className={styles.evant_item_date}>

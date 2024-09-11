@@ -52,7 +52,7 @@ export default function Layout ({ children }: ILayout) {
     if (imageStatus === 'idle'){
       dispatch(fetchImage())
     }
-  },[])
+  },[dispatch, imageStatus, mobileCheckStatus])
 
   return (
     <>
