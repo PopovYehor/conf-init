@@ -1,9 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    i18n: {
-    locales: ['en', 'ua'],
-    defaultLocale: 'ua',
+  i18n: {
+    locales: ["en", "ua"],
+    defaultLocale: "ua",
     localeDetection: false,
+  },
+  images: {
+    domains: ["res.cloudinary.com"],
   },
 };
 

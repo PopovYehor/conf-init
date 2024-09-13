@@ -1,49 +1,65 @@
 import style from "./desktop.module.scss";
 import Image from "next/image";
-import photo from "../photo.png";
+
+import { apiUrls, languageParameter } from "@/constants/apiUrls/apiUrls";
+import { useAppSelector } from "@/hooks/hooks";
+import axios from "axios";
+import { IImageItem } from "@/interfaces/image/image.interfaces";
+import { useEffect, useState } from "react";
+import { defaultAboutUsDescription } from "@/constants/mainItemsDefault/mainItemsDefault";
 
 export default function Desktop() {
+
+    interface IAboutUsDescription {
+      _id: string;
+      titleAbout: string;
+      description: string;
+      description1: string;
+      description2: string;
+      description3: string;
+      image: IImageItem;
+      language: string;
+      __v: number;
+  }
+  
+  const [apiData, setApiData] = useState<IAboutUsDescription[]>([
+    defaultAboutUsDescription,
+  ]);
+  const languageSelected = useAppSelector(
+    (state) => state.language.languageSelected
+  );
+
+    const fetchDescription = async () => {
+      try {
+        const response = await axios.get(
+          apiUrls.aboutUs + languageParameter + languageSelected
+        );
+        const { data } = response;
+
+        setApiData(data);
+      } catch {
+        setApiData([defaultAboutUsDescription]);
+      }
+    };
+
+  useEffect(() => {
+    fetchDescription();
+  }, [languageSelected]);
 
   return (
     <>
           <section className={style.wrapper}>
             <div className={style.image_wrapper}>
-              <Image src={photo} alt="" className={style.image}></Image>
+              <Image src={apiData[0].image.url} alt="marta" className={style.image} width={609} height={777}></Image>
             </div>
             <div className={style.text_wrapper}>
               <div className={style.title_description}>
-                <h2>
-                  Благодійна організація «Конференція Блаженної Марти Вєцкої»
-                </h2>
+                <h2>{apiData[0].titleAbout }</h2>
               </div>
-              <h6>
-                Є українською гілкою Товариства св. Вікентія де Поля (St Vincent
-                de Paul Society) - міжнародної християнської волонтерської
-                спільноти.
-              </h6>
-              <p>
-                Товариство св. Вікентія де Поля (історична назва – Конференція),
-                було створено групою студентів на чолі з Бл. Фредеріком Озанамом
-                в 1833 році в Франції і головною метою якого було допомагати
-                бідним та обездоленим людям на вулицях. На даний час товариство
-                об`єднує майже 800 000 волонтерів по всьому світу для надання
-                практичної допомоги людям, які її потребують. В світі функціонує
-                близько 40 000 конференцій в 120 країнах.
-              </p>
-              <p>
-                В Україні – волонтери Товариства працюють в Києві, Харкові,
-                Снятині та інших містах. Наша організація названа на честь
-                однієї з Дочок Милосердя - Марти Вєцкої, яка віддано та
-                безумовно служила людям в лікарні Снятина Івано-Франківської
-                області.
-              </p>
-              <p>
-                БО «Конференція Блаженної Марти Вєцкої» є частиною міжнародної
-                мережі Вікентійської родини, яка об’єднує організації по всьому
-                світу, основне завдання яких – благодійна діяльність для
-                найбільш потребуючих з безумовним дотримання вікентійських
-                цінностей.
-              </p>
+              <h6>{apiData[0].description}</h6>
+              <p>{apiData[0].description1}</p>
+              <p>{apiData[0].description2}</p>
+              <p>{apiData[0].description3}</p>
             </div>
           </section>
         </>

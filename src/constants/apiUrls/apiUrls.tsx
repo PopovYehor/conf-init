@@ -13,7 +13,8 @@ const  partner = "partner"
 const  help = "help"
 //_________
 //about-us
-const sectionAbout = 'sectionabout'
+const sectionAbout = 'sectionabout';
+const aboutUs = "about-us";
 //______________
 //language parameter 
 export const languageParameter = "?language="
@@ -31,6 +32,7 @@ export const apiUrls = {
   helpUrl: url+help,
   //_______________
   //about
+  aboutUs: url+aboutUs,
   sectionAbout: url+sectionAbout,
   //__________
 };

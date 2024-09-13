@@ -12,12 +12,12 @@ export interface IDBDefault extends IDefaultData{
 }
 
 export interface IContactsItem extends IDBDefault {
-    adressContEN: string;
-    adressContUA: string;
-    phoneContEN: string;
-    phoneContUA: string;
-    titleContEN: string
-    titleContUA: string;
+    adressCont: string;
+    
+    phoneCont: string;
+    
+    titleCont: string
+    
 }
 
 export interface IEventItem extends IDBDefault{

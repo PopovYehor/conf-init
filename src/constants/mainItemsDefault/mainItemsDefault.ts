@@ -10,12 +10,25 @@ export const defaultContacts = {
     language: "ua"
 }
 
+
 export const defaultImage: IImageItem = {
     _id: "",
     url: "",
     description: "",
     __v: 0
 }
+
+export const defaultAboutUsDescription = {
+  _id: "1",
+  titleAbout: "",
+  description: "",
+  description1: "",
+  description2: "",
+  description3: "",
+  image: defaultImage,
+  language: "",
+  __v: 0,
+};
 
 export const defaultEvant: IEventItem = {
     _id: "0",
