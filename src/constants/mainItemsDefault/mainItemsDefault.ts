@@ -4,12 +4,10 @@ import { IEventItem, IHelpItem, IPartnerItem, IWorthItem } from "@/interfaces/ma
 export const defaultContacts = {
     _id: "1",
     __v: 0,
-    adressContEN: "",
-    adressContUA: "",
-    phoneContEN: "",
-    phoneContUA: "",
-    titleContEN: "",
-    titleContUA: "",
+    adressCont: "",
+    phoneCont: "",
+    titleCont: "",
+    language: "ua"
 }
 
 export const defaultImage: IImageItem = {
