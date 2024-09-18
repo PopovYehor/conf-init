@@ -15,17 +15,17 @@
             text-align: center;
 
             h2{
-                @include h3;
+                @include h2;
                 margin: 0;
             }
         }
 
         h6{
-            @include t2;
+            @include t1;
             margin: 12px 0;
         }
         p{
-            @include t3;
+            @include t2;
             margin: 0 0 8px;
         }
     }

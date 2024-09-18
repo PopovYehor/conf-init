@@ -1,0 +1,16 @@
+@import "../../../../styles/var.scss";
+
+.member{
+    h1{
+        @include h3;
+        margin: 32px 0 12px;
+    }
+    h3{
+        @include t2;
+        margin-bottom: 20px;
+    }
+    p{
+        @include t2;
+        margin: 0;
+    }
+}

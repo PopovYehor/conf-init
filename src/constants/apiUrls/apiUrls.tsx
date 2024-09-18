@@ -15,6 +15,7 @@ const  help = "help"
 //about-us
 const sectionAbout = 'sectionabout';
 const aboutUs = "about-us";
+const member = "member";
 //______________
 //language parameter 
 export const languageParameter = "?language="
@@ -23,17 +24,18 @@ export const apiUrls = {
   urlPage: urlPage,
   url: url,
   //main
-  mainUrl: url+main,
-  worthUrl: url+worth,
-  eventsUrl: url+events,
-  imageUrl: url+image,
-  contactUrl: url+contact,
-  partnerUrl: url+partner,
-  helpUrl: url+help,
+  mainUrl: url + main,
+  worthUrl: url + worth,
+  eventsUrl: url + events,
+  imageUrl: url + image,
+  contactUrl: url + contact,
+  partnerUrl: url + partner,
+  helpUrl: url + help,
   //_______________
   //about
-  aboutUs: url+aboutUs,
-  sectionAbout: url+sectionAbout,
+  aboutUs: url + aboutUs,
+  sectionAbout: url + sectionAbout,
+  member: url + member,
   //__________
 };
 export const googleForm = 'https://docs.google.com/forms/d/e/1FAIpQLSd1xaeCYoSMucIhInHujyJtK95an2ZMGh5sPRQuJaPf1JHqng/viewform'

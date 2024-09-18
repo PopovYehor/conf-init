@@ -1,5 +1,6 @@
 import { HistoryDescription } from "@/components/AboutUs/HistoryDescription/historyDescription";
 import SecondPageDescription from "@/components/AboutUs/SecondPageDescription/SecondPageDescription";
+import TeemSlider from "@/components/AboutUs/TeemSlider/TeemSlider";
 import HelpRaiseCash from "@/components/HelpRaiseCash/HelpRaiseCash";
 import JoinVolunteers from "@/components/JoinVolunteers/JoinVolunteers";
 import TitleForOtherPages from "@/components/TitlePages/TitleForOtherPages";
@@ -14,7 +15,8 @@ export default function AboutUsView(){
         <>
             <TitleForOtherPages text={languages[languageSelected].about} />
             <SecondPageDescription/>
-            <HistoryDescription/>
+            <HistoryDescription />
+            <TeemSlider/>
             <HelpRaiseCash/>
             <JoinVolunteers/>
         </>
