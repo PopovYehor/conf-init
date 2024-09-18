@@ -28,7 +28,6 @@ export function Worth(){
                         <WorthDoIcons key={i}/>,
                         <WorthFaithIcons key={i}/>]
                     return item.icon = worthIcons[i]
-                    
                 })
                 setWorth(copyData)
             }catch{
