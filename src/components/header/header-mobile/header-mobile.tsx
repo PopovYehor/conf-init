@@ -1,12 +1,12 @@
-import { IconsMain, IconsMenuClose, IconsMenuOpen } from "@/components/Icons/icons-main/icons-main"
 import styles from "../header.module.scss"
 import Link from "next/link"
-import { FacebookIcons, InstargamIcons } from "@/components/Icons/icons-socials/icons-socials"
 import { useState } from "react"
 import LanguageListComponent from "../language-list/language-list"
 import { IHeaderProps } from "../header"
 import { useAppDispatch } from "@/hooks/hooks"
 import { CHANGE_PAGE } from "@/reducers/language/language.reducer"
+import { IconsMain, IconsMenuClose, IconsMenuOpen } from "@/components/icons/icons-main/icons-main"
+import { FacebookIcons, InstargamIcons } from "@/components/icons/icons-socials/icons-socials"
 
 export function HeaderMobile({nav}: IHeaderProps){
 

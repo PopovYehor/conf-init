@@ -40,8 +40,15 @@ export default function Layout ({ children }: ILayout) {
     })
 
     //check page
-    const page =  window.location.href.replace(apiUrls.urlPage+langLocation, '')
-    dispatch(CHANGE_PAGE(page))
+    locales.forEach((local)=>{
+      if (local == langLocation){
+        const page =  window.location.href.replace(apiUrls.urlPage+langLocation, '')
+        dispatch(CHANGE_PAGE(page))
+      }else{
+        const page =  window.location.href.replace(apiUrls.urlPage, '')
+        dispatch(CHANGE_PAGE(page))
+      }
+    })
 
     // mobile check
     if (mobileCheckStatus === null){

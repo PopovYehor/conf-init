@@ -33,7 +33,7 @@
         justify-content: center;
         .header_wrap{
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             @media screen and (min-width: 1240px){
                 width: 1240px;
             }
@@ -42,7 +42,7 @@
             }
             @media screen and (max-width: 1023px) and (min-width: 769px) {
                 width: 100%;
-                margin: 0 20px;
+                margin: 0 100px;
             }
             .header_logo_wrap{
                 height: 113px;
