@@ -6,10 +6,40 @@ import axios from "axios";
 import { IImageItem } from "@/interfaces/image/image.interfaces";
 import { useEffect, useState } from "react";
 import EmployeeItem from "./EmployeeItem/EmployeeItem";
+import { defaultTeemSlider } from "@/constants/mainItemsDefault/mainItemsDefault";
 
 export default function TeemSlider() {
+  interface ITeemSlider {
+    _id: string;
+    name: string;
+    role: string;
+    description: string;
+    image: IImageItem;
+    language: string;
+    __v: number;
+  }
 
+  const [apiData, setApiData] = useState<ITeemSlider[]>([defaultTeemSlider]);
+  const languageSelected = useAppSelector(
+      (state) => state.language.languageSelected
+  );
+  
+  const fetchSlider = async () => {
+    try {
+      const response = await axios.get(
+        apiUrls.member + languageParameter + languageSelected
+      );
+      const { data } = response;
+      setApiData(data);
+    } catch {
+      setApiData([defaultTeemSlider]);
+    }
+  };
 
+  useEffect(() => {
+    fetchSlider();
+  }, [languageSelected]);
+  
     return (
       <section className={style.wrapper}>
         <h1>Наша Команда</h1>
@@ -17,17 +47,21 @@ export default function TeemSlider() {
           Якщо ви бажаєте приєднатися до нашої команди, зв`яжіться з нами поштою
         </p>
         <div className={style.slider_wrapper}>
-          <div>
-            <EmployeeItem />
-          </div>
-          <div>
-            <EmployeeItem />
-          </div>
-          <div>
-            <EmployeeItem />
-          </div>
-            </div>
-            <div>. . .</div>
+          {apiData.map((member) => (
+            <>
+              <div>
+                <EmployeeItem
+                  key={member._id}
+                  img={member.image.url}
+                  name={member.name}
+                  role={member.role}
+                  desc={member.description}
+                />
+              </div>
+            </>
+          ))}
+        </div>
+        <div>. . .</div>
       </section>
     );
 }
