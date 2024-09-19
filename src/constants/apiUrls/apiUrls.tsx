@@ -17,6 +17,10 @@ const sectionAbout = 'sectionabout';
 const aboutUs = "about-us";
 const member = "member";
 //______________
+//our projects
+const ourProjects = 'ourproject'
+const project = 'project'
+//______________
 //language parameter 
 export const languageParameter = "?language="
 
@@ -36,6 +40,10 @@ export const apiUrls = {
   aboutUs: url + aboutUs,
   sectionAbout: url + sectionAbout,
   member: url + member,
+  //__________
+  //our projects
+  ourProjects: url+ourProjects,
+  projects: url+project
   //__________
 };
 export const googleForm = 'https://docs.google.com/forms/d/e/1FAIpQLSd1xaeCYoSMucIhInHujyJtK95an2ZMGh5sPRQuJaPf1JHqng/viewform'

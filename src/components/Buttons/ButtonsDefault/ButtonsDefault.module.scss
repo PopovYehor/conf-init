@@ -3,6 +3,7 @@
 .button{
     @include button_default;
     text-decoration: none;
+    text-align: center;
     cursor: pointer;
     &:hover{
         @include button_hover;

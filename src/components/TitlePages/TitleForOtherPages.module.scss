@@ -1,30 +1,46 @@
 @import "../../styles/var.scss";
 
-.wrapper{
-    height: 77px;
-    background-color: $color_accent;
-    padding: 48px 100px;
-    border-radius: 0px 0px 20px 20px;
-
-    .title{
-        margin: 0;
-        @include h1_bold;
-        color: white;
+@media screen and (min-width: 769px){
+    .container{
+        height: 77px;
+        background-color: $color_accent;
+        border-radius: 0px 0px 20px 20px;
+        padding: 48px 100px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        .wrapper{
+            @media screen and (min-width: 1240px){
+                width: 1240px;
+            }
+            @media screen and (max-width: 1239px) and (min-width: 1024px) {
+                width: 1000px;
+            }
+            @media screen and (max-width: 1023px) and (min-width: 769px) {
+                width: 100%;
+            }
+            .title{
+                margin: 0;
+                @include h1_bold;
+                color: $color_white_background;
+            }
+        }
     }
 }
 
 @media (max-width: 768px) {
-    .wrapper{
-        margin-top: 14px;
+    .container{
         height: 39px;
         background-color: $color_accent;
         padding: 48px 20px;
         border-radius: 0px 0px 20px 20px;
-
-        .title{
-            margin: 0;
-            @include h3_bold;
-            color: white;
+        .wrapper{
+            margin-top: 14px;
+            .title{
+                margin: 0;
+                @include h3_bold;
+                color: $color_white_background;
+            }
         }
     }
 }
