@@ -1,3 +1,6 @@
+import HelpRaiseCash from "@/components/HelpRaiseCash/HelpRaiseCash";
+import JoinVolunteers from "@/components/JoinVolunteers/JoinVolunteers";
+import NeedSupport from "@/components/NeedSupport/NeedSupport";
 import OurProjectsList from "@/components/OurProjects/our-projects-list/our-projects-list";
 import OurProjectsGoal from "@/components/OurProjects/out-projects-goal/our-projects-goal";
 import TitleForOtherPages from "@/components/TitlePages/TitleForOtherPages";
@@ -13,6 +16,9 @@ export default function OurProjectsView(){
         <TitleForOtherPages text={languages[languageSelected].project}/>
         <OurProjectsGoal/>
         <OurProjectsList/>
+        <NeedSupport/>
+        <HelpRaiseCash/>
+        <JoinVolunteers/>
         </>
     )
 }
