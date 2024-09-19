@@ -48,6 +48,12 @@ export const languages: any = {
     main_page_button_volunteers: "ДОЛУЧИТИСЬ",
     //_____________________
 
+    //projects
+    where: "Де: ",
+    when: "Коли: ",
+    join_volunteers: "Долучитись як волонтер",
+    //_________________
+
     //partners
     partners: "Наші партнери",
     //_____________________________
@@ -103,6 +109,12 @@ export const languages: any = {
       "To do this, you need to register on a special volunteer platform, which constantly involves volunteers to work and various useful fees",
     main_page_button_volunteers: "JOIN",
     //_____________________
+
+    //projects
+    where: "Where: ",
+    when: "When: ",
+    join_volunteers: "Join as a volunteer",
+    //_________________
 
     //partners
     partners: "Our partners",
