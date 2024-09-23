@@ -55,6 +55,7 @@ export const languages: any = {
     //footer
     menu: "Меню",
     contacts: "Контакти",
+    docs: "Документи",
     privacy_policy: "Політика конфіденційності",
     offer: "Публічна оферта",
   },
@@ -111,6 +112,7 @@ export const languages: any = {
     //footer
     menu: "Menu",
     contacts: "Contacts",
+    docs: "Documents",
     privacy_policy: "Privacy policy",
     offer: "Public offer",
   },
