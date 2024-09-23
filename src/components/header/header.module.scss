@@ -7,11 +7,19 @@
     }
     }
 }
-@media screen and (max-width: 1439px) and (min-width: 1024px) {
+@media screen and (max-width: 1439px) and (min-width: 1240px) {
     .nav_wrap{
     gap: 60px;
     .header_nav{
         gap: 60px;
+    }
+    }
+}
+@media screen and (max-width: 1240px) and (min-width: 1024px) {
+    .nav_wrap{
+    gap: 30px;
+    .header_nav{
+        gap: 30px;
     }
     }
 }
@@ -36,13 +44,15 @@
             justify-content: space-between;
             @media screen and (min-width: 1240px){
                 width: 1240px;
+                margin: 0 100px 0 90px;
             }
             @media screen and (max-width: 1239px) and (min-width: 1024px) {
                 width: 1000px;
+                margin: 0 100px 0 90px;
             }
             @media screen and (max-width: 1023px) and (min-width: 769px) {
                 width: 100%;
-                margin: 0 100px;
+                margin: 0 100px 0 90px;
             }
             .header_logo_wrap{
                 height: 113px;
@@ -64,11 +74,14 @@
                     flex-direction: row;
                     align-items: center;
                     a{
-                        @media screen and (min-width: 1023px){
+                        @media screen and (min-width: 1240px){
                             @include h4;
                         }
-                        @media screen and (max-width: 1023px) and (min-width: 769px){
+                        @media screen and (max-width: 1239px) and (min-width: 1024px){
                             @include t2;
+                        }
+                        @media screen and (max-width: 1023px) and (min-width: 769px){
+                            @include t3;
                         }
                         text-decoration: none;
                         color: $color_text_black;
@@ -81,7 +94,8 @@
                         @media screen and (max-width: 1023px) and (min-width: 769px){
                             @include t2;
                         }
-                        color: $color_blue_hover;
+                        color: $color_blue_hover !important;
+                        text-decoration: underline !important;
                     }
                     a:active{
                         @media screen and (min-width: 1023px){
@@ -91,6 +105,7 @@
                             @include t2;
                         }
                         color: $color_blue_hover;
+                        text-decoration: underline !important;
                     }
                 }
                 .header_language_wrap{
@@ -121,6 +136,7 @@
                 z-index: 2;
                 display: flex;
                 align-items: center;
+                margin-left: 10px;
                 svg{
                     width: 80px;
                     height: 80px;
