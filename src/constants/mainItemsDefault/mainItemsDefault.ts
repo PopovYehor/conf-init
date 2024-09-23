@@ -34,6 +34,16 @@ export const defaultAboutUsDescription = {
   __v: 0,
 };
 
+export const defaultTeemSlider = {
+    _id: "0",
+    name: "",
+    role: "",
+    description: "",
+    image: defaultImage,
+    language: 'ua',
+    __v: 0,
+}
+
 export const defaultEvant: IEventItem = {
     _id: "0",
     __v: 0,

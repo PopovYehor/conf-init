@@ -1,14 +1,17 @@
 import Image from "next/image";
 import style from "./EmployeeItem.module.scss";
+import { IImageItem } from "@/interfaces/image/image.interfaces";
 
 
-export default function EmployeeItem() {
+export default function EmployeeItem({ img, name, role, desc }:
+    {img:string, name:string, role:string, desc:string}
+) {
     return (
         <div className={style.member}>
-            <Image src="http://res.cloudinary.com/duz9hwe05/image/upload/v1723376798/ezmozrbvwh6dckkh4iru.png" alt="" width={369.5} height={468} className={style.img}></Image>
-            <h1>NAME</h1>
-            <h3>ROLE</h3>
-            <p>description</p>
+            <Image src={img} alt="" width={369.5} height={468} className={style.img}></Image>
+            <h1>{name}</h1>
+            <h3>{role}</h3>
+            <p>{desc}</p>
         </div>
     )
 }
