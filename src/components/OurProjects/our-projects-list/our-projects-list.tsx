@@ -23,7 +23,7 @@ export default function OurProjectsList(){
             }
         }
         fetchProjectList()
-    }, [])
+    }, [languageSelected])
 
     return(
         <>

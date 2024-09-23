@@ -1,8 +1,9 @@
 //url
-/* const urlPage = 'http://localhost:3000/'  */// for local use
-const urlPage = 'conf-init.vercel.app' // for regular use
-/* const url = 'http://localhost:5000/' */ // for local use
-const url = 'https://konf-backend.onrender.com/' // for regular use
+const urlPage = 'http://localhost:3000/' // for local use
+/* const urlPage = 'conf-init.vercel.app' */ // for regular use
+const url = 'http://localhost:5000/' // for local use
+/* const url = 'https://konf-backend.onrender.com/' */ // for regular use
+
 //main
 const main = "main"
 const  worth = "worth"
@@ -45,8 +46,13 @@ export const apiUrls = {
   ourProjects: url+ourProjects,
   projects: url+project
   //__________
+  //our projects
+  ourProjects: url+ourProjects,
+  projects: url+project
+  //__________
 };
 export const googleForm = 'https://docs.google.com/forms/d/e/1FAIpQLSd1xaeCYoSMucIhInHujyJtK95an2ZMGh5sPRQuJaPf1JHqng/viewform'
+export const supportUrl = 'https://www.liqpay.ua/'
 export const facebookUrl = 'https://www.facebook.com/profile.php?id=61559370821121'
 export const supportUrl = 'https://www.liqpay.ua/'
 export const instagramUrl = 'https://www.instagram.com/conf.bmv/'
