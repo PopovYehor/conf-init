@@ -39,9 +39,9 @@ export function ProjectListItem({projectItem}:IProjectListItemProps){
                         <p>{projectItem.descriptionBold}</p>
                     </div>
                     <div className={styles.project_item_list}>
-                        {projectItem.description.map((item)=>{
+                        {projectItem.description.map((item, i)=>{
                             return(
-                                <div className={styles.project_item_list_wrap} key={item}>
+                                <div className={styles.project_item_list_wrap} key={item+i}>
                                     <div className={styles.icons}>
                                         <IconsDone/>
                                     </div>
