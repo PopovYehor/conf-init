@@ -8,7 +8,7 @@ export default function EmployeeItem({ img, name, role, desc }:
 ) {
     return (
         <div className={style.member}>
-            <Image src={img} alt="" width={369.5} height={468} className={style.img}></Image>
+            <Image src={img} alt="" width={340} height={448} className={style.img}></Image>
             <h1>{name}</h1>
             <h3>{role}</h3>
             <p>{desc}</p>

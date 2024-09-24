@@ -20,11 +20,17 @@
             @include t1;
         }
         .slider_wrapper{
-            display: flex;
             margin: 64px 0;
             border: 1px solid black;
-            max-width: 1240px;
-            height: 747px;
-            gap: 20px;
+            max-width: 1063px;
+            overflow: hidden;
+            
+            .slider{
+                display: flex;
+                height: 747px;
+                gap: 22px;
+                width: 3720px;
+                transition: transform 1s ease;
+            }
         }
 }

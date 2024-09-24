@@ -23,6 +23,8 @@ export default function TeemSlider() {
   const languageSelected = useAppSelector(
       (state) => state.language.languageSelected
   );
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slidesToShow = 3;
   
   const fetchSlider = async () => {
     try {
@@ -39,6 +41,22 @@ export default function TeemSlider() {
   useEffect(() => {
     fetchSlider();
   }, [languageSelected]);
+
+
+ useEffect(() => {
+   const slideInterval = setInterval(() => {
+     setCurrentSlide(
+       (prev) => (prev + 1) % Math.ceil(apiData.length / slidesToShow)
+     );
+   }, 3000); // Перемикання кожні 3 секунди
+
+   return () => clearInterval(slideInterval);
+ }, [apiData]);
+
+ const displayedMembers = apiData.slice(
+   currentSlide * slidesToShow,
+   currentSlide * slidesToShow + slidesToShow
+ );
   
     return (
       <section className={style.wrapper}>
@@ -47,9 +65,12 @@ export default function TeemSlider() {
           Якщо ви бажаєте приєднатися до нашої команди, зв`яжіться з нами поштою
         </p>
         <div className={style.slider_wrapper}>
-          {apiData.map((member) => (
-            <>
-              <div>
+          <div
+            className={style.slider}
+            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+          >
+            {apiData.map((member) => (
+              <>
                 <EmployeeItem
                   key={member._id}
                   img={member.image.url}
@@ -57,9 +78,31 @@ export default function TeemSlider() {
                   role={member.role}
                   desc={member.description}
                 />
-              </div>
-            </>
-          ))}
+              </>
+            ))}
+            {apiData.map((member) => (
+              <>
+                <EmployeeItem
+                  key={member._id}
+                  img={member.image.url}
+                  name={member.name}
+                  role={member.role}
+                  desc={member.description}
+                />
+              </>
+            ))}
+            {apiData.map((member) => (
+              <>
+                <EmployeeItem
+                  key={member._id}
+                  img={member.image.url}
+                  name={member.name}
+                  role={member.role}
+                  desc={member.description}
+                />
+              </>
+            ))}
+          </div>
         </div>
         <div>. . .</div>
       </section>

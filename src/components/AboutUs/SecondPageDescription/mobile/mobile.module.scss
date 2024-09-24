@@ -1,7 +1,7 @@
 @import "../../../../styles/var.scss";
 
 .wrapper{
-    padding: 29px 20px 48px;
+    padding: 0 20px 48px;
     display: flex;
     flex-direction: column;
 
@@ -13,12 +13,12 @@
 
             h2{
                 @include h4;
-                margin: 0;
+                margin: 46px 0 0;
             }
             h6{
                 @include t4;
                 width: 286px;
-                margin: 12px 0 29px;
+                margin: 12px 0 22px;
             }
     }
 
@@ -56,7 +56,7 @@
         text-align: center;
 
             h2{
-                @include h3;
+                @include h4;
                 margin: 0;
             }
             h6{

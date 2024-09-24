@@ -39,8 +39,9 @@
             margin-top: 14px;
             .title{
                 margin: 0;
-                @include h3_bold;
+                @include h4;
                 color: $color_white_background;
+                font-weight: 600;
             }
         }
     }
