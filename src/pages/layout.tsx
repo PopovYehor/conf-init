@@ -28,16 +28,17 @@ export default function Layout ({ children }: ILayout) {
     // check locales
     const replaceUrl: string = window.location.href.replace(apiUrls.urlPage, '')
     const langLocation: string = replaceUrl.slice(0,2)
-    
-    locales.forEach((local)=>{
-      if (local == langLocation){
+
+    for(let i = 0; i < locales.length; i++){
+      if(locales[i] == langLocation){
         dispatch(SET_LANGUAGE_SELECTED(langLocation)) 
         dispatch(CHANGE_LANGUAGE(langLocation))
+        break
       }else{
         dispatch(SET_LANGUAGE_SELECTED('ua'))
         dispatch(CHANGE_LANGUAGE('ua'))
       }
-    })
+    }
 
     //check page
     locales.forEach((local)=>{
