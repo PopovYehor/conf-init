@@ -98,16 +98,15 @@ export default function Evants(){
                 <>
                     {viewEvents.length > 0 && viewEvents[0]._id !== "0" && viewEvents.map((item : IEventItem, i: number)=>{
                         return(
-                            <div key={i}>
+                            <section className={styles.evant_item_wrap} key={i}>
                                 <EvantItem 
                                 image={ item.image}
                                 dataEvent={item.dataEvent}
                                 adressEvent={item.adressEvent}
                                 description={item.description}
                                 titleEvent={item.titleEvent}
-                                linkEvent={item.linkEvent}
                                 />
-                            </div>
+                            </section>
                         )
                     })}
                 </>

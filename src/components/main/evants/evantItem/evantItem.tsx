@@ -16,7 +16,6 @@ interface IEventItemProps{
     adressEvent: string
     description: string
     titleEvent: string
-    linkEvent: string | undefined
 }
 
 export function EvantItem({
@@ -25,7 +24,6 @@ export function EvantItem({
     adressEvent,
     description,
     titleEvent,
-    linkEvent
     }: IEventItemProps){
 
     const languageSelected = useAppSelector((state)=>state.language.languageSelected)
@@ -56,7 +54,7 @@ export function EvantItem({
 
 
     return(
-        <section className={styles.evant_item_wrap}>
+        <>
             <div className={styles.evant_item_img}>
                 <img src={url} alt={description}/>
             </div>
@@ -68,10 +66,6 @@ export function EvantItem({
                 <div className={styles.evant_item_title}>
                     <h3>{titleEvent}</h3>
                 </div>
-                {linkEvent && <div className={styles.event_item_link}>
-                    <Link href={linkEvent}>{linkEvent}</Link>
-                </div>
-                }
                 <div ref={descriptionRef} className={!openDescription ? 
                     `${styles.evant_item_description} ${styles.hiden_description}`
                     : styles.evant_item_description}>
@@ -86,6 +80,6 @@ export function EvantItem({
                     <ButtonsDefault url={googleForm} text={languages[languageSelected].evant_join}/>
                 </div>
             </div>
-        </section>
+        </>
     )
 }
