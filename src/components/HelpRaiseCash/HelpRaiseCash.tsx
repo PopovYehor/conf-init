@@ -13,15 +13,17 @@ export default function HelpRaiseCash() {
   );
   return (
     <section className={style.wrapper}>
-      <Image src={photo} alt="" className={style.image} />
+      <div className={style.container}>
+        <Image src={photo} alt="" className={style.image} />
 
-      <div className={style.info}>
-        <h2>{languages[languageSelected].main_page_title_raise_cash}</h2>
-        <p>{languages[languageSelected].main_page_text_raise_cash}</p>
-        <ButtonsDefault
-          text={languages[languageSelected].main_page_button_raise_cash}
-          url="/support"
-        />
+        <div className={style.info}>
+          <h2>{languages[languageSelected].main_page_title_raise_cash}</h2>
+          <p>{languages[languageSelected].main_page_text_raise_cash}</p>
+          <ButtonsDefault
+            text={languages[languageSelected].main_page_button_raise_cash}
+            url="/support"
+          />
+        </div>
       </div>
     </section>
   );

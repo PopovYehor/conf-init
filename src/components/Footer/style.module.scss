@@ -1,189 +1,234 @@
 @import "../../styles/var";
 
 .footer {
-  height: 217px;
+  width: 100%;
+  height: auto;
   margin: 0;
-  padding: 82px 100px 90px;
+  display: flex;
+  justify-content: center;
   border-radius: 24px 24px 0 0;
   background-color: $color_blue_main;
   
-  .top_part{
-    display: flex;
-    justify-content: space-between;
-  
-    .wrapper_logos {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      width: 43%;
-
-      .logo {
-        display: flex;
-        margin: 0 0 35px;
-        justify-content: center;
-      }
-
-      .wrapper_icons {
-        display: flex;
-        justify-content: space-between;
-        width: 110px;
-      }
-    }
-
-    .wrapper_menu_contacts{
-        display: flex;
-        width: 33%;
-        justify-content: space-between;
-
-        .wrapper_menu {
-            display: flex;
-            flex-direction: column;
-            color: $color_white_background;
-                p {
-                    font-weight: $font_weight_bold;
-                    margin-top: 0;
-                    margin-bottom: 20px;
-                }
-                a {
-                    margin-bottom: 12px;
-                    color: $color_white_background;
-                    text-decoration: none;
-
-                    &:hover {
-                    text-decoration: underline;
-                    }
-                }
-        }
-  
-        .wrapper_contacts {
-            display: flex;
-            flex-direction: column;
-            width: 180px;
-                p {
-                    font-weight: $font_weight_bold;
-                    margin-top: 0;
-                    margin-bottom: 20px;
-                    color: $color_white_background;
-                }
-                span, a {
-                    margin-bottom: 12px;
-                    color: $color_white_background;
-                }
-                a {
-                    text-decoration: none;
-
-                    &:hover {
-                    text-decoration: underline;
-                    }
-                }
-        }
-    }
-
-    .wrapper_politics {
-      display: flex;
-      flex-direction: column;
-      p {
-                    font-weight: $font_weight_bold;
-                    margin-top: 0;
-                    margin-bottom: 20px;
-                    color: $color_white_background;
-                }
-
-        &:first-child {
-            margin-bottom: 12px;
-        }
-        a {
-            margin-bottom: 12px;
-            color: $color_white_background;
-            text-decoration: none;
-
-            &:hover {
-            text-decoration: underline;
-            }
-        }
-    }
-  }
-
-  .bottom_part{
-    hr{
-      width: auto;
-      height: 1px;
-      background-color: #00599B;
-      border: #00599B;
-      margin: 42px 0 15px;
-    }
-    p{
-      @include t4;
-      color: white;
-      margin: 0;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  
-  .footer {
-    height: max-content;
-    padding: 20px 20px 16px;
+  .container{
+    padding: 82px 100px 19px;
 
     .top_part{
-      flex-direction: column;
-      align-items: center;
-        .wrapper_logos {
-          align-items: center;
-          width: 100%;
-
-          .logo {
-            margin: 15px 0 25px;
-          }
-
-          .wrapper_icons {
-            width: 103px;
-            justify-content: space-between;
-          }
-        }
-
-        .wrapper_menu_contacts {
-          flex-direction: row;
-          justify-content: space-between;
-          width: 100%;
-          margin-top: 58px;
-
-          .wrapper_menu,
-          .wrapper_contacts {
-            width: 100%;
-            margin-bottom: 100px;
-          }
-          .wrapper_contacts{
-            padding-left: 50px;
-          }
-        }
-
-        .wrapper_politics {
-          align-items: center;
-          width: 100%;
-
-          a {
-            text-align: center;
-          }
-        }
-    }
-    .bottom_part{
       display: flex;
-      flex-direction: column;
-      
+      justify-content: space-between;
+    
+      .wrapper_logos {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 33%;
+
+        .logo {
+          display: flex;
+          margin: 0 0 35px;
+          justify-content: center;
+        }
+
+        .wrapper_icons {
+          display: flex;
+          justify-content: space-between;
+          width: 110px;
+        }
+      }
+
+      .wrapper_menu_contacts{
+          display: flex;
+          width: 35%;
+          justify-content: space-between;
+
+          .wrapper_menu {
+              display: flex;
+              flex-direction: column;
+              color: $color_white_background;
+                  p {
+                      font-weight: $font_weight_bold;
+                      margin-top: 0;
+                      margin-bottom: 20px;
+                  }
+                  a {
+                      margin-bottom: 12px;
+                      color: $color_white_background;
+                      text-decoration: none;
+
+                      &:hover {
+                      text-decoration: underline;
+                      }
+                  }
+          }
+    
+          .wrapper_contacts {
+              display: flex;
+              flex-direction: column;
+              width: 180px;
+                  p {
+                      font-weight: $font_weight_bold;
+                      margin-top: 0;
+                      margin-bottom: 20px;
+                      color: $color_white_background;
+                  }
+                  span, a {
+                      margin-bottom: 12px;
+                      color: $color_white_background;
+                  }
+                  a {
+                      text-decoration: none;
+
+                      &:hover {
+                      text-decoration: underline;
+                      }
+                  }
+          }
+      }
+
+      .wrapper_politics {
+        display: flex;
+        flex-direction: column;
+        p {
+                      font-weight: $font_weight_bold;
+                      margin-top: 0;
+                      margin-bottom: 20px;
+                      color: $color_white_background;
+                  }
+
+          &:first-child {
+              margin-bottom: 12px;
+          }
+          a {
+              margin-bottom: 12px;
+              color: $color_white_background;
+              text-decoration: none;
+
+              &:hover {
+              text-decoration: underline;
+              }
+          }
+      }
+    }
+
+    .bottom_part{
       hr{
         width: auto;
         height: 1px;
-        background-color: #A9A9A9;
-        border: #A9A9A9;
-        margin: 40px 0 16px;
+        background-color: #00599B;
+        border: #00599B;
+        margin: 42px 0 15px;
       }
       p{
         @include t4;
         color: white;
-        align-self: center;
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1149px) {
+  .footer{
+    .container{
+      padding: 46px 20px 16px;
+      margin: 0;
+        .top_part{
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+            .wrapper_logos{
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              width: 100%;
+            }
+            .wrapper_menu_contacts{
+              display: flex;
+              justify-content: space-between;
+              width: 100%;
+            }
+        }
+    }
+}    
+    }
+    @media screen and (min-width: 1340px) {
+      .container{
+        width: 1240px;
+      }
+    }
+    @media screen and (max-width: 1340px) {
+       .container{ 
+        width: 1130px;
+      }
+    }
+
+@media (max-width: 768px) {
+  .footer {
+    height: max-content;
+    .container{
+      .top_part{
+        flex-direction: column;
+        align-items: center;
+
+          .wrapper_logos {
+            display: flex;
+            align-items: center;
+            width: 100%;
+
+            .logo {
+              margin: 15px 0 25px;
+            }
+
+            .wrapper_icons {
+              width: 103px;
+              justify-content: space-between;
+            }
+          }
+
+          .wrapper_menu_contacts {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 58px;
+
+            .wrapper_menu,
+            .wrapper_contacts {
+              width: 100%;
+              margin-bottom: 100px;
+            }
+            .wrapper_contacts{
+              padding-left: 50px;
+            }
+          }
+
+          .wrapper_politics {
+            align-items: center;
+            width: 100%;
+
+            a {
+              text-align: center;
+            }
+          }
+      }
+      .bottom_part{
+        display: flex;
+        flex-direction: column;
         
+        hr{
+          width: auto;
+          height: 1px;
+          background-color: #A9A9A9;
+          border: #A9A9A9;
+          margin: 40px 0 16px;
+        }
+        p{
+          @include t4;
+          color: white;
+          align-self: center;
+          
+        }
       }
     }
   }

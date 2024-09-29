@@ -13,15 +13,17 @@ export default function JoinVolunteers() {
   );
   return (
     <section className={style.wrapper}>
-      <Image src={photo} alt="" className={style.image} />
+      <div className={style.container}>
+        <Image src={photo} alt="" className={style.image} />
 
-      <div className={style.info}>
-        <h2>{languages[languageSelected].main_page_title_volunteers}</h2>
-        <p>{languages[languageSelected].main_page_text_volunteers}</p>
-        <ButtonsDefault
-          text={languages[languageSelected].main_page_button_volunteers}
-          url="/volunteers"
-        />
+        <div className={style.info}>
+          <h2>{languages[languageSelected].main_page_title_volunteers}</h2>
+          <p>{languages[languageSelected].main_page_text_volunteers}</p>
+          <ButtonsDefault
+            text={languages[languageSelected].main_page_button_volunteers}
+            url="/volunteers"
+          />
+        </div>
       </div>
     </section>
   );
