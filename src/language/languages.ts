@@ -89,7 +89,7 @@ export const languages: any = {
     worth: "Our core worths",
     //How we help
     how_help: "How we help ?",
-    help_description_1: "We work directly and closely with people who need help, because we believe that direct communication and support will allow us to determine the individual needs of each person and/or family as effectively as possible and help according to our capabilities.",
+    help_description_1: "We work directly and closely with people, who need help, because we are confident that direct communication and support will allow us to determine the individual needs of each person and/or family as efficiently as possible and help according to our capabilities.",
     help_description_2: "The charitable activities of the Conference are based on respect and love for one's neighbor, starting with a firm commitment to our common Christian values.",
     we_support:"We support:",
     //Need support

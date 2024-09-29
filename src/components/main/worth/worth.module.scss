@@ -10,10 +10,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        @media screen and (min-width: 769px){
+            margin: 0 100px;
+        }
+        @media screen and (max-width: 768px){
+            margin: 0 20px
+        }
         .worth_header{
-            @media screen and (max-width: 768px){
-                margin: 0 20px;
-            }
             h1{
                 text-align: center;
                 @media screen and (min-width: 769px){
@@ -28,37 +31,63 @@
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: center;
+            @media screen and (min-width: 1122px) {
+                justify-content: center;
+            }
+            @media screen and (max-width: 1121px) and (min-width: 890px)  {
+                justify-content: space-between;
+            }
+            @media screen and (max-width: 889px){
+                justify-content: center;
+                align-items: center;
+            }
             @media screen and (min-width: 769px){
-                margin-top: 64px;
+                margin-top: 80px;
             }
             @media screen and (max-width: 768px){
                 margin-top: 42px;
             }
-            @media screen and (min-width: 645px){
+            @media screen and (min-width: 1024px) {
                 gap: 36px;
+            }
+            @media screen and (max-width: 1023px) and (min-width: 645px){
+                gap: 30px;
             }
             @media screen and (max-width: 644px) and (min-width: 390px){
                 gap: 20px;
             }
             @media screen and (max-width: 389px){
                 gap: 10px;
-                margin: 0 20px;
             }
-            @media screen and (min-width: 1265px){
-                width: 1255px;
+            @media screen and (min-width: 1340px){
+                width: 1240px;
             }
             
             .worth_item{
-                @media screen and (min-width: 645px){
+                @media screen and (min-width: 1122px){
                     min-width: 241px;
                     min-height: 194px;
                     padding: 38px 21px;
                 }
-                @media screen and (max-width: 644px) and (min-width: 390px){
+                @media screen and (max-width: 1121px) and (min-width: 1010px){
+                    min-width: 230px;
+                    min-height: 194px;
+                    padding: 20px 10px;
+                }
+                @media screen and (max-width: 1009px) and (min-width: 860px){
+                    min-width: 190px;
+                    min-height: 194px;
+                    padding: 20px 10px;
+                }
+                @media screen and (max-width: 879px) and (min-width: 769px){
+                    min-width: 230px;
+                    min-height: 194px;
+                    padding: 20px 10px;
+                }
+                @media screen and (max-width: 768px) and (min-width: 390px){
                     min-width: 120px;
                     min-height: 178px;
-                    padding: 34px 10px;
+                    padding: 34px 6px;
                 }
                 @media screen and (max-width: 389px){
                     min-height: 178px;
@@ -90,8 +119,11 @@
                     }
                 }
                 .worth_item_description{
-                        @media screen and (min-width: 645px){
+                        @media screen and (min-width: 1010px){
                             width: 225px;
+                        }
+                        @media screen and (max-width: 1009px) and (min-width: 645px){
+                            width: 165px;
                         }
                         @media screen and (max-width: 644px) and (min-width: 390px){
                             width: 150px;
@@ -100,8 +132,11 @@
                             width: 130px;
                         }
                     p{
-                        @media screen and (min-width: 645px){
+                        @media screen and (min-width: 1010px){
                             @include t2;
+                        }
+                        @media screen and (max-width: 1009px) and (min-width: 645px){
+                            @include t4;
                         }
                         @media screen and (max-width: 644px){
                             @include t5;
