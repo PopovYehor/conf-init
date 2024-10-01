@@ -11,8 +11,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        @media screen and (max-width: 1300px) {
-            padding: 0 20px;
+        @media screen and (min-width: 769px) {
+            margin: 0 100px;
+        }
+        @media screen and (max-width: 768px) {
+            margin: 0 20px;
         }
         @media screen and (max-width: 1004px) {
             align-items:normal !important
@@ -34,7 +37,10 @@
         .help_description_wrap{
             display: flex;
             flex-direction: row;
-            @media screen and (min-width: 1300px) {
+            @media screen and (min-width: 1340px) {
+                width: 1240px;
+            }
+            /* @media screen and (min-width: 1300px) {
                 width: 1255px;
                 justify-content: space-between;
             }
@@ -46,27 +52,31 @@
                 width: 965px;
                 justify-content: space-between;
                 gap: 50px;
-            }
+            } */
             @media screen and (max-width: 1004px) {
                 flex-direction: column !important;
             }
             .help_description{
                 /* max-width: 615px; */
-                @media screen and (min-width: 1300px) {
-                    max-width: 615px;
+                /* @media screen and (min-width: 1300px) {
+                    max-width: 752px;
                 }
                 @media screen and (max-width: 1300px) and (min-width: 1135px) {
                     max-width: 550px;
                 }
                 @media screen and (max-width: 1134px) and (min-width: 1004px) {
                     max-width: 470px;
-                }
+                } */
+                @media screen and (min-width: 1004px) {
+                    margin-left: 64px;
+                }   
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
+                max-width: 732px;
                 p{
                     @include t1;
-                    margin: 0
+                    margin: 0;
                 }
             }
         }
@@ -75,30 +85,30 @@
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
-            
+            width: 100%;
             @media screen and (min-width: 769px) {
                 margin-top: 42px;
             }
             .help_header{
-                @media screen and (min-width: 1300px) {
-                    width: 1255px;
+                @media screen and (min-width: 1340px) {
+                    width: 1240px;
                 }
-                @media screen and (max-width: 1300px) and (min-width: 1135px) {
-                    width: 1130px;
+                @media screen and (max-width: 1339px){
+                    width: 100%;
                 }
-                @media screen and (max-width: 1134px) and (min-width: 1005px) {
+                /* @media screen and (max-width: 1134px) and (min-width: 1005px) {
                     width: 965px;
                 }
                 @media screen and (max-width: 1004px) {
                     width: 100%;
-                }
+                } */
             }
             .support_description{
-                @media screen and (min-width: 1300px) {
+                @media screen and (min-width: 1340px) {
                     width: 1255px;
                 }
-                @media screen and (max-width: 1300px) {
-                    justify-content: center;
+                @media screen and (max-width: 1339px) {
+                    justify-content: space-around;
                 }
                 display: flex;
                 gap: 24px;
@@ -108,17 +118,14 @@
                     width: 100%;
                 }
                 .support_description_item_wrap{
-                    @media screen and (min-width: 1300px) {
+                    @media screen and (min-width: 1340px) {
                         width: 615px;
                     }
-                    @media screen and (max-width: 1300px) and (min-width: 1135px) {
-                        width: 550px;
-                    }
-                    @media screen and (max-width: 1134px) and (min-width: 1004px) {
-                        width: 470px;
+                    @media screen and (max-width: 1339px) and (min-width: 1005px) {
+                        max-width: 48%;
                     }
                     @media screen and (max-width: 1004px) {
-                            width: 100%;
+                        width: 100%;
                     }
                     @media screen and (min-width: 769px) {
                         gap: 24px;
