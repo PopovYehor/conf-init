@@ -2,7 +2,7 @@ import Image from "next/image";
 import style from "./HelpRaiseCash.module.scss";
 
 import { languages } from "@/language/languages";
-import photo from "./photo.png";
+import photo from "@/assets/qr_code/photo.png";
 import { useAppSelector } from "@/hooks/hooks";
 import ButtonsDefault from "@/components/Buttons/ButtonsDefault/ButtonsDefault";
 

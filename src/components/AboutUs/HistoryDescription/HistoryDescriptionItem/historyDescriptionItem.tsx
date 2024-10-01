@@ -13,24 +13,43 @@ interface IHistoryDescriptionItemProps{
 export function HistoryDescriptionItem({item}: IHistoryDescriptionItemProps){
 
     const [imageUrl, setImageUrl] = useState<string>(defaultImage.url)
-    const images = useAppSelector((state)=>state.image.image)
     const [openDescription, setOpenDescription] = useState<boolean>(false)
-    const descriptionRef = useRef<HTMLParagraphElement | null>(null)
+    const descriptionRef = useRef<HTMLDivElement | null>(null)
     const [isReadMore, setIsreadMore] = useState<boolean>(false)
+    const [readMoreMobile, setReadMoreMobile] = useState<boolean>(false)
+
+    const mobile = useAppSelector((state)=>state.mobile.mobile)
+    const images = useAppSelector((state)=>state.image.image)
     const languageSelected = useAppSelector((state)=>state.language.languageSelected)
+    
+
+    const checkMobileReadMore = ()=>{
+        document.body.clientWidth < 426 ? 
+        setReadMoreMobile(true): setReadMoreMobile(false)
+    }
+    
+    const checkMobileReadMoreListener = ()=>{
+       return window.addEventListener('resize', ()=>{checkMobileReadMore()})
+    }
+
+    const readMoreHendler = (boolean: boolean)=>{
+        setIsreadMore(boolean)
+        setOpenDescription(!boolean)
+    }
 
     const readMoreHandler = ()=>{
         const description = descriptionRef.current
         if (description){
-            if (description.clientHeight > 265){
-                setIsreadMore(true)
-                setOpenDescription(false)
-            }else{
-                setIsreadMore(false)
-                setOpenDescription(true)
-            }
+            !readMoreMobile ? 
+                description.clientHeight > 340 ? readMoreHendler(true) : readMoreHendler(false)
+                : description.clientHeight > 200 ? readMoreHendler(true) : readMoreHendler(false)
         }
     }
+    
+    useEffect(()=>{
+        checkMobileReadMore()
+        checkMobileReadMoreListener()
+    }, [])
 
     useEffect(()=>{
         getCurrentImage(item.image, images, setImageUrl)
@@ -38,13 +57,13 @@ export function HistoryDescriptionItem({item}: IHistoryDescriptionItemProps){
 
     useEffect(()=>{
         readMoreHandler()
-    },[item.description])
+    },[imageUrl, readMoreMobile, mobile])
 
     return(
         <>
-            <div className={styles.history_item_text}>
+            <div className={styles.history_item_text} ref={descriptionRef}>
                 <h2>{item.titleElement}</h2>
-                <p ref={descriptionRef} className={!openDescription ? 
+                <p className={!openDescription ? 
                     `${styles.history_item_description} ${styles.hiden_description}`
                     : styles.history_item_description}>{item.description}</p>
                 {isReadMore && 

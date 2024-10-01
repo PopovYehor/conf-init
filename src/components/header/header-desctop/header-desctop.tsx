@@ -15,7 +15,7 @@ export function HeaderDesctop({nav}: IHeaderProps){
         <header className={styles.header}>
         <div className={styles.header_wrap}>
             <div className={styles.header_logo_wrap}>
-                <Link href={navigation.main}>
+                <Link href={navigation.main} onClick={()=>dispatch(CHANGE_PAGE(navigation.main))}>
                     <IconsMain/>
                 </Link>
             </div>

@@ -20,6 +20,7 @@ export default function OurProjectsGoal(){
             try{
                 const responce = await axios.get(apiUrls.ourProjects+languageParameter+languageSelected)
                 setOurProjects(responce.data)
+                console.log(responce.data)
             }catch{
                 setOurProjects([ourProjectDefault])
             }
@@ -41,8 +42,15 @@ export default function OurProjectsGoal(){
                     <div className={styles.goal_description_header}>
                         <h3>{ourProject[0].titleOurProject}</h3>
                     </div>
-                    <div className={styles.goal_description_text_wrap}>
-                        <p>{ourProject[0].description}</p>
+                    <div className={styles.goal_description_text_container}>
+                        {ourProject[0].description.map((item)=>{
+                            return(
+                                <div key={item} className={styles.goal_description_text_wrap}>
+                                    <span>&#x2022;</span>
+                                    <p >{item}</p>
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
             </div>

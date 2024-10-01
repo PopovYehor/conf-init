@@ -16,10 +16,11 @@ export function HeaderMobile({nav}: IHeaderProps){
     return(
         <header className={styles.header}>
         <div className={styles.header_menu_wrap}>
-            <Link href={'/'} className={styles.header_logo_wrap}>
-                <IconsMain/>
+            <Link href={'/'} className={styles.header_logo_wrap}
+                onClick={()=>{if (open == true)setOpen(!open)}}>
+                    <IconsMain/>
             </Link>
-            <input type="checkbox" id="menu"/>
+            <input type="checkbox" id="menu" checked={open}/>
             <div className={styles.header_menu} >
                 <label htmlFor="menu" onClick={()=>setOpen(!open)}>
                     {!open? <IconsMenuOpen/> : <IconsMenuClose/>}
@@ -30,7 +31,16 @@ export function HeaderMobile({nav}: IHeaderProps){
                 <nav className={styles.header_nav}>
                     {nav.map((item)=>{
                         return(
-                            <Link key={item.link} href={item.link} onClick={()=>dispatch(CHANGE_PAGE(item.link))} >{item.text}</Link>
+                            <Link
+                                key={item.link}
+                                href={item.link} 
+                                onClick={()=>{
+                                    dispatch(CHANGE_PAGE(item.link))
+                                    setOpen(!open)
+                                    }}>
+                                {item.text}
+                            </Link>
+                            
                         )
                     })}
                 </nav>
@@ -39,7 +49,7 @@ export function HeaderMobile({nav}: IHeaderProps){
                         <div><InstargamIcons/></div>
                         <div><FacebookIcons/></div>
                     </div>
-                    <div className={styles.header_language_wrap}>
+                    <div className={styles.header_language_wrap} >
                         <LanguageListComponent/>
                     </div>
                 </div>
