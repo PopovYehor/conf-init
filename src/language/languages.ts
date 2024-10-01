@@ -5,6 +5,7 @@ export const languages: any = {
     project: "Наші проєкти",
     support: "Підтримати",
     volunteers: "Волонтери",
+    donate: 'Підтримати',
     //_____________________
     //MAIN
 
@@ -34,7 +35,7 @@ export const languages: any = {
     need_support_headline: "Якщо вам потрібна підтримка або допомога",
     need_support_text:
       "Якщо Ви потребуєте допомоги, то просимо заповнити форму за посиланням.",
-    need_support_button_text: "ОТРИМАТИ ДОПОМОГУ",
+    need_support_button_text: "Отримати допомогу",
     //_______________________________________________
 
     //raise cash
@@ -67,6 +68,10 @@ export const languages: any = {
     partners: "Наші партнери",
     //_____________________________
 
+    //support us
+    donate_description_1: "Благодійна організація «Конференція Блаженної Марти Вєцкої» є неприбутковою організацією, тому її діяльність можлива тільки завдяки благодійним пожертвам. Всі кошти, які отримає організація будуть направлені на реалізацію наших проектів та підтримку потребуючим людям.",
+    donate_description_2: "Ви можете зробити добровільну благодійну пожертву наступним чином:",
+
     //footer
     menu: "Меню",
     contacts: "Контакти",
@@ -78,8 +83,9 @@ export const languages: any = {
     //header
     about: "About Us",
     project: "Our Projects",
-    support: "To Support",
+    support: "Support Us",
     volunteers: "Volunteers",
+    donate: 'Donate',
     //_____________________
 
     //MAIN
@@ -107,20 +113,20 @@ export const languages: any = {
     //Need support
     need_support_headline: "If you need support or help",
     need_support_text: "If you need help, please fill out the form here.",
-    need_support_button_text: "GET HELP",
+    need_support_button_text: "Get Help",
     //_______________________________________________
     //raise cash
     main_page_title_raise_cash: "Help us raise funds",
     main_page_text_raise_cash:
       "Purpose: to collect school supplies and funds for its purchase in order to give children from low-income, large and crisis families filled with school bags by September 1.",
-    main_page_button_raise_cash: "SUPPORT",
+    main_page_button_raise_cash: "Donate",
     //_____________________
 
     //volunteers
     main_page_title_volunteers: "Do you want to volunteer?",
     main_page_text_volunteers:
       "To do this, you need to register on a special volunteer platform, which constantly involves volunteers to work and various useful fees",
-    main_page_button_volunteers: "JOIN",
+    main_page_button_volunteers: "Join",
     //_____________________
 
     //about us

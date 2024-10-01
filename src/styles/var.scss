@@ -8,6 +8,7 @@ $color_accent_green: #2C5F1A;
 $color_white_background: #ffffff;
 $color_light_gray_disabled_primary: #b3b4b6;
 $color_disabled_secondary: #888888;
+$color_disabled_dark_gray: #383A3D;
 $color_disabled_third: #ECECEC;
 $color_text: #1E1E1E;
 $color_text_black: #000000;
@@ -22,7 +23,7 @@ $font_size_t3:18px;
 $font_size_t4:16px;
 $font_size_t5:14px;
 
-$letter_spacing: 0.5px;
+$letter_spacing: 0.2px;
 
 //css function
 @mixin flex_center{
@@ -152,8 +153,14 @@ $letter_spacing: 0.5px;
     @media screen and (max-width: 299px) {
         max-width: 299px;
     }
-    height: 70px;
-    border-radius: 20px;
+    @media screen and (min-width: 769px){
+        height: 70px;
+        border-radius: 20px;
+    }
+    @media screen and (max-width: 768px){
+        height: 48px;
+        border-radius: 10px;
+    }
     text-transform: uppercase;
 }
 

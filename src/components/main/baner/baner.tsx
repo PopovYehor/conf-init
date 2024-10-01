@@ -1,7 +1,6 @@
 import { navigation } from "@/constants/navigations/navigations"
 import styles from "./baner.module.scss"
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks"
-import Link from "next/link"
 import { languages } from '@/language/languages';
 import { useEffect } from "react";
 import { fetchMain } from "@/reducers/main/main.reducer";
@@ -31,13 +30,7 @@ export default function Baner(){
                 </div>
                 <div className={styles.baner_buttons}>
                     <ButtonsDefault text={languages[languageSelected].about} url={navigation.about}/>
-                    {/* <Link className={styles.button_about} href={}>
-                        {}
-                    </Link> */}
-                    <ButtonsSecondary  text={languages[languageSelected].support} url={navigation.support}/>
-                    {/* <Link href={navigation.support} className={styles.button_support}>
-                        {languages[languageSelected].support}
-                    </Link> */}
+                    <ButtonsSecondary  text={languages[languageSelected].donate} url={navigation.support}/>
                 </div>
             </div>
         </div>
