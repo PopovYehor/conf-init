@@ -14,11 +14,12 @@ import {
 import { IconsMain } from "@/components/icons/icons-main/icons-main";
 import { useState, useEffect } from "react";
 import { defaultContacts } from "@/constants/mainItemsDefault/mainItemsDefault";
-import { apiUrls, languageParameter } from "@/constants/apiUrls/apiUrls";
+import { apiUrls, facebookUrl, instagramUrl, languageParameter } from "@/constants/apiUrls/apiUrls";
 import { useAppSelector } from "@/hooks/hooks";
 
 import { languages } from "@/language/languages";
 import axios from "axios";
+import { navigation } from "@/constants/navigations/navigations";
 
 export default function Footer() {
   interface IContactData {
@@ -91,7 +92,10 @@ export default function Footer() {
                 onMouseUp={() => setInstagramPressed(false)}
                 onDoubleClick={() => setInstagramDisabled(!isInstagramDisabled)}
               >
-                <Link href="https://www.instagram.com/conf.bmv/" target="_blank">
+                <Link
+                  href={instagramUrl}
+                  target="_blank"
+                >
                   {getInstagramIcon()}
                 </Link>
               </div>
@@ -104,7 +108,7 @@ export default function Footer() {
                 onDoubleClick={() => setFacebookDisabled(!isFacebookDisabled)}
               >
                 <Link
-                  href="https://www.facebook.com/profile.php?id=61559370821121"
+                  href={facebookUrl}
                   target="_blank"
                 >
                   {getFacebookIcon()}
@@ -116,15 +120,19 @@ export default function Footer() {
             <div className={style.wrapper_menu}>
               <p>{languages[languageSelected].menu}</p>
 
-              <Link href={"/about"}>{languages[languageSelected].about}</Link>
+              <Link href={navigation.about}>
+                {languages[languageSelected].about}
+              </Link>
 
-              <Link href={"/support"}>{languages[languageSelected].support}</Link>
+              <Link href={navigation.support}>
+                {languages[languageSelected].support}
+              </Link>
 
-              <Link href={"/projects"}>
+              <Link href={navigation.projects}>
                 {languages[languageSelected].project}
               </Link>
 
-              <Link href={"/volunteers"}>
+              <Link href={navigation.volunteers}>
                 {languages[languageSelected].volunteers}
               </Link>
             </div>
@@ -135,7 +143,9 @@ export default function Footer() {
                 <>
                   <span>{apiData[0].titleCont}</span>
                   <span>{apiData[0].adressCont}</span>
-                  <Link href={apiData[0].phoneCont}>{apiData[0].phoneCont}</Link>
+                  <Link href={apiData[0].phoneCont}>
+                    {apiData[0].phoneCont}
+                  </Link>
                 </>
               )}
             </div>
