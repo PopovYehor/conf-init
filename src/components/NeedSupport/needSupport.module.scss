@@ -1,59 +1,86 @@
 @import "../../styles/var.scss";
 
 .wrapper{
-    @include flex_center;
-    flex-direction: column;
-    width: auto;
+    width: 100%;
     height: 667px;
     margin-top: 126px;
-    padding: 57px 306.5px 64px;
-
+    @include flex_center;
     background-color: $color_accent;
     border-radius: 50px;
 
-    .image{
-        width: 824px;
-        height: 277px;
-        border-radius: 20px;
-    }
+    .container{
+        padding: 57px 306.5px 64px;
+        @include flex_center;
+        flex-direction: column;
+        @media screen and (max-width: 1149px) {
+            .image{
+                width: 524px;
+                height: auto;
+                border-radius: 20px;
+            }
+        }
 
-    h3{
-        @include h3;
-        text-align: center;
-        margin: 24px 0 12px;
+        @media screen and (min-width: 1340px) {
+            width: 1240px;
+            .image{
+                width: 100%;
+                height: auto;
+                border-radius: 20px;
+            }
+        }
+        @media screen and (max-width: 1340px) {
+            margin: 0 100px;
+            padding: 57px 0 64px;
+
+            .image{
+                width: 100%;
+                height: auto;
+                border-radius: 20px;
+            }
+        }
+
+        h3{
+            @include h3;
+            text-align: center;
+            margin: 24px 0 12px;
+        }
+        p{
+            @include t1;
+            text-align: center;
+            margin: 0 0 26px;
+        }
     }
-    p{
-        @include t1;
-        text-align: center;
-        margin: 0 0 26px;
-    }
+    
 }
 
 @media (max-width: 768px) {
     .wrapper{
         @include flex_center;
-        flex-direction: column;
         height: 508px;
-        width: auto;
+        width: 100%;
         background-color: $color_accent;
         border-radius: 15px;
-        padding: 10px 20px 0;
         margin: 64px 0;
 
-        .image{
-            width: 328px;
-            height: 130px;
-            border-radius: 20px;
-        }
-        h3{
-            @include t1;
-            text-align: center;
-            margin: 24px 0 8px;
-        }
-        p{
-            @include t5;
-            text-align: center;
-            margin: 0 0 24px;
+        .container{
+            @include flex_center;
+            flex-direction: column;
+            padding: 10px 20px 0;
+            .image{
+                width: 328px;
+                height: 130px;
+                border-radius: 20px;
+            }
+            h3{
+                @include t1;
+                text-align: center;
+                margin: 24px 0 8px;
+            }
+            p{
+                @include t5;
+                text-align: center;
+                margin: 0 0 24px;
+            }
         }
     }
 }

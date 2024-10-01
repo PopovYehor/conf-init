@@ -2,16 +2,46 @@
 
 .member{
     width: 340px;
+    
+    .img{
+        width: 340px;
+        height: auto;
+    }
     h1{
         @include h3;
-        margin: 32px 0 12px;
+        margin: 32px 0px 12px;
     }
     h3{
         @include t2;
+        margin-top: 0;
         margin-bottom: 20px;
     }
     p{
         @include t2;
         margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .member{
+        width: 350px;
+        
+        .img{
+            width: 350px;
+            height: auto;
+
+        }
+        h1{
+            @include t2;
+            margin: 20px 0 8px;
+        }
+        h3{
+            @include t2;
+            margin: 0 0 19px;
+        }
+        p{
+            @include t5;
+            margin: 0;
+        }
     }
 }
