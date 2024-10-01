@@ -2,7 +2,7 @@ import { IDBDefault } from "../main/main.interface";
 
 export interface IOurProject extends IDBDefault{
     titleOurProject: string
-    description: string
+    description: Array<string>
 }
 
 export interface IOurProjectItem extends IDBDefault{

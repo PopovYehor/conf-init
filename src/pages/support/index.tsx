@@ -1,3 +1,5 @@
+import SupportUsView from "@/view/support-us/support-us";
+
 export default function Support() {
-    return <h1>Підтримати</h1>;
+    return <SupportUsView/>;
 }

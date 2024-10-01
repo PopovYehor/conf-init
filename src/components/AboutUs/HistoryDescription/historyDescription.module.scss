@@ -82,7 +82,12 @@
                     margin: 0;
                 }
                 .hiden_description{
-                    max-height: 200px;
+                    @media screen and (min-width: 426px){
+                        max-height: 175px;
+                    }
+                    @media screen and (max-width: 768px){
+                        max-height: 82px;
+                    }
                     overflow: hidden;
                 }
                 .read_more{
