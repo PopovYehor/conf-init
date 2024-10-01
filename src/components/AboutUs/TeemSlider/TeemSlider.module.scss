@@ -2,21 +2,25 @@
 
 .wrapper{
     margin-top: 132px;
-    max-width: 1440px;
+    width: 100%;
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 58px 100px;
     background-color: $color_accent;
     border-radius: 50px;
-
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 1440px;
+        margin: 58px 100px;
+    }
         h1{
             @include h1;
             margin: 0;
         }
         p{
-            margin: 16px 0 0;
+            margin: 24px 0 0;
             @include t1;
         }
         .slider_wrapper{

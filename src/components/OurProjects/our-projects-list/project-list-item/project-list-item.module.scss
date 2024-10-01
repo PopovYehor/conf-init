@@ -60,7 +60,6 @@
             }
         }
         .project_item_bold{
-            
             @media screen and (min-width: 769px){
                 margin-top: 26px;
             }
@@ -69,7 +68,7 @@
             }
             p{
                 @media screen and (min-width: 769px){
-                    @include t3;
+                    @include t2;
                 }
                 @media screen and (max-width: 768px){
                     color:$color_text_black;

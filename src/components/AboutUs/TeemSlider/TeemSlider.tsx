@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import EmployeeItem from "./EmployeeItem/EmployeeItem";
 import { defaultTeemSlider } from "@/constants/mainItemsDefault/mainItemsDefault";
 import { ActiveSlideDot, OtherSlideDot } from "@/components/icons/icons-slider/icons-slider";
+import { languages } from "@/language/languages";
 
 export default function TeemSlider() {
   interface ITeemSlider {
@@ -84,29 +85,29 @@ useEffect(() => {
   
     return (
       <section className={style.wrapper}>
-        <h1>Наша Команда</h1>
-        <p>
-          Якщо ви бажаєте приєднатися до нашої команди, зв`яжіться з нами поштою
-        </p>
-        <div className={style.slider_wrapper}>
-          <div
-            className={style.slider}
-            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-          >
-            {apiData.map((member) => (
-              <>
-                <EmployeeItem
-                  key={member._id}
-                  img={member.image.url}
-                  name={member.name}
-                  role={member.role}
-                  desc={member.description}
-                />
-              </>
-            ))}
+        <div className={style.container}>
+          <h1>{languages[languageSelected].ourTeam}</h1>
+          <p>{languages[languageSelected].joinOurTeam}</p>
+          <div className={style.slider_wrapper}>
+            <div
+              className={style.slider}
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
+              {apiData.map((member) => (
+                <>
+                  <EmployeeItem
+                    key={member._id}
+                    img={member.image.url}
+                    name={member.name}
+                    role={member.role}
+                    desc={member.description}
+                  />
+                </>
+              ))}
+            </div>
           </div>
+          <div className={style.dots_wrapper}>{dots}</div>
         </div>
-        <div className={style.dots_wrapper}>{dots}</div>
       </section>
     );
 }
