@@ -49,5 +49,7 @@ export const apiUrls = {
 };
 export const googleForm = 'https://docs.google.com/forms/d/e/1FAIpQLSd1xaeCYoSMucIhInHujyJtK95an2ZMGh5sPRQuJaPf1JHqng/viewform'
 export const supportUrl = 'https://www.liqpay.ua/'
+export const paypalUrl = 'https://www.paypal.com/'
+export const monobankUrl = 'https://monobank.ua/'
 export const facebookUrl = 'https://www.facebook.com/profile.php?id=61559370821121'
 export const instagramUrl = 'https://www.instagram.com/conf.bmv/'
