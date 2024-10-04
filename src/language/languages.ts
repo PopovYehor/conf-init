@@ -78,6 +78,7 @@ export const languages: any = {
     docs: "Документи",
     privacy_policy: "Політика конфіденційності",
     offer: "Публічна оферта",
+    underText: "Сайт створено командою junfolio.top © 2024",
   },
   en: {
     //header
@@ -151,5 +152,6 @@ export const languages: any = {
     docs: "Documents",
     privacy_policy: "Privacy policy",
     offer: "Public offer",
+    underText: "Site created by junfolio.top © 2024",
   },
 };
