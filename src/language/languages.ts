@@ -5,7 +5,7 @@ export const languages: any = {
     project: "Наші проєкти",
     support: "Підтримати",
     volunteers: "Волонтери",
-    donate: 'Підтримати',
+    donate: "Підтримати",
     //_____________________
     //MAIN
 
@@ -69,8 +69,10 @@ export const languages: any = {
     //_____________________________
 
     //support us
-    donate_description_1: "Благодійна організація «Конференція Блаженної Марти Вєцкої» є неприбутковою організацією, тому її діяльність можлива тільки завдяки благодійним пожертвам. Всі кошти, які отримає організація будуть направлені на реалізацію наших проектів та підтримку потребуючим людям.",
-    donate_description_2: "Ви можете зробити добровільну благодійну пожертву наступним чином:",
+    donate_description_1:
+      "Благодійна організація «Конференція Блаженної Марти Вєцкої» є неприбутковою організацією, тому її діяльність можлива тільки завдяки благодійним пожертвам. Всі кошти, які отримає організація будуть направлені на реалізацію наших проектів та підтримку потребуючим людям.",
+    donate_description_2:
+      "Ви можете зробити добровільну благодійну пожертву наступним чином:",
 
     //footer
     menu: "Меню",
@@ -78,6 +80,7 @@ export const languages: any = {
     docs: "Документи",
     privacy_policy: "Політика конфіденційності",
     offer: "Публічна оферта",
+    underText: "Сайт створено командою junfolio.top © 2024",
   },
   en: {
     //header
@@ -85,7 +88,7 @@ export const languages: any = {
     project: "Our Projects",
     support: "Support Us",
     volunteers: "Volunteers",
-    donate: 'Donate',
+    donate: "Donate",
     //_____________________
 
     //MAIN
@@ -151,5 +154,6 @@ export const languages: any = {
     docs: "Documents",
     privacy_policy: "Privacy policy",
     offer: "Public offer",
+    underText: "Site created by junfolio.top © 2024",
   },
 };

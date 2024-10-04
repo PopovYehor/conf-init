@@ -92,10 +92,7 @@ export default function Footer() {
                 onMouseUp={() => setInstagramPressed(false)}
                 onDoubleClick={() => setInstagramDisabled(!isInstagramDisabled)}
               >
-                <Link
-                  href={instagramUrl}
-                  target="_blank"
-                >
+                <Link href={instagramUrl} target="_blank">
                   {getInstagramIcon()}
                 </Link>
               </div>
@@ -107,10 +104,7 @@ export default function Footer() {
                 onMouseUp={() => setFacebookPressed(false)}
                 onDoubleClick={() => setFacebookDisabled(!isFacebookDisabled)}
               >
-                <Link
-                  href={facebookUrl}
-                  target="_blank"
-                >
+                <Link href={facebookUrl} target="_blank">
                   {getFacebookIcon()}
                 </Link>
               </div>
@@ -143,7 +137,7 @@ export default function Footer() {
                 <>
                   <span>{apiData[0].titleCont}</span>
                   <span>{apiData[0].adressCont}</span>
-                  <Link href={apiData[0].phoneCont}>
+                  <Link href={"tel:" + apiData[0].phoneCont.replace(/\s+/g, "")}>
                     {apiData[0].phoneCont}
                   </Link>
                 </>
@@ -162,7 +156,7 @@ export default function Footer() {
         </div>
         <div className={style.bottom_part}>
           <hr></hr>
-          <p>Сайт створено командою junfolio.top © 2024</p>
+          <p>{languages[languageSelected].underText}</p>
         </div>
       </div>
     </footer>

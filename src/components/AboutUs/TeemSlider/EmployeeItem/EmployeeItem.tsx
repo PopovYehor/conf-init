@@ -1,4 +1,3 @@
-import Image from "next/image";
 import style from "./EmployeeItem.module.scss";
 
 
@@ -8,9 +7,9 @@ export default function EmployeeItem({ img, name, role, desc }:
     return (
       <div className={style.member}>
         <img src={img} alt={name} className={style.img}></img>
-        <h1>{name}</h1>
-        <h3>{role}</h3>
-        <p>{desc}</p>
+        <h2 className={style.name}>{name}</h2>
+        <h3 className={style.role}>{role}</h3>
+        <span className={style.desc}>{desc}</span>
       </div>
     );
 }
