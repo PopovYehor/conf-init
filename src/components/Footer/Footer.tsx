@@ -14,11 +14,12 @@ import {
 import { IconsMain } from "@/components/icons/icons-main/icons-main";
 import { useState, useEffect } from "react";
 import { defaultContacts } from "@/constants/mainItemsDefault/mainItemsDefault";
-import { apiUrls, languageParameter } from "@/constants/apiUrls/apiUrls";
+import { apiUrls, facebookUrl, instagramUrl, languageParameter } from "@/constants/apiUrls/apiUrls";
 import { useAppSelector } from "@/hooks/hooks";
 
 import { languages } from "@/language/languages";
 import axios from "axios";
+import { navigation } from "@/constants/navigations/navigations";
 
 export default function Footer() {
   interface IContactData {
@@ -76,82 +77,87 @@ export default function Footer() {
 
   return (
     <footer className={style.footer}>
-      <div className={style.top_part}>
-        <div className={style.wrapper_logos}>
-          <div className={style.logo}>
-            <a href="">{IconsMain()}</a>
-          </div>
-
-          <div className={style.wrapper_icons}>
-            <div
-              onMouseEnter={() => setInstagramHovered(true)}
-              onMouseLeave={() => setInstagramHovered(false)}
-              onMouseDown={() => setInstagramPressed(true)}
-              onMouseUp={() => setInstagramPressed(false)}
-              onDoubleClick={() => setInstagramDisabled(!isInstagramDisabled)}
-            >
-              <Link href="https://www.instagram.com/conf.bmv/" target="_blank">
-                {getInstagramIcon()}
-              </Link>
+      <div className={style.container}>
+        <div className={style.top_part}>
+          <div className={style.wrapper_logos}>
+            <div className={style.logo}>
+              <a href="">{IconsMain()}</a>
             </div>
 
-            <div
-              onMouseEnter={() => setFacebookHovered(true)}
-              onMouseLeave={() => setFacebookHovered(false)}
-              onMouseDown={() => setFacebookPressed(true)}
-              onMouseUp={() => setFacebookPressed(false)}
-              onDoubleClick={() => setFacebookDisabled(!isFacebookDisabled)}
-            >
-              <Link
-                href="https://www.facebook.com/profile.php?id=61559370821121"
-                target="_blank"
+            <div className={style.wrapper_icons}>
+              <div
+                onMouseEnter={() => setInstagramHovered(true)}
+                onMouseLeave={() => setInstagramHovered(false)}
+                onMouseDown={() => setInstagramPressed(true)}
+                onMouseUp={() => setInstagramPressed(false)}
+                onDoubleClick={() => setInstagramDisabled(!isInstagramDisabled)}
               >
-                {getFacebookIcon()}
-              </Link>
+                <Link href={instagramUrl} target="_blank">
+                  {getInstagramIcon()}
+                </Link>
+              </div>
+
+              <div
+                onMouseEnter={() => setFacebookHovered(true)}
+                onMouseLeave={() => setFacebookHovered(false)}
+                onMouseDown={() => setFacebookPressed(true)}
+                onMouseUp={() => setFacebookPressed(false)}
+                onDoubleClick={() => setFacebookDisabled(!isFacebookDisabled)}
+              >
+                <Link href={facebookUrl} target="_blank">
+                  {getFacebookIcon()}
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-        <div className={style.wrapper_menu_contacts}>
-          <div className={style.wrapper_menu}>
-            <p>{languages[languageSelected].menu}</p>
+          <div className={style.wrapper_menu_contacts}>
+            <div className={style.wrapper_menu}>
+              <p>{languages[languageSelected].menu}</p>
 
-            <Link href={"/about"}>{languages[languageSelected].about}</Link>
+              <Link href={navigation.about}>
+                {languages[languageSelected].about}
+              </Link>
 
-            <Link href={"/support"}>{languages[languageSelected].support}</Link>
+              <Link href={navigation.support}>
+                {languages[languageSelected].support}
+              </Link>
 
-            <Link href={"/projects"}>
-              {languages[languageSelected].project}
+              <Link href={navigation.projects}>
+                {languages[languageSelected].project}
+              </Link>
+
+              <Link href={navigation.volunteers}>
+                {languages[languageSelected].volunteers}
+              </Link>
+            </div>
+
+            <div className={style.wrapper_contacts}>
+              <p>{languages[languageSelected].contacts}</p>
+              {apiData.length > 0 && (
+                <>
+                  <span>{apiData[0].titleCont}</span>
+                  <span>{apiData[0].adressCont}</span>
+                  <Link href={"tel:" + apiData[0].phoneCont.replace(/\s+/g, "")}>
+                    {apiData[0].phoneCont}
+                  </Link>
+                </>
+              )}
+            </div>
+          </div>
+          <div className={style.wrapper_politics}>
+            <p>{languages[languageSelected].docs}</p>
+            <Link href="/politic-files/privacy_policy.docx" download>
+              {languages[languageSelected].privacy_policy}
             </Link>
-
-            <Link href={"/volunteers"}>
-              {languages[languageSelected].volunteers}
+            <Link href="/politic-files/public_offer.docx" download>
+              {languages[languageSelected].offer}
             </Link>
           </div>
-
-          <div className={style.wrapper_contacts}>
-            <p>{languages[languageSelected].contacts}</p>
-            {apiData.length > 0 && (
-              <>
-                <span>{apiData[0].titleCont}</span>
-                <span>{apiData[0].adressCont}</span>
-                <Link href={apiData[0].phoneCont}>{apiData[0].phoneCont}</Link>
-              </>
-            )}
-          </div>
         </div>
-        <div className={style.wrapper_politics}>
-          <p>{languages[languageSelected].docs}</p>
-          <Link href="/politic-files/privacy_policy.docx" download>
-            {languages[languageSelected].privacy_policy}
-          </Link>
-          <Link href="/politic-files/public_offer.docx" download>
-            {languages[languageSelected].offer}
-          </Link>
+        <div className={style.bottom_part}>
+          <hr></hr>
+          <p>{languages[languageSelected].underText}</p>
         </div>
-      </div>
-      <div className={style.bottom_part}>
-        <hr></hr>
-        <p>Сайт створено командою junfolio.top © 2024</p>
       </div>
     </footer>
   );

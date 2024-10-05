@@ -12,13 +12,15 @@ export default function NeedSupport() {
 
   return (
     <section className={style.wrapper}>
-      <Image src={photo} alt="" className={style.image} />
-          <h3>{languages[languageSelected].need_support_headline}</h3>
-          <p>{languages[languageSelected].need_support_text}</p>
-          <ButtonsSecondary
-            text={languages[languageSelected].need_support_button_text}
-            url="https://forms.gle/iS8nQyzXFMYZxMwYA"
-          />
+      <div className={style.container}>
+        <Image src={photo} alt="" className={style.image} />
+        <h3>{languages[languageSelected].need_support_headline}</h3>
+        <p>{languages[languageSelected].need_support_text}</p>
+        <ButtonsSecondary
+          text={languages[languageSelected].need_support_button_text}
+          url="https://forms.gle/iS8nQyzXFMYZxMwYA"
+        />
+      </div>
     </section>
-  )
+  );
 }

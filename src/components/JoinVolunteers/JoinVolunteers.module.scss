@@ -2,25 +2,53 @@
 
 .wrapper{
     margin: 132px 0;
-    padding: 0 100px;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        
 
-    .image {
-        width: 610px;
-        height: 599px;
-        margin-right: 42px;
-    }
-    
-    .info{
-        h2{
-            @include h2;
-            margin: 0;
+        .image {
+            width: 610px;
+            height: 599px;
+            margin-right: 42px;
         }
-        p{
-            margin-bottom: 36px;
-            @include t2;
+        
+        .info{
+            h2{
+                @include h2;
+                margin: 0;
+            }
+            p{
+                margin-bottom: 36px;
+                @include t2;
+            }
+        }
+        @media screen and (min-width: 1150px) {
+            flex-direction: row;
+            .image {
+                width: 610px;
+                height: 599px;
+                margin: 0 42px 0 0;
+            }
+        }
+        @media screen and (max-width: 1149px) {
+            flex-direction: column;
+            .image {
+                width: 610px;
+                height: 599px;
+                margin: 0 0 24px;
+            }
+        }
+        @media screen and (min-width: 1340px) {
+            width: 1240px;
+        }
+        @media screen and (max-width: 1340px) {
+            margin: 0 100px;  
         }
     }
 }
@@ -28,27 +56,29 @@
 @media (max-width: 768px) {
     .wrapper{
         margin: 32px 0 48px;
-        padding: 0 40px;
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
 
-        .image {
-            width: 350px;
-            height: 343px;
-            margin-bottom: 20px;
-            margin-right: 0;
-        }
-
-        .info{
-            h2{
-                @include t1;
-                margin: 0;
+        .container{
+            .image {
+                width: 350px;
+                height: 343px;
+                margin-bottom: 20px;
+                margin-right: 0;
             }
-            p{
-                margin: 8px 0 24px;
-                @include t5;
+
+            .info{
+                h2{
+                    @include t1;
+                    margin: 0;
+                }
+                p{
+                    margin: 8px 0 24px;
+                    @include t5;
+                }
             }
         }
     }

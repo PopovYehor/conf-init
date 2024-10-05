@@ -2,35 +2,104 @@
 
 .wrapper{
     margin-top: 132px;
-    max-width: 1440px;
+    width: 100%;
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 58px 100px;
     background-color: $color_accent;
     border-radius: 50px;
-
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 58px 100px;
+    
         h1{
             @include h1;
             margin: 0;
         }
         p{
-            margin: 16px 0 0;
+            align-self: center;
+            margin: 24px 0 0;
             @include t1;
         }
         .slider_wrapper{
             margin: 64px 0;
-            border: 1px solid black;
             max-width: 1063px;
             overflow: hidden;
             
             .slider{
                 display: flex;
-                height: 747px;
-                gap: 22px;
-                width: 3720px;
                 transition: transform 1s ease;
+                
+                > div:nth-child(3n + 2) {
+                    margin: 0 21.5px; 
+                }
             }
         }
+        .dots_wrapper{
+            display: flex;
+            gap: 32px;
+        }
+    }
+        @media screen and (min-width: 1150px) {
+            .container{
+                margin: 58px 0;
+            }
+        }
+
+        @media screen and (max-width: 1149px) {
+            
+        }
+        @media screen and (min-width: 1340px) {
+            .container{
+                width: 1240px;
+                margin: 58px 0;
+            }
+        }
+        @media screen and (max-width: 1339px) {
+            .container{
+                margin: 58px 100px;
+            }
+        }
+}
+
+@media (max-width: 768px) {
+    .wrapper{
+        margin: 48px 0;
+        height: 847px;
+        padding: 24px 20px 44px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .container{
+            h1{
+                @include h4;
+                margin: 0;
+            }
+            p{
+                @include t3;
+                margin: 16px 0 34px;
+            }
+            .slider_wrapper{
+                margin: 0 0 32px;
+                height: auto;
+                width: 350px;
+                overflow: hidden;
+
+                .slider{
+                    height: auto;
+                    transition: transform 1s ease;
+                    > div:nth-child(3n + 2) {
+                        margin: 0; 
+                    }
+                }
+            }
+            .dots_wrapper{
+                display: flex;
+                gap: 14px;
+            }
+        }
+    }
 }
