@@ -5,6 +5,7 @@ import { languages } from "@/language/languages";
 import photo from "./photo.png";
 import { useAppSelector } from "@/hooks/hooks";
 import ButtonsDefault from "@/components/Buttons/ButtonsDefault/ButtonsDefault";
+import { googleForm } from "@/constants/apiUrls/apiUrls";
 
 
 export default function JoinVolunteers() {
@@ -21,7 +22,7 @@ export default function JoinVolunteers() {
           <p>{languages[languageSelected].main_page_text_volunteers}</p>
           <ButtonsDefault
             text={languages[languageSelected].main_page_button_volunteers}
-            url="/volunteers"
+            url={googleForm}
           />
         </div>
       </div>

@@ -8,6 +8,7 @@ import banerImg from "@/assets/baner/baner-img.jpg"
 import Image from "next/image";
 import ButtonsDefault from "@/components/Buttons/ButtonsDefault/ButtonsDefault";
 import ButtonsSecondary from "@/components/Buttons/ButtonsSecondary/ButtonsSecondary";
+import { supportUrl } from "@/constants/apiUrls/apiUrls";
 
 export default function Baner(){
     const languageSelected = useAppSelector((state)=>state.language.languageSelected)
@@ -30,7 +31,7 @@ export default function Baner(){
                 </div>
                 <div className={styles.baner_buttons}>
                     <ButtonsDefault text={languages[languageSelected].about} url={navigation.about}/>
-                    <ButtonsSecondary  text={languages[languageSelected].donate} url={navigation.support}/>
+                    <ButtonsSecondary  text={languages[languageSelected].donate} url={supportUrl}/>
                 </div>
             </div>
         </div>
