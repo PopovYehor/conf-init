@@ -23,7 +23,7 @@ $font_size_t3:18px;
 $font_size_t4:16px;
 $font_size_t5:14px;
 
-$letter_spacing: 0.2px;
+$letter_spacing: 0.3px;
 
 //css function
 @mixin flex_center{
@@ -87,6 +87,7 @@ $letter_spacing: 0.2px;
     line-height: 28.8px;
     color: $color_text_black;
     letter-spacing: $letter_spacing;
+    margin: 0;
 }
 //---Secondary text---//
 @mixin t2{
@@ -95,6 +96,7 @@ $letter_spacing: 0.2px;
     line-height: 24px;
     color: $color_text_black;
     letter-spacing: $letter_spacing;
+    margin: 0;
 }
 @mixin t2_underline{
     font-size: $font_size_t2;
@@ -103,6 +105,7 @@ $letter_spacing: 0.2px;
     color: $color_text_black;
     text-decoration: underline;
     letter-spacing: $letter_spacing;
+    margin: 0;
 }
 //---Others text
 @mixin t3{
@@ -111,6 +114,7 @@ $letter_spacing: 0.2px;
     line-height: 21.6px;
     color: $color_text_black;
     letter-spacing: $letter_spacing;
+    margin: 0;
 }
 
 @mixin t4{
@@ -119,6 +123,7 @@ $letter_spacing: 0.2px;
     line-height: 19.2px;
     color: $color_text_black;
     letter-spacing: $letter_spacing;
+    margin: 0;
 }
 
 @mixin t5{
@@ -127,6 +132,7 @@ $letter_spacing: 0.2px;
     line-height: 16.8px;
     color: $color_text_black;
     letter-spacing: $letter_spacing;
+    margin: 0;
 }
 
 @mixin t_button{
@@ -134,6 +140,7 @@ $letter_spacing: 0.2px;
     font-weight: $font_weight;
     line-height: 16px;
     letter-spacing: $letter_spacing;
+    margin: 0;
 }
 
 //buttons

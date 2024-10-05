@@ -26,11 +26,12 @@
 @media screen and (max-width: 1023px) and (min-width: 769px) {
     .nav_wrap{
     gap: 30px;
-    .header_nav{
-        gap: 15px;
-    }
+        .header_nav{
+            gap: 15px;
+        }
     }
 }
+
 @media screen and (min-width: 769px) {
     .header{
         height: 113px;
@@ -80,8 +81,11 @@
                         @media screen and (max-width: 1239px) and (min-width: 1024px){
                             @include t2;
                         }
-                        @media screen and (max-width: 1023px) and (min-width: 769px){
+                        @media screen and (max-width: 1023px) and (min-width: 900px){
                             @include t3;
+                        }
+                        @media screen and (max-width: 899px) and (min-width: 769px){
+                            @include t5;
                         }
                         text-decoration: none;
                         color: $color_text_black;
@@ -210,8 +214,8 @@
                         svg{
                             position: relative;
                             top: 2px;
-                            fill: $color_blue_main;
-                            path{
+                            color: $color_blue_main;
+                            path:nth-child(2n){
                                 fill: $color_blue_main
                             }
                         }

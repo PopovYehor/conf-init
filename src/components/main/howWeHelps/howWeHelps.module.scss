@@ -22,8 +22,13 @@
         }
         .help_header{
             h2{
-                @media screen and (min-width: 769px) {
+                @media screen and (min-width: 1340px) {
                     @include h2;
+                    min-width: 430px;
+                }
+                @media screen and (max-width: 1339px) and (min-width: 769px) {
+                    @include h2;
+                    font-size: 47px;
                     min-width: 430px;
                 }
                 @media screen and (max-width: 768px) {
@@ -40,33 +45,10 @@
             @media screen and (min-width: 1340px) {
                 width: 1240px;
             }
-            /* @media screen and (min-width: 1300px) {
-                width: 1255px;
-                justify-content: space-between;
-            }
-            @media screen and (max-width: 1300px) and (min-width: 1135px) {
-                width: 1130px;
-                justify-content: space-between;
-            }
-            @media screen and (max-width: 1134px) and (min-width: 1005px) {
-                width: 965px;
-                justify-content: space-between;
-                gap: 50px;
-            } */
             @media screen and (max-width: 1004px) {
                 flex-direction: column !important;
             }
             .help_description{
-                /* max-width: 615px; */
-                /* @media screen and (min-width: 1300px) {
-                    max-width: 752px;
-                }
-                @media screen and (max-width: 1300px) and (min-width: 1135px) {
-                    max-width: 550px;
-                }
-                @media screen and (max-width: 1134px) and (min-width: 1004px) {
-                    max-width: 470px;
-                } */
                 @media screen and (min-width: 1004px) {
                     margin-left: 64px;
                 }   
@@ -96,12 +78,6 @@
                 @media screen and (max-width: 1339px){
                     width: 100%;
                 }
-                /* @media screen and (max-width: 1134px) and (min-width: 1005px) {
-                    width: 965px;
-                }
-                @media screen and (max-width: 1004px) {
-                    width: 100%;
-                } */
             }
             .support_description{
                 @media screen and (min-width: 1340px) {

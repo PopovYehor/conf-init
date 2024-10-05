@@ -5,6 +5,6 @@ export default function ButtonsDefault(
   { text, url }: { text: string; url: string }
 ) {
   return (
-    <Link href={url} className={style.button}>{text}</Link>
+    <Link href={url} className={style.button} target="_blank">{text}</Link>
   );
 }
