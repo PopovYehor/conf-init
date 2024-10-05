@@ -71,6 +71,12 @@ export const languages: any = {
     //support us
     donate_description_1: "Благодійна організація «Конференція Блаженної Марти Вєцкої» є неприбутковою організацією, тому її діяльність можлива тільки завдяки благодійним пожертвам. Всі кошти, які отримає організація будуть направлені на реалізацію наших проектів та підтримку потребуючим людям.",
     donate_description_2: "Ви можете зробити добровільну благодійну пожертву наступним чином:",
+    report_header: 'Звіти та документи',
+    report_description: 'Ознайомитись з документами Організації, договором публічної оферти про надання пожертвувань та звітом за використані кошти можна тут.',
+    extract: 'Виписка',
+    registration: 'Реєстрація організації',
+    mounth_report: 'Звіт за місяць',
+    //________________________
 
     //footer
     menu: "Меню",
@@ -145,6 +151,16 @@ export const languages: any = {
     //partners
     partners: "Our partners",
     //_____________________________
+
+    //support us
+    donate_description_1: 'The "Blessed Marta Wiecka Conference" charitable organization is a non-profit organization, therefore its activities are possible only thanks to charitable donations. All funds received by the organization will be directed to the implementation of our projects and support to people in need.',
+    donate_description_2: "You can make a voluntary charitable donation as follows:",
+    report_header: 'Reports and documents',
+    report_description: 'You can get acquainted with the documents of the Organization, the contract of the public offer on the provision of donations and the report on the funds used here.',
+    extract: 'Extract',
+    registration: 'Organization registration',
+    mounth_report: 'Monthly report',
+    //__________________________________
 
     //footer
     menu: "Menu",
