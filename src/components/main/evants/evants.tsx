@@ -19,7 +19,7 @@ export interface IPagination{
 export default function Evants(){
 
     const languageSelected = useAppSelector((state)=>state.language.languageSelected)
-    const [events, setEvents] = useState<IEventItem[]>([defaultEvant])
+    const [events, setEvents] = useState<IEventItem[] | []>([])
     const [viewEvents, setViewEvents] = useState<IEventItem[]>(events)
     const [disconect, setDisconect] = useState<boolean>(false)
     const header_event = useRef<HTMLDivElement | null>(null)
@@ -34,7 +34,7 @@ export default function Evants(){
     const [pag, setPag] = useState<IPagination>(pagination)
     // get events
     
-    useEffect(()=>{
+    /* useEffect(()=>{
         const fetchEvents = async ()=>{
             try{
                 const responce = await axios.get(apiUrls.eventsUrl+languageParameter+languageSelected)
@@ -46,7 +46,7 @@ export default function Evants(){
             }
         }
         fetchEvents()
-    },[languageSelected, disconect])
+    },[languageSelected, disconect]) */
 
     //set list for next page
     const nextPage = ()=>{
@@ -115,7 +115,7 @@ export default function Evants(){
             {events.length > 3 &&
                 <Pagination event = {events} page = {pag.page} nextPage = {nextPage} previousPage = {previousPage} setPage = {setPage}/>
             }
-            {viewEvents.length == 0 || disconect && <EventBaner/>}
+            {viewEvents.length == 0 && <EventBaner/>}
         </article>
         </>
     )
