@@ -5,6 +5,7 @@ import { languages } from "@/language/languages";
 import photo from "@/assets/qr_code/photo.png";
 import { useAppSelector } from "@/hooks/hooks";
 import ButtonsDefault from "@/components/Buttons/ButtonsDefault/ButtonsDefault";
+import { supportUrl } from "@/constants/apiUrls/apiUrls";
 
 
 export default function HelpRaiseCash() {
@@ -21,7 +22,7 @@ export default function HelpRaiseCash() {
           <p>{languages[languageSelected].main_page_text_raise_cash}</p>
           <ButtonsDefault
             text={languages[languageSelected].main_page_button_raise_cash}
-            url="/support"
+            url={supportUrl}
           />
         </div>
       </div>
