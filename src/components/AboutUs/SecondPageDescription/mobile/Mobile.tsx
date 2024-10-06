@@ -51,7 +51,7 @@ export default function Mobile() {
       <section className={style.wrapper}>
         <div className={style.title_description}>
           <h2>{apiData[0].titleAbout}</h2>
-          <h6>{apiData[0].description}</h6>
+          <h6>{apiData[0].description[0]}</h6>
         </div>
         <div className={style.image_wrapper}>
           <Image
@@ -63,9 +63,9 @@ export default function Mobile() {
           ></Image>
         </div>
         <div className={style.text_wrapper}>
-          <p>{apiData[0].description1}</p>
-          <p>{apiData[0].description2}</p>
-          <p>{apiData[0].description3}</p>
+          <p>{apiData[0].description[1]}</p>
+          <p>{apiData[0].description[2]}</p>
+          <p>{apiData[0].description[3]}</p>
         </div>
       </section>
     </>
