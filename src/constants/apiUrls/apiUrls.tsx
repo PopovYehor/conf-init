@@ -53,3 +53,5 @@ export const paypalUrl = 'https://www.paypal.com/'
 export const monobankUrl = 'https://monobank.ua/'
 export const facebookUrl = 'https://www.facebook.com/profile.php?id=61559370821121'
 export const instagramUrl = 'https://www.instagram.com/conf.bmv/'
+export const publicOfferUrl = 'https://drive.google.com/file/d/1V0Z2kltb6IRcOAZONEQphSvhnsYfvtHv/view';
+export const privacyPolicyUrl = 'https://drive.google.com/file/d/1u5EJLKih1SGQ_py_6P6iIQ7UwviwxXTE/view';

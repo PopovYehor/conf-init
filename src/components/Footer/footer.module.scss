@@ -10,7 +10,7 @@
   background-color: $color_blue_main;
   
   .container{
-    padding: 82px 100px 19px;
+    margin: 82px 100px 19px;
 
     .top_part{
       display: flex;
@@ -26,12 +26,6 @@
           display: flex;
           margin: 0 0 35px;
           justify-content: center;
-        }
-
-        .wrapper_icons {
-          display: flex;
-          justify-content: space-between;
-          width: 110px;
         }
       }
 
@@ -88,11 +82,11 @@
         display: flex;
         flex-direction: column;
         p {
-                      font-weight: $font_weight_bold;
-                      margin-top: 0;
-                      margin-bottom: 20px;
-                      color: $color_white_background;
-                  }
+            font-weight: $font_weight_bold;
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: $color_white_background;
+        }
 
           &:first-child {
               margin-bottom: 12px;
@@ -105,6 +99,12 @@
               &:hover {
               text-decoration: underline;
               }
+          }
+          .wrapper_icons {
+            margin-top: 42px;
+            display: flex;
+            justify-content: space-between;
+            width: 110px;
           }
       }
     }
@@ -129,8 +129,6 @@
 @media screen and (max-width: 1149px) {
   .footer{
     .container{
-      padding: 46px 20px 16px;
-      margin: 0;
         .top_part{
           width: 100%;
           display: flex;
@@ -148,6 +146,15 @@
               display: flex;
               justify-content: space-between;
               width: 100%;
+            }
+            .wrapper_politics{
+              align-items: center;
+              .wrapper_icons {
+                margin-top: 16px;
+                display: flex;
+                justify-content: space-between;
+                width: 110px;
+              }
             }
         }
     }
@@ -173,33 +180,21 @@
         align-items: center;
 
           .wrapper_logos {
-            display: flex;
-            align-items: center;
-            width: 100%;
-
-            .logo {
-              margin: 15px 0 25px;
-            }
-
-            .wrapper_icons {
-              width: 103px;
-              justify-content: space-between;
-            }
+            display: none;
           }
 
           .wrapper_menu_contacts {
             flex-direction: row;
             justify-content: space-between;
             width: 100%;
-            margin-top: 58px;
 
             .wrapper_menu,
             .wrapper_contacts {
               width: 100%;
-              margin-bottom: 100px;
+              margin-bottom: 32px;
             }
             .wrapper_contacts{
-              padding-left: 50px;
+              margin-right: 48px;
             }
           }
 
@@ -209,6 +204,11 @@
 
             a {
               text-align: center;
+            }
+            .wrapper_icons {
+              margin-top: 16px;
+              width: 60px;
+              justify-content: space-between;
             }
           }
       }

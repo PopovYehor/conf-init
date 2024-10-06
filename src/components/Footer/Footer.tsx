@@ -1,5 +1,5 @@
 import Link from "next/link";
-import style from "./style.module.scss";
+import style from "./footer.module.scss";
 
 import {
   InstagramIconsDefault,
@@ -10,16 +10,18 @@ import {
   FacebookIconsHover,
   FacebookIconsPresed,
   FacebookIconsDisabled,
+  InstagramIconsMobile,
+  FacebookIconsMobile,
 } from "@/components/icons/icons-socials/icons-socials";
 import { IconsMain } from "@/components/icons/icons-main/icons-main";
 import { useState, useEffect } from "react";
 import { defaultContacts } from "@/constants/mainItemsDefault/mainItemsDefault";
-import { apiUrls, facebookUrl, instagramUrl, languageParameter } from "@/constants/apiUrls/apiUrls";
+import { apiUrls, facebookUrl, instagramUrl, languageParameter, privacyPolicyUrl, publicOfferUrl } from "@/constants/apiUrls/apiUrls";
 import { useAppSelector } from "@/hooks/hooks";
-
 import { languages } from "@/language/languages";
 import axios from "axios";
 import { navigation } from "@/constants/navigations/navigations";
+
 
 export default function Footer() {
   interface IContactData {
@@ -40,6 +42,7 @@ export default function Footer() {
   const [isFacebookPressed, setFacebookPressed] = useState(false);
   const [isFacebookDisabled, setFacebookDisabled] = useState(false);
 
+  const isMobile = useAppSelector((state) => state.mobile.mobile);
   const languageSelected = useAppSelector(
     (state) => state.language.languageSelected
   );
@@ -83,32 +86,6 @@ export default function Footer() {
             <div className={style.logo}>
               <a href="">{IconsMain()}</a>
             </div>
-
-            <div className={style.wrapper_icons}>
-              <div
-                onMouseEnter={() => setInstagramHovered(true)}
-                onMouseLeave={() => setInstagramHovered(false)}
-                onMouseDown={() => setInstagramPressed(true)}
-                onMouseUp={() => setInstagramPressed(false)}
-                onDoubleClick={() => setInstagramDisabled(!isInstagramDisabled)}
-              >
-                <Link href={instagramUrl} target="_blank">
-                  {getInstagramIcon()}
-                </Link>
-              </div>
-
-              <div
-                onMouseEnter={() => setFacebookHovered(true)}
-                onMouseLeave={() => setFacebookHovered(false)}
-                onMouseDown={() => setFacebookPressed(true)}
-                onMouseUp={() => setFacebookPressed(false)}
-                onDoubleClick={() => setFacebookDisabled(!isFacebookDisabled)}
-              >
-                <Link href={facebookUrl} target="_blank">
-                  {getFacebookIcon()}
-                </Link>
-              </div>
-            </div>
           </div>
           <div className={style.wrapper_menu_contacts}>
             <div className={style.wrapper_menu}>
@@ -137,7 +114,9 @@ export default function Footer() {
                 <>
                   <span>{apiData[0].titleCont}</span>
                   <span>{apiData[0].adressCont}</span>
-                  <Link href={"tel:" + apiData[0].phoneCont.replace(/\s+/g, "")}>
+                  <Link
+                    href={"tel:" + apiData[0].phoneCont.replace(/\s+/g, "")}
+                  >
                     {apiData[0].phoneCont}
                   </Link>
                 </>
@@ -146,12 +125,38 @@ export default function Footer() {
           </div>
           <div className={style.wrapper_politics}>
             <p>{languages[languageSelected].docs}</p>
-            <Link href="/politic-files/privacy_policy.docx" download>
+            <Link href={privacyPolicyUrl} target="_blank">
               {languages[languageSelected].privacy_policy}
             </Link>
-            <Link href="/politic-files/public_offer.docx" download>
+            <Link href={publicOfferUrl} target="_blank">
               {languages[languageSelected].offer}
             </Link>
+
+            <div className={style.wrapper_icons}>
+              <div
+                onMouseEnter={() => setInstagramHovered(true)}
+                onMouseLeave={() => setInstagramHovered(false)}
+                onMouseDown={() => setInstagramPressed(true)}
+                onMouseUp={() => setInstagramPressed(false)}
+                onDoubleClick={() => setInstagramDisabled(!isInstagramDisabled)}
+              >
+                <Link href={instagramUrl} target="_blank">
+                  {!isMobile ? getInstagramIcon() : InstagramIconsMobile()}
+                </Link>
+              </div>
+
+              <div
+                onMouseEnter={() => setFacebookHovered(true)}
+                onMouseLeave={() => setFacebookHovered(false)}
+                onMouseDown={() => setFacebookPressed(true)}
+                onMouseUp={() => setFacebookPressed(false)}
+                onDoubleClick={() => setFacebookDisabled(!isFacebookDisabled)}
+              >
+                <Link href={facebookUrl} target="_blank">
+                  {!isMobile ? getFacebookIcon() : FacebookIconsMobile()}
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
         <div className={style.bottom_part}>
