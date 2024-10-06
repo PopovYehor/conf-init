@@ -35,7 +35,6 @@ export default function Desktop() {
           apiUrls.aboutUs + languageParameter + languageSelected
         );
         const { data } = response;
-
         setApiData(data);
       } catch {
         setApiData([defaultAboutUsDescription]);
@@ -62,10 +61,10 @@ export default function Desktop() {
           <div className={style.title_description}>
             <h2>{apiData[0].titleAbout}</h2>
           </div>
-          <h6>{apiData[0].description}</h6>
-          <p>{apiData[0].description1}</p>
-          <p>{apiData[0].description2}</p>
-          <p>{apiData[0].description3}</p>
+          <h6>{apiData[0].description[0]}</h6>
+          <p>{apiData[0].description[1]}</p>
+          <p>{apiData[0].description[2]}</p>
+          <p>{apiData[0].description[3]}</p>
         </div>
       </div>
     </section>
