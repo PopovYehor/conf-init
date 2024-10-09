@@ -12,6 +12,7 @@ import {
 } from "@/components/icons/icons-slider/icons-slider";
 import { languages } from "@/language/languages";
 import { useSwipeable } from "react-swipeable";
+import { cursorTo } from "readline";
 
 export default function TeemSlider() {
   interface ITeemSlider {
@@ -63,11 +64,11 @@ export default function TeemSlider() {
     const newDots = [];
 
     for (let i = 0; i < dotesCount; i++) {
-      if (i === currentSlide) {
-        newDots.push(<ActiveSlideDot key={i} />); // Активна точка
-      } else {
-        newDots.push(<OtherSlideDot key={i} />); // Інші точки
-      }
+      newDots.push(
+        <div style={{cursor: "pointer"}} key={i} onClick={() => goToSlide(i)}>
+          {i === currentSlide ? <ActiveSlideDot /> : <OtherSlideDot />}
+        </div>
+      );
     }
 
     setDots(newDots);
@@ -94,6 +95,11 @@ export default function TeemSlider() {
         (prev - 1 + Math.ceil(apiData.length / slidesToShow)) %
         Math.ceil(apiData.length / slidesToShow)
     );
+  };
+
+  // Обробка перемикання на конкретний слайд при кліку на точку
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
   };
 
   return (
