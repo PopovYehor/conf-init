@@ -1,3 +1,5 @@
+import VolunteersView from "@/view/volunteers/volunteers";
+
 export default function Volunteers() {
-  return <h1>Волонтери</h1>;
+  return <VolunteersView/>;
 }
