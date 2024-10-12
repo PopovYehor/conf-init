@@ -23,6 +23,7 @@ export default function JoinVolunteers() {
           <ButtonsDefault
             text={languages[languageSelected].main_page_button_volunteers}
             url={googleForm}
+            target={true}
           />
         </div>
       </div>

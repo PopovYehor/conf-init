@@ -77,7 +77,7 @@ export function EvantItem({
                             onClick={()=>setOpenDescription(!openDescription)}>
                                 {!openDescription ? languages[languageSelected].read_more : languages[languageSelected].hide_text}
                         </span>}
-                    <ButtonsDefault url={googleForm} text={languages[languageSelected].evant_join}/>
+                    <ButtonsDefault target={true} url={googleForm} text={languages[languageSelected].evant_join}/>
                 </div>
             </div>
         </>

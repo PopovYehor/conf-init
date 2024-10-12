@@ -11,7 +11,6 @@ export default function OurProjectsGoal(){
 
     const languageSelected = useAppSelector((state) => state.language.languageSelected);
     const images = useAppSelector((state)=>state.image.image)
-    const langPage = useAppSelector((state) => state.language.page)
     const [ourProject, setOurProjects] = useState<IOurProject[]>([ourProjectDefault])
     const [imageUrl, setImageUrl] = useState<string>(defaultImage.url)
 
@@ -20,7 +19,6 @@ export default function OurProjectsGoal(){
             try{
                 const responce = await axios.get(apiUrls.ourProjects+languageParameter+languageSelected)
                 setOurProjects(responce.data)
-                console.log(responce.data)
             }catch{
                 setOurProjects([ourProjectDefault])
             }

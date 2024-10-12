@@ -1,13 +1,19 @@
 @import "../../../styles/var.scss";
 .partners_wrap{
-    margin: 132px 0 112px 0;
+    
+    @media screen and (min-width: 769px) {
+        margin: 132px 0 112px 0;
+    }
+    @media screen and (max-width: 768px) {
+        margin: 16px 0 64px 0;
+    }
     width: 100%;
     display: flex;
     justify-content: center;
     .partners_container{
         display: flex;
         flex-direction: column;
-        gap: 42px;
+        gap: 32px;
         @media screen and (min-width: 1340px) {
             width: 1240px;
         }
@@ -29,20 +35,21 @@
         .partners_header{
             width: 100%;
             display: flex;
-            @media screen and (min-width: 769px) {
+            justify-content: center;
+            /* @media screen and (min-width: 769px) {
                 justify-content: space-between;
             }
             @media screen and (max-width: 768px) {
                 justify-content: center;
-            }
+            } */
             h3{
-                @include h1;
                 @media screen and (min-width: 769px) {
                     @include h1;
                 }
                 @media screen and (max-width: 768px) {
                     @include h3;
                 }
+                text-align: center;
             }
         }
         .partners_items_wrap{

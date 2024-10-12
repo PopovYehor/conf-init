@@ -4,6 +4,7 @@ import photo from "./photo.png";
 import { languages } from "@/language/languages";
 import { useAppSelector } from "@/hooks/hooks";
 import ButtonsSecondary from "@/components/Buttons/ButtonsSecondary/ButtonsSecondary";
+import { googleForm } from "@/constants/apiUrls/apiUrls";
 
 export default function NeedSupport() {
     const languageSelected = useAppSelector(
@@ -19,7 +20,8 @@ export default function NeedSupport() {
         <span>{languages[languageSelected].need_support_text2}</span>
         <ButtonsSecondary
           text={languages[languageSelected].need_support_button_text}
-          url="https://forms.gle/iS8nQyzXFMYZxMwYA"
+          url={googleForm}
+          target={true}
         />
       </div>
     </section>

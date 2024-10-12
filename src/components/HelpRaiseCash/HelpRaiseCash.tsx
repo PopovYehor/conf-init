@@ -23,6 +23,7 @@ export default function HelpRaiseCash() {
           <ButtonsDefault
             text={languages[languageSelected].main_page_button_raise_cash}
             url={supportUrl}
+            target={true}
           />
         </div>
       </div>

@@ -36,7 +36,7 @@
         .goal_image_wrap{
             @media screen and (min-width: 1340px){
                 width: 610px;
-                height: 600px;
+                height: 453px;
             }
             @media screen and (max-width: 1339px) and (min-width: 1000px) {
                 width: 610px;
@@ -64,6 +64,9 @@
             
             @media screen and (min-width: 1000px){
                 width: 582px;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
             }
             @media screen and (max-width: 999px){
                 width: 100%;

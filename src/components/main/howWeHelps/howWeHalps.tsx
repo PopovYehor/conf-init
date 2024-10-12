@@ -32,7 +32,6 @@ export default function HowWeHelps(){
         <>
         <article className={styles.help_container}>
             <div className={styles.help_wrap}>
-                {!mobile &&
                     <div className={styles.help_description_wrap}>
                         <div className={styles.help_header}>
                             <h2>{languages[languageSelected].how_help}</h2>
@@ -42,13 +41,9 @@ export default function HowWeHelps(){
                             <p>{languages[languageSelected].help_description_2}</p>
                         </div>
                     </div>
-                }
                 <div className={styles.help_supports_wrap}>
                     <div className={styles.help_header}>
-                        <h2>{
-                            !mobile?
-                                languages[languageSelected].we_support
-                                : languages[languageSelected].how_help}</h2>
+                        <h2>{languages[languageSelected].we_support}</h2>
                     </div>
                     <div className={styles.support_description}>
                         {help.map((item : IHelpItem, i : number)=>{

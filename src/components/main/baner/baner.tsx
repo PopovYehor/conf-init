@@ -31,7 +31,7 @@ export default function Baner(){
                 </div>
                 <div className={styles.baner_buttons}>
                     <ButtonsDefault text={languages[languageSelected].about} url={navigation.about}/>
-                    <ButtonsSecondary  text={languages[languageSelected].donate} url={supportUrl}/>
+                    <ButtonsSecondary target={true}  text={languages[languageSelected].donate} url={supportUrl}/>
                 </div>
             </div>
         </div>

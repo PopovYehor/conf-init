@@ -34,7 +34,7 @@ export default function Evants(){
     const [pag, setPag] = useState<IPagination>(pagination)
     // get events
     
-    /* useEffect(()=>{
+    useEffect(()=>{
         const fetchEvents = async ()=>{
             try{
                 const responce = await axios.get(apiUrls.eventsUrl+languageParameter+languageSelected)
@@ -46,7 +46,7 @@ export default function Evants(){
             }
         }
         fetchEvents()
-    },[languageSelected, disconect]) */
+    },[languageSelected, disconect])
 
     //set list for next page
     const nextPage = ()=>{

@@ -70,8 +70,8 @@ export function ProjectListItem({projectItem}:IProjectListItemProps){
                         </div>
                     }
                     <div className={styles.project_item_buttons_wrap}>
-                        <ButtonsDefault text={languages[languageSelected].donate} url={supportUrl}/>
-                        <ButtonsSecondary text={languages[languageSelected].join_volunteers} url={googleForm}/>
+                        <ButtonsDefault target={true} text={languages[languageSelected].donate} url={supportUrl}/>
+                        <ButtonsSecondary text={languages[languageSelected].join_volunteers} target={true} url={googleForm}/>
                     </div>
                 </div>
             </div>
