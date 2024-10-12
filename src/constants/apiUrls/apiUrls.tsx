@@ -21,6 +21,9 @@ const member = "member";
 //our projects
 const ourProjects = 'ourproject'
 const project = 'project'
+//_____________
+//Support Us
+const requisits = 'requisit'
 //______________
 //language parameter 
 export const languageParameter = "?language="
@@ -44,8 +47,11 @@ export const apiUrls = {
   //__________
   //our projects
   ourProjects: url+ourProjects,
-  projects: url+project
+  projects: url+project,
   //__________
+  //Support Us
+  requisits: url + requisits
+//______________
 };
 export const googleForm = 'https://docs.google.com/forms/d/e/1FAIpQLSd1xaeCYoSMucIhInHujyJtK95an2ZMGh5sPRQuJaPf1JHqng/viewform'
 export const supportUrl = 'https://www.liqpay.ua/'

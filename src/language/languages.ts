@@ -79,6 +79,10 @@ export const languages: any = {
     extract: "Виписка",
     registration: "Реєстрація організації",
     mounth_report: "Звіт за місяць",
+    requsits_header: 'Реквізити для благодійних внесків',
+    requsits_description: 'Якщо ви хочете, щоб ваша пожертва була спрямована на конкретний проект організації (посилання на сторінку з проектами), просимо вказати назву проекту в коментарі до платежу.',
+    requsits_uah: 'гривні',
+    requsits_head: 'Як зробити благодійний внесок у ',
     //________________________
 
     //footer
@@ -167,6 +171,10 @@ export const languages: any = {
     extract: "Extract",
     registration: "Organization registration",
     mounth_report: "Monthly report",
+    requsits_header: 'Details for charitable contributions',
+    requsits_description: 'If you want your donation to be directed to a specific project of the organization (link to the page with projects), please indicate the name of the project in the comments to the payment.',
+    requsits_uah: 'UAH',
+    requsits_head: 'How to make a charitable contribution to ',
     //__________________________________
 
     //footer
