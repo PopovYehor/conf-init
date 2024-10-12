@@ -5,7 +5,7 @@ export const languages: any = {
     project: "Наші проєкти",
     support: "Підтримати",
     volunteers: "Волонтери",
-    donate: 'Підтримати',
+    donate: "Підтримати",
     //_____________________
     //MAIN
 
@@ -33,8 +33,8 @@ export const languages: any = {
     we_support: "Ми підтримуємо:",
     //Need support
     need_support_headline: "Якщо вам потрібна підтримка або допомога",
-    need_support_text:
-      "Якщо Ви потребуєте допомоги, то просимо заповнити форму за посиланням.",
+    need_support_text: "Спершу ми хотіли б сказати вам, що ви не самотні!",
+    need_support_text2: "Ми завжди поруч",
     need_support_button_text: "Отримати допомогу",
     //_______________________________________________
 
@@ -69,13 +69,16 @@ export const languages: any = {
     //_____________________________
 
     //support us
-    donate_description_1: "Благодійна організація «Конференція Блаженної Марти Вєцкої» є неприбутковою організацією, тому її діяльність можлива тільки завдяки благодійним пожертвам. Всі кошти, які отримає організація будуть направлені на реалізацію наших проектів та підтримку потребуючим людям.",
-    donate_description_2: "Ви можете зробити добровільну благодійну пожертву наступним чином:",
-    report_header: 'Звіти та документи',
-    report_description: 'Ознайомитись з документами Організації, договором публічної оферти про надання пожертвувань та звітом за використані кошти можна тут.',
-    extract: 'Виписка',
-    registration: 'Реєстрація організації',
-    mounth_report: 'Звіт за місяць',
+    donate_description_1:
+      "Благодійна організація «Конференція Блаженної Марти Вєцкої» є неприбутковою організацією, тому її діяльність можлива тільки завдяки благодійним пожертвам. Всі кошти, які отримає організація будуть направлені на реалізацію наших проектів та підтримку потребуючим людям.",
+    donate_description_2:
+      "Ви можете зробити добровільну благодійну пожертву наступним чином:",
+    report_header: "Звіти та документи",
+    report_description:
+      "Ознайомитись з документами Організації, договором публічної оферти про надання пожертвувань та звітом за використані кошти можна тут.",
+    extract: "Виписка",
+    registration: "Реєстрація організації",
+    mounth_report: "Звіт за місяць",
     //________________________
 
     //footer
@@ -92,7 +95,7 @@ export const languages: any = {
     project: "Our Projects",
     support: "Support Us",
     volunteers: "Volunteers",
-    donate: 'Donate',
+    donate: "Donate",
     //_____________________
 
     //MAIN
@@ -119,7 +122,8 @@ export const languages: any = {
     we_support: "We support:",
     //Need support
     need_support_headline: "If you need support or help",
-    need_support_text: "If you need help, please fill out the form here.",
+    need_support_text: "First we would like to tell you that you are not alone!",
+    need_support_text2: "We are always there",
     need_support_button_text: "Get Help",
     //_______________________________________________
     //raise cash
@@ -153,13 +157,16 @@ export const languages: any = {
     //_____________________________
 
     //support us
-    donate_description_1: 'The "Blessed Marta Wiecka Conference" charitable organization is a non-profit organization, therefore its activities are possible only thanks to charitable donations. All funds received by the organization will be directed to the implementation of our projects and support to people in need.',
-    donate_description_2: "You can make a voluntary charitable donation as follows:",
-    report_header: 'Reports and documents',
-    report_description: 'You can get acquainted with the documents of the Organization, the contract of the public offer on the provision of donations and the report on the funds used here.',
-    extract: 'Extract',
-    registration: 'Organization registration',
-    mounth_report: 'Monthly report',
+    donate_description_1:
+      'The "Blessed Marta Wiecka Conference" charitable organization is a non-profit organization, therefore its activities are possible only thanks to charitable donations. All funds received by the organization will be directed to the implementation of our projects and support to people in need.',
+    donate_description_2:
+      "You can make a voluntary charitable donation as follows:",
+    report_header: "Reports and documents",
+    report_description:
+      "You can get acquainted with the documents of the Organization, the contract of the public offer on the provision of donations and the report on the funds used here.",
+    extract: "Extract",
+    registration: "Organization registration",
+    mounth_report: "Monthly report",
     //__________________________________
 
     //footer
