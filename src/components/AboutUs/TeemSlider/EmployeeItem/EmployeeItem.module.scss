@@ -28,13 +28,16 @@
         }
         .name{
             @include h4;
-           
+            margin: 20px 0px 12px;
         }
         .role{
             @include t3;
+            margin-top: 0;
+            margin-bottom: 20px;
         }
         .desc{
             @include t3;
+            margin: 0;
         }
 
 }

@@ -24,8 +24,8 @@
                 margin: 0;
             }
             p{
-                margin-bottom: 36px;
                 @include t2;
+                margin:16px 0  36px;
             }
         }
         @media screen and (min-width: 1150px) {
@@ -76,8 +76,8 @@
                     margin: 0;
                 }
                 p{
-                    margin: 8px 0 24px;
                     @include t5;
+                    margin: 8px 0 24px;
                 }
             }
         }

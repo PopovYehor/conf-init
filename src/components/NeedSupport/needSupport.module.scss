@@ -46,6 +46,10 @@
         p{
             @include t1;
             text-align: center;
+        }
+        span{
+            @include t1;
+            text-align: center;
             margin: 0 0 46.5px;
         }
     }
@@ -71,11 +75,15 @@
                 border-radius: 20px;
             }
             h3{
-                @include t1;
+                @include t2;
                 text-align: center;
                 margin: 24px 0 8px;
             }
             p{
+                @include t5;
+                text-align: center;
+            }
+            span{
                 @include t5;
                 text-align: center;
                 margin: 0 0 24px;

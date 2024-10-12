@@ -10,7 +10,21 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
+        .image {
+            width: 610px;
+            height: 599px;
+        }
+    
+        .info{
+            h2{
+                @include h2;
+                margin: 0;
+            }
+            p{
+                @include t2;
+                margin: 16px 0 36px;
+            }
+        }
         @media screen and (min-width: 1150px) {
             flex-direction: row-reverse;
         }
@@ -23,21 +37,6 @@
         }
         @media screen and (max-width: 1340px) {
             margin: 0 100px;  
-        }
-        .image {
-            width: 610px;
-            height: 599px;
-        }
-    
-        .info{
-            h2{
-                @include h2;
-                margin: 0;
-            }
-            p{
-                margin: 16px 0 36px;
-                @include t2;
-            }
         }
     }
 }
@@ -64,8 +63,8 @@
                     margin: 0;
                 }
                 p{
-                    margin: 8px 0 24px;
                     @include t5;
+                    margin: 8px 0 24px;
                 }
             }
         }

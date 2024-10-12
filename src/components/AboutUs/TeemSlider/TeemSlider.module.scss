@@ -27,6 +27,27 @@
             margin: 64px 0;
             max-width: 1063px;
             overflow: hidden;
+            cursor: pointer;
+
+            @media screen and (min-width: 1150px) {
+                max-width: 943px;
+            }
+            @media screen and (min-width: 1340px) {
+                max-width: 1063px;
+            }
+            @media screen and (max-width: 1340px) {
+                max-width: 1063px;
+            }
+            @media screen and (max-width: 1250px) {
+                max-width: 943px;
+            }
+            @media screen and (max-width: 1149px) {
+                max-width: 823px;
+            }
+            @media screen and (max-width: 919px) {
+                max-width: 643px;
+            }
+
             
             .slider{
                 display: flex;
@@ -68,7 +89,6 @@
     .wrapper{
         margin: 48px 0;
         height: 847px;
-        padding: 24px 20px 44px;
         border-radius: 20px;
         display: flex;
         flex-direction: column;
