@@ -50,6 +50,9 @@ export const languages: any = {
     main_page_text_volunteers:
       "Для цього треба зареєструватися на спеціальній волонтерській платформі, яка постійно долучає волонтерів до роботи та різних корисних зборів",
     main_page_button_volunteers: "ДОЛУЧИТИСЬ",
+
+    volunteersPageText1: "Ми шукаємо небайдужих людей для роботи в нашій команді волонтерів, щоб допомагати людям, які потребують підтримки. Ваші зусилля, вміння, знання та дві години на тиждень вашого часу можуть стати справжньою підтримкою для багатьох людей!",
+    volunteersPageText2: "Ми зможемо знайти Вам ту діяльність, яка буде приносити задоволення та розвивати ваші таланти і здібності!",
     //_____________________
 
     //about us
@@ -142,6 +145,8 @@ export const languages: any = {
     main_page_text_volunteers:
       "To do this, you need to register on a special volunteer platform, which constantly involves volunteers to work and various useful fees",
     main_page_button_volunteers: "Join",
+    volunteersPageText1: "We are looking for caring people to work in our team of volunteers to help people who need support. Your efforts, skills, knowledge and two hours a week of your time can be a real support for many people!",
+    volunteersPageText2: "We can find you the activity that will bring pleasure and develop your talents and abilities!",
     //_____________________
 
     //about us

@@ -2,7 +2,8 @@ import Image from "next/image";
 import style from "./HelpRaiseCash.module.scss";
 
 import { languages } from "@/language/languages";
-import photo from "@/assets/qr_code/photo.png";
+import iPhone from "@/assets/qr_code/iPhone.png";
+import pig from "@/assets/donate-buttons-img/donate-img-mobile.png";
 import { useAppSelector } from "@/hooks/hooks";
 import ButtonsDefault from "@/components/Buttons/ButtonsDefault/ButtonsDefault";
 import { supportUrl } from "@/constants/apiUrls/apiUrls";
@@ -12,10 +13,11 @@ export default function HelpRaiseCash() {
   const languageSelected = useAppSelector(
     (state) => state.language.languageSelected
   );
+  const isMobile = useAppSelector((state) => state.mobile.mobile);
   return (
     <section className={style.wrapper}>
       <div className={style.container}>
-        <Image src={photo} alt="" className={style.image} />
+        <Image src={!isMobile ? iPhone : pig} alt="" className={style.image} />
 
         <div className={style.info}>
           <h2>{languages[languageSelected].main_page_title_raise_cash}</h2>

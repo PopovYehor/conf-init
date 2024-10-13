@@ -19,9 +19,9 @@
             margin: 0;
         }
         p{
+            @include t1;
             align-self: center;
             margin: 24px 0 0;
-            @include t1;
         }
         .slider_wrapper{
             margin: 64px 0;
