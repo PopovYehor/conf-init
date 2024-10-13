@@ -48,28 +48,31 @@ export default function JoinAsVolunteers() {
         <section className={style.wrapper}>
           <div className={style.container}>
             <div className={style.content}>
-                <Image src={!isMobile ? desctop : mobile} alt="hands" className={style.image}></Image>
-                <h2>Бажаєш долучитися до волонтерства?</h2>
-                <div className={style.text_wrapper}>
-                  <p className={style.bold}>Як приєднатися:</p>
-                  <p >
-                    Якщо ви зацікавлені, будь ласка, заповніть форму волонтера
-                    за посиланням або зателефонуйте нам за номером:
-                  </p>
-                  <Link
-                    className={style.phoneNumber}
-                    href={"tel:" + apiData[0].phoneCont.replace(/\s+/g, "")}
-                  >
-                    {apiData[0].phoneCont}
-                  </Link>
-                  <p>Разом ми зможемо зробити більше!</p>
-                  <p>Чекаємо на вас з нетерпінням!</p>
-                </div>
-                <ButtonsDefault
-                  text={languages[languageSelected].main_page_button_volunteers}
-                  url={googleForm}
-                  target={true}
-                />
+              <Image
+                src={!isMobile ? desctop : mobile}
+                alt="hands"
+                className={style.image}
+              ></Image>
+              <h2>{languages[languageSelected].main_page_title_volunteers}</h2>
+              <div className={style.text_wrapper}>
+                <p className={style.bold}>
+                  {languages[languageSelected].joinAsVolunteersText1}
+                </p>
+                <p>{languages[languageSelected].joinAsVolunteersText2}</p>
+                <Link
+                  className={style.phoneNumber}
+                  href={"tel:" + apiData[0].phoneCont.replace(/\s+/g, "")}
+                >
+                  {apiData[0].phoneCont}
+                </Link>
+                <p>{languages[languageSelected].joinAsVolunteersText3}</p>
+                <p>{languages[languageSelected].joinAsVolunteersText4}</p>
+              </div>
+              <ButtonsDefault
+                text={languages[languageSelected].main_page_button_volunteers}
+                url={googleForm}
+                target={true}
+              />
             </div>
           </div>
         </section>

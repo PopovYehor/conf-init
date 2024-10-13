@@ -51,8 +51,16 @@ export const languages: any = {
       "Для цього треба зареєструватися на спеціальній волонтерській платформі, яка постійно долучає волонтерів до роботи та різних корисних зборів",
     main_page_button_volunteers: "ДОЛУЧИТИСЬ",
 
-    volunteersPageText1: "Ми шукаємо небайдужих людей для роботи в нашій команді волонтерів, щоб допомагати людям, які потребують підтримки. Ваші зусилля, вміння, знання та дві години на тиждень вашого часу можуть стати справжньою підтримкою для багатьох людей!",
-    volunteersPageText2: "Ми зможемо знайти Вам ту діяльність, яка буде приносити задоволення та розвивати ваші таланти і здібності!",
+    volunteersPageText1:
+      "Ми шукаємо небайдужих людей для роботи в нашій команді волонтерів, щоб допомагати людям, які потребують підтримки. Ваші зусилля, вміння, знання та дві години на тиждень вашого часу можуть стати справжньою підтримкою для багатьох людей!",
+    volunteersPageText2:
+      "Ми зможемо знайти Вам ту діяльність, яка буде приносити задоволення та розвивати ваші таланти і здібності!",
+
+    joinAsVolunteersText1: "Як приєднатися:",
+    joinAsVolunteersText2:
+      "Якщо ви зацікавлені, будь ласка, заповніть форму волонтера за посиланням або зателефонуйте нам за номером:",
+    joinAsVolunteersText3: "Разом ми зможемо зробити більше!",
+    joinAsVolunteersText4: "Чекаємо на вас з нетерпінням!",
     //_____________________
 
     //about us
@@ -82,10 +90,11 @@ export const languages: any = {
     extract: "Виписка",
     registration: "Реєстрація організації",
     mounth_report: "Звіт за місяць",
-    requsits_header: 'Реквізити для благодійних внесків',
-    requsits_description: 'Якщо ви хочете, щоб ваша пожертва була спрямована на конкретний проект організації (посилання на сторінку з проектами), просимо вказати назву проекту в коментарі до платежу.',
-    requsits_uah: 'гривні',
-    requsits_head: 'Як зробити благодійний внесок у ',
+    requsits_header: "Реквізити для благодійних внесків",
+    requsits_description:
+      "Якщо ви хочете, щоб ваша пожертва була спрямована на конкретний проект організації (посилання на сторінку з проектами), просимо вказати назву проекту в коментарі до платежу.",
+    requsits_uah: "гривні",
+    requsits_head: "Як зробити благодійний внесок у ",
     //________________________
 
     //footer
@@ -129,7 +138,8 @@ export const languages: any = {
     we_support: "We support:",
     //Need support
     need_support_headline: "If you need support or help",
-    need_support_text: "First we would like to tell you that you are not alone!",
+    need_support_text:
+      "First we would like to tell you that you are not alone!",
     need_support_text2: "We are always there",
     need_support_button_text: "Get Help",
     //_______________________________________________
@@ -145,8 +155,15 @@ export const languages: any = {
     main_page_text_volunteers:
       "To do this, you need to register on a special volunteer platform, which constantly involves volunteers to work and various useful fees",
     main_page_button_volunteers: "Join",
-    volunteersPageText1: "We are looking for caring people to work in our team of volunteers to help people who need support. Your efforts, skills, knowledge and two hours a week of your time can be a real support for many people!",
-    volunteersPageText2: "We can find you the activity that will bring pleasure and develop your talents and abilities!",
+    volunteersPageText1:
+      "We are looking for caring people to work in our team of volunteers to help people who need support. Your efforts, skills, knowledge and two hours a week of your time can be a real support for many people!",
+    volunteersPageText2:
+      "We can find you the activity that will bring pleasure and develop your talents and abilities!",
+    joinAsVolunteersText1: "How to join:",
+    joinAsVolunteersText2:
+      "If you are interested, please fill out the volunteer form or call us:",
+    joinAsVolunteersText3: "Together we can do more!",
+    joinAsVolunteersText4: "We look forward to seeing you!",
     //_____________________
 
     //about us
@@ -176,10 +193,11 @@ export const languages: any = {
     extract: "Extract",
     registration: "Organization registration",
     mounth_report: "Monthly report",
-    requsits_header: 'Details for charitable contributions',
-    requsits_description: 'If you want your donation to be directed to a specific project of the organization (link to the page with projects), please indicate the name of the project in the comments to the payment.',
-    requsits_uah: 'UAH',
-    requsits_head: 'How to make a charitable contribution to ',
+    requsits_header: "Details for charitable contributions",
+    requsits_description:
+      "If you want your donation to be directed to a specific project of the organization (link to the page with projects), please indicate the name of the project in the comments to the payment.",
+    requsits_uah: "UAH",
+    requsits_head: "How to make a charitable contribution to ",
     //__________________________________
 
     //footer
