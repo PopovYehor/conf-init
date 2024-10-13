@@ -1,0 +1,146 @@
+@import "../../../styles/var.scss";
+
+.wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+        .container{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 0 100px 132px;
+            .content{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 40px 0;
+                    @media screen and (min-width: 1340px){
+                        width: 1240px;
+                        h2{
+                            @include h2;
+                            margin: 40px 0 16px;
+                            text-align: center;
+                        }
+                    }
+                    @media screen and (min-width: 1150px) and (max-width: 1339px)  {
+                        margin: 40px 100px;
+                        .image {
+                            width: 900px;
+                            height: auto;
+                            margin: 0;
+                            align-self: center;
+                        }
+                        h2{
+                            @include h3;
+                            margin: 40px 0 16px;
+                            text-align: center;
+                        }
+                    }
+                    @media screen and (max-width: 1149px) {
+                        .image {
+                            width: 700px;
+                            height: auto;
+                            margin: 0;
+                            align-self: center;
+                        }
+                        h2{
+                            @include h3;
+                            margin: 40px 0 16px;
+                            text-align: center;
+                        }
+                    }
+                    
+                    
+                    .text_wrapper{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        margin-bottom: 42px;
+                        width: 652px;
+                        a, p{
+                            @include t2;
+                            margin: 0;
+                            text-align: center;
+                        }
+                        .bold{
+                            @include t2;
+                            font-weight: 600;
+                        }
+                        a{
+                            text-decoration: none;
+                            color: #2C5F1A;
+                            font-weight: 600;
+                        }
+                    }
+                    @media screen and (min-width: 769px) and (max-width: 890px){
+                        margin: 40px 0px;
+                        .image {
+                            width: 600px;
+                            height: auto;
+                            margin: 0;
+                            align-self: center;
+                        }
+                        h2{
+                            @include h4;
+                            margin: 40px 0 16px;
+                            text-align: center;
+                        }
+                        .text_wrapper{
+                            width: 500px;
+                            
+                        }
+                    }
+            }
+        }
+}
+@media screen and (min-width : 300px) and (max-width: 768px) {
+    .wrapper{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .container{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 64px 20px;
+            .content{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0;
+                .image{
+                    width: 350px;
+                    height: auto;
+                }
+                h2{
+                    @include t1;
+                    margin: 24px 0 16px;
+                    text-align: center;
+                }
+                .text_wrapper{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-bottom: 24px;
+                    width: 100%;
+                    a, p{
+                        @include t5;
+                        margin: 0;
+                        text-align: center;
+                    }
+                    .bold{
+                        @include t5;
+                        font-weight: 600;
+                    }
+                    a{
+                        text-decoration: none;
+                        color: #2C5F1A;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}
