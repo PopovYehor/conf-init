@@ -1,0 +1,65 @@
+@import "../../../styles/var.scss";
+
+.wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+        .container{
+            display: flex;
+            margin: 64px 100px 132px;
+
+            .image{
+                margin-right: 48px;
+            }
+
+            .content{
+                .text1, .text2{
+                    @include h4;
+                }
+                .text1{
+                    margin: 16px 0;
+                }
+            }
+            @media screen and (min-width: 1340px){
+                width: 1240px;
+            }
+            @media screen and (max-width: 1149px) {
+                flex-direction: column;
+                align-self: center;
+                .image {
+                    width: 450px;
+                    height: auto;
+                    margin: 0;
+                    align-self: center;
+                }
+            }
+        }
+}
+
+@media (max-width: 768px) {
+    .wrapper{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .container{
+            margin: 48px 20px 64px;
+
+            .image{
+                width: 350px;
+                height: auto;
+                margin: 0
+            }
+            .content{
+                .text1, .text2{
+                    @include t3;
+                }
+                .text1{
+                    margin: 24px 0 16px;
+                }
+            }
+        }
+    }
+}
