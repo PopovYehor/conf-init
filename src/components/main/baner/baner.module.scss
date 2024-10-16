@@ -113,9 +113,10 @@
                 h1{
                     margin: 0;
                     padding: 0;
-                    @include h3;
+                    @include h4;
                     color: $color_white_background;
                     text-align: center;
+                    font-weight: 600;
                     cursor: default;
                 }
                 p{
