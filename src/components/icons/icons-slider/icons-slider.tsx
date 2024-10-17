@@ -17,4 +17,23 @@ export const OtherSlideDot = () => {
         </div>
   );
 };
- 
+
+export const MobileActiveSlideDot = () => {
+    return (
+        <div>
+            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="8" cy="8.78442" r="8" fill="white"/>
+            </svg>
+        </div>
+    );
+}
+
+export const MobileOtherSlideDot = () => {
+    return (
+        <div>
+            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle opacity="0.6" cx="8" cy="8.78442" r="8" fill="#383A3D"/>
+            </svg>
+        </div>
+  );
+};

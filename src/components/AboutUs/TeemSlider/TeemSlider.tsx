@@ -9,6 +9,8 @@ import { defaultTeemSlider } from "@/constants/mainItemsDefault/mainItemsDefault
 import {
   ActiveSlideDot,
   OtherSlideDot,
+  MobileActiveSlideDot,
+  MobileOtherSlideDot
 } from "@/components/icons/icons-slider/icons-slider";
 import { languages } from "@/language/languages";
 import { useSwipeable } from "react-swipeable";
@@ -64,14 +66,17 @@ export default function TeemSlider() {
 
     for (let i = 0; i < dotesCount; i++) {
       newDots.push(
-        <div style={{cursor: "pointer"}} key={i} onClick={() => goToSlide(i)}>
-          {i === currentSlide ? <ActiveSlideDot /> : <OtherSlideDot />}
+        <div style={{ cursor: "pointer" }} key={i} onClick={() => goToSlide(i)}>
+          {!isMobile ?
+            i === currentSlide ? < ActiveSlideDot /> : <OtherSlideDot /> :
+            i === currentSlide ? < MobileActiveSlideDot /> : <MobileOtherSlideDot />
+          }
         </div>
       );
     }
 
     setDots(newDots);
-  }, [currentSlide, apiData.length, slidesToShow]);
+  }, [currentSlide, apiData.length, slidesToShow, isMobile]);
 
   // Логіка для обробки свайпів
   const handlers = useSwipeable({

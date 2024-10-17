@@ -21,6 +21,7 @@
         p{
             @include t1;
             align-self: center;
+            text-align: center;
             margin: 24px 0 0;
         }
         .slider_wrapper{
@@ -100,6 +101,7 @@
             }
             p{
                 @include t3;
+                text-align: center;
                 margin: 16px 0 34px;
             }
             .slider_wrapper{

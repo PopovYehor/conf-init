@@ -41,7 +41,6 @@
         .text_wrapper{
             .title_description{
                 display: flex;
-                text-align: center;
 
                 h2{
                     @include h2;
@@ -50,7 +49,7 @@
             }
 
             h6{
-                @include t1;
+                @include t2;
                 margin: 12px 0;
             }
             p{
