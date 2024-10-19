@@ -49,7 +49,7 @@ export default function HowWeHelps(){
                         {help.map((item : IHelpItem, i : number)=>{
                             return(
                                 <div className={styles.support_description_item_wrap} key={item._id+i}>
-                                    <HowWeHelpItem titleHelp = {item.titleHelp} image = {item.image}/>
+                                    <HowWeHelpItem description={item.description} titleHelp = {item.titleHelp} image = {item.image}/>
                                 </div>
                             )
                         })}

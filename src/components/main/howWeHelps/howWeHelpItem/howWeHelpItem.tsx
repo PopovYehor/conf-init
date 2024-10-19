@@ -8,14 +8,14 @@ import { IImageItem } from "@/interfaces/image/image.interfaces"
 
 interface IHowWeHelpProps{
     titleHelp: string
+    description: string
     image: IImageItem
 }
 
-export function HowWeHelpItem({titleHelp, image}: IHowWeHelpProps){
+export function HowWeHelpItem({titleHelp, description, image}: IHowWeHelpProps){
 
     const mobile = useAppSelector((state)=>state.mobile.mobile)
     const images = useAppSelector((state)=>state.image.image)
-    const addText = "Ea cupiditate aperiam possimus sed voluptates reiciendis harum. Quia rerum est quo veniam mollitia. Ad qui illum ut."
     const [helpImage, setHelpImage] = useState(defaultImage.url)
     
     useEffect(()=>{
@@ -30,7 +30,7 @@ export function HowWeHelpItem({titleHelp, image}: IHowWeHelpProps){
             </div>
             <div className={styles.support_description_item_text_wrap}>
                 <p>{titleHelp}</p>
-                {mobile && <p className={styles.add_text}>{addText}</p>}
+                {mobile && <p className={styles.add_text}>{description}</p>}
             </div>
         </>
     )

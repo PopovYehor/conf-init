@@ -30,6 +30,7 @@ export interface IEventItem extends IDBDefault{
 
 export interface IHelpItem extends IDBDefault{
     titleHelp: string
+    description: string
 }
 
 export interface IPartnerItem extends IDBDefault{

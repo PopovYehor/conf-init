@@ -95,6 +95,12 @@ export const languages: any = {
       "Якщо ви хочете, щоб ваша пожертва була спрямована на конкретний проект організації (посилання на сторінку з проектами), просимо вказати назву проекту в коментарі до платежу.",
     requsits_uah: "гривні",
     requsits_head: "Як зробити благодійний внесок у ",
+
+    nameOrganization: "Найменування організації:",
+    code: "Код отримувача:",
+    bankName: "Назва банку:",
+    accountNumber: "Номер рахунку отримувача:",
+    payment: "Призначення платежу:",
     //________________________
 
     //footer
@@ -198,6 +204,12 @@ export const languages: any = {
       "If you want your donation to be directed to a specific project of the organization (link to the page with projects), please indicate the name of the project in the comments to the payment.",
     requsits_uah: "UAH",
     requsits_head: "How to make a charitable contribution to ",
+
+    nameOrganization: "Name of the organization:",
+    code: "Recipient code:",
+    bankName: "Name of the bank:",
+    accountNumber: "Recipient's account number:",
+    payment: "Purpose of payment:",
     //__________________________________
 
     //footer

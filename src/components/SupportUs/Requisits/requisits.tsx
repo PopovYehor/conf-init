@@ -49,29 +49,24 @@ export default function Requisits(){
                                     </div>
                                     <div className={styles.item_container}>
                                         <div className={styles.item}>
-                                            {item.nameOrganization.map((item)=>{
-                                                return(<p>{item}</p>)
-                                            })}
+                                            <p>{languages[languageSelected].nameOrganization}</p>
+                                            <p>{item.nameOrganization}</p>
                                         </div>
                                         <div className={styles.item}>
-                                            {item.code.map((item)=>{
-                                                return(<p>{item}</p>)
-                                            })}
+                                            <p>{languages[languageSelected].code}</p>
+                                            <p>{item.code}</p>
                                         </div>
                                         <div className={styles.item}>
-                                            {item.bankName.map((item)=>{
-                                                return(<p>{item}</p>)
-                                            })}
+                                            <p>{languages[languageSelected].bankName}</p>
+                                            <p>{item.bankName}</p>
                                         </div>
                                         <div className={styles.item}>
-                                            {item.accountNumber.map((item)=>{
-                                                return(<p>{item}</p>)
-                                            })}
+                                            <p>{languages[languageSelected].accountNumber}</p>
+                                            <p>{item.accountNumber}</p>
                                         </div>
                                         <div className={styles.item}>
-                                            {item.payment.map((item)=>{
-                                                return(<p>{item}</p>)
-                                            })}
+                                            <p>{languages[languageSelected].payment}</p>
+                                            <p>{item.payment}</p>
                                         </div>
                                     </div>
                                 </div>
