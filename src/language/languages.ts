@@ -43,6 +43,8 @@ export const languages: any = {
     main_page_text_raise_cash:
       "Мета: зібрати шкільне приладдя та кошти на його закупівлю, аби подарувати дітям з малозабезпечених, багатодітних та кризових сімей наповнені шкільні портфелики до 1 вересня.",
     main_page_button_raise_cash: "ПІДТРИМАТИ",
+    iPhone: "/_next/static/media/iPhone.b049dd5d.png",
+    pig: "/_next/static/media/donate-img-mobile.1c28f368.png",
     //_____________________
 
     //volunteers
@@ -154,6 +156,8 @@ export const languages: any = {
     main_page_text_raise_cash:
       "Purpose: to collect school supplies and funds for its purchase in order to give children from low-income, large and crisis families filled with school bags by September 1.",
     main_page_button_raise_cash: "Donate",
+    iPhone: "/_next/static/media/eng-iPhone.25a421f2.png",
+    pig: "/_next/static/media/donate-img-mobile.1c28f368.png",
     //_____________________
 
     //volunteers
