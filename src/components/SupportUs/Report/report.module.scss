@@ -71,7 +71,8 @@
                     @media screen and (min-width: 769px){
                         margin-top: 28px;
                     }
-                    p{
+                    text-align: center;
+                    a{
                         @media screen and (min-width: 769px){
                             @include t1;
                         }
@@ -79,7 +80,12 @@
                             @include t5;
                         }
                         text-align: center;
+                        text-decoration: none;
+                        cursor: pointer;
                     }
+                    /* a:hover{
+                        color: $color_blue_main
+                    } */
                 }
                 .document_item_icon{
                     display: flex;
@@ -98,5 +104,10 @@
                 }
             }
         }
+    }
+}
+.document_item_wrap:hover{
+    a{
+        color: $color_blue_main !important;
     }
 }
