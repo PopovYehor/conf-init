@@ -28,7 +28,7 @@ export default function Report(){
                             <div className={styles.document_item_wrap} key={item.name}>
                                 <Link className={styles.document_item_icon} href={item.url} target='_blank'>{item.img}</Link>
                                 <div className={styles.document_item_text}>
-                                    <p>{item.name}</p>
+                                    <Link href={item.url}>{item.name}</Link>
                                 </div>
                             </div>
                         )

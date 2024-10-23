@@ -3,7 +3,7 @@ import { IImageItem } from "../image/image.interfaces";
 
 export interface IDefaultData{
     _id: string;
-    __v: number;
+    __v?: number;
 }
 
 export interface IDBDefault extends IDefaultData{
