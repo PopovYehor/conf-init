@@ -2,7 +2,6 @@ import Image from "next/image";
 import style from "./HelpRaiseCash.module.scss";
 
 import { languages } from "@/language/languages";
-import iPhone from "@/assets/qr_code/iPhone.png";
 import pig from "@/assets/donate-buttons-img/donate-img-mobile.png";
 import { useAppSelector } from "@/hooks/hooks";
 import ButtonsDefault from "@/components/Buttons/ButtonsDefault/ButtonsDefault";
@@ -17,7 +16,15 @@ export default function HelpRaiseCash() {
   return (
     <section className={style.wrapper}>
       <div className={style.container}>
-        <Image src={!isMobile ? iPhone : pig} alt="" className={style.image} />
+        <img
+          src={
+            !isMobile
+              ? languages[languageSelected].iPhone
+              : languages[languageSelected].pig
+          }
+          alt=""
+          className={style.image}
+        />
 
         <div className={style.info}>
           <h2>{languages[languageSelected].main_page_title_raise_cash}</h2>
