@@ -4,6 +4,7 @@
     padding: 0 20px 48px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     .title_description{
         display: flex;
@@ -23,15 +24,15 @@
     }
 
     .image_wrapper{
-        width: 350px;
+        width: fit-content;
         height: 274px;
         overflow: hidden;
         border-radius: 20px;
-        align-items: center;
 
         img{
             width: 350px;
             height: 410px;
+            border-radius: 20px;
         }
     }
     .text_wrapper{

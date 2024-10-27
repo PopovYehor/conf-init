@@ -2,7 +2,9 @@ import Image from "next/image";
 import style from "./HelpRaiseCash.module.scss";
 
 import { languages } from "@/language/languages";
-import pig from "@/assets/donate-buttons-img/donate-img-mobile.png";
+import pig from "../../assets/donate-buttons-img/donate-img-mobile.png";
+import iPhoneUA from "../../assets/qr_code/iPhone.png";
+import iPhoneEN from "../../assets/qr_code/eng-iPhone.png";
 import { useAppSelector } from "@/hooks/hooks";
 import ButtonsDefault from "@/components/Buttons/ButtonsDefault/ButtonsDefault";
 import { supportUrl } from "@/constants/apiUrls/apiUrls";
@@ -13,15 +15,20 @@ export default function HelpRaiseCash() {
     (state) => state.language.languageSelected
   );
   const isMobile = useAppSelector((state) => state.mobile.mobile);
+   const handleDonateImg = () => {
+     if (!isMobile && languageSelected === 'ua') {
+      return iPhoneUA
+     } else if (!isMobile && languageSelected === 'en') {
+       return iPhoneEN;
+     } else {
+       return pig;
+    }
+  } 
   return (
     <section className={style.wrapper}>
       <div className={style.container}>
-        <img
-          src={
-            !isMobile
-              ? languages[languageSelected].iPhone
-              : languages[languageSelected].pig
-          }
+        <Image
+          src={handleDonateImg()}
           alt=""
           className={style.image}
         />
