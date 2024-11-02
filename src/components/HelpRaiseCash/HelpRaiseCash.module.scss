@@ -32,7 +32,7 @@
         @media screen and (max-width: 1149px) {
             flex-direction: column;
             .image {
-                width: 350px;
+                width: 244px;
                 height: auto;
                 margin: 0 0 24px;
             }
@@ -61,6 +61,8 @@
                 width: 350px;
                 height: 343px;
                 margin-bottom: 20px;
+                border-radius: 24px;
+                overflow: hidden;
             }
 
             .info{
