@@ -24,6 +24,7 @@ const project = 'project'
 //_____________
 //Support Us
 const requisits = 'requisit'
+const report = 'report'
 //______________
 //Volunteers
 const VolunteersSection = 'sectionvolontir'
@@ -54,6 +55,7 @@ export const apiUrls = {
   //__________
   //Support Us
   requisits: url + requisits,
+  report: url + report,
 //______________
 //Volunteers
   volunteersSection: url + VolunteersSection
