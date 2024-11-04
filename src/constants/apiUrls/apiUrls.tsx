@@ -27,6 +27,7 @@ const requisits = 'requisit'
 //______________
 //Volunteers
 const VolunteersSection = 'sectionvolontir'
+const VolunteersSlider = "gallery";
 //______________
 //language parameter 
 export const languageParameter = "?language="
@@ -56,7 +57,8 @@ export const apiUrls = {
   requisits: url + requisits,
 //______________
 //Volunteers
-  volunteersSection: url + VolunteersSection
+  volunteersSection: url + VolunteersSection,
+  VolunteersSlider: url +  VolunteersSlider
 //______________
 };
 export const googleForm = 'https://docs.google.com/forms/d/e/1FAIpQLSd1xaeCYoSMucIhInHujyJtK95an2ZMGh5sPRQuJaPf1JHqng/viewform'

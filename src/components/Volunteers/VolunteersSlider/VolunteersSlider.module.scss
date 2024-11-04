@@ -1,0 +1,46 @@
+.wrapper{
+    margin: 132px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .container{
+        height: auto;
+        margin: 16px 0 0;
+        width: 1243px;
+        overflow: hidden;
+        
+        .content{
+            display: flex;
+            width: 2486px;
+            
+                
+                .slide{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    width: 1243px;
+                    gap: 20px;
+                    cursor: pointer;
+
+                    .imageWrapper{
+                        width: auto;
+                        height: auto;
+                        img{
+                            width: 401px;
+                            height: auto;
+                        }
+                    }   
+                }
+        }
+    }
+    .dots_wrapper{
+        display: flex;
+        gap: 27px;
+        margin: 64px 0 16px;
+        
+    }
+}
+
+    

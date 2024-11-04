@@ -17,7 +17,6 @@ export default function VolunteersDescription(){
             try{
                 const response = await axios.get(apiUrls.volunteersSection+languageParameter+languageSelected)
                 setData(response.data)
-                console.log(response.data)
             }catch{
                 setData([volunteerSectionItemDefault])
                 console.log("error")

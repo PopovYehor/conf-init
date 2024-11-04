@@ -18,6 +18,11 @@ export const defaultImage: IImageItem = {
     __v: 0
 }
 
+export const defaultGallerySlider = {
+  _id: "0",
+  image: defaultImage,
+  language: "ua",
+};
 export const defaultAboutUsDescription = {
   _id: "1",
   titleAbout: "Благодійна організація «Конференція Блаженної Марти Вєцкої»",

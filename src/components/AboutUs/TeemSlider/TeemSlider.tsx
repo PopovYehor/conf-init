@@ -61,6 +61,10 @@ export default function TeemSlider() {
 
   useEffect(() => {
     if (apiData.length === 0 || slidesToShow <= 0) return;
+    const slides = [];
+    for (let i = 0; i < apiData.length; i += 6) {
+      slides.push(apiData.slice(i, i + 6));
+    }
     const dotesCount = Math.max(1, Math.ceil(apiData.length / slidesToShow));
     const newDots = [];
 
@@ -68,8 +72,8 @@ export default function TeemSlider() {
       newDots.push(
         <div style={{ cursor: "pointer" }} key={i} onClick={() => goToSlide(i)}>
           {!isMobile ?
-            i === currentSlide ? < ActiveSlideDot /> : <OtherSlideDot /> :
-            i === currentSlide ? < MobileActiveSlideDot /> : <MobileOtherSlideDot />
+            i === currentSlide ? <OtherSlideDot /> : <ActiveSlideDot /> :
+            i === currentSlide ? <MobileActiveSlideDot /> : <MobileOtherSlideDot />
           }
         </div>
       );
