@@ -2,11 +2,11 @@ import { useEffect, useState } from "react"
 import styles from "./pagination.module.scss"
 import { useAppSelector } from "@/hooks/hooks"
 import { languages } from '@/language/languages';
-import Link from "next/link";
 import { IEventItem } from "@/interfaces/main/main.interface";
+import { IReportItem } from "@/interfaces/supportUs/supportUs.interface";
 
 interface IPaginationComponentProps{
-    event: IEventItem[]
+    event: IEventItem[] | IReportItem[]
     page: number
     nextPage: ()=> void
     previousPage: ()=> void
