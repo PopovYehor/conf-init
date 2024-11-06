@@ -28,6 +28,11 @@ export default function VolunteersSlider() {
   const isMobile = useAppSelector((state) => state.mobile.mobile);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [dots, setDots] = useState<JSX.Element[]>([]);
+  const handlers = useSwipeable({
+    onSwipedLeft: () => handleNextSlide(),
+    onSwipedRight: () => handlePrevSlide(),
+    trackMouse: true,
+  });
 
   const fetchSlider = async () => {
     try {
@@ -75,12 +80,6 @@ export default function VolunteersSlider() {
     setDots(newDots);
   }, [currentSlide, groupedSlides.length, isMobile]);
 
-  const handlers = useSwipeable({
-    onSwipedLeft: () => handleNextSlide(),
-    onSwipedRight: () => handlePrevSlide(),
-    trackMouse: true,
-  });
-
   const handleNextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % groupedSlides.length);
   };
@@ -101,20 +100,18 @@ export default function VolunteersSlider() {
         <div
           className={style.content}
           style={{
-            transform: `translateX(-${currentSlide * 50}%)`,
+            transform: `translateX(-${currentSlide * 33.3}%)`,
             transition: "transform 0.5s ease",
           }}
         >
           {groupedSlides.map((group) => (
-            
-              <div key={group[0]._id} className={style.slide}>
-                {group.map((gallery) => (
-                  <div key={gallery._id} className={style.imageWrapper}>
-                    <img src={gallery.image.url} alt="" />
-                  </div>
-                ))}
-              </div>
-            
+            <div key={group[0]._id} className={style.slide} >
+              {group.map((gallery) => (
+                <div key={gallery._id} className={style.imageWrapper}>
+                  <img src={gallery.image.url} alt="" />
+                </div>
+              ))}
+            </div>
           ))}
         </div>
       </div>
