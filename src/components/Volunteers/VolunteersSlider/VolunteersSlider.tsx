@@ -7,10 +7,10 @@ import { IImageItem } from "@/interfaces/image/image.interfaces";
 import { useEffect, useState } from "react";
 import { defaultGallerySlider } from "@/constants/mainItemsDefault/mainItemsDefault";
 import {
-  ActiveSlideDot,
-  OtherSlideDot,
-  MobileActiveSlideDot,
-  MobileOtherSlideDot,
+  MobileVolunteerActiveSlideDot,
+  MobileVolunteerOtherSlideDot,
+  DesctopVolunteerActiveSlideDot,
+  DesctopVolunteerOtherSlideDot
 } from "@/components/icons/icons-slider/icons-slider";
 
 export default function VolunteersSlider() {
@@ -28,6 +28,7 @@ export default function VolunteersSlider() {
   const isMobile = useAppSelector((state) => state.mobile.mobile);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [dots, setDots] = useState<JSX.Element[]>([]);
+
   const handlers = useSwipeable({
     onSwipedLeft: () => handleNextSlide(),
     onSwipedRight: () => handlePrevSlide(),
@@ -51,34 +52,41 @@ export default function VolunteersSlider() {
   }, [languageSelected]);
 
   useEffect(() => {
-    const slidesPerPage = 6;
-    const grouped = [];
-    for (let i = 0; i < apiData.length; i += slidesPerPage) {
-      grouped.push(apiData.slice(i, i + slidesPerPage));
+    // Якщо не мобільна версія, групуємо по 6 фото на слайд
+    if (!isMobile) {
+      const slidesPerPage = 6;
+      const grouped = [];
+      for (let i = 0; i < apiData.length; i += slidesPerPage) {
+        grouped.push(apiData.slice(i, i + slidesPerPage));
+      }
+      setGroupedSlides(grouped);
+    } else {
+      // Якщо мобільна версія, не групуємо фото, кожне фото буде окремим слайдом
+      setGroupedSlides(apiData.map((item) => [item]));
     }
-    setGroupedSlides(grouped);
     setCurrentSlide(0);
-  }, [apiData]);
+  }, [apiData, isMobile]);
 
   useEffect(() => {
     const dotsCount = groupedSlides.length;
     const newDots = Array.from({ length: dotsCount }, (_, i) => (
       <div style={{ cursor: "pointer" }} key={i} onClick={() => goToSlide(i)}>
         {i === currentSlide ? (
-          isMobile ? (
-            <MobileActiveSlideDot />
+          !isMobile ? (
+            <DesctopVolunteerActiveSlideDot />
           ) : (
-            <ActiveSlideDot />
+            <MobileVolunteerActiveSlideDot />
           )
-        ) : isMobile ? (
-          <MobileOtherSlideDot />
+        ) : !isMobile ? (
+          <DesctopVolunteerOtherSlideDot />
         ) : (
-          <OtherSlideDot />
+          <MobileVolunteerOtherSlideDot />
         )}
       </div>
     ));
     setDots(newDots);
   }, [currentSlide, groupedSlides.length, isMobile]);
+
 
   const handleNextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % groupedSlides.length);
@@ -100,12 +108,12 @@ export default function VolunteersSlider() {
         <div
           className={style.content}
           style={{
-            transform: `translateX(-${currentSlide * 33.3}%)`,
+            transform: `translateX(-${currentSlide * (isMobile ? (100 / dots.length) : 33.3)}%)`,
             transition: "transform 0.5s ease",
           }}
         >
-          {groupedSlides.map((group) => (
-            <div key={group[0]._id} className={style.slide} >
+          {groupedSlides.map((group, index) => (
+            <div key={index} className={style.slide}>
               {group.map((gallery) => (
                 <div key={gallery._id} className={style.imageWrapper}>
                   <img src={gallery.image.url} alt="" />
