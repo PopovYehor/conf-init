@@ -33,7 +33,7 @@ export default function TeemSlider() {
   );
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slidesToShow, setSlidesToShow] = useState(0);
-  const [dots, setDots] = useState<JSX.Element[]>([]);
+  const [startDotIndex, setStartDotIndex] = useState(0); // Індекс для видимих точок пагінації
 
   const fetchSlider = async () => {
     try {
@@ -52,51 +52,36 @@ export default function TeemSlider() {
   }, [languageSelected]);
 
   useEffect(() => {
-    if (!isMobile) {
-      setSlidesToShow(3);
-    } else {
-      setSlidesToShow(1);
-    }
+    setSlidesToShow(isMobile ? 1 : 3); // Встановлюємо кількість видимих слайдів залежно від типу пристрою
   }, [isMobile]);
 
+  // Оновлюємо початковий індекс для точок пагінації залежно від поточного слайду
   useEffect(() => {
-    if (apiData.length === 0 || slidesToShow <= 0) return;
-    const slides = [];
-    for (let i = 0; i < apiData.length; i += 6) {
-      slides.push(apiData.slice(i, i + 6));
-    }
-    const dotesCount = Math.max(1, Math.ceil(apiData.length / slidesToShow));
-    const newDots = [];
+    const dotesCount = Math.ceil(apiData.length / slidesToShow);
 
-    for (let i = 0; i < dotesCount; i++) {
-      newDots.push(
-        <div style={{ cursor: "pointer" }} key={i} onClick={() => goToSlide(i)}>
-          {!isMobile ?
-            i === currentSlide ? <OtherSlideDot /> : <ActiveSlideDot /> :
-            i === currentSlide ? <MobileActiveSlideDot /> : <MobileOtherSlideDot />
-          }
-        </div>
-      );
+    // Логіка для зміщення видимих точок пагінації
+    if (currentSlide <= 1) {
+      setStartDotIndex(0); // Точка зліва на початку слайдера
+    } else if (currentSlide >= dotesCount - 2) {
+      setStartDotIndex(dotesCount - 3); // Точка справа в кінці слайдера
+    } else {
+      setStartDotIndex(currentSlide - 1); // Точка посередині на інших слайдах
     }
-
-    setDots(newDots);
-  }, [currentSlide, apiData.length, slidesToShow, isMobile]);
+  }, [currentSlide, apiData.length, slidesToShow]);
 
   // Логіка для обробки свайпів
   const handlers = useSwipeable({
     onSwipedLeft: () => handleNextSlide(),
     onSwipedRight: () => handlePrevSlide(),
-    trackMouse: true, // Дозволяє перетягування мишкою
+    trackMouse: true,
   });
 
-  // Обробка перемикання на наступний слайд
   const handleNextSlide = () => {
     setCurrentSlide(
       (prev) => (prev + 1) % Math.ceil(apiData.length / slidesToShow)
     );
   };
 
-  // Обробка перемикання на попередній слайд
   const handlePrevSlide = () => {
     setCurrentSlide(
       (prev) =>
@@ -105,7 +90,6 @@ export default function TeemSlider() {
     );
   };
 
-  // Обробка перемикання на конкретний слайд при кліку на точку
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
   };
@@ -134,7 +118,31 @@ export default function TeemSlider() {
             ))}
           </div>
         </div>
-        <div className={style.dots_wrapper}>{dots}</div>
+
+        {/* Відображення трьох точок пагінації */}
+        <div className={style.dots_wrapper}>
+          {Array.from({ length: 3 }, (_, i) => i + startDotIndex).map(
+            (index) => (
+              <div
+                key={index}
+                style={{ cursor: "pointer" }}
+                onClick={() => goToSlide(index)}
+              >
+                {index === currentSlide ? (
+                  isMobile ? (
+                    <MobileActiveSlideDot />
+                  ) : (
+                    <ActiveSlideDot />
+                  )
+                ) : isMobile ? (
+                  <MobileOtherSlideDot />
+                ) : (
+                  <OtherSlideDot />
+                )}
+              </div>
+            )
+          )}
+        </div>
       </div>
     </section>
   );
