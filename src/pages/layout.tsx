@@ -9,6 +9,7 @@ import { apiUrls } from "@/constants/apiUrls/apiUrls";
 import { fetchImage } from "@/reducers/image/image.reducer";
 import { locales } from "@/constants/languages/language";
 import Header from "@/components/header/header";
+import { IconsMain } from "@/components/icons/icons-main/icons-main";
 
 const inter = Inter({ subsets: ['latin'] }) // main font in site
 
@@ -78,6 +79,7 @@ export default function Layout ({ children }: ILayout) {
       <meta name="keywords" content="благодійна організація, волонтерство, Марта Вєцька, charitable organization, volunteer, Marta Wiecka "/>
       <meta name="og:title" property="og:title" content="Благодійна Організація Конференція Блаженої Марти Вєцкої"/>
       <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <link rel="icon" href="./favicon.png" type="image/png" sizes="192x192" />
     </Head>
     <div className={inter.className}>
       <Header/>
