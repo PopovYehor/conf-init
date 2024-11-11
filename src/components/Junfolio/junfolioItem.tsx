@@ -12,14 +12,6 @@ interface IJunfolioitemProps{
 
 export default function JunfolioItem({item}: IJunfolioitemProps){
 
-    /* useEffect(()=>{
-        const getPhoto = async ()=>{
-            const res = await axios.get(item.img)
-            console.log(res.data)
-        }
-        getPhoto()
-    }, [item]) */
-
     return(
         <>
             <div className={styles.image_wrap}>
