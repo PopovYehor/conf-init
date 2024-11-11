@@ -161,7 +161,7 @@ export default function Footer() {
         </div>
         <div className={style.bottom_part}>
           <hr></hr>
-          <p>{languages[languageSelected].underText}</p>
+          <Link href={navigation.junfolio}>{languages[languageSelected].junfolio}</Link>
         </div>
       </div>
     </footer>

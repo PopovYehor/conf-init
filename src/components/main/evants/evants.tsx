@@ -105,6 +105,7 @@ export default function Evants(){
                                 adressEvent={item.adressEvent}
                                 description={item.description}
                                 titleEvent={item.titleEvent}
+                                linkEvent = {item.linkEvent}
                                 />
                             </section>
                         )

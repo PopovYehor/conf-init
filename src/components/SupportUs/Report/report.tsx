@@ -16,12 +16,6 @@ export default function Report(){
 
     const languageSelected = useAppSelector((state) => state.language.languageSelected)
 
-    const documentItems = [
-        {name: languages[languageSelected].extract, img: <IconExtract/>, url: extractUrl},
-        {name: languages[languageSelected].registration, img: <IconRegistrtion/>, url: registrationUrl},
-        {name: languages[languageSelected].mounth_report, img: <IconMounthReport/>, url: mounth_reportUrl}
-    ]
-
     const [reports, setReports] = useState<IReportItem[] | []>([])
     const [viewEvents, setViewEvents] = useState<IReportItem[] | []>(reports)
     const [disconect, setDisconect] = useState<boolean>(false)

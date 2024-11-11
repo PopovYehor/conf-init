@@ -85,8 +85,7 @@ export const languages: any = {
     donate_description_2:
       "Ви можете зробити добровільну благодійну пожертву наступним чином:",
     report_header: "Звіти та документи",
-    report_description:
-      "Ознайомитись з документами Організації, договором публічної оферти про надання пожертвувань та звітом за використані кошти можна тут.",
+    report_description: "Ми відповідально стежимо за документацією і готові показати всю звітність фонду",
     extract: "Виписка",
     registration: "Реєстрація організації",
     mounth_report: "Звіт за місяць",
@@ -103,13 +102,25 @@ export const languages: any = {
     payment: "Призначення платежу:",
     //________________________
 
+    //junfolio
+    titleJunfolio: 'Команда розробки сайту',
+    pm: 'Микита Головатий',
+    ba: "Олена Долгоп'ятова",
+    ux1: 'Марія Кривуля',
+    ux2: 'Віта Мельничук',
+    front1: 'Єгор Попов',
+    front2: 'Владислав Шамрай',
+    back: "В'ячеслав Широков",
+    qa: 'Юлія Крахмаль',
+    //_______________________________________
+
     //footer
     menu: "Меню",
     contacts: "Контакти",
     docs: "Документи",
     privacy_policy: "Політика конфіденційності",
     offer: "Публічна оферта",
-    underText: "Сайт створено командою junfolio.top © 2024",
+    junfolio: "Сайт створено командою junfolio.top © 2024",
   },
   en: {
     //header
@@ -195,7 +206,7 @@ export const languages: any = {
       "You can make a voluntary charitable donation as follows:",
     report_header: "Reports and documents",
     report_description:
-      "You can get acquainted with the documents of the Organization, the contract of the public offer on the provision of donations and the report on the funds used here.",
+      "We responsibly monitor the documentation and are ready to show all the fund's reporting",
     extract: "Extract",
     registration: "Organization registration",
     mounth_report: "Monthly report",
@@ -212,12 +223,25 @@ export const languages: any = {
     payment: "Purpose of payment:",
     //__________________________________
 
+    // junfolio
+    titleJunfolio: 'Site development team',
+    pm: 'Nikita Golovatyi',
+    ba: 'Olena Dolhopiatova',
+    ux1: 'Maria Krivulya',
+    ux2: 'Vita Melnychuk',
+    front1: 'Yehor Popov',
+    front2: 'Vladislav Shamrai',
+    back: 'Viacheslav Shyrokov',
+    qa: 'Yulia Krakhmal',
+    //____________________________________
+
     //footer
     menu: "Menu",
     contacts: "Contacts",
     docs: "Documents",
     privacy_policy: "Privacy policy",
     offer: "Public offer",
-    underText: "Site created by junfolio.top © 2024",
+    junfolio: "Site created by junfolio.top © 2024",
   },
 };
+
