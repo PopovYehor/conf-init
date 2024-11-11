@@ -4,12 +4,15 @@
     overflow: hidden;
     @media screen and (min-width: 769px){
         width: 264px;
+        max-height: 295px;
     }
     @media screen and (max-width: 768px) and (min-width: 400px){
         width: 200px;
+        max-height: 223px;
     }
     @media screen and (max-width: 399px){
         width: 160px;
+        max-height: 179px;
     }
     img{
         object-fit: cover;
