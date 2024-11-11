@@ -14,16 +14,14 @@ import {
 } from "@/components/icons/icons-slider/icons-slider";
 
 export default function VolunteersSlider() {
-  // Інтерфейс для зображень, що використовуються у слайдері
   interface IGallery {
     _id: string;
     image: IImageItem;
     language: string;
   }
 
-  // Ініціалізація станів
-  const languageSelected = useAppSelector((state) => state.language.languageSelected); // Обраний користувачем мовний параметр
-  const isMobile = useAppSelector((state) => state.mobile.mobile); // Стан мобільної/десктопної версії
+  const languageSelected = useAppSelector((state) => state.language.languageSelected); 
+  const isMobile = useAppSelector((state) => state.mobile.mobile);
 
   const [apiData, setApiData] = useState<IGallery[]>([defaultGallerySlider]); // Дані з API або за замовчуванням
 

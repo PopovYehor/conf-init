@@ -3,8 +3,6 @@ import styles from './junfolioItem.module.scss'
 import Link from 'next/link'
 import { IconBehance, IconGitHub, IconLinkedIn, IconTelegram } from '../icons/icons-socials/icons-socials'
 import Image from 'next/image'
-import { useEffect } from 'react'
-import axios from 'axios'
 
 interface IJunfolioitemProps{
     item: IteamItem

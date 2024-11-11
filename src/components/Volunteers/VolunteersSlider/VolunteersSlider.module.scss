@@ -15,35 +15,35 @@
             display: flex;
             width: 3729px;
             
-                .slide{
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: center;
-                    width: 1243px;
-                    gap: 20px;
-                    cursor: pointer;
-                    pointer-events: none;
-                    user-select: none;
-                    @media screen and (min-width : 769px) and (max-width: 1339px) {
-                        width: 640px;
-                    }
-                    
-                    .imageWrapper{
-                        width: auto;
-                        height: auto;
-
-                        img{
-                            width: 401px;
-                            height: auto;
-                            pointer-events: none;
-                            user-select: none;
-                            @media screen and (min-width : 769px) and (max-width: 1339px) {
-                                width: 310px;
-                            }
-                            
-                        }
-                    }   
+            .slide{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 1243px;
+                gap: 20px;
+                cursor: pointer;
+                pointer-events: none;
+                user-select: none;
+                @media screen and (min-width : 769px) and (max-width: 1339px) {
+                    width: 640px;
                 }
+                
+                .imageWrapper{
+                    width: auto;
+                    height: auto;
+
+                    img{
+                        width: 401px;
+                        height: auto;
+                        pointer-events: none;
+                        user-select: none;
+                        @media screen and (min-width : 769px) and (max-width: 1339px) {
+                            width: 310px;
+                        }
+                        
+                    }
+                }   
+            }
         }
     }
     .dots_wrapper{
@@ -101,6 +101,8 @@
                     justify-content: unset;
                     gap: 0;
                     width: 350px;
+                    pointer-events: none;
+                    user-select: none;
                     
                     .imageWrapper{
                         width: auto;
@@ -109,6 +111,8 @@
                         img{
                             width: 350px;
                             height: auto;
+                            pointer-events: none;
+                            user-select: none;
                         }
                     }   
                 }

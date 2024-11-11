@@ -1,26 +1,20 @@
 import Link from "next/link";
 import style from "./footer.module.scss";
 
-import {
-  InstagramIconsDefault,
-  InstagramIconsHover,
-  InstagramIconsPressed,
-  InstagramIconsDisabled,
-  FacebookIconsDefault,
-  FacebookIconsHover,
-  FacebookIconsPresed,
-  FacebookIconsDisabled,
-  InstagramIconsMobile,
-  FacebookIconsMobile,
-} from "@/components/icons/icons-socials/icons-socials";
 import { IconsMain } from "@/components/icons/icons-main/icons-main";
 import { useState, useEffect } from "react";
 import { defaultContacts } from "@/constants/mainItemsDefault/mainItemsDefault";
-import { apiUrls, facebookUrl, instagramUrl, languageParameter, privacyPolicyUrl, publicOfferUrl } from "@/constants/apiUrls/apiUrls";
+import { apiUrls, languageParameter, privacyPolicyUrl, publicOfferUrl } from "@/constants/apiUrls/apiUrls";
 import { useAppSelector } from "@/hooks/hooks";
 import { languages } from "@/language/languages";
 import axios from "axios";
 import { navigation } from "@/constants/navigations/navigations";
+import {
+  InstargamIcons,
+  FacebookIcons,
+  FacebookIconsMobile,
+  InstagramIconsMobile,
+} from "../icons/icons-socials/icons-socials";
 
 
 export default function Footer() {
@@ -34,14 +28,7 @@ export default function Footer() {
   }
 
   const [apiData, setApiData] = useState<IContactData[]>([defaultContacts]);
-  const [isInstagramHovered, setInstagramHovered] = useState(false);
-  const [isInstagramPressed, setInstagramPressed] = useState(false);
-  const [isInstagramDisabled, setInstagramDisabled] = useState(false);
-
-  const [isFacebookHovered, setFacebookHovered] = useState(false);
-  const [isFacebookPressed, setFacebookPressed] = useState(false);
-  const [isFacebookDisabled, setFacebookDisabled] = useState(false);
-
+  
   const isMobile = useAppSelector((state) => state.mobile.mobile);
   const languageSelected = useAppSelector(
     (state) => state.language.languageSelected
@@ -64,19 +51,6 @@ export default function Footer() {
     fetchContacts();
   }, [languageSelected]);
 
-  const getInstagramIcon = () => {
-    if (isInstagramDisabled) return InstagramIconsDisabled();
-    if (isInstagramPressed) return InstagramIconsPressed();
-    if (isInstagramHovered) return InstagramIconsHover();
-    return InstagramIconsDefault();
-  };
-
-  const getFacebookIcon = () => {
-    if (isFacebookDisabled) return FacebookIconsDisabled();
-    if (isFacebookPressed) return FacebookIconsPresed();
-    if (isFacebookHovered) return FacebookIconsHover();
-    return FacebookIconsDefault();
-  };
 
   return (
     <footer className={style.footer}>
@@ -133,35 +107,20 @@ export default function Footer() {
             </Link>
 
             <div className={style.wrapper_icons}>
-              <div
-                onMouseEnter={() => setInstagramHovered(true)}
-                onMouseLeave={() => setInstagramHovered(false)}
-                onMouseDown={() => setInstagramPressed(true)}
-                onMouseUp={() => setInstagramPressed(false)}
-                onDoubleClick={() => setInstagramDisabled(!isInstagramDisabled)}
-              >
-                <Link href={instagramUrl} target="_blank">
-                  {!isMobile ? getInstagramIcon() : InstagramIconsMobile()}
-                </Link>
+              <div>        
+                  {!isMobile ? <InstargamIcons /> : InstagramIconsMobile()}
               </div>
-
-              <div
-                onMouseEnter={() => setFacebookHovered(true)}
-                onMouseLeave={() => setFacebookHovered(false)}
-                onMouseDown={() => setFacebookPressed(true)}
-                onMouseUp={() => setFacebookPressed(false)}
-                onDoubleClick={() => setFacebookDisabled(!isFacebookDisabled)}
-              >
-                <Link href={facebookUrl} target="_blank">
-                  {!isMobile ? getFacebookIcon() : FacebookIconsMobile()}
-                </Link>
+              <div>
+                  {!isMobile ? <FacebookIcons /> : FacebookIconsMobile()}
               </div>
             </div>
           </div>
         </div>
         <div className={style.bottom_part}>
           <hr></hr>
-          <Link href={navigation.junfolio}>{languages[languageSelected].junfolio}</Link>
+          <Link href={navigation.junfolio}>
+            {languages[languageSelected].junfolio}
+          </Link>
         </div>
       </div>
     </footer>

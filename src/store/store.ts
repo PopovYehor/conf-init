@@ -1,4 +1,3 @@
-import ContactsReducer from '@/reducers/contact/contact.reducer';
 import ImageReducer from '@/reducers/image/image.reducer';
 import LanguageReducer from '@/reducers/language/language.reducer';
 import MainReducer from '@/reducers/main/main.reducer';
@@ -10,7 +9,6 @@ import { combineReducers } from "redux"
 const combinatedReducer = combineReducers({
     test: TestReducer,
     language: LanguageReducer,
-    contacts: ContactsReducer,
     mobile: MobileReducer,
     main: MainReducer,
     image: ImageReducer
