@@ -6,7 +6,13 @@ const nextConfig = {
     localeDetection: false,
   },
   images: {
-    domains: ["res.cloudinary.com"],
+    domains: ["res.cloudinary.com", "fotobym.com.ua", "drive.google.com"],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'drive.google.com',
+      },
+    ],
   },
 };
 

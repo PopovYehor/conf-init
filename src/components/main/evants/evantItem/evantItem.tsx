@@ -16,6 +16,7 @@ interface IEventItemProps{
     adressEvent: string
     description: string
     titleEvent: string
+    linkEvent: string
 }
 
 export function EvantItem({
@@ -24,6 +25,7 @@ export function EvantItem({
     adressEvent,
     description,
     titleEvent,
+    linkEvent
     }: IEventItemProps){
 
     const languageSelected = useAppSelector((state)=>state.language.languageSelected)
@@ -77,7 +79,7 @@ export function EvantItem({
                             onClick={()=>setOpenDescription(!openDescription)}>
                                 {!openDescription ? languages[languageSelected].read_more : languages[languageSelected].hide_text}
                         </span>}
-                    <ButtonsDefault target={true} url={googleForm} text={languages[languageSelected].evant_join}/>
+                    <ButtonsDefault target={true} url={linkEvent} text={languages[languageSelected].evant_join}/>
                 </div>
             </div>
         </>

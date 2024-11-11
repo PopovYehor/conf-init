@@ -57,6 +57,7 @@ export const defaultEvant: IEventItem = {
     dataEvent: "",
     description: "",
     titleEvent: "",
+    linkEvent: '',
     language: 'ua'
 }
 
@@ -80,6 +81,7 @@ export const defaultHelp: IHelpItem = {
     __v: 0,
     image: defaultImage,
     titleHelp: "",
+    description: '',
     language: 'ua'
 }
 

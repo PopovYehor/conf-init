@@ -43,7 +43,7 @@ export function Worth(){
         <article className={styles.worth_container}>
             <div className={styles.worth_warp}>
                 <div className={styles.worth_header}>
-                    <h1>{languages[languageSelected].worth}</h1>
+                    <h2>{languages[languageSelected].worth}</h2>
                 </div>
                 <div className={styles.worth_items_wrap}>
                     {worth.map((item:IWorthItem)=>{

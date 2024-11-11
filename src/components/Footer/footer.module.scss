@@ -117,10 +117,12 @@
         border: #00599B;
         margin: 42px 0 15px;
       }
-      p{
+      a{
         @include t4;
-        color: white;
+        color: white !important;
         margin: 0;
+        cursor: pointer;
+        text-decoration: none;
       }
     }
   }

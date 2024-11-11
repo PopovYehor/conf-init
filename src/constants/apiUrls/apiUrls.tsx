@@ -1,9 +1,10 @@
-//url
+//url for get data
 const urlPage = 'http://localhost:3000/' // for local use
 /* const urlPage = 'conf-init.vercel.app' */ // for regular use
 const url = 'http://localhost:5000/' // for local use
 /* const url = 'https://konf-backend.onrender.com/' */ // for regular use
 
+// url const for get data from backend in pages
 //main
 const main = "main"
 const  worth = "worth"
@@ -30,10 +31,11 @@ const report = 'report'
 const VolunteersSection = 'sectionvolontir'
 const VolunteersSlider = "gallery";
 //______________
-//language parameter 
+
+//language parameter for get the data in the desired language
 export const languageParameter = "?language="
 
-export const apiUrls = {
+export const apiUrls = { // urls for get data in different pages
   urlPage: urlPage,
   url: url,
   //main
@@ -63,11 +65,13 @@ export const apiUrls = {
   VolunteersSlider: url +  VolunteersSlider
 //______________
 };
-export const googleForm = 'https://docs.google.com/forms/d/e/1FAIpQLSd1xaeCYoSMucIhInHujyJtK95an2ZMGh5sPRQuJaPf1JHqng/viewform'
-export const supportUrl = 'https://www.liqpay.ua/'
-export const paypalUrl = 'https://www.paypal.com/'
-export const monobankUrl = 'https://monobank.ua/'
-export const facebookUrl = 'https://www.facebook.com/profile.php?id=61559370821121'
-export const instagramUrl = 'https://www.instagram.com/conf.bmv/'
-export const publicOfferUrl = 'https://drive.google.com/file/d/1V0Z2kltb6IRcOAZONEQphSvhnsYfvtHv/view';
-export const privacyPolicyUrl = 'https://drive.google.com/file/d/1u5EJLKih1SGQ_py_6P6iIQ7UwviwxXTE/view';
+export const googleForm = 'https://docs.google.com/forms/d/e/1FAIpQLSd1xaeCYoSMucIhInHujyJtK95an2ZMGh5sPRQuJaPf1JHqng/viewform' // const link for google form for join volunters
+
+export const supportUrl = 'https://www.liqpay.ua/' // const for liqpay donate
+export const paypalUrl = 'https://www.paypal.com/' // const for paypal donate
+export const monobankUrl = 'https://monobank.ua/' // const for monobank donate
+
+export const facebookUrl = 'https://www.facebook.com/profile.php?id=61559370821121' //const for facebook page
+export const instagramUrl = 'https://www.instagram.com/conf.bmv/' //const for instagram page
+export const publicOfferUrl = 'https://drive.google.com/file/d/1V0Z2kltb6IRcOAZONEQphSvhnsYfvtHv/view'; //const for publick offer document link
+export const privacyPolicyUrl = 'https://drive.google.com/file/d/1u5EJLKih1SGQ_py_6P6iIQ7UwviwxXTE/view'; //const for privacy politic document link

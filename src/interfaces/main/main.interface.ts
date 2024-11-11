@@ -25,7 +25,7 @@ export interface IEventItem extends IDBDefault{
     dataEvent: string
     description: string
     titleEvent: string
-    linkEvent?: string
+    linkEvent: string
 }
 
 export interface IHelpItem extends IDBDefault{
