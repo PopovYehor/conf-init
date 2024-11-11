@@ -113,7 +113,10 @@ export default function Evants(){
                 }
             </div>
             {events.length > 3 &&
-                <Pagination event = {events} page = {pag.page} nextPage = {nextPage} previousPage = {previousPage} setPage = {setPage}/>
+                <Pagination event = {events} page = {pag.page} 
+                nextPage = {nextPage}
+                previousPage = {previousPage}
+                setPage = {setPage}/>
             }
             {viewEvents.length == 0 && <EventBaner/>}
         </article>

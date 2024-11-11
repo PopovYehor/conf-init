@@ -13,7 +13,7 @@ export default function VolunteersDescription(){
     const [data, setData] = useState<IvolunteerSectionItemDefault[]>([volunteerSectionItemDefault])
 
     useEffect(()=>{
-        const fetchWorth = async ()=>{
+        const fetchVoluntersDescription = async ()=>{
             try{
                 const response = await axios.get(apiUrls.volunteersSection+languageParameter+languageSelected)
                 setData(response.data)
@@ -22,8 +22,8 @@ export default function VolunteersDescription(){
                 console.log("error")
             }
         }
-        fetchWorth()
-    },[])
+        fetchVoluntersDescription()
+    },[languageSelected])
 
     return(
         <>
