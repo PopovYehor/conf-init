@@ -31,9 +31,9 @@ export default function TeemSlider() {
   const languageSelected = useAppSelector(
     (state) => state.language.languageSelected
   );
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [slidesToShow, setSlidesToShow] = useState(0);
-  const [startDotIndex, setStartDotIndex] = useState(0); // Індекс для видимих точок пагінації
+  const [currentSlide, setCurrentSlide] = useState(0); // Index of the current slide
+  const [slidesToShow, setSlidesToShow] = useState(0); // Number of visible slides on one screen
+  const [startDotIndex, setStartDotIndex] = useState(0); // Starting index for pagination dots
 
   const fetchSlider = async () => {
     try {
@@ -43,7 +43,7 @@ export default function TeemSlider() {
       const { data } = response;
       setApiData(data);
     } catch {
-      setApiData([defaultTeemSlider]);
+      setApiData([defaultTeemSlider]); // Use default data if there's an error
     }
   };
 
@@ -51,35 +51,30 @@ export default function TeemSlider() {
     fetchSlider();
   }, [languageSelected]);
 
+  // Set the number of visible slides based on device type
   useEffect(() => {
-    setSlidesToShow(isMobile ? 1 : 3); // Встановлюємо кількість видимих слайдів залежно від типу пристрою
+    setSlidesToShow(isMobile ? 1 : 3);
   }, [isMobile]);
 
-  // Оновлюємо початковий індекс для точок пагінації залежно від поточного слайду
+  // Update the starting index for pagination dots based on the current slide
   useEffect(() => {
     const dotesCount = Math.ceil(apiData.length / slidesToShow);
 
-    // Логіка для зміщення видимих точок пагінації
+    // Logic for controlling visible pagination dots
     if (currentSlide <= 1) {
-      setStartDotIndex(0); // Точка зліва на початку слайдера
+      setStartDotIndex(0); // Dot on the left when at the start
     } else if (currentSlide >= dotesCount - 2) {
-      setStartDotIndex(dotesCount - 3); // Точка справа в кінці слайдера
+      setStartDotIndex(dotesCount - 3); // Dot on the right when at the end
     } else {
-      setStartDotIndex(currentSlide - 1); // Точка посередині на інших слайдах
+      setStartDotIndex(currentSlide - 1); // Center dot when there is room to move in both directions
     }
   }, [currentSlide, apiData.length, slidesToShow]);
 
-  // Логіка для обробки свайпів
-  const handlers = useSwipeable({
-    onSwipedLeft: () => handleNextSlide(),
-    onSwipedRight: () => handlePrevSlide(),
-    trackMouse: true,
-  });
-
+  // Slide transitions
   const handleNextSlide = () => {
     setCurrentSlide(
       (prev) => (prev + 1) % Math.ceil(apiData.length / slidesToShow)
-    );
+    ); // Increment index or loop back to start
   };
 
   const handlePrevSlide = () => {
@@ -87,12 +82,20 @@ export default function TeemSlider() {
       (prev) =>
         (prev - 1 + Math.ceil(apiData.length / slidesToShow)) %
         Math.ceil(apiData.length / slidesToShow)
-    );
+    ); // Decrement index or go to the end
   };
 
+  // Go to a specific slide by index
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
   };
+
+  // Swipe configuration for slide navigation
+  const handlers = useSwipeable({
+    onSwipedLeft: () => handleNextSlide(),
+    onSwipedRight: () => handlePrevSlide(),
+    trackMouse: true, // Allows swipe with mouse drag
+  });
 
   return (
     <section className={style.wrapper}>
@@ -119,25 +122,25 @@ export default function TeemSlider() {
           </div>
         </div>
 
-        {/* Відображення трьох точок пагінації */}
+        {/* Display three pagination dots */}
         <div className={style.dots_wrapper}>
           {Array.from({ length: 3 }, (_, i) => i + startDotIndex).map(
             (index) => (
               <div
                 key={index}
                 style={{ cursor: "pointer" }}
-                onClick={() => goToSlide(index)}
+                onClick={() => goToSlide(index)} // Handle click to navigate to the corresponding slide
               >
                 {index === currentSlide ? (
                   isMobile ? (
-                    <MobileActiveSlideDot />
+                    <MobileActiveSlideDot /> // Display active dot on mobile
                   ) : (
-                    <ActiveSlideDot />
+                    <ActiveSlideDot /> // Display active dot on desktop
                   )
                 ) : isMobile ? (
-                  <MobileOtherSlideDot />
+                  <MobileOtherSlideDot /> // Display inactive dot on mobile
                 ) : (
-                  <OtherSlideDot />
+                  <OtherSlideDot /> // Display inactive dot on desktop
                 )}
               </div>
             )

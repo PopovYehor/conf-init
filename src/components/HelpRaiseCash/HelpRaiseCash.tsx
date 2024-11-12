@@ -15,23 +15,21 @@ export default function HelpRaiseCash() {
     (state) => state.language.languageSelected
   );
   const isMobile = useAppSelector((state) => state.mobile.mobile);
-   const handleDonateImg = () => {
-     if (!isMobile && languageSelected === 'ua') {
-      return iPhoneUA
-     } else if (!isMobile && languageSelected === 'en') {
-       return iPhoneEN;
-     } else {
-       return pig;
+  //creating a condition that returns the desired picture depending 
+  //on the selected language and on the mobile version
+  const handleDonateImg = () => {
+    if (!isMobile && languageSelected === "ua") {
+      return iPhoneUA;
+    } else if (!isMobile && languageSelected === "en") {
+      return iPhoneEN;
+    } else {
+      return pig;
     }
-  } 
+  };
   return (
     <section className={style.wrapper}>
       <div className={style.container}>
-        <Image
-          src={handleDonateImg()}
-          alt=""
-          className={style.image}
-        />
+        <Image src={handleDonateImg()} alt="" className={style.image} />
 
         <div className={style.info}>
           <h2>{languages[languageSelected].main_page_title_raise_cash}</h2>
