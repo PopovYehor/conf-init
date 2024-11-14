@@ -9,7 +9,6 @@ import { apiUrls } from "@/constants/apiUrls/apiUrls";
 import { fetchImage } from "@/reducers/image/image.reducer";
 import { locales } from "@/constants/languages/language";
 import Header from "@/components/header/header";
-import { IconsMain } from "@/components/icons/icons-main/icons-main";
 
 const inter = Inter({ subsets: ['latin'] }) // main font in site
 
