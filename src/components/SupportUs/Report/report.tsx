@@ -74,7 +74,7 @@ export default function Report(){
             }
         }
         fetchReports()
-    },[languageSelected])
+    },[languageSelected, disconect])
 
     return(
         <div className={styles.report_wrap}>

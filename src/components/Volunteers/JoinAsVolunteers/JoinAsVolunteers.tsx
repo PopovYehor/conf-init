@@ -41,7 +41,7 @@ export default function JoinAsVolunteers() {
 
   useEffect(() => {
     fetchContacts();
-  }, [languageSelected]);
+  }, [languageSelected, fetchContacts]);
 
     return (
       <>

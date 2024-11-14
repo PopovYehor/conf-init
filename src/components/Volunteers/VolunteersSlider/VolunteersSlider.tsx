@@ -44,7 +44,7 @@ export default function VolunteersSlider() {
 
   useEffect(() => {
     fetchSlider();
-  }, [languageSelected]);
+  }, [languageSelected, fetchSlider]);
 
   // Group slides depending on device type (mobile or desktop version)
   useEffect(() => {

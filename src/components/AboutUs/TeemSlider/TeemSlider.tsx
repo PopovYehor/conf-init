@@ -49,7 +49,7 @@ export default function TeemSlider() {
 
   useEffect(() => {
     fetchSlider();
-  }, [languageSelected]);
+  }, [languageSelected, fetchSlider]);
 
   // Set the number of visible slides based on device type
   useEffect(() => {

@@ -28,7 +28,7 @@ export default function OurProjectsGoal(){
 
     useEffect(()=>{
         getCurrentImage(ourProject[0].image, images, setImageUrl)
-    },[ourProject, ourProject[0].image, images])
+    },[getCurrentImage, ourProject, ourProject[0].image, images])
 
     return(
         <article className={styles.goal_container}>

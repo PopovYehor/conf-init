@@ -49,7 +49,7 @@ export function HistoryDescriptionItem({item}: IHistoryDescriptionItemProps){
     useEffect(()=>{
         checkMobileReadMore()
         checkMobileReadMoreListener()
-    }, [])
+    }, [checkMobileReadMore, checkMobileReadMoreListener])
 
     useEffect(()=>{
         getCurrentImage(item.image, images, setImageUrl)

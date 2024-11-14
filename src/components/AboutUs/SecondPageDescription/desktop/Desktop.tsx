@@ -43,7 +43,7 @@ export default function Desktop() {
 
   useEffect(() => {
     fetchDescription();
-  }, [languageSelected]);
+  }, [languageSelected, fetchDescription]);
 
   return (
     <section className={style.wrapper}>

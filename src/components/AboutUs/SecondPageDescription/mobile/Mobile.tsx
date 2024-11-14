@@ -44,7 +44,7 @@ export default function Mobile() {
 
     useEffect(() => {
       fetchDescription();
-    }, [languageSelected]);
+    }, [languageSelected, fetchDescription]);
 
   return (
     <>

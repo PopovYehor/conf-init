@@ -49,7 +49,7 @@ export default function Footer() {
 
   useEffect(() => {
     fetchContacts();
-  }, [languageSelected]);
+  }, [languageSelected, fetchContacts]);
 
 
   return (
