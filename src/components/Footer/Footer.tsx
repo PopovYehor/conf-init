@@ -48,7 +48,7 @@ export default function Footer() {
       }
     };
     fetchContacts();
-  }, [languageSelected]);
+  }, [languageSelected, fetchContacts]);
 
 
   return (

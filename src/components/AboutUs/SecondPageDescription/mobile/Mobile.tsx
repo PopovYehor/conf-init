@@ -43,7 +43,7 @@ export default function Mobile() {
         }
       };
       fetchDescription();
-    }, [languageSelected]);
+    }, [languageSelected, fetchDescription]);
 
   return (
     <>

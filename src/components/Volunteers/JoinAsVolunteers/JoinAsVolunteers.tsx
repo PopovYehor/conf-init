@@ -42,7 +42,7 @@ export default function JoinAsVolunteers() {
       }
     };
     fetchContacts();
-  }, [languageSelected]);
+  }, [languageSelected, fetchContacts]);
 
     return (
       <>
