@@ -1,0 +1,141 @@
+@import "../../../styles/var.scss";
+.donate_wrap{
+    
+    width: 100%;
+    display: flex;
+    @media screen and (min-width: 1340px){
+        justify-content: center;
+    }
+    @media screen and (min-width: 769px){
+        margin-top: 64px;
+    }
+    @media screen and (max-width: 768px){
+        margin-top: 48px;
+    }
+    .donate_container{
+        display: flex;
+        @media screen and (min-width: 1340px){
+            width: 1240px;
+            gap: 48px;
+        }
+        @media screen and (max-width: 1339px) and (min-width: 769px){
+            margin: 0 100px;
+            gap: 48px;
+        }
+        @media screen and (max-width: 768px){
+            margin: 0 20px;
+            align-items: center;
+            gap: 24px;
+        }
+        @media screen and (min-width: 1024px){
+            flex-direction: row;
+        }
+        @media screen and (max-width: 1023px){
+            flex-direction: column;
+        }
+        
+        .donate_qr_wrap{
+            @media screen and (min-width: 1180px){
+                width: 448px;
+                height: 438px;
+            }
+            @media screen and (max-width: 1179px) and (min-width: 769px){
+                width: 350px;
+                height: 342px;
+            }
+            @media screen and (max-width: 768px) and (min-width: 520px){
+                width: 100%;
+                height: 489px;
+                border-radius: 20px;
+                overflow: hidden;
+            }
+            @media screen and (max-width: 519px){
+                width: 100%;
+                height: 343px;
+                border-radius: 20px;
+                overflow: hidden;
+            }
+            img{
+                width: 100% ;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .donate_description_wrap{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            @media screen and (min-width: 1340px){
+                max-width: 744px;
+                gap: 120px;
+            }
+            @media screen and (max-width: 1339px) and (min-width: 1180px){
+                max-width: min-content;
+                gap: 65px;
+            }
+            @media screen and (max-width: 1179px) and (min-width: 769px){
+                max-width: min-content;
+                gap: 20px;
+            }
+            @media screen and (max-width: 768px){
+                gap: 42px;
+            }
+            .donate_description_text{
+                p{
+                    @media screen and (min-width: 769px){
+                        @include h4
+                    }
+                    @media screen and (max-width: 768px){
+                        @include t3
+                    }
+                    margin: 0;
+                }
+            }
+            .donate_description_buttons_wrap{
+                display: flex;
+                
+                @media screen and (min-width: 1240px){
+                    gap: 60px;
+                }
+                @media screen and (max-width: 1239px) and (min-width: 769px){
+                    gap: 20px;
+                }
+                @media screen and (min-width: 769px){
+                    @include h4;
+                    flex-direction: row;
+                }
+                @media screen and (max-width: 768px){
+                    gap: 24px;
+                    flex-direction: column;
+                }
+                .donate_button{
+                    @media screen and (min-width: 769px){
+                        width: 150px;
+                        height: 65px;
+                    }
+                    @media screen and (max-width: 768px){
+                        width: 100%;
+                        height: 48px;
+                    }
+                    
+                    border: solid 1px $color_blue_main;
+                    border-radius: 11px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                    cursor: pointer;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit:cover;
+                    }
+                    svg{
+                        width: 110px;
+                        height: 25px;
+                    }
+                }
+            }
+        }
+    }
+}

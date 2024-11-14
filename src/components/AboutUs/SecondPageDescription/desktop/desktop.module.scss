@@ -1,0 +1,61 @@
+@import "../../../../styles/var.scss";
+
+.wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    .container{
+        display: flex;
+        width: 1240px;
+        margin: 64px 100px;
+
+        
+        @media screen and (max-width: 1149px) {
+            align-items: center;
+            flex-direction: column;
+            .image_wrapper{
+                width: 409px;
+                margin: 0 0 24px;
+            }
+        }
+        @media screen and (min-width: 1340px) {
+            width: 1240px;
+            margin: 64px 100px;
+            .image_wrapper{
+                width: 609px;
+                margin-right: 24px;
+            }
+        }
+        @media screen and (max-width: 1340px) {
+            margin: 64px 100px;  
+            .image_wrapper{
+                width: 609px;
+                margin-right: 24px;
+            }
+        }
+        
+        .image_wrapper{
+            width: 609px;
+        }
+        .text_wrapper{
+            .title_description{
+                display: flex;
+
+                h2{
+                    @include h2;
+                    margin: 0;
+                }
+            }
+
+            h6{
+                @include t2;
+                margin: 12px 0;
+            }
+            p{
+                @include t2;
+                margin: 0 0 8px;
+            }
+        }
+    }
+}

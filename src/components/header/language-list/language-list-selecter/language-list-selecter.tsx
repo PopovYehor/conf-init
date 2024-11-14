@@ -10,6 +10,7 @@ export function LanguageListSelecter(){
     const languageLists = useAppSelector((state)=>state.language.languageList)
     const languageSwitch = useAppSelector((state)=>state.language.languageSwitch)
     const language = useAppSelector((state)=>state.language.language)
+    const page = useAppSelector((state)=>state.language.page)
     const dispatch = useAppDispatch()
     
     const mouseLeaveEvent = ()=>{
@@ -33,7 +34,7 @@ export function LanguageListSelecter(){
             <div className={styles.language_items}>
                 {languageLists.map((item: ILanguageItem)=>{
                     return(
-                        <Link href={'/'} locale={item.name} key={item.name}>
+                        <Link href={page} locale={item.name} key={item.name}>
                             <div key={item.name} className={styles.language_item} onClick={()=>dispatch(CHANGE_LANGUAGE(item.name))}>
                                 <div className={styles.language_switch_item}>
                                     <div className={styles.language_icon}><item.img/></div>

@@ -7,7 +7,7 @@
     }
     }
 }
-@media screen and (min-width: 1024px) and (max-width: 1439px) {
+@media screen and (max-width: 1439px) and (min-width: 1240px) {
     .nav_wrap{
     gap: 60px;
     .header_nav{
@@ -15,7 +15,7 @@
     }
     }
 }
-@media screen and (min-width: 769px)  and (max-width: 1023px) {
+@media screen and (max-width: 1240px) and (min-width: 1024px) {
     .nav_wrap{
     gap: 30px;
     .header_nav{
@@ -23,19 +23,43 @@
     }
     }
 }
+@media screen and (max-width: 1023px) and (min-width: 769px) {
+    .nav_wrap{
+    gap: 30px;
+        .header_nav{
+            gap: 15px;
+        }
+    }
+}
+
 @media screen and (min-width: 769px) {
     .header{
         height: 113px;
         background-color: $color_white_background;
         position: relative;
         z-index: 1;
+        display: flex;
+        justify-content: center;
         .header_wrap{
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
+            @media screen and (min-width: 1240px){
+                width: 1240px;
+                margin: 0 100px 0 90px;
+            }
+            @media screen and (max-width: 1239px) and (min-width: 1024px) {
+                width: 1000px;
+                margin: 0 100px 0 90px;
+            }
+            @media screen and (max-width: 1023px) and (min-width: 769px) {
+                width: 100%;
+                margin: 0 100px 0 90px;
+            }
             .header_logo_wrap{
                 height: 113px;
                 width: 119px;
-                @include flex_center;
+                display: flex;
+                align-items: center;
                 svg{
                     width: 100px;
                     height: 100px;
@@ -51,17 +75,41 @@
                     flex-direction: row;
                     align-items: center;
                     a{
-                        @include h4;
+                        @media screen and (min-width: 1240px){
+                            @include h4;
+                        }
+                        @media screen and (max-width: 1239px) and (min-width: 1024px){
+                            @include t2;
+                        }
+                        @media screen and (max-width: 1023px) and (min-width: 900px){
+                            @include t3;
+                        }
+                        @media screen and (max-width: 899px) and (min-width: 769px){
+                            @include t5;
+                        }
                         text-decoration: none;
-                        color: $color_text_black
+                        color: $color_text_black;
+                        text-align: center;
                     }
                     a:hover{
-                        @include h4;
-                        color: $color_blue_hover;
+                        @media screen and (min-width: 1023px){
+                            @include h4;
+                        }
+                        @media screen and (max-width: 1023px) and (min-width: 769px){
+                            @include t2;
+                        }
+                        color: $color_blue_hover !important;
+                        text-decoration: underline !important;
                     }
                     a:active{
-                        @include h4;
+                        @media screen and (min-width: 1023px){
+                            @include h4;
+                        }
+                        @media screen and (max-width: 1023px) and (min-width: 769px){
+                            @include t2;
+                        }
                         color: $color_blue_hover;
+                        text-decoration: underline !important;
                     }
                 }
                 .header_language_wrap{
@@ -92,6 +140,7 @@
                 z-index: 2;
                 display: flex;
                 align-items: center;
+                margin-left: 10px;
                 svg{
                     width: 80px;
                     height: 80px;
@@ -105,9 +154,12 @@
                 z-index: 2;
                 display: flex;
                 align-items: center;
+                cursor: pointer;
                 svg{
                     width: 100%;
-                    height: 16px;
+                    height: 22px;
+                    cursor: pointer;
+                    color: $color_blue_hover;
                 }
             }
             input{
@@ -132,11 +184,14 @@
                 flex-direction: column;
                 gap: 15px;
                 margin-top: 140px;
-                padding-left: 20px;
+                padding-right: 20px;
                 a{
                     @include h3;
                     text-decoration: none;
-                    color: $color_text_black
+                    color: $color_text_black;
+                    &:hover{
+                        color: $color_blue_hover;
+                    }
                 }
             }
             .header_swap_bottom{
@@ -149,6 +204,22 @@
                     display: flex;
                     gap: 15px;
                     padding-left: 20px;
+                    div{
+                        width: 50px;
+                        height: 50px;
+                        @include flex_center;
+                        border: solid 1px $color_blue_main;
+                        border-radius: 50%;
+                        position: relative;
+                        svg{
+                            position: relative;
+                            top: 2px;
+                            color: $color_blue_main;
+                            path:nth-child(2n){
+                                fill: $color_blue_main
+                            }
+                        }
+                    }
                 }
                 .header_language_wrap{
                     @include flex_center;
@@ -166,6 +237,7 @@ input:checked ~ .header_swap_menu{
     border-radius: 0 0 15px 15px;
     .header_nav{
         display: flex;
+        align-items: flex-end;
     }
     .header_swap_bottom{
         display: flex;

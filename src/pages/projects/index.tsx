@@ -1,3 +1,5 @@
+import OurProjectsView from "@/view/our-projects/our-projects";
+
 export default function Projects() {
-    return <h1>Наші проєкти</h1>;
+    return <OurProjectsView/>
 }

@@ -6,7 +6,8 @@ const initialState: ILanguageState = {
     languageList: languageList,
     languageSelected: languageDefault,
     language: languageList[0],
-    languageSwitch: false
+    languageSwitch: false,
+    page: '/'
 }
 
 const languageSlice = createSlice({
@@ -31,11 +32,15 @@ const languageSlice = createSlice({
                 item.name === payload ? (item.selected = true, state.language = item) : item.selected = false
             })
             state.languageSelected = payload
-        } 
+        },
+        CHANGE_PAGE:(state, actions)=>{
+            const {payload} = actions
+            state.page = payload
+        }
     },
 })
 
 const { actions, reducer } = languageSlice
-export const { SET_LANGUAGE_SELECTED, SET_LANGUAGE_LIST, SET_LANGUAGE_SWITCH, CHANGE_LANGUAGE } = actions
+export const { SET_LANGUAGE_SELECTED, SET_LANGUAGE_LIST, SET_LANGUAGE_SWITCH, CHANGE_LANGUAGE, CHANGE_PAGE } = actions
 export const LanguageReducer = (state: ILanguageState) => state.languageList
 export default languageSlice.reducer

@@ -1,0 +1,125 @@
+@import "../../../../styles/var.scss";
+
+.member{
+    width: auto;
+
+    .img{
+        width: 340px;
+        height: auto;
+    }
+    .name{
+        @include h3;
+        margin: 20px 0px 12px;
+    }
+    .role{
+        @include t2;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    .desc{
+        @include t2;
+        margin: 0;
+    }
+    .img, .name, .role, .desc{
+        pointer-events: none;
+        user-select: none;
+    }
+
+@media screen and (max-width: 1250px) {
+    
+        .img{
+            width: 300px;
+        }
+        .name{
+            @include h4;
+            margin: 20px 0px 12px;
+        }
+        .role{
+            @include t3;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .desc{
+            @include t3;
+            margin: 0;
+        }
+
+        .img, .name, .role, .desc{
+            pointer-events: none;
+            user-select: none;
+        }
+}
+
+@media screen and (max-width: 1149px) {
+        .img{
+            width: 260px;
+        }
+        .name{
+            @include t1;
+            margin: 20px 0px 12px;
+        }
+        .role{
+            @include t3;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .desc{
+            @include t5;
+            margin: 0;
+        }
+        .img, .name, .role, .desc{
+            pointer-events: none;
+            user-select: none;
+        }
+}
+@media screen and (max-width: 919px) {
+    
+        .img{
+            width: 200px;
+        }
+        .name{
+            @include t1;
+            margin: 10px 0px 2px;
+        }
+        .role{
+            @include t3;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .desc{
+            @include t5;
+            margin: 0;
+        }
+        .img, .name, .role, .desc{
+            pointer-events: none;
+            user-select: none;
+        }
+    }
+}
+@media (max-width: 768px) {
+    .member{
+        width: 350px;
+        
+        .img{
+            width: 350px;
+            height: auto;
+
+        }
+        .name{
+            @include t2;
+            margin: 20px 0 8px;
+        }
+        .role{
+            @include t2;
+            margin: 0 0 19px;
+        }
+        .desc{
+            @include t5;
+            margin: 0;
+        }
+        .img, .name, .role, .desc{
+            pointer-events: none;
+            user-select: none;
+        }
+    }
+}

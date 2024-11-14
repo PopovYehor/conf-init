@@ -4,27 +4,33 @@ import { useEffect, useState } from "react"
 import { defaultImage } from "@/reducers/image/image.reducer"
 import { getCurrentImage } from "@/hooks/image"
 import { IHelpItem } from "@/interfaces/main/main.interface"
+import { IImageItem } from "@/interfaces/image/image.interfaces"
 
-export function HowWeHelpItem({titleHelp, image}: IHelpItem){
+interface IHowWeHelpProps{
+    titleHelp: string
+    description: string
+    image: IImageItem
+}
+
+export function HowWeHelpItem({titleHelp, description, image}: IHowWeHelpProps){
 
     const mobile = useAppSelector((state)=>state.mobile.mobile)
     const images = useAppSelector((state)=>state.image.image)
-    const addText = "Ea cupiditate aperiam possimus sed voluptates reiciendis harum. Quia rerum est quo veniam mollitia. Ad qui illum ut."
     const [helpImage, setHelpImage] = useState(defaultImage.url)
     
     useEffect(()=>{
         if (image){
             getCurrentImage(image, images, setHelpImage)
         }
-    }, [])
+    }, [image, images])
     return(
         <>
             <div className={styles.support_description_item_image_wrap}>
-                <img src={helpImage}/>
+                <img src={helpImage} alt={titleHelp}/>
             </div>
             <div className={styles.support_description_item_text_wrap}>
                 <p>{titleHelp}</p>
-                {mobile && <p className={styles.add_text}>{addText}</p>}
+                {mobile && <p className={styles.add_text}>{description}</p>}
             </div>
         </>
     )

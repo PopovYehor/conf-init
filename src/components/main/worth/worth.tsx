@@ -12,25 +12,30 @@ export function Worth(){
     const languageSelected = useAppSelector((state)=>state.language.languageSelected)
     const [worth, setWorth] = useState<IWorthItem[]>([defaultWorth])
 
-    const worthIcons = [<WorthHelpIcons/>, <WorthDiversityIcons/>, <WorthDignityIcons/>, <WorthDefenseIcons/>,  <WorthDoIcons/>, <WorthFaithIcons/>]
-
-    const fetchWorth = async ()=>{
-        try{
-            const response = await axios.get(apiUrls.worthUrl+languageParameter+languageSelected)
-
-            const {data} = response
-            const copyData = data
-            copyData.map((item: IWorthItem, i: number)=>{
-                item.icon = worthIcons[i]
-            })
-            setWorth(copyData)
-        }catch{
-            setWorth([defaultWorth])
-        }
-        
-    }
-
     useEffect(()=>{
+        const fetchWorth = async ()=>{
+            try{
+                const response = await axios.get(apiUrls.worthUrl+languageParameter+languageSelected)
+    
+                const {data} = response
+                const copyData = data
+                copyData.map((item: IWorthItem, i: number)=>{
+                    const worthIcons = [
+                        <WorthHelpIcons key={i}/>, 
+                        <WorthDiversityIcons key={i}/>,
+                        <WorthDignityIcons key={i}/>,
+                        <WorthDefenseIcons key={i}/>,
+                        <WorthDoIcons key={i}/>,
+                        <WorthFaithIcons key={i}/>]
+                    return item.icon = worthIcons[i]
+                })
+                setWorth(copyData)
+                console.log(response)
+            }catch{
+                setWorth([defaultWorth])
+                console.log("error")
+            }
+        }
         fetchWorth()
     },[languageSelected])
 
@@ -38,12 +43,12 @@ export function Worth(){
         <article className={styles.worth_container}>
             <div className={styles.worth_warp}>
                 <div className={styles.worth_header}>
-                    <h1>{languages[languageSelected].worth}</h1>
+                    <h2>{languages[languageSelected].worth}</h2>
                 </div>
                 <div className={styles.worth_items_wrap}>
                     {worth.map((item:IWorthItem)=>{
                         return(
-                            <section className={styles.worth_item}>
+                            <section className={styles.worth_item} key={item._id}>
                                 <div className={styles. worth_item_icon}>
                                     {item.icon}
                                 </div>

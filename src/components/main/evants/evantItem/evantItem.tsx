@@ -8,6 +8,16 @@ import { useEffect, useRef, useState } from "react"
 import { IImageItem } from "@/interfaces/image/image.interfaces"
 import { defaultImage } from "@/reducers/image/image.reducer"
 import { getCurrentImage } from "@/hooks/image"
+import ButtonsDefault from "@/components/Buttons/ButtonsDefault/ButtonsDefault"
+
+interface IEventItemProps{
+    image: IImageItem
+    dataEvent: string
+    adressEvent: string
+    description: string
+    titleEvent: string
+    linkEvent: string
+}
 
 export function EvantItem({
     image,
@@ -15,7 +25,8 @@ export function EvantItem({
     adressEvent,
     description,
     titleEvent,
-    }: IEventItem){
+    linkEvent
+    }: IEventItemProps){
 
     const languageSelected = useAppSelector((state)=>state.language.languageSelected)
     const images = useAppSelector((state)=>state.image.image)
@@ -37,7 +48,7 @@ export function EvantItem({
     
     useEffect(()=>{
         getCurrentImage(image, images, setUrl)
-    },[])
+    },[image, images])
 
     useEffect(()=>{
         readMoreHandler()
@@ -45,9 +56,9 @@ export function EvantItem({
 
 
     return(
-        <section className={styles.evant_item_wrap}>
+        <>
             <div className={styles.evant_item_img}>
-                <img src={url}/>
+                <img src={url} alt={description}/>
             </div>
             <div className={styles.evant_item_container}>
                 <div className={styles.evant_item_date}>
@@ -56,9 +67,6 @@ export function EvantItem({
                 </div>
                 <div className={styles.evant_item_title}>
                     <h3>{titleEvent}</h3>
-                </div>
-                <div className={styles.event_item_link}>
-                    <Link href={'/'}>Посилання на проект</Link>
                 </div>
                 <div ref={descriptionRef} className={!openDescription ? 
                     `${styles.evant_item_description} ${styles.hiden_description}`
@@ -71,9 +79,9 @@ export function EvantItem({
                             onClick={()=>setOpenDescription(!openDescription)}>
                                 {!openDescription ? languages[languageSelected].read_more : languages[languageSelected].hide_text}
                         </span>}
-                    <Link className={styles.join} href={googleForm}>{languages[languageSelected].evant_join}</Link>
+                    <ButtonsDefault target={true} url={linkEvent} text={languages[languageSelected].evant_join}/>
                 </div>
             </div>
-        </section>
+        </>
     )
 }

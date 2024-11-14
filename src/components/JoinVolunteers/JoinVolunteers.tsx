@@ -3,8 +3,9 @@ import style from "./JoinVolunteers.module.scss";
 
 import { languages } from "@/language/languages";
 import photo from "./photo.png";
-import ButtonsDefault from "../Buttons/ButtonsDefault/ButtonsDefault";
 import { useAppSelector } from "@/hooks/hooks";
+import ButtonsDefault from "@/components/Buttons/ButtonsDefault/ButtonsDefault";
+import { googleForm } from "@/constants/apiUrls/apiUrls";
 
 
 export default function JoinVolunteers() {
@@ -13,15 +14,18 @@ export default function JoinVolunteers() {
   );
   return (
     <section className={style.wrapper}>
-      <Image src={photo} alt="" className={style.image} />
+      <div className={style.container}>
+        <Image src={photo} alt="" className={style.image} />
 
-      <div className={style.info}>
-        <h2>{languages[languageSelected].main_page_title_volunteers}</h2>
-        <p>{languages[languageSelected].main_page_text_volunteers}</p>
-        <ButtonsDefault
-          text={languages[languageSelected].main_page_button_volunteers}
-          url="/volunteers"
-        />
+        <div className={style.info}>
+          <h2>{languages[languageSelected].main_page_title_volunteers}</h2>
+          <p>{languages[languageSelected].main_page_text_volunteers}</p>
+          <ButtonsDefault
+            text={languages[languageSelected].main_page_button_volunteers}
+            url={googleForm}
+            target={true}
+          />
+        </div>
       </div>
     </section>
   );

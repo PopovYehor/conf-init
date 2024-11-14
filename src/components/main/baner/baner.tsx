@@ -1,7 +1,6 @@
 import { navigation } from "@/constants/navigations/navigations"
 import styles from "./baner.module.scss"
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks"
-import Link from "next/link"
 import { languages } from '@/language/languages';
 import { useEffect } from "react";
 import { fetchMain } from "@/reducers/main/main.reducer";
@@ -9,6 +8,7 @@ import banerImg from "@/assets/baner/baner-img.jpg"
 import Image from "next/image";
 import ButtonsDefault from "@/components/Buttons/ButtonsDefault/ButtonsDefault";
 import ButtonsSecondary from "@/components/Buttons/ButtonsSecondary/ButtonsSecondary";
+import { supportUrl } from "@/constants/apiUrls/apiUrls";
 
 export default function Baner(){
     const languageSelected = useAppSelector((state)=>state.language.languageSelected)
@@ -17,7 +17,7 @@ export default function Baner(){
 
     useEffect(()=>{
         dispatch(fetchMain(languageSelected))
-    },[languageSelected])
+    },[languageSelected, dispatch])
 
     return(
         <>
@@ -31,13 +31,7 @@ export default function Baner(){
                 </div>
                 <div className={styles.baner_buttons}>
                     <ButtonsDefault text={languages[languageSelected].about} url={navigation.about}/>
-                    {/* <Link className={styles.button_about} href={}>
-                        {}
-                    </Link> */}
-                    <ButtonsSecondary  text={languages[languageSelected].support} url={navigation.support}/>
-                    {/* <Link href={navigation.support} className={styles.button_support}>
-                        {languages[languageSelected].support}
-                    </Link> */}
+                    <ButtonsSecondary target={true}  text={languages[languageSelected].donate} url={supportUrl}/>
                 </div>
             </div>
         </div>

@@ -6,21 +6,9 @@
     }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1250px) {
-    .evant_item_wrap{
-        flex-direction: column !important;
-    }
-}
-
 @media screen and (min-width: 769px) {
-    .evant_item_wrap{
-        display: flex;
-        flex-direction: row;
-        gap: 48px;
-        margin-top: 64px;
         .evant_item_img{
-            /* width: 610px; */
-            height: 500px;
+            height: 584px;
             border-radius: 20px;
             overflow: hidden;
             img{
@@ -30,8 +18,9 @@
             }
         }
         .evant_item_container{
-            width: 583px;
-            /* max-height: 500px; */
+            @media screen and (min-width: 1000px) {
+                width: 583px;
+            }
             .evant_item_date{
                 display: flex;
                 flex-direction: column;
@@ -61,14 +50,17 @@
                 overflow: hidden;
             }
             .evant_item_buttons{
-                margin-top: 32px;
+                margin-top: 16px;
                 display: flex;
-                align-items: center;
+                flex-direction: column;
                 gap: 32px;
                 .read_more{
                     @include t3;
                     text-decoration: underline;
                     cursor: pointer;
+                    &:hover{
+                        color: $color_blue_hover !important;
+                    }
                 }
                 .join{
                     @include button_default;
@@ -85,14 +77,9 @@
             }
         }
     }
-}
 
 @media screen and (max-width: 768px) {
-    .evant_item_wrap{
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
-        margin-top: 32px;
+    
         .evant_item_img{
             width: 100%;
             height: auto;
@@ -105,8 +92,6 @@
             }
         }
         .evant_item_container{
-            /* width: 583px; */
-            /* max-height: 500px; */
             .evant_item_date{
                 display: flex;
                 flex-direction: column;
@@ -144,6 +129,9 @@
                     @include t3;
                     text-decoration: underline;
                     cursor: pointer;
+                    &:active{
+                        color: $color_blue_hover !important;
+                    }
                 }
                 .join{
                     @include button_default;
@@ -160,4 +148,3 @@
             }
         }
     }
-}

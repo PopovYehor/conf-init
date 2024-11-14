@@ -1,0 +1,147 @@
+@import "../../../styles/var.scss";
+
+.history_description_wrap{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+    @media screen and (min-width: 769px){
+        margin-top: 84px;
+    }
+    .history_description_container{
+        @media screen and (min-width: 769px){
+            padding: 0 100px;
+            gap: 48px;
+        }
+        @media screen and (max-width: 768px){
+            padding: 0 20px;
+            gap: 24px;
+        }
+        
+        @media screen and (min-width: 1340px){
+            width: 1240px;
+        }
+        @media screen and (max-width: 1339px) and (min-width: 1100px){
+            width: 1000px;
+        }
+        @media screen and (max-width: 1099px) and (min-width: 920px){
+            width: 820px;
+        }
+        @media screen and (max-width: 919px){
+            width: 100%;
+        }
+        display: flex;
+        flex-direction: column;
+        .history_item_wrap{
+            display: flex;
+            gap: 24px;
+            @media screen and (min-width: 920px){
+                flex-direction: row;
+            }
+            @media screen and (max-width: 919px){
+                flex-direction: column-reverse;
+            }
+            .history_item_text{
+                @media screen and (min-width: 1340px){
+                    width: 609px;
+                }
+                @media screen and (max-width: 1339px) and (min-width: 1100px){
+                    width: 488px;
+                }
+                @media screen and (max-width: 1099px) and (min-width: 920px){
+                    width: 390px;
+                }
+                @media screen and (max-width: 919px){
+                    width: 100%;
+                }
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                @media screen and (min-width: 769px){
+                    gap: 16px;
+                }
+                @media screen and (max-width: 768px){
+                    gap: 8px;
+                }
+                h2{
+                    @media screen and (min-width: 769px){
+                        @include h3;
+                    }
+                    @media screen and (max-width: 768px){
+                        @include t2;
+                    }
+                    margin: 0;
+                }
+                .history_item_description{
+                    @media screen and (min-width: 769px){
+                        @include h4;
+                    }
+                    @media screen and (max-width: 768px){
+                        @include t5;
+                    }
+                    margin: 0;
+                }
+                .hiden_description{
+                    @media screen and (min-width: 426px){
+                        max-height: 175px;
+                    }
+                    @media screen and (max-width: 768px){
+                        max-height: 82px;
+                    }
+                    overflow: hidden;
+                }
+                .read_more{
+                    @include t3;
+                    text-decoration: underline;
+                    cursor: pointer;
+                    &:hover{
+                        color: $color_blue_hover !important;
+                    }
+                }
+            }
+            .history_item_img{
+                @media screen and (min-width: 1340px){
+                    width: 609px;
+                }
+                @media screen and (max-width: 1339px) and (min-width: 1100px){
+                    width: 488px;
+                }
+                @media screen and (max-width: 1099px) and (min-width: 920px){
+                    width: 390px;
+                }
+                @media screen and (max-width: 919px){
+                    width: 100%;
+                }
+                border-radius: 16px;
+                overflow: hidden;
+                img{
+                    @media screen and (min-width: 1340px){
+                        height: 342px;
+                    }
+                    @media screen and (max-width: 1339px) and (min-width: 1100px){
+                        height: 274px;
+                    }
+                    @media screen and (max-width: 1099px) and (min-width: 920px){
+                        height: 219px;
+                    }
+                    @media screen and (max-width: 919px) and (min-width: 426px){
+                        height: auto;
+                    }
+                    @media screen and (max-width: 425px) {
+                        height: 170px;
+                    }
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+        .history_item_wrap:nth-child(2n){
+            @media screen and (min-width: 920px){
+                flex-direction: row-reverse;
+            }
+            @media screen and (max-width: 919px){
+                flex-direction: column-reverse;
+            }
+        }
+    }
+}

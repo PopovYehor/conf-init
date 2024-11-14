@@ -1,43 +1,47 @@
 import { JSXElementConstructor } from "react";
 import { IImageItem } from "../image/image.interfaces";
 
-interface IDBDefault{
-    _id?: string;
+export interface IDefaultData{
+    _id: string;
     __v?: number;
-    image?: IImageItem
-    language?: string
+}
+
+export interface IDBDefault extends IDefaultData{
+    image: NonNullable<IImageItem>
+    language: string
 }
 
 export interface IContactsItem extends IDBDefault {
-    adressContEN: string;
-    adressContUA: string;
-    phoneContEN: string;
-    phoneContUA: string;
-    titleContEN: string
-    titleContUA: string;
+    adressCont: string;
+    
+    phoneCont: string;
+    
+    titleCont: string
+    
 }
 
-export interface IEventItem{
-    _id?: string;
-    __v?: number;
-    image: IImageItem
+export interface IEventItem extends IDBDefault{
     adressEvent: string
     dataEvent: string
     description: string
     titleEvent: string
+    linkEvent: string
 }
 
 export interface IHelpItem extends IDBDefault{
     titleHelp: string
+    description: string
 }
 
 export interface IPartnerItem extends IDBDefault{
     webPatner: string
 }
 
-export interface IWorthItem extends IDBDefault{
+export interface IWorthItem extends IDefaultData{
     textWorth: string
     icon?: JSX.Element
+    key?: number
+    language: string
 }
 
 export interface IMain{
