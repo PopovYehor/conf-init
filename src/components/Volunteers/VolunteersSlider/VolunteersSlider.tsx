@@ -30,21 +30,20 @@ export default function VolunteersSlider() {
   const [currentSlide, setCurrentSlide] = useState(0); // Current slide index
   const [startDotIndex, setStartDotIndex] = useState(0); // Initial index for pagination dots display
 
-  const fetchSlider = async () => {
-    try {
-      const response = await axios.get(
-        apiUrls.VolunteersSlider + languageParameter + languageSelected
-      );
-      const { data } = response;
-      setApiData(data);
-    } catch {
-      setApiData([defaultGallerySlider]); // Use default slider in case of an error
-    }
-  };
-
   useEffect(() => {
+      const fetchSlider = async () => {
+        try {
+          const response = await axios.get(
+            apiUrls.VolunteersSlider + languageParameter + languageSelected
+          );
+          const { data } = response;
+          setApiData(data);
+        } catch {
+          setApiData([defaultGallerySlider]); // Use default slider in case of an error
+        }
+      };
     fetchSlider();
-  }, [languageSelected, fetchSlider]);
+  }, [languageSelected]);
 
   // Group slides depending on device type (mobile or desktop version)
   useEffect(() => {
