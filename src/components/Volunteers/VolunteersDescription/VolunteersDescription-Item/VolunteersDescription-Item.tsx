@@ -21,7 +21,7 @@ export default function VolunteersDescriptionItem({item}: IVolunteerSectionProps
     return(
         <>
         <div className={styles.image_wrap}>
-            <img src={imageUrl}/>
+            <img src={imageUrl} alt={item.title}/>
         </div>
         <div className={styles.item_desc_wrap}>
             <div className={styles.title_wrap}>

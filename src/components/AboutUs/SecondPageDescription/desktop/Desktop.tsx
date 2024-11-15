@@ -29,6 +29,7 @@ export default function Desktop() {
     (state) => state.language.languageSelected
   );
 
+  useEffect(() => {
     const fetchDescription = async () => {
       try {
         const response = await axios.get(
@@ -40,8 +41,6 @@ export default function Desktop() {
         setApiData([defaultAboutUsDescription]);
       }
     };
-
-  useEffect(() => {
     fetchDescription();
   }, [languageSelected]);
 

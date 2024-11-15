@@ -26,20 +26,21 @@ export default function JoinAsVolunteers() {
     const [apiData, setApiData] = useState<IContactData[]>([defaultContacts]);
     const languageSelected = useAppSelector((state) => state.language.languageSelected);
     const isMobile = useAppSelector((state) => state.mobile.mobile);
-    const fetchContacts = async () => {
-    try {
-      const response = await axios.get(
-        apiUrls.contactUrl + languageParameter + languageSelected
-      );
-      const { data } = response;
-
-      setApiData(data);
-    } catch {
-      setApiData([defaultContacts]);
-    }
-  };
+    
 
   useEffect(() => {
+    const fetchContacts = async () => {
+      try {
+        const response = await axios.get(
+          apiUrls.contactUrl + languageParameter + languageSelected
+        );
+        const { data } = response;
+  
+        setApiData(data);
+      } catch {
+        setApiData([defaultContacts]);
+      }
+    };
     fetchContacts();
   }, [languageSelected]);
 

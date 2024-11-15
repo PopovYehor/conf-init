@@ -42,7 +42,7 @@ export default function Requisits(){
                     <div className={styles.requsits_items_wrap}>
                         {requisits.map((item, i)=>{
                             return(
-                                <div className={styles.requsits_item}>
+                                <div className={styles.requsits_item} key={item._id}>
                                     <div className={styles.item_header}>
                                         <p>{languages[languageSelected].requsits_head+requsitsHeaders[i]+'?'}</p>
                                     </div>

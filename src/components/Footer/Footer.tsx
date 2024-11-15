@@ -34,20 +34,19 @@ export default function Footer() {
     (state) => state.language.languageSelected
   );
 
-  const fetchContacts = async () => {
-    try {
-      const response = await axios.get(
-        apiUrls.contactUrl + languageParameter + languageSelected
-      );
-      const { data } = response;
-
-      setApiData(data);
-    } catch {
-      setApiData([defaultContacts]);
-    }
-  };
-
   useEffect(() => {
+    const fetchContacts = async () => {
+      try {
+        const response = await axios.get(
+          apiUrls.contactUrl + languageParameter + languageSelected
+        );
+        const { data } = response;
+  
+        setApiData(data);
+      } catch {
+        setApiData([defaultContacts]);
+      }
+    };
     fetchContacts();
   }, [languageSelected]);
 

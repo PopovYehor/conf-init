@@ -29,20 +29,19 @@ export default function Mobile() {
       (state) => state.language.languageSelected
     );
 
-    const fetchDescription = async () => {
-      try {
-        const response = await axios.get(
-          apiUrls.aboutUs + languageParameter + languageSelected
-        );
-        const { data } = response;
-
-        setApiData(data);
-      } catch {
-        setApiData([defaultAboutUsDescription]);
-      }
-    };
-
     useEffect(() => {
+      const fetchDescription = async () => {
+        try {
+          const response = await axios.get(
+            apiUrls.aboutUs + languageParameter + languageSelected
+          );
+          const { data } = response;
+  
+          setApiData(data);
+        } catch {
+          setApiData([defaultAboutUsDescription]);
+        }
+      };
       fetchDescription();
     }, [languageSelected]);
 

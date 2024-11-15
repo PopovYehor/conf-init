@@ -35,19 +35,20 @@ export default function TeemSlider() {
   const [slidesToShow, setSlidesToShow] = useState(0); // Number of visible slides on one screen
   const [startDotIndex, setStartDotIndex] = useState(0); // Starting index for pagination dots
 
-  const fetchSlider = async () => {
-    try {
-      const response = await axios.get(
-        apiUrls.member + languageParameter + languageSelected
-      );
-      const { data } = response;
-      setApiData(data);
-    } catch {
-      setApiData([defaultTeemSlider]); // Use default data if there's an error
-    }
-  };
+  
 
   useEffect(() => {
+    const fetchSlider = async () => {
+      try {
+        const response = await axios.get(
+          apiUrls.member + languageParameter + languageSelected
+        );
+        const { data } = response;
+        setApiData(data);
+      } catch {
+        setApiData([defaultTeemSlider]); // Use default data if there's an error
+      }
+    };
     fetchSlider();
   }, [languageSelected]);
 
