@@ -45,7 +45,7 @@ export default function VolunteersSlider() {
       }
     };
     fetchSlider();
-  }, [languageSelected, fetchSlider]);
+  }, [languageSelected]);
 
   // Group slides depending on device type (mobile or desktop version)
   useEffect(() => {
