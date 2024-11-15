@@ -41,7 +41,7 @@ export default function Footer() {
           apiUrls.contactUrl + languageParameter + languageSelected
         );
         const { data } = response;
-
+  
         setApiData(data);
       } catch {
         setApiData([defaultContacts]);

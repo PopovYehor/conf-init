@@ -23,39 +23,42 @@ export function HistoryDescriptionItem({item}: IHistoryDescriptionItemProps){
     const languageSelected = useAppSelector((state)=>state.language.languageSelected)
     
 
-    const checkMobileReadMore = ()=>{
-        document.body.clientWidth < 426 ? 
-        setReadMoreMobile(true): setReadMoreMobile(false)
-    }
     
-    const checkMobileReadMoreListener = ()=>{
-       return window.addEventListener('resize', ()=>{checkMobileReadMore()})
-    }
+    
+    
 
     const readMoreHendler = (boolean: boolean)=>{
         setIsreadMore(boolean)
         setOpenDescription(!boolean)
     }
 
-    const readMoreHandler = ()=>{
-        const description = descriptionRef.current
-        if (description){
-            !readMoreMobile ? 
-                description.clientHeight > 340 ? readMoreHendler(true) : readMoreHendler(false)
-                : description.clientHeight > 200 ? readMoreHendler(true) : readMoreHendler(false)
-        }
-    }
+    
     
     useEffect(()=>{
+        const checkMobileReadMore = ()=>{
+            document.body.clientWidth < 426 ? 
+            setReadMoreMobile(true): setReadMoreMobile(false)
+        }
+        const checkMobileReadMoreListener = ()=>{
+            return window.addEventListener('resize', ()=>{checkMobileReadMore()})
+        }
         checkMobileReadMore()
         checkMobileReadMoreListener()
-    }, [checkMobileReadMore, checkMobileReadMoreListener])
+    }, [readMoreMobile])
 
     useEffect(()=>{
         getCurrentImage(item.image, images, setImageUrl)
     },[images, item.image])
 
     useEffect(()=>{
+        const readMoreHandler = ()=>{
+            const description = descriptionRef.current
+            if (description){
+                !readMoreMobile ? 
+                    description.clientHeight > 340 ? readMoreHendler(true) : readMoreHendler(false)
+                    : description.clientHeight > 200 ? readMoreHendler(true) : readMoreHendler(false)
+            }
+        }
         readMoreHandler()
     },[imageUrl, readMoreMobile, mobile])
 
