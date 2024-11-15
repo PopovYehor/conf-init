@@ -42,7 +42,7 @@ export default function Desktop() {
       }
     };
     fetchDescription();
-  }, [languageSelected, fetchDescription]);
+  }, [languageSelected]);
 
   return (
     <section className={style.wrapper}>
