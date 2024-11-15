@@ -107,10 +107,10 @@ export default function Footer() {
 
             <div className={style.wrapper_icons}>
               <div>        
-                  {!isMobile ? <InstargamIcons /> : InstagramIconsMobile()}
+                <InstargamIcons /> 
               </div>
               <div>
-                  {!isMobile ? <FacebookIcons /> : FacebookIconsMobile()}
+                <FacebookIcons />
               </div>
             </div>
           </div>
