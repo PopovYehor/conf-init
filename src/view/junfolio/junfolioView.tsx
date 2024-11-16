@@ -2,7 +2,6 @@ import TitleForOtherPages from "@/components/TitlePages/TitleForOtherPages";
 import { useAppSelector } from "@/hooks/hooks";
 import { IteamItem } from "@/interfaces/junfolio/junfolio.interface";
 import { languages } from "@/language/languages";
-import { defaultImage } from "@/reducers/image/image.reducer";
 import styles from './junfolioView.module.scss'
 import JunfolioItem from "@/components/Junfolio/junfolioItem";
 
@@ -18,7 +17,7 @@ export default function JunfolioView(){
 
     const teamItems: IteamItem[] = [
         {name: languages[languageSelected].pm, description: '', occupation: 'Project maneger', img: googlePhoto+'1qVY_iWqVffsId1uRoEtlfnb3Tp_xQQ96', link: {linkedIn: linkedIn+'mykyta-holovatyi', telegram: telegram+'Nikita_Golovatyi'}},
-        {name: languages[languageSelected].ba, description: '', occupation: 'Business analyst', img: googlePhoto+'1p9jreuMZU6_02dStHprxvuYlj9NwYq7w', link: {linkedIn: linkedIn+'olena-dolhopiatova'}},
+        {name: languages[languageSelected].ba, description: '', occupation: 'Business analyst', img: googlePhoto+'1D3BxDngt3B5dCrNn8fSUCaI5eiiJDJPC', link: {linkedIn: linkedIn+'olena-dolhopiatova'}},
         {name: languages[languageSelected].ux1, description: '', occupation: 'UX/UI designer', img: googlePhoto+'1wa-hb2yrSfCnssOdsZxNaBHMFpyp-KBJ', link: {linkedIn: linkedIn+'maria-krivulya-93b43928a', behance:behance+"mariakrivulya"}},
         {name: languages[languageSelected].ux2, description: '', occupation: 'UX/UI designer', img: googlePhoto+'1WTL7EsurTo0SzSm_ysR7_U8xd9rSbiOv', link: {linkedIn: linkedIn+'vita-melnychuk-333a8a2b4', behance: behance+'2f47de46'}},
         {name: languages[languageSelected].front1, description: '', occupation: 'Frontend developer', img: googlePhoto+'1UN0d_6aZqlJBTDPh7oAFBFZV_70aP4dD', link: {linkedIn: linkedIn+'yehor-popov-a44a90250', telegram: telegram+'Yehor_dnipro', github: github+'PopovYehor'}},
