@@ -30,10 +30,8 @@ export function Worth(){
                     return item.icon = worthIcons[i]
                 })
                 setWorth(copyData)
-                console.log(response)
             }catch{
                 setWorth([defaultWorth])
-                console.log("error")
             }
         }
         fetchWorth()

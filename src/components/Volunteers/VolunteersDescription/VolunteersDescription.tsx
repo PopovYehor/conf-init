@@ -19,7 +19,6 @@ export default function VolunteersDescription(){
                 setData(response.data)
             }catch{
                 setData([volunteerSectionItemDefault])
-                console.log("error")
             }
         }
         fetchVoluntersDescription()

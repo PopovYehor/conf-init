@@ -5,16 +5,15 @@ import { IconsMain } from "@/components/icons/icons-main/icons-main";
 import { useState, useEffect } from "react";
 import { defaultContacts } from "@/constants/mainItemsDefault/mainItemsDefault";
 import { apiUrls, languageParameter, privacyPolicyUrl, publicOfferUrl } from "@/constants/apiUrls/apiUrls";
-import { useAppSelector } from "@/hooks/hooks";
+import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
 import { languages } from "@/language/languages";
 import axios from "axios";
 import { navigation } from "@/constants/navigations/navigations";
 import {
   InstargamIcons,
   FacebookIcons,
-  FacebookIconsMobile,
-  InstagramIconsMobile,
 } from "../icons/icons-socials/icons-socials";
+import { CHANGE_PAGE } from "@/reducers/language/language.reducer";
 
 
 export default function Footer() {
@@ -29,7 +28,7 @@ export default function Footer() {
 
   const [apiData, setApiData] = useState<IContactData[]>([defaultContacts]);
   
-  const isMobile = useAppSelector((state) => state.mobile.mobile);
+  const dispatch = useAppDispatch()
   const languageSelected = useAppSelector(
     (state) => state.language.languageSelected
   );
@@ -117,7 +116,7 @@ export default function Footer() {
         </div>
         <div className={style.bottom_part}>
           <hr></hr>
-          <Link href={navigation.junfolio}>
+          <Link href={navigation.junfolio} onClick={()=>dispatch(CHANGE_PAGE(navigation.junfolio))}>
             {languages[languageSelected].junfolio}
           </Link>
         </div>
