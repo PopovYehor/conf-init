@@ -1,5 +1,5 @@
 //url for get data
-/* const urlPage = 'http://localhost:3000/' */ // for local use
+/* const urlPage = 'http://localhost:3000/' */// for local use
 const urlPage = 'https://conf-init.vercel.app/' // for regular use
 /* const urlPage = 'https://svp.org.ua/' */ // for future use
 /* const url = 'http://localhost:5000/'  */// for local use
