@@ -6,10 +6,12 @@ import { useAppDispatch } from "@/hooks/hooks"
 import { CHANGE_PAGE } from "@/reducers/language/language.reducer"
 import { IHeaderNavigation, IHeaderProps } from "../header"
 import LanguageListComponent from "../language-list/language-list"
+import { useRouter } from "next/router"
 
 export function HeaderDesctop({nav}: IHeaderProps){
 
     const dispatch = useAppDispatch()
+    const router = useRouter()
 
     return(
         <header className={styles.header}>
@@ -23,7 +25,7 @@ export function HeaderDesctop({nav}: IHeaderProps){
                 <div className={styles.header_nav}>
                     {nav.map((item: IHeaderNavigation)=>{
                         return(
-                            <Link key={item.link} href={item.link} onClick={()=>dispatch(CHANGE_PAGE(item.link))}>{item.text}</Link>
+                            <>{router.asPath != item.link &&<Link key={item.link} href={item.link} onClick={()=>dispatch(CHANGE_PAGE(item.link))}>{item.text}</Link>}</>
                         )
                     })}
                 </div>

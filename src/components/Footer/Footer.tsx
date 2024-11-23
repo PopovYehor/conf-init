@@ -1,6 +1,5 @@
 import Link from "next/link";
 import style from "./footer.module.scss";
-
 import { IconsMain } from "@/components/icons/icons-main/icons-main";
 import { useState, useEffect } from "react";
 import { defaultContacts } from "@/constants/mainItemsDefault/mainItemsDefault";
@@ -14,9 +13,15 @@ import {
   FacebookIcons,
 } from "../icons/icons-socials/icons-socials";
 import { CHANGE_PAGE } from "@/reducers/language/language.reducer";
+import { IHeaderNavigation } from "../header/header";
+import { useRouter } from "next/router";
 
 
 export default function Footer() {
+
+  const langageSelected = useAppSelector((state)=>state.language.languageSelected)
+  const router = useRouter()
+  
   interface IContactData {
     _id: string;
     titleCont: string;
@@ -25,6 +30,14 @@ export default function Footer() {
     language: string;
     __v: number;
   }
+
+  const nav: IHeaderNavigation[] = [
+    {text: languages[langageSelected].main, link: navigation.main},
+    {text: languages[langageSelected].about, link: navigation.about},
+    {text: languages[langageSelected].project, link: navigation.projects},
+    {text: languages[langageSelected].support, link: navigation.support},
+    {text: languages[langageSelected].volunteers, link: navigation.volunteers}
+]
 
   const [apiData, setApiData] = useState<IContactData[]>([defaultContacts]);
   
@@ -62,22 +75,11 @@ export default function Footer() {
           <div className={style.wrapper_menu_contacts}>
             <div className={style.wrapper_menu}>
               <p>{languages[languageSelected].menu}</p>
-
-              <Link href={navigation.about}>
-                {languages[languageSelected].about}
-              </Link>
-
-              <Link href={navigation.support}>
-                {languages[languageSelected].support}
-              </Link>
-
-              <Link href={navigation.projects}>
-                {languages[languageSelected].project}
-              </Link>
-
-              <Link href={navigation.volunteers}>
-                {languages[languageSelected].volunteers}
-              </Link>
+              {nav.map((item: IHeaderNavigation)=>{
+                return(
+                    <>{router.asPath != item.link &&<Link key={item.link} href={item.link} onClick={()=>dispatch(CHANGE_PAGE(item.link))}>{item.text}</Link>}</>
+                )
+              })}
             </div>
 
             <div className={style.wrapper_contacts}>

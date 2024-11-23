@@ -7,11 +7,13 @@ import { useAppDispatch } from "@/hooks/hooks"
 import { CHANGE_PAGE } from "@/reducers/language/language.reducer"
 import { IconsMain, IconsMenuClose, IconsMenuOpen } from "@/components/icons/icons-main/icons-main"
 import { FacebookIcons, InstargamIcons } from "@/components/icons/icons-socials/icons-socials"
+import { useRouter } from "next/router"
 
 export function HeaderMobile({nav}: IHeaderProps){
 
     const [open, setOpen] = useState(false)
     const dispatch = useAppDispatch()
+    const router = useRouter()
 
     return(
         <header className={styles.header}>
@@ -20,7 +22,7 @@ export function HeaderMobile({nav}: IHeaderProps){
                 onClick={()=>{if (open == true)setOpen(!open)}}>
                     <IconsMain/>
             </Link>
-            <input type="checkbox" id="menu" checked={open}/>
+            <input type="checkbox" id="menu" checked={open} readOnly/>
             <div className={styles.header_menu} >
                 <label htmlFor="menu" onClick={()=>setOpen(!open)}>
                     {!open? <IconsMenuOpen/> : <IconsMenuClose/>}
@@ -31,6 +33,8 @@ export function HeaderMobile({nav}: IHeaderProps){
                 <nav className={styles.header_nav}>
                     {nav.map((item)=>{
                         return(
+                        <>
+                        {router.asPath != item.link &&
                             <Link
                                 key={item.link}
                                 href={item.link} 
@@ -40,9 +44,10 @@ export function HeaderMobile({nav}: IHeaderProps){
                                     }}>
                                 {item.text}
                             </Link>
-                            
-                        )
-                    })}
+                        }
+                        </>
+                        )}
+                    )}
                 </nav>
                 <div className={styles.header_swap_bottom}>
                     <div className={styles.header_swap_socials}>

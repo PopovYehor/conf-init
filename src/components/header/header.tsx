@@ -19,6 +19,7 @@ export default function Header(){
     const isMobile = useAppSelector((state)=>state.mobile.mobile)
     
     const nav: IHeaderNavigation[] = [
+        {text: languages[langageSelected].main, link: navigation.main},
         {text: languages[langageSelected].about, link: navigation.about},
         {text: languages[langageSelected].project, link: navigation.projects},
         {text: languages[langageSelected].support, link: navigation.support},

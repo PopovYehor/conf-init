@@ -1,6 +1,7 @@
 export const languages: any = {
   ua: {
     //header
+    main: 'Головна',
     about: "Про нас",
     project: "Наші проєкти",
     support: "Підтримати",
@@ -124,6 +125,7 @@ export const languages: any = {
   },
   en: {
     //header
+    main: 'Main',
     about: "About Us",
     project: "Our Projects",
     support: "Support Us",
