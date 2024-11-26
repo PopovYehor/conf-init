@@ -1,17 +1,17 @@
 @import "../../styles/var.scss";
 @media screen and (min-width: 1440px) {
     .nav_wrap{
-    gap: 80px;
+    gap: 64px;
     .header_nav{
-        gap: 80px;
+        gap: 64px;
     }
     }
 }
 @media screen and (max-width: 1439px) and (min-width: 1240px) {
     .nav_wrap{
-    gap: 60px;
+    gap: 50px;
     .header_nav{
-        gap: 60px;
+        gap: 50px;
     }
     }
 }
@@ -76,13 +76,13 @@
                     align-items: center;
                     a{
                         @media screen and (min-width: 1240px){
-                            @include h4;
+                            @include t2;
                         }
                         @media screen and (max-width: 1239px) and (min-width: 1024px){
                             @include t2;
                         }
                         @media screen and (max-width: 1023px) and (min-width: 900px){
-                            @include t3;
+                            @include t4;
                         }
                         @media screen and (max-width: 899px) and (min-width: 769px){
                             @include t5;
@@ -92,22 +92,10 @@
                         text-align: center;
                     }
                     a:hover{
-                        @media screen and (min-width: 1023px){
-                            @include h4;
-                        }
-                        @media screen and (max-width: 1023px) and (min-width: 769px){
-                            @include t2;
-                        }
                         color: $color_blue_hover !important;
                         text-decoration: underline !important;
                     }
                     a:active{
-                        @media screen and (min-width: 1023px){
-                            @include h4;
-                        }
-                        @media screen and (max-width: 1023px) and (min-width: 769px){
-                            @include t2;
-                        }
                         color: $color_blue_hover;
                         text-decoration: underline !important;
                     }
@@ -182,11 +170,11 @@
                 position: relative;
                 display: none;
                 flex-direction: column;
-                gap: 15px;
+                gap: 20px;
                 margin-top: 140px;
                 padding-right: 20px;
                 a{
-                    @include h3;
+                    @include h4;
                     text-decoration: none;
                     color: $color_text_black;
                     &:hover{

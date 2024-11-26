@@ -25,7 +25,7 @@ export function HeaderDesctop({nav}: IHeaderProps){
                 <div className={styles.header_nav}>
                     {nav.map((item: IHeaderNavigation)=>{
                         return(
-                            <>{router.asPath != item.link &&<Link key={item.link} href={item.link} onClick={()=>dispatch(CHANGE_PAGE(item.link))}>{item.text}</Link>}</>
+                            <Link key={item.link} href={item.link} onClick={()=>dispatch(CHANGE_PAGE(item.link))}>{item.text}</Link>
                         )
                     })}
                 </div>

@@ -77,7 +77,7 @@ export default function Footer() {
               <p>{languages[languageSelected].menu}</p>
               {nav.map((item: IHeaderNavigation)=>{
                 return(
-                    <>{router.asPath != item.link &&<Link key={item.link} href={item.link} onClick={()=>dispatch(CHANGE_PAGE(item.link))}>{item.text}</Link>}</>
+                    <Link key={item.link} href={item.link} onClick={()=>dispatch(CHANGE_PAGE(item.link))}>{item.text}</Link>
                 )
               })}
             </div>

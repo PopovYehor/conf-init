@@ -33,8 +33,6 @@ export function HeaderMobile({nav}: IHeaderProps){
                 <nav className={styles.header_nav}>
                     {nav.map((item)=>{
                         return(
-                        <>
-                        {router.asPath != item.link &&
                             <Link
                                 key={item.link}
                                 href={item.link} 
@@ -44,8 +42,6 @@ export function HeaderMobile({nav}: IHeaderProps){
                                     }}>
                                 {item.text}
                             </Link>
-                        }
-                        </>
                         )}
                     )}
                 </nav>
