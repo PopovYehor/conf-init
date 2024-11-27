@@ -105,12 +105,12 @@ export const languages: any = {
 
     beneficiary: 'Отримувач:',
     beneficiaryBank: 'Банк отримувача:',
-    iBAN: 'IBAN:',
+    iBAN: 'IBAN Code:',
     intermediaryBankBeneficiary: 'Банк-кореспондент отримувача:',
-    beneficiaryBankSwift: 'SWIFT Банк-кореспондент отримувача:',
-    correspondentBank: 'Рахунок банку отримувача в банку-кореспондента:',
-    intermediaryBank: 'Банк-посередник:',
-    intermediaryBankSwift: 'SWIFT Банк-посередник:',
+    beneficiaryBankSwift: 'SWIFT code банку:',
+    correspondentBank: 'Рахунок у банку-кореспонденті:',
+    intermediaryBank: 'Банк-кореспондент:',
+    intermediaryBankSwift: 'SWIFT Code банку-кореспондента:',
     //________________________
 
     //junfolio
@@ -236,11 +236,11 @@ export const languages: any = {
     addressOrganization: "Addres of the organization:",
     beneficiary: 'Beneficiary:',
     beneficiaryBank: 'Bank of beneficiary:',
-    iBAN: 'IBAN:',
+    iBAN: 'IBAN Code:',
     intermediaryBankBeneficiary: 'Intermediary bank beneficiary:',
-    beneficiaryBankSwift: 'SWIFT intermediary bank beneficiary:',
-    correspondentBank: 'Correspondent account:',
-    intermediaryBank: 'Intermediary bank:',
+    beneficiaryBankSwift: 'Bank SWIFT Code:',
+    correspondentBank: 'Account in the correspondent bank:',
+    intermediaryBank: 'Correspondent bank:',
     intermediaryBankSwift: 'SWIFT intermediary bank:',
     //__________________________________
 
