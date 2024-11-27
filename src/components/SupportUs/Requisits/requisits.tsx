@@ -4,12 +4,15 @@ import { languages } from '@/language/languages'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { apiUrls, languageParameter } from '@/constants/apiUrls/apiUrls'
-import { SupportItemsDefault } from '@/constants/SupportItemsDefault/SupportItemsDefault'
+import { RequisitsCurrencyItemsDefault, SupportItemsDefault } from '@/constants/SupportItemsDefault/SupportItemsDefault'
+import RequisitsItemUa from './requisitsItem/requisitsItemUA'
+import RequisitsItemCurrency from './requisitsItem/requisitsItemCurrency'
 
 export default function Requisits(){
 
     const languageSelected = useAppSelector((state) => state.language.languageSelected)
     const [requisits, setRequisits] = useState([SupportItemsDefault])
+    const [requisitsCurrency, setRequisitsCurrency] = useState([RequisitsCurrencyItemsDefault])
     
     const requsitsHeaders = [languages[languageSelected].requsits_uah, 'USD', 'EUR']
     const mobile = useAppSelector((state)=>state.mobile.mobile)
@@ -18,9 +21,12 @@ export default function Requisits(){
         const fetchRequisits = async ()=>{
             try{
                 const responce = await axios.get(apiUrls.requisits+languageParameter+languageSelected)
+                const responceCurrency = await axios.get(apiUrls.requisitsCurrency+languageParameter+languageSelected)
                 setRequisits(responce.data)
+                setRequisitsCurrency(responceCurrency.data)
             }catch{
                 setRequisits([SupportItemsDefault])
+                setRequisitsCurrency([RequisitsCurrencyItemsDefault])
             }
         }
         fetchRequisits()
@@ -40,37 +46,12 @@ export default function Requisits(){
                         </div>}
                     </div>
                     <div className={styles.requsits_items_wrap}>
-                        {requisits.map((item, i)=>{
-                            return(
-                                <div className={styles.requsits_item} key={item._id}>
-                                    <div className={styles.item_header}>
-                                        <p>{languages[languageSelected].requsits_head+requsitsHeaders[i]+'?'}</p>
-                                    </div>
-                                    <div className={styles.item_container}>
-                                        <div className={styles.item}>
-                                            <p>{languages[languageSelected].nameOrganization}</p>
-                                            <p>{item.nameOrganization}</p>
-                                        </div>
-                                        <div className={styles.item}>
-                                            <p>{languages[languageSelected].code}</p>
-                                            <p>{item.code}</p>
-                                        </div>
-                                        <div className={styles.item}>
-                                            <p>{languages[languageSelected].bankName}</p>
-                                            <p>{item.bankName}</p>
-                                        </div>
-                                        <div className={styles.item}>
-                                            <p>{languages[languageSelected].accountNumber}</p>
-                                            <p>{item.accountNumber}</p>
-                                        </div>
-                                        <div className={styles.item}>
-                                            <p>{languages[languageSelected].payment}</p>
-                                            <p>{item.payment}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            )
-                        })}
+                        <div className={styles.requsits_item}>
+                            <RequisitsItemUa item={requisits[0]} header={languages[languageSelected].requsits_head+languages[languageSelected].requsits_uah+'?'}/>
+                        </div>
+                        <div className={styles.requsits_item}>
+                            <RequisitsItemCurrency item={requisitsCurrency[0]} header={languages[languageSelected].requsits_head+'USD'+'?'}/>
+                        </div>
                     </div>
                 </div>
             </div>

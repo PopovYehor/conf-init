@@ -1,4 +1,4 @@
-import { IReportItem, IRequsitsItem } from "@/interfaces/supportUs/supportUs.interface"
+import { IIRequsitsCurencyItem, IReportItem, IRequsitsItem } from "@/interfaces/supportUs/supportUs.interface"
 
 export const SupportItemsDefault: IRequsitsItem = {
     _id: '0',
@@ -7,6 +7,19 @@ export const SupportItemsDefault: IRequsitsItem = {
     bankName: "АТ КБ «ПриватБанк»",
     accountNumber: "UA523052990000026006026722176",
     payment: "благодійна пожертва",
+}
+
+export const RequisitsCurrencyItemsDefault: IIRequsitsCurencyItem = {
+        _id: '0',
+        nameOrganization: "nameOrganization",
+        codeIBAN: "codeIBAN",
+        bankName: "bankName",
+        bankSWIFTCode: "bankSWIFTCode",
+        companyAddress: "companyAddress",
+        acountCorrespondentBank: "acountCorrespondentBank",
+        codeSWIFTCorrespondentBank: "codeSWIFTCorrespondentBank",
+        correspondentBank: "correspondentBank",
+        payment: "payment",
 }
 
 export const ReportItemDefault: IReportItem = {

@@ -26,6 +26,7 @@ const project = 'project'
 //_____________
 //Support Us
 const requisits = 'requisit'
+const requisitsCurrency = 'currencyrequisit'
 const report = 'report'
 //______________
 //Volunteers
@@ -59,6 +60,7 @@ export const apiUrls = { // urls for get data in different pages
   //__________
   //Support Us
   requisits: url + requisits,
+  requisitsCurrency: url + requisitsCurrency,
   report: url + report,
 //______________
 //Volunteers

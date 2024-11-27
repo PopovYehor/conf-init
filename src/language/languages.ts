@@ -101,6 +101,16 @@ export const languages: any = {
     bankName: "Назва банку:",
     accountNumber: "Номер рахунку отримувача:",
     payment: "Призначення платежу:",
+    addressOrganization: "Адреса організації:",
+
+    beneficiary: 'Отримувач:',
+    beneficiaryBank: 'Банк отримувача:',
+    iBAN: 'IBAN:',
+    intermediaryBankBeneficiary: 'Банк-кореспондент отримувача:',
+    beneficiaryBankSwift: 'SWIFT Банк-кореспондент отримувача:',
+    correspondentBank: 'Рахунок банку отримувача в банку-кореспондента:',
+    intermediaryBank: 'Банк-посередник:',
+    intermediaryBankSwift: 'SWIFT Банк-посередник:',
     //________________________
 
     //junfolio
@@ -223,6 +233,15 @@ export const languages: any = {
     bankName: "Name of the bank:",
     accountNumber: "Recipient's account number:",
     payment: "Purpose of payment:",
+    addressOrganization: "Addres of the organization:",
+    beneficiary: 'Beneficiary:',
+    beneficiaryBank: 'Bank of beneficiary:',
+    iBAN: 'IBAN:',
+    intermediaryBankBeneficiary: 'Intermediary bank beneficiary:',
+    beneficiaryBankSwift: 'SWIFT intermediary bank beneficiary:',
+    correspondentBank: 'Correspondent account:',
+    intermediaryBank: 'Intermediary bank:',
+    intermediaryBankSwift: 'SWIFT intermediary bank:',
     //__________________________________
 
     // junfolio

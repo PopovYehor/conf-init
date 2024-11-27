@@ -13,3 +13,15 @@ export interface IRequsitsItem extends IDefaultData{
     accountNumber: string;
     payment: string;
 } 
+
+export interface IIRequsitsCurencyItem extends IDefaultData {
+    nameOrganization: string
+    codeIBAN: string
+    bankName: string
+    bankSWIFTCode: string
+    companyAddress: string
+    acountCorrespondentBank: string
+    codeSWIFTCorrespondentBank: string
+    correspondentBank: string
+    payment: string
+}
