@@ -52,9 +52,9 @@ export default function Layout ({ children }: ILayout) {
       <title>CONFERENCE OF BLESSED MARTHA OF VETCKA</title>
       <meta charSet="UTF-8"/>
       <meta name="title" content='Благодійна Організація "Конференція Блаженої Марти Вєцкої", Charitable Organization "Conference of Blessed Marta Wiecka"' />
-      <meta name="description" content='Благодійна Організація Конференція Блаженої Марти Вєцкої. Отримання допомоги, надання допомоги, благодійність, волонтерство.
-       Charitable Organization Conference of Blessed Marta Wiecka. Receiving help, providing help, charity, volunteering.'/>
-      <meta name="keywords" content="благодійна організація, волонтерство, Марта Вєцька, charitable organization, volunteer, Marta Wiecka "/>
+      <meta name="description" content='Благодійна Організація Конференція Блаженої Марти Вєцкої. Отримання допомоги, Надання допомоги, Благодійність, Волонтерство.
+       Charitable Organization Conference of Blessed Marta Wiecka. Receiving help, Providing help, Charity, Volunteering.'/>
+      <meta name="keywords" content="Благодійна організація, Волонтерство, Марта Вєцька, Charitable organization, Volunteer, Marta Wiecka "/>
       <meta name="og:title" property="og:title" content="Благодійна Організація Конференція Блаженої Марти Вєцкої"/>
       <meta name="viewport" content="width=device-width,initial-scale=1" />
       <link rel="icon" href="./favicon.png" type="image/png" sizes="192x192" />
