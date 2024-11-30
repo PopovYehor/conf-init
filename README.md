@@ -74,3 +74,11 @@ i18n: {
 # Media data
 #### All static images are in the src/assets folder
 #### All static icons on the site are located in the src/components/icons folder
+
+# Authors
+### Popov Yehor
+#### [GitHub](https://github.com/PopovYehor "Popov Yehor")
+#### [Telegram](https://t.me/Yehor_dnipro "Popov Yehor")
+### Vladislav Shamrai
+#### [GitHub](https://github.com/PanShamray "Vladislav Shamrai")
+#### [Telegram](https://t.me/panshamray "Vladislav Shamrai")
