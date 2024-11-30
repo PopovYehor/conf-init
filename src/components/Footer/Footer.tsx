@@ -69,7 +69,7 @@ export default function Footer() {
         <div className={style.top_part}>
           <div className={style.wrapper_logos}>
             <div className={style.logo}>
-              <a href="">{IconsMain()}</a>
+              <Link href={navigation.main}><IconsMain/></Link>
             </div>
           </div>
           <div className={style.wrapper_menu_contacts}>

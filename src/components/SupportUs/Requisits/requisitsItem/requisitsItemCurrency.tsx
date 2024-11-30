@@ -42,11 +42,11 @@ export default function RequisitsItemCurrency({item, header}: IRequsitsItemUaPro
                     <p>{item.acountCorrespondentBank}</p>
                 </div>
                 <div className={styles.item}>
-                    <p>{languages[languageSelected].beneficiaryBankSwift}</p>
+                    <p>{languages[languageSelected].intermediaryBankSwift}</p>
                     <p>{item.codeSWIFTCorrespondentBank}</p>
                 </div>
                 <div className={styles.item}>
-                    <p>{languages[languageSelected].correspondentBank}</p>
+                    <p>{languages[languageSelected].intermediaryBank}</p>
                     <p>{item.correspondentBank}</p>
                 </div>
                 <div className={styles.item}>

@@ -241,7 +241,7 @@ export const languages: any = {
     beneficiaryBankSwift: 'Bank SWIFT Code:',
     correspondentBank: 'Account in the correspondent bank:',
     intermediaryBank: 'Correspondent bank:',
-    intermediaryBankSwift: 'SWIFT intermediary bank:',
+    intermediaryBankSwift: 'SWIFT Code of the correspondent bank:',
     //__________________________________
 
     // junfolio
